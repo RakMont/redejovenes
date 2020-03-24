@@ -4,7 +4,6 @@ import { MisionService } from 'src/app/services/mision.service';
 import { Subscriber } from 'rxjs';
 import { Mision } from './models/Mision';
 import { CarouselComponent } from './components/carousel/carousel.component';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,6 +11,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 })
 export class AppComponent {
   title = 'frontend';
+  HVTScreen;
   constructor(private router: Router) {}
 
 

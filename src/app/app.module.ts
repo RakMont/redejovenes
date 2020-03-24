@@ -1,6 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MatSliderModule } from '@angular/material/slider';
+import {MatTableModule}from '@angular/material/table';
+import {MatTableDataSource} from '@angular/material/table';
+import{MatDialogModule} from '@angular/material/dialog';
 
+import {MatSnackBarModule}from '@angular/material/snack-bar';
+
+import {MatButtonModule} from '@angular/material/button';
+import {MatSortModule} from '@angular/material/sort';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
@@ -24,6 +34,7 @@ import {HttpClientModule} from '@angular/common/http';
 
 import {MisionService} from './services/mision.service';
 import {HistoriaVidaTextoService} from './services/historia-vida-texto.service';
+import {HistoriaVidaVideoService}from './services/historia-vida-video.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
@@ -33,7 +44,7 @@ import { VerVisionComponent } from './components/vision/ver-vision/ver-vision.co
 import { EditVisionComponent } from './components/vision/edit-vision/edit-vision.component';
 import { VerObjetivoComponent } from './components/objetivo/ver-objetivo/ver-objetivo.component';
 import { EditObjetivoComponent } from './components/objetivo/edit-objetivo/edit-objetivo.component';
-
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +69,9 @@ import { EditObjetivoComponent } from './components/objetivo/edit-objetivo/edit-
     VerVisionComponent,
     EditVisionComponent,
     VerObjetivoComponent,
-    EditObjetivoComponent
+    EditObjetivoComponent,
+    HomeComponent
+
 
   ],
   imports: [
@@ -69,9 +82,18 @@ import { EditObjetivoComponent } from './components/objetivo/edit-objetivo/edit-
     FormsModule,
     MatIconModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSliderModule,
+    MatTableModule,
+    MatButtonModule,
+    MatSortModule,
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSnackBarModule
   ],
-  providers: [HistoriaVidaTextoService],
-  bootstrap: [AppComponent]
+  providers: [HistoriaVidaTextoService,HistoriaVidaVideoService],
+  bootstrap: [AppComponent],
+  entryComponents:[AddHistoriaVidaTextoComponent,EditHistoriaVidaTextoComponent]
 })
 export class AppModule { }

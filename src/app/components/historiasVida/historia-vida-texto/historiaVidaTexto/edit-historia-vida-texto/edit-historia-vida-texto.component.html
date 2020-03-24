@@ -1,1 +1,57 @@
-<p>edit-historia-vida-texto works!</p>
+<div class="container col-md-11">
+    <div class="d-flex justify-content-between">
+        <h4>ADD HISTORIA DE VIDA</h4>
+
+        <button mat-button (click)="close()">
+    <mat-icon>close</mat-icon>
+  </button>
+    </div>
+    <div style="overflow: auto;height: 450px;">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
+
+            <div class="m-2 input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">ID</span>
+                </div>
+                <input readonly="readonly" type="text" class="form-control" name="id_HVT" #id_HVT="ngModel" [(ngModel)]="service.formData.id_HVT">
+            </div>
+
+
+
+            <div class="m-2 input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">TITULO</span>
+                </div>
+                <input required minlength="2" type="text" class="form-control" name="titulo" #titulo="ngModel" [(ngModel)]="service.formData.titulo">
+            </div>
+            <div class="text-left text-danger" *ngif="titulo.invalid && titulo.touched">
+                Please enter titulo.
+            </div>
+
+            <div class="m-2 input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">CONTENIDO</span>
+                </div>
+                <input required minlength="2" type="text" class="form-control" name="contenido" #contenido="ngModel" [(ngModel)]="service.formData.contenido">
+            </div>
+            <div class="text-left text-danger" *ngif="contenido.invalid && contenido.touched">
+                Please enter contenido.
+            </div>
+
+
+            <div class="m-2 input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">FECHA</span>
+                </div>
+                <input required minlength="2" [matDatepicker]="picker" class="form-control" type="text" name="fecha" #fecha="ngModel" [(ngModel)]="service.formData.fecha">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker touchUi="true" #picker [(ngModel)]="service.formData.fecha"></mat-datepicker>
+
+            </div>
+
+
+            <button class="m-2" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">ADD</button>
+        </form>
+
+    </div>
+</div>
