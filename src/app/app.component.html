@@ -7,7 +7,7 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
-
+    
     h1,
     h2,
     h3,
@@ -16,15 +16,15 @@
     h6 {
         margin: 8px 0;
     }
-
+    
     p {
         margin: 0;
     }
-
+    
     .spacer {
         flex: 1;
     }
-
+    
     .toolbar {
         height: 60px;
         margin: 0px;
@@ -34,7 +34,7 @@
         color: white;
         font-weight: 600;
     }
-
+    
     .content {
         display: flex;
         margin: 32px auto;
@@ -43,18 +43,18 @@
         flex-direction: column;
         align-items: center;
     }
-
+    
     a,
     a:visited,
     a:hover {
         color: #1976d2;
         text-decoration: none;
     }
-
+    
     a:hover {
         color: #125699;
     }
-
+    
     .terminal {
         position: relative;
         width: 80%;
@@ -65,7 +65,7 @@
         overflow: hidden;
         background-color: rgb(15, 15, 16);
     }
-
+    
     .terminal::before {
         content: "\2022 \2022 \2022";
         position: absolute;
@@ -80,14 +80,14 @@
         padding: 14px 0;
         text-indent: 4px;
     }
-
+    
     .terminal pre {
         font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
         color: white;
         padding: 0 1rem 1rem;
         margin: 0;
     }
-
+    
     .circle-link {
         height: 40px;
         width: 40px;
@@ -102,24 +102,24 @@
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
         transition: 1s ease-out;
     }
-
+    
     .circle-link:hover {
         transform: translateY(-0.25rem);
         box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
     }
-
+    
     footer {
         margin-top: 8px;
         display: flex;
         align-items: center;
         line-height: 20px;
     }
-
+    
     footer a {
         display: flex;
         align-items: center;
     }
-
+    
     .github-star-badge {
         color: #24292e;
         display: flex;
@@ -133,19 +133,19 @@
         font-weight: 600;
         font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     }
-
+    
     .github-star-badge:hover {
         background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
         border-color: rgba(27, 31, 35, .35);
         background-position: -.5em;
     }
-
+    
     .github-star-badge .material-icons {
         height: 16px;
         width: 16px;
         margin-right: 4px;
     }
-
+    
     svg#clouds {
         position: fixed;
         bottom: -160px;
@@ -161,24 +161,7 @@
 <app-navbar>
 
 </app-navbar>
-<!--
-<app-carousel></app-carousel>
-<div class="container">
-</div>
 
-<main>
-    <app-ver-mision></app-ver-mision>
-    <app-ver-vision></app-ver-vision>
-    <app-ver-objetivo></app-ver-objetivo>
-</main>
--->
-<!--<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
-
-<button class="m-1 btn-light btn-outline-danger" Button label="HVTScreen" (click)="HVTScreen=true;">
-  HVT
-</button>
-
--->
 
 <app-historia-vida-texto *ngIf="HVTScreen"></app-historia-vida-texto>
 <app-footer></app-footer>

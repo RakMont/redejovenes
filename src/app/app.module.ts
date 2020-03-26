@@ -45,6 +45,39 @@ import { EditVisionComponent } from './components/vision/edit-vision/edit-vision
 import { VerObjetivoComponent } from './components/objetivo/ver-objetivo/ver-objetivo.component';
 import { EditObjetivoComponent } from './components/objetivo/edit-objetivo/edit-objetivo.component';
 import { HomeComponent } from './components/home/home.component';
+import { ShowConvenioComponent } from './components/Convenio/show-convenio/show-convenio.component';
+import { EditConvenioComponent } from './components/Convenio/edit-convenio/edit-convenio.component';
+import { TrabajoComponent } from './components/Referente/trabajo/trabajo.component';
+import { AddContactanosComponent } from './components/Contactanos/add-contactanos/add-contactanos.component';
+import { EditContactanosComponent } from './components/Contactanos/edit-contactanos/edit-contactanos.component';
+import { ShowContactanosComponent } from './components/Contactanos/show-contactanos/show-contactanos.component';
+import { AddConvenioComponent } from './components/Convenio/add-convenio/add-convenio.component';
+import { AddTrabajoComponent } from './components/Referente/Trabajo/add-trabajo/add-trabajo.component';
+import { EditTrabajoComponent } from './components/Referente/Trabajo/edit-trabajo/edit-trabajo.component';
+import { ShowTrabajoComponent } from './components/Referente/Trabajo/show-trabajo/show-trabajo.component';
+import { AddEducacionComponent } from './components/Referente/Educacion/add-educacion/add-educacion.component';
+import { EditEducacionComponent } from './components/Referente/Educacion/edit-educacion/edit-educacion.component';
+import { ShowEducacionComponent } from './components/Referente/Educacion/show-educacion/show-educacion.component';
+import { AddSaludComponent } from './components/Referente/Salud/add-salud/add-salud.component';
+import { EditSaludComponent } from './components/Referente/Salud/edit-salud/edit-salud.component';
+import { ShowSaludComponent } from './components/Referente/Salud/show-salud/show-salud.component';
+import { AddViviendaComponent } from './components/Referente/Vivienda/add-vivienda/add-vivienda.component';
+import { EditViviendaComponent } from './components/Referente/Vivienda/edit-vivienda/edit-vivienda.component';
+import { ShowViviendaComponent } from './components/Referente/Vivienda/show-vivienda/show-vivienda.component';
+import { AddPodcastComponent } from './components/Podcast/add-podcast/add-podcast.component';
+import { EditPodcastComponent } from './components/Podcast/edit-podcast/edit-podcast.component';
+import { ShowPodcastComponent } from './components/Podcast/show-podcast/show-podcast.component';
+import { AddToTrabajoComponent } from './components/te_ofrecemos/to_trabajo/add-to-trabajo/add-to-trabajo.component';
+import { EditToTrabajoComponent } from './components/te_ofrecemos/to_trabajo/edit-to-trabajo/edit-to-trabajo.component';
+import { ShowToTrabajoComponent } from './components/te_ofrecemos/to_trabajo/show-to-trabajo/show-to-trabajo.component';
+import { AddToBecaComponent } from './components/te_ofrecemos/to_beca/add-to-beca/add-to-beca.component';
+import { EditToBecaComponent } from './components/te_ofrecemos/to_beca/edit-to-beca/edit-to-beca.component';
+import { ShowToBecaComponent } from './components/te_ofrecemos/to_beca/show-to-beca/show-to-beca.component';
+import { AddToViviendaComponent } from './components/te_ofrecemos/to_vivienda/add-to-vivienda/add-to-vivienda.component';
+import { EditToViviendaComponent } from './components/te_ofrecemos/to_vivienda/edit-to-vivienda/edit-to-vivienda.component';
+import { ShowToViviendaComponent } from './components/te_ofrecemos/to_vivienda/show-to-vivienda/show-to-vivienda.component';
+
+
 
 @NgModule({
   declarations: [
@@ -70,7 +103,39 @@ import { HomeComponent } from './components/home/home.component';
     EditVisionComponent,
     VerObjetivoComponent,
     EditObjetivoComponent,
-    HomeComponent
+    HomeComponent,
+    ShowConvenioComponent,
+    EditConvenioComponent,
+    TrabajoComponent,
+    AddContactanosComponent,
+    EditContactanosComponent,
+    ShowContactanosComponent,
+    AddConvenioComponent,
+    AddTrabajoComponent,
+    EditTrabajoComponent,
+    ShowTrabajoComponent,
+    AddEducacionComponent,
+    EditEducacionComponent,
+    ShowEducacionComponent,
+    AddSaludComponent,
+    EditSaludComponent,
+    ShowSaludComponent,
+    AddViviendaComponent,
+    EditViviendaComponent,
+    ShowViviendaComponent,
+    AddPodcastComponent,
+    EditPodcastComponent,
+    ShowPodcastComponent,
+    AddToTrabajoComponent,
+    EditToTrabajoComponent,
+    ShowToTrabajoComponent,
+    AddToBecaComponent,
+    EditToBecaComponent,
+    ShowToBecaComponent,
+    AddToViviendaComponent,
+    EditToViviendaComponent,
+    ShowToViviendaComponent,
+
 
 
   ],
