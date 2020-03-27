@@ -26,7 +26,7 @@ import{ShowToTrabajoComponent}from './components/te_ofrecemos/to_trabajo/show-to
 import{ShowToBecaComponent}from './components/te_ofrecemos/to_beca/show-to-beca/show-to-beca.component';
 import{ShowToViviendaComponent}from './components/te_ofrecemos/to_vivienda/show-to-vivienda/show-to-vivienda.component';
 
-
+import{ShowEventosComponent}from './components/eventos/show-eventos/show-eventos.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},

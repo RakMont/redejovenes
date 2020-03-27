@@ -33,3 +33,20 @@ div.hvv {
     -o-background-size: cover;
     background-size: cover;
 }
+
+.mat-card {
+    max-width: 900px;
+    margin: auto;
+}
+
+.mat-card-avatar {
+    background-size: cover;
+}
+
+.mat-card-actions {
+    display: flex;
+}
+
+.mat-card-actions .flex-spacer {
+    width: 100%;
+}

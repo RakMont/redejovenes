@@ -6,7 +6,8 @@ import {MatTableDataSource} from '@angular/material/table';
 import{MatDialogModule} from '@angular/material/dialog';
 
 import {MatSnackBarModule}from '@angular/material/snack-bar';
-
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSortModule} from '@angular/material/sort';
 import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -76,6 +77,10 @@ import { ShowToBecaComponent } from './components/te_ofrecemos/to_beca/show-to-b
 import { AddToViviendaComponent } from './components/te_ofrecemos/to_vivienda/add-to-vivienda/add-to-vivienda.component';
 import { EditToViviendaComponent } from './components/te_ofrecemos/to_vivienda/edit-to-vivienda/edit-to-vivienda.component';
 import { ShowToViviendaComponent } from './components/te_ofrecemos/to_vivienda/show-to-vivienda/show-to-vivienda.component';
+import { EventosComponent } from './components/eventos/eventos.component';
+import { AddEventosComponent } from './components/eventos/add-eventos/add-eventos.component';
+import { ShowEventosComponent } from './components/eventos/show-eventos/show-eventos.component';
+import { EditEventosComponent } from './components/eventos/edit-eventos/edit-eventos.component';
 
 
 
@@ -135,6 +140,10 @@ import { ShowToViviendaComponent } from './components/te_ofrecemos/to_vivienda/s
     AddToViviendaComponent,
     EditToViviendaComponent,
     ShowToViviendaComponent,
+    EventosComponent,
+    AddEventosComponent,
+    ShowEventosComponent,
+    EditEventosComponent,
 
 
 
@@ -155,7 +164,10 @@ import { ShowToViviendaComponent } from './components/te_ofrecemos/to_vivienda/s
     MatDialogModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCardModule,
+    MatButtonModule,
+    MatListModule
   ],
   providers: [HistoriaVidaTextoService,HistoriaVidaVideoService],
   bootstrap: [AppComponent],

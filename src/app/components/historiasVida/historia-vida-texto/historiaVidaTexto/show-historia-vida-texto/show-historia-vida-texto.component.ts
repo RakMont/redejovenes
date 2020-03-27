@@ -15,6 +15,7 @@ import {Observable} from 'rxjs';
 import {MatSnackBar}from '@angular/material/snack-bar';
 import { EditHistoriaVidaVideoComponent } from '../../../historia-vida-video/historiaVidaVideo/edit-historia-vida-video/edit-historia-vida-video.component';
 
+
 @Component({
   selector: 'app-show-historia-vida-texto',
   templateUrl: './show-historia-vida-texto.component.html',

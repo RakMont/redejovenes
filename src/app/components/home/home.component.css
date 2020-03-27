@@ -16,16 +16,29 @@ h6 {
     margin: 8px 0;
 }
 
+.nav-item {
+    text-align: center;
+}
+
 main {
     column-count: 3;
     column-gap: 4em;
     /*column-rule: 1px solid #bbb;*/
     column-width: 140px;
     text-align: center;
+    margin-bottom: 100px;
 }
 
-p {
-    margin: 0;
+.evento {
+    /*
+    align-items: center;
+
+    align-content: center;
+    align: center;
+    position: center;
+    width: 100%;
+    text-align: center;*/
+    margin-bottom: 100px;
 }
 
 .spacer {
