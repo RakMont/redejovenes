@@ -8,7 +8,7 @@ export class ObjetivoService {
 
   constructor(private http: HttpClient) { }
   Url = 'http://localhost:8090/objetivos';
-
+  formData: Objetivos;
   getObjetivos() {
     // obtengo todos los datos de esta url que hace ref a backend
     return this.http.get<Objetivos[]>(this.Url);

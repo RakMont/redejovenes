@@ -3,6 +3,14 @@ import { Router } from '@angular/router';
 import { ObjetivoService } from 'src/app/services/objetivo.service';
 import { Subscriber } from 'rxjs';
 import { Objetivos } from 'src/app/models/Objetivos';
+import {MatSnackBar}from '@angular/material/snack-bar';
+import { MatTableDataSource } from '@angular/material/table';
+import {MatSort}from '@angular/material/sort';
+import {ViewChild}from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import{NgForm}from '@angular/forms';
+
+
 @Component({
   selector: 'app-edit-objetivo',
   templateUrl: './edit-objetivo.component.html',
@@ -10,8 +18,11 @@ import { Objetivos } from 'src/app/models/Objetivos';
 })
 export class EditObjetivoComponent implements OnInit {
   objetivo: Objetivos=new Objetivos();
-  constructor(private router:Router,private service:ObjetivoService) { }
-  ngOnInit() {
+  constructor(private snackBar:MatSnackBar, private router:Router,public dialogbox:MatDialogRef<EditObjetivoComponent>,public service:ObjetivoService){
+    console.log(this.objetivo);
+  };
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
+  ngOnInit():void {
     this.edit_objetivo();
   }
   edit_objetivo(){
@@ -25,9 +36,27 @@ export class EditObjetivoComponent implements OnInit {
     this.service.updateObjetivo(objetivo)
     .subscribe(data=>{
       this.objetivo=data;
-
-      this.router.navigate(["/"]);
+      this.dialogbox.close();
+      //this.service.filter("Register click");
+      this.snackBar.open('Editado con exito','',{
+        duration:5000,
+        verticalPosition:'top'
+      })
+      //this.router.navigate(["/"]);
     })
   }
+  onSubmit(form:NgForm){
+    this.service.updateObjetivo(form.value).subscribe(res=>
+    {
+      this.dialogbox.close();
+      //this.service.filter("Register click");
+      this.snackBar.open('Editado con exito','',{
+        duration:5000,
+        verticalPosition:'top'
+      })
+    })
+    //location.reload(true);
+     // this.router.navigate(["/"]);
 
+  }
 }

@@ -1,27 +1,21 @@
-<p>edit-vision works!</p>
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <h3>UPDATE</h3>
-
+            <h3>Vision</h3>
         </div>
         <div class="card-body">
-            <form action="">
-                <div class="form-group">
-
-                    <label for="">CONTENIDO:</label>
-                    <input [(ngModel)]="vision.contenido" name="contenido" type="text" class="form-control">
-
+            <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
+                <div class=" input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">CONTENIDO</span>
+                        <input [(ngModel)]="vision.contenido" name="contenido" type="text" class="form-control"required minlength="2" [(ngModel)]="service.formData.contenido">
+                    </div>
                 </div>
-
-
+                <div class="text-left text-danger" *ngif="contenido.invalid && contenido.touched">
+                    Please enter contenido.
+                </div>
                 <button (click)="Actualizar(vision)" class="btn btn-warning">Actualizar</button>
             </form>
-
         </div>
     </div>
-
-
-
-
 </div>

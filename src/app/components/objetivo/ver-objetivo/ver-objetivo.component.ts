@@ -3,6 +3,11 @@ import { Router } from '@angular/router';
 import { ObjetivoService } from 'src/app/services/objetivo.service';
 import { Subscriber } from 'rxjs';
 import { Objetivos } from 'src/app/models/Objetivos';
+import { MatDialog,MatDialogConfig }from '@angular/material/dialog';
+import { EditMisionComponent } from 'src/app/components/mision/edit-mision/edit-mision.component';
+import { MatSnackBar }from '@angular/material/snack-bar';
+import { EditObjetivoComponent } from '../edit-objetivo/edit-objetivo.component';
+
 @Component({
   selector: 'app-ver-objetivo',
   templateUrl: './ver-objetivo.component.html',
@@ -11,17 +16,23 @@ import { Objetivos } from 'src/app/models/Objetivos';
 export class VerObjetivoComponent implements OnInit {
   objetivos: Objetivos[];
   objetivo:Objetivos;
-  constructor(private objetivoService: ObjetivoService, private router: Router) { }
+  constructor(private snackBar:MatSnackBar,private objetivoService: ObjetivoService, private router: Router, private dialog: MatDialog) { }
+  
   ngOnInit() {
-    this.objetivoService.getObjetivos()
-   .subscribe(data =>{
+    this.objetivoService.getObjetivos().subscribe(data =>{
      this.objetivos = data;
      this.objetivo = data[0];
    });
   }
+  
   edit_objetivo(objetivos: Objetivos):void{
+    this.objetivoService.formData=objetivos;
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose=true;
+    dialogConfig.autoFocus=true;
+    dialogConfig.width="70%";
+    this.dialog.open(EditObjetivoComponent,dialogConfig);
     localStorage.setItem("id_objetivos", objetivos.id_objetivos.toString());
-    this.router.navigate(["edit_objetivos"]); //in  app routing.ts => edit
-}
-
+    //this.router.navigate(["edit_objetivos"]); //in  app routing.ts => edit
+  }
 }

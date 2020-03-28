@@ -8,7 +8,7 @@ export class VisionService {
 
   constructor(private http: HttpClient) { }
   Url = 'http://localhost:8090/visiones';
-
+  formData: Vision;
   getVision() {
     // obtengo todos los datos de esta url que hace ref a backend
     return this.http.get<Vision[]>(this.Url);
