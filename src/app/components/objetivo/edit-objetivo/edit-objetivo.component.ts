@@ -32,6 +32,9 @@ export class EditObjetivoComponent implements OnInit {
       this.objetivo = data;
     })
   }
+  close(){
+    this.dialogbox.close();
+  }
   Actualizar(objetivo:Objetivos){
     this.service.updateObjetivo(objetivo)
     .subscribe(data=>{
