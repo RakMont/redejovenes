@@ -1,0 +1,23 @@
+.btnClose{
+    float: right;
+    margin-top: -8px;
+    margin-right: 0px;
+}
+.Mision{
+    float: left;
+    margin-top: auto;
+    margin-left: auto;
+}
+.card-header{
+    height: 50px;
+}
+.botones{
+    float: right;
+    padding: 1px 5px;
+}
+.mt-4.input-group{
+    height: 100px;
+}
+.form-control{
+    height: 100px;
+}
