@@ -63,12 +63,17 @@ export class ShowHistoriaVidaVideoComponent implements OnInit {
    }
 
    Delete(historiaVidaVideo: HistoriaVidaVideo){
-    this.historiaVidaVideoService.deleteHVV(historiaVidaVideo)
-    .subscribe(data=>{
-      this.historiasHVV=this.historiasHVV.filter(p=>p!==historiaVidaVideo);
-
-    })
-
+    if(confirm('Estas seguro de eliminar ? ')){
+      this.historiaVidaVideoService.deleteHVV(historiaVidaVideo)
+      .subscribe(data=>{
+        //.historiasHVT=this.historiasHVT.filter(p=>p.id_HVT!==historiaVidaTexto.id_HVT);
+        this.charge();
+        this.snackBar.open('Eliminado Correctamente','',{
+          duration:5000,
+          verticalPosition:'top'
+        });
+     });
+    }
 
    }
 

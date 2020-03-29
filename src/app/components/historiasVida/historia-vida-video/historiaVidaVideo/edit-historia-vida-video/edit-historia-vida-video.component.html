@@ -25,20 +25,20 @@
                 <input required minlength="2" type="text" class="form-control" name="titulo" #titulo="ngModel" [(ngModel)]="service.formData.titulo">
             </div>
             <div class="text-left text-danger" *ngIf="titulo.invalid && titulo.touched">
-                Please enter titulo.
+                Debes ingresar el titulo.
             </div>
 
             <div class="m-2 input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">URL</span>
                 </div>
-                <input required minlength="2" type="text" class="form-control" name="video_HVV" #video_HVV="ngModel" [(ngModel)]="service.formData.video_HVV">
+                <input required minlength="2" type="text" class="form-control" placeholder="https://www.youtube.com/....." name="video_HVV" #video_HVV="ngModel" [(ngModel)]="service.formData.video_HVV">
             </div>
             <div class="text-left text-danger" *ngIf="video_HVV.invalid && video_HVV.touched">
-                Please enter contenido.
+                Debes ingresar la URL de tu video
             </div>
 
-
+            <!--
             <div class="m-2 input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">FECHA</span>
@@ -48,7 +48,7 @@
                 <mat-datepicker touchUi="true" #picker [(ngModel)]="service.formData.fecha"></mat-datepicker>
 
             </div>
-
+-->
 
             <button class="m-2" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">ADD</button>
         </form>

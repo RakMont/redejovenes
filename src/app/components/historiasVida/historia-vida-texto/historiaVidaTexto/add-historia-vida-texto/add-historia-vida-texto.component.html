@@ -15,8 +15,8 @@
                 </div>
                 <input required minlength="2" type="text" class="form-control" name="titulo" #titulo="ngModel" [(ngModel)]="service.formData.titulo">
             </div>
-            <div class="text-left text-danger" *ngif="titulo.invalid && titulo.touched">
-                Please enter titulo.
+            <div class="text-left text-danger" *ngIf="titulo.invalid && titulo.touched">
+                Debes ingresar el titulo.
             </div>
 
             <div class="mt-4 input-group">
@@ -25,11 +25,11 @@
                 </div>
                 <input required minlength="2" type="text" class="form-control" name="contenido" #contenido="ngModel" [(ngModel)]="service.formData.contenido">
             </div>
-            <div class="text-left text-danger" *ngif="contenido.invalid && contenido.touched">
-                Please enter titulo.
+            <div class="text-left text-danger" *ngIf="contenido.invalid && contenido.touched">
+                Debes ingresar el contenido
             </div>
 
-
+            <!--
             <div class="mt-4 input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">FECHA</span>
@@ -42,7 +42,7 @@
             <div class="text-left text-danger" *ngif="fecha.invalid && fecha.touched">
                 Please enter date.
             </div>
-
+-->
             <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">ADD</button>
         </form>
 

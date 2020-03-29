@@ -76,12 +76,6 @@ export class ShowHistoriaVidaTextoComponent implements OnInit {
           duration:5000,
           verticalPosition:'top'
         });
-        /*.historiaVidaTextoService.listen().subscribe((m:any)=>{
-          console.log(m);
-          this.charge();
-
-        });*/
-
      });
     }
    }
