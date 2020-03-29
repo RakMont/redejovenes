@@ -1,7 +1,8 @@
-main{
-    column-count:3;
+main {
+    column-count: 3;
     column-gap: 4em;
     /*column-rule: 1px solid #bbb;*/
     column-width: 140px;
     text-align: center;
+    font-family: "Font Awesome 5 Free";
 }

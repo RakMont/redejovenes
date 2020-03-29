@@ -5,6 +5,11 @@ import {MatTableModule}from '@angular/material/table';
 import {MatTableDataSource} from '@angular/material/table';
 import{MatDialogModule} from '@angular/material/dialog';
 
+
+
+import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
 import {MatSnackBarModule}from '@angular/material/snack-bar';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
@@ -32,6 +37,8 @@ import { EditHistoriaVidaVideoComponent } from './components/historiasVida/histo
 import { AddHistoriaVidaVideoComponent } from './components/historiasVida/historia-vida-video/historiaVidaVideo/add-historia-vida-video/add-historia-vida-video.component';
 import { ShowHistoriaVidaVideoComponent } from './components/historiasVida/historia-vida-video/historiaVidaVideo/show-historia-vida-video/show-historia-vida-video.component';
 import {HttpClientModule} from '@angular/common/http';
+
+import { CommonModule } from "@angular/common";
 
 import {MisionService} from './services/mision.service';
 import {HistoriaVidaTextoService} from './services/historia-vida-texto.service';
@@ -150,6 +157,7 @@ import { EditEventosComponent } from './components/eventos/edit-eventos/edit-eve
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     NgbModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -167,7 +175,10 @@ import { EditEventosComponent } from './components/eventos/edit-eventos/edit-eve
     MatSnackBarModule,
     MatCardModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    BrowserModule,
+    NgxYoutubePlayerModule
+
   ],
   providers: [HistoriaVidaTextoService,HistoriaVidaVideoService],
   bootstrap: [AppComponent],

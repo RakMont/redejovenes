@@ -8,55 +8,15 @@
     </div>-->
 <div class="addbox-HVT">
     <button class="mt-2" mat-raised-button (click)="AddHVV()" color="primary">
-        Agregar
-         <mat-icon>add_box</mat-icon>
-        </button>
+          Agregar
+           <mat-icon>add_box</mat-icon>
+          </button>
 </div>
 
 <div class="container title">
     <h1>Historias de Vida Video</h1>
 </div>
-<!--
-<div style="overflow:auto;">
-    <div class="mat-elevation-z8">
-        <mat-table [dataSource]="listData" [hidden]="!listData.data" matSort>
-            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-            <mat-row *matRowDef="let hvt;columns:displayedColumns"></mat-row>
 
-            <ng-container matColumnDef="id_HVV">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>HVV_ID</mat-header-cell>
-                <mat-header-cell *matCellDef="let hvt">{{hvt.id_HVV}}</mat-header-cell>
-            </ng-container>
-
-            <ng-container matColumnDef="titulo">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>TITULO</mat-header-cell>
-                <mat-header-cell *matCellDef="let hvt">{{hvt.titulo}}</mat-header-cell>
-            </ng-container>
-            <ng-container matColumnDef="fecha">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>FECHA</mat-header-cell>
-                <mat-header-cell *matCellDef="let hvt">{{hvt.fecha}}</mat-header-cell>
-            </ng-container>
-            <ng-container matColumnDef="video_HVV">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>CONTENIDO</mat-header-cell>
-                <mat-header-cell *matCellDef="let hvt">{{hvt.video_HVV}}</mat-header-cell>
-            </ng-container>
-
-            <ng-container matColumnDef="opciones">
-                <mat-header-cell *matHeaderCellDef>OPCIONES</mat-header-cell>
-                <mat-cell *matCellDef="let hvt">
-                    <button mat-icon-button (click)="edit_HVV(hvt)">
-                    <mat-icon>edit</mat-icon>
-                </button>
-                    <button mat-icon-button color="warn" (click)="Delete(hvt)">
-                    <mat-icon>delete_forever</mat-icon>
-                </button>
-                </mat-cell>
-            </ng-container>
-
-        </mat-table>
-    </div>
-
-</div>-->
 
 <div class="container">
     <div class="card">
@@ -64,67 +24,71 @@
             <mat-card-title>EVENTOS</mat-card-title>
 
         </div>
-        <div class="card-body">
 
 
-            <mat-list *ngFor="let hvt of historiasHVV">
-                <mat-card>
-                    <mat-card-header>
-                        <div mat-card-avatar></div>
-                        <mat-card-title>EVENTOS</mat-card-title>
+        <mat-list *ngFor="let hvt of historiasHVV">
+            <mat-card>
+                <mat-card-header>
+                    <div mat-card-avatar></div>
+                    <mat-card-title>{{hvt.titulo}}</mat-card-title>
 
-                    </mat-card-header>
-                    <div fxLayout="row">
-                        <div fxFlex="10">
-                            <!--<img mat-card-image src="https://i.pinimg.com/originals/39/a7/a0/39a7a092fd760ac037cca51e495d6248.jpg" alt="Photo of a Shiba Inu" alt="">
+                </mat-card-header>
+                <div fxLayout="row">
+                    <div fxFlex="10">
+
+                        -->
+                        <mat-card-content>
+                            <h2>{{hvt.fecha}}</h2>
+                        </mat-card-content>
+                    </div>
+                    <div fxFlex="10">
+                        <!--<img mat-card-image src="https://i.pinimg.com/originals/39/a7/a0/39a7a092fd760ac037cca51e495d6248.jpg" alt="Photo of a Shiba Inu" alt="">
 
                     -->
-                            <mat-card-content>
-                                <h1>{{hvt.titulo}}</h1>
-                                <h2>{{hvt.fecha}}</h2>
-                                <h2>{{hvt.video_HVV}}</h2>
-                            </mat-card-content>
-                        </div>
+                        <mat-card-content>
+                            <youtube-player [videoId]="hvt.video_HVV"></youtube-player>
+                        </mat-card-content>
+                    </div>
 
-                        <div fxFlex="10px" fxFlexAlign="center">
-                            <mat-card-actions>
+                    <div fxFlex="10px" fxFlexAlign="center">
+                        <mat-card-actions>
 
-                                <button mat-icon-button (click)="Delete(hvt)">
-                              <mat-icon>delete_forever</mat-icon>
+                            <button mat-icon-button (click)="Delete(hvt)">
+                                <mat-icon>delete_forever</mat-icon>
+                                </button>
+
+                            <button mat-icon-button (click)="edit_HVV(hvt)">
+                                  <mat-icon>edit</mat-icon>
+                                  </button>
+                        </mat-card-actions>
+                    </div>
+                </div>
+            </mat-card>
+
+        </mat-list>
+        <!--
+                      <tr *ngFor="let hvt of historiasHVV" class="text-center">
+                          <td>{{hvt.id_HVV}}</td>
+                          <td>{{hvt.titulo}}</td>
+                          <td>{{hvt.fecha}}</td>
+                          <td>{{hvt.video_HVV}}</td>
+                          <td>
+                              <button mat-icon-button (click)="Delete(hvt)">
+                            <mat-icon>delete_forever</mat-icon>
+                            </button>
+                              <button mat-icon-button (click)="edit_HVV(hvt)">
+                              <mat-icon>edit</mat-icon>
                               </button>
 
-                                <button mat-icon-button (click)="edit_HVV(hvt)">
-                                <mat-icon>edit</mat-icon>
-                                </button>
-                            </mat-card-actions>
-                        </div>
-                    </div>
-                </mat-card>
 
-            </mat-list>
-            <!--
-                    <tr *ngFor="let hvt of historiasHVV" class="text-center">
-                        <td>{{hvt.id_HVV}}</td>
-                        <td>{{hvt.titulo}}</td>
-                        <td>{{hvt.fecha}}</td>
-                        <td>{{hvt.video_HVV}}</td>
-                        <td>
-                            <button mat-icon-button (click)="Delete(hvt)">
-                          <mat-icon>delete_forever</mat-icon>
-                          </button>
-                            <button mat-icon-button (click)="edit_HVV(hvt)">
-                            <mat-icon>edit</mat-icon>
-                            </button>
+                          </td>
 
-
-                        </td>
-
-                    </tr>-->
+                      </tr>-->
 
 
 
 
-        </div>
     </div>
+
 
 </div>

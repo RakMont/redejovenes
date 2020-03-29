@@ -14,6 +14,8 @@ import{Subject}from 'rxjs';
 import {Observable} from 'rxjs';
 import {MatSnackBar}from '@angular/material/snack-bar';
 
+import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
+
 @Component({
   selector: 'app-show-historia-vida-video',
   templateUrl: './show-historia-vida-video.component.html',
@@ -23,23 +25,41 @@ export class ShowHistoriaVidaVideoComponent implements OnInit {
   historiasHVV:HistoriaVidaVideo[];
 
   dataSource=null;
+  player: YT.Player;
+  private id: string = 'qDuKsiwS5xw';
+
+  savePlayer(player) {
+    this.player = player;
+    console.log('player instance', player.getVideoUrl());
+  }
+  onStateChange(event) {
+    console.log('player state', event.data);
+  }
   constructor(private snackBar:MatSnackBar,private historiaVidaVideoService: HistoriaVidaVideoService, private router: Router,private dialog: MatDialog) {
-    /*this.historiaVidaVideoService.listen().subscribe((m:any)=>{
+    this.historiaVidaVideoService.listen().subscribe((m:any)=>{
       console.log(m);
       this.charge();
 
-    });*/
+    });
    }
 
    ngOnInit() {
     this.historiaVidaVideoService.getHVV()
    .subscribe(data =>{
      this.historiasHVV = data;
+     this.charge();
    });
   }
    edit_HVV(historiaVidaVideo: HistoriaVidaVideo):void{
-        localStorage.setItem("id_HVV", historiaVidaVideo.id_HVV.toString());
-        this.router.navigate(["editar"]); //in  app routing.ts => edit
+     historiaVidaVideo.video_HVV="https://www.youtube.com/watch?v="+historiaVidaVideo.video_HVV;
+    this.historiaVidaVideoService.formData=historiaVidaVideo;
+    const dialogConfig=new MatDialogConfig();
+   dialogConfig.disableClose=true;
+   dialogConfig.autoFocus=true;
+   dialogConfig.width="70%";
+   this.dialog.open(EditHistoriaVidaVideoComponent,dialogConfig);
+
+   localStorage.setItem("id_HVV", historiaVidaVideo.id_HVV.toString());
    }
 
    Delete(historiaVidaVideo: HistoriaVidaVideo){
@@ -54,81 +74,28 @@ export class ShowHistoriaVidaVideoComponent implements OnInit {
 
 
 AddHVV(){
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-   listData:MatTableDataSource<any>;
-
-   displayedColumns:string[]=['id_HVV','titulo','fecha','video_HVV','opciones'];
-
-   @ViewChild(MatSort, {static: true}) sort: MatSort;
-  ngOnInit(): void {
-    this.charge();
-    this.listData.sort = this.sort;
-  }
-  fetchData() {
-    this.historiaVidaVideoService.getHVV().subscribe(data =>{
-      this.listData= new MatTableDataSource(data);
-
-    });
-  }
-  applyFilter(filtervalue:string){
-    this.listData.filter=filtervalue.trim().toLocaleLowerCase();
-  }
-  AddHVV(){
-    const dialogConfig=new MatDialogConfig();
+  const dialogConfig=new MatDialogConfig();
     dialogConfig.disableClose=true;
     dialogConfig.autoFocus=true;
     dialogConfig.width="70%";
     this.dialog.open(AddHistoriaVidaVideoComponent,dialogConfig);
 
-  }
-  edit_HVV(historiaVidaVideo: HistoriaVidaVideo){
-    this.historiaVidaVideoService.formData=historiaVidaVideo;
-    const dialogConfig=new MatDialogConfig();
-   dialogConfig.disableClose=true;
-   dialogConfig.autoFocus=true;
-   dialogConfig.width="70%";
-   this.dialog.open(EditHistoriaVidaVideoComponent,dialogConfig);
+}
 
-   localStorage.setItem("id_HVV", historiaVidaVideo.id_HVV.toString());
-  }
-  charge(){
-    this.historiaVidaVideoService
-    .getHVV().subscribe(data=>{
-      this.listData= new MatTableDataSource(data);
-      this.listData.sort=this.sort;
-    });
-  }
-  Delete(historiaVidaVideo: HistoriaVidaVideo){
-    if(confirm('Estas seguro de eliminar ? ')){
-      this.historiaVidaVideoService.deleteHVV(historiaVidaVideo)
-      .subscribe(data=>{
-        //.historiasHVT=this.historiasHVT.filter(p=>p.id_HVT!==historiaVidaTexto.id_HVT);
-        this.charge();
-        this.snackBar.open('Eliminado Correctamente','',{
-          duration:5000,
-          verticalPosition:'top'
-        });
+charge(){
+  this.historiaVidaVideoService
+  .getHVV().subscribe(data=>{
+    this.historiasHVV=data;
+  });
+}
 
-     });
-    }
-   }*/
+
+
 
 }
+
+
+
+
+
+
