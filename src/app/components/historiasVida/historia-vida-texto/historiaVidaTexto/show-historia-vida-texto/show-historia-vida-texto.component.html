@@ -1,101 +1,57 @@
-<div class="filter-HVT">
-    <mat-form-field>
-        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-        <mat-icon matSuffix>filter_list</mat-icon>
-    </mat-form-field>
-</div>
 <div class="addbox-HVT">
     <button class="mt-2" mat-raised-button (click)="AddHVT()" color="primary">
-      Agregar
-      <mat-icon>add_box</mat-icon>
-  </button>
+          Agregar
+           <mat-icon>add_box</mat-icon>
+          </button>
 </div>
+
 <div class="container title">
     <h1>Historias de Vida Texto</h1>
 </div>
-<div style="overflow:auto;">
-    <div class="mat-elevation-z8">
-        <mat-table [dataSource]="listData" [hidden]="!listData.data" matSort>
-            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-            <mat-row *matRowDef="let hvt;columns:displayedColumns"></mat-row>
-
-            <ng-container matColumnDef="id_HVT">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>HVT_ID</mat-header-cell>
-                <mat-header-cell *matCellDef="let hvt">{{hvt.id_HVT}}</mat-header-cell>
-            </ng-container>
-
-            <ng-container matColumnDef="titulo">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>TITULO</mat-header-cell>
-                <mat-header-cell *matCellDef="let hvt">{{hvt.titulo}}</mat-header-cell>
-            </ng-container>
-            <ng-container matColumnDef="fecha">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>FECHA</mat-header-cell>
-                <mat-header-cell *matCellDef="let hvt">{{hvt.fecha}}</mat-header-cell>
-            </ng-container>
-            <ng-container matColumnDef="contenido">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>CONTENIDO</mat-header-cell>
-                <mat-header-cell *matCellDef="let hvt">{{hvt.contenido}}</mat-header-cell>
-            </ng-container>
-
-            <ng-container matColumnDef="opciones">
-                <mat-header-cell *matHeaderCellDef>OPCIONES</mat-header-cell>
-                <mat-cell *matCellDef="let hvt">
-                    <button mat-icon-button (click)="edit_HVT(hvt)">
-                      <mat-icon>edit</mat-icon>
-                  </button>
-                    <button mat-icon-button color="warn" (click)="Delete(hvt)">
-                      <mat-icon>delete_forever</mat-icon>
-                  </button>
-                </mat-cell>
-            </ng-container>
-
-        </mat-table>
-    </div>
-
-</div>
 
 
-
-
-<!--<div class="container">
-  <div class="card">
-      <div class="card-header">
-          <h3>Productos</h3>
-
-      </div>
-      <div class="card-body">
-          <table class="table table-hover">
-              <thead>
-                  <tr>
-                      <th>ID</th>
-                      <th>TITULO</th>
-                      <th>FECHA</th>
-                      <th>CONTENIDO</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr *ngFor="let hvt of historiasHVT" class="text-center">
-                      <td>{{hvt.id_HVT}}</td>
-                      <td>{{hvt.titulo}}</td>
-                      <td>{{hvt.fecha}}</td>
-                      <td>{{hvt.contenido}}</td>
-                      <td>
-                          <button mat-icon-button (click)="Delete(hvt)">
-                          <mat-icon>delete_forever</mat-icon>
-                          </button>
-                          <button mat-icon-button (click)="edit_HVT(hvt)">
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <mat-card-title>Lista de Videos</mat-card-title>
+        </div>
+        <mat-list *ngFor="let hvt of historiasHVT">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Titulo: {{hvt.titulo}}</mat-card-title>
+                </mat-card-header>
+                <div class="options" fxFlex="10px" fxFlexAlign="center">
+                    <mat-card-actions>
+                        <button mat-icon-button (click)="edit_HVT(hvt)">
                             <mat-icon>edit</mat-icon>
-                            </button>
-
-
-                      </td>
-                  </tr>
-              </tbody>
-
-          </table>
-
-      </div>
-  </div>
-
+                        </button>
+                        <button mat-icon-button color="warn" (click)="Delete(hvt)">
+                            <mat-icon>delete_forever</mat-icon>
+                        </button>
+                    </mat-card-actions>
+                </div>
+                <div fxLayout="row">
+                    <div class="fecha" fxFlex="10">
+                        <mat-card-content>
+                            <h3>Fecha: {{hvt.fecha}}</h3>
+                        </mat-card-content>
+                    </div>
+                    <div fxFlex="10">
+                        <br>
+                        <div class="contenidohvt">
+                            <br>
+                            <h3>CONTENIDO: </h3>
+                        </div>
+                        <br>
+                        <mat-card-content>
+                            <br>
+                            <h4>
+                                {{hvt.contenido}}
+                            </h4>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </mat-list>
+    </div>
 </div>
--->

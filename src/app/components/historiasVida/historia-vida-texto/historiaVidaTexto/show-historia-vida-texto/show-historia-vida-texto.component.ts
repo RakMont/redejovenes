@@ -34,37 +34,42 @@ export class ShowHistoriaVidaTextoComponent implements OnInit {
     });
   }
 
+  
   listData:MatTableDataSource<any>;
 
   displayedColumns:string[]=['id_HVT','titulo','fecha','contenido','opciones'];
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   //@ViewChild(MatSort, null) sort: MatSort;
+  
   ngOnInit() {
-
-   this.charge();
-   this.listData.sort = this.sort;
+    this.historiaVidaTextoService.getHVT()
+   .subscribe(data =>{
+     this.historiasHVT = data;
+     this.charge();
+   });
   }
 
-
-  fetchData() {
+  /*fetchData() {
     this.historiaVidaTextoService.getHVT().subscribe(data =>{
       this.listData= new MatTableDataSource(data);
 
     });
-  }
+  }*/
   applyFilter(filtervalue:string){
     this.listData.filter=filtervalue.trim().toLocaleLowerCase();
   }
-  charge(){
-    this.historiaVidaTextoService
-    .getHVT().subscribe(data=>{
-      this.listData= new MatTableDataSource(data);
-      this.listData.sort=this.sort;
-    });
+  
+  edit_HVT(historiaVidaTexto: historiaVidaTexto){
+    this.historiaVidaTextoService.formData=historiaVidaTexto;
+    const dialogConfig=new MatDialogConfig();
+   dialogConfig.disableClose=true;
+   dialogConfig.autoFocus=true;
+   dialogConfig.width="70%";
+   this.dialog.open(EditHistoriaVidaTextoComponent,dialogConfig);
+
+   localStorage.setItem("id_HVT", historiaVidaTexto.id_HVT.toString());
   }
-
-
 
   Delete(historiaVidaTexto: historiaVidaTexto){
     if(confirm('Estas seguro de eliminar ? ')){
@@ -87,24 +92,24 @@ export class ShowHistoriaVidaTextoComponent implements OnInit {
     dialogConfig.width="70%";
     this.dialog.open(AddHistoriaVidaTextoComponent,dialogConfig);
    }
-
-   edit_HVT(historiaVidaTexto: historiaVidaTexto){
-     this.historiaVidaTextoService.formData=historiaVidaTexto;
-     const dialogConfig=new MatDialogConfig();
-    dialogConfig.disableClose=true;
-    dialogConfig.autoFocus=true;
-    dialogConfig.width="70%";
-    this.dialog.open(EditHistoriaVidaTextoComponent,dialogConfig);
-
-    localStorage.setItem("id_HVT", historiaVidaTexto.id_HVT.toString());
-  }
-
+   charge(){
+    this.historiaVidaTextoService
+    .getHVT().subscribe(data=>{
+      this.historiasHVT=data;
+    });
+    }
 /*
   public onDate(event): void {
     this.formData.date = event;
     this.getData(this.roomsFilter.date);
   }
+
+  charge(){
+    this.historiaVidaTextoService
+    .getHVT().subscribe(data=>{
+      this.listData= new MatTableDataSource(data);
+      this.listData.sort=this.sort;
+    });
+  }
 */
-
-
 }
