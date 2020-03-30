@@ -35,9 +35,11 @@ div.hvv {
 }
 
 .mat-card {
-    max-width: 900px;
+    max-width: 400px;
     margin: auto;
     font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+    background-color: #a1a1a1;
+    margin-bottom: 30px;
 }
 
 .mat-card-avatar {
@@ -55,4 +57,24 @@ div.hvv {
 .container {
     text-align: center;
     font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+}
+
+.options{
+    float: right;
+    margin-top: -50px;
+    margin-right: auto;
+}
+
+.fecha{
+    float: left;
+    margin-top: -5px;
+    margin-left: 18px;
+}
+
+.card{
+    background-color: #323232;
+}
+
+.card-header{
+    color: #ffffff;
 }

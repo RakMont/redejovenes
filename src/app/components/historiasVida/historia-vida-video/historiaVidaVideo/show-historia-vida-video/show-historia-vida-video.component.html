@@ -1,11 +1,3 @@
-<!--
-<div class="hvv" style="background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/f5f9c989-0119-44ae-a646-d28630ea2f16/d2yp07m-a084ef34-38cc-400f-9d3d-db11e88eb1e5.jpg')">
-    <div class="filter-HVT">
-        <mat-form-field>
-
-            <mat-icon matSuffix>filter_list</mat-icon>
-        </mat-form-field>
-    </div>-->
 <div class="addbox-HVT">
     <button class="mt-2" mat-raised-button (click)="AddHVV()" color="primary">
           Agregar
@@ -21,54 +13,36 @@
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <mat-card-title>EVENTOS</mat-card-title>
-
+            <mat-card-title>Lista de Videos</mat-card-title>
         </div>
-
-
         <mat-list *ngFor="let hvt of historiasHVV">
             <mat-card>
                 <mat-card-header>
-                    <div mat-card-avatar></div>
-                    <mat-card-title>{{hvt.titulo}}</mat-card-title>
-
+                    <mat-card-title>Titulo: {{hvt.titulo}}</mat-card-title>
                 </mat-card-header>
+                <div class="options" fxFlex="10px" fxFlexAlign="center">
+                    <mat-card-actions>
+                        <button mat-icon-button (click)="edit_HVV(hvt)">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-icon-button color="warn" (click)="Delete(hvt)">
+                            <mat-icon>delete_forever</mat-icon>
+                        </button>
+                    </mat-card-actions>
+                </div>
                 <div fxLayout="row">
-                    <div fxFlex="10">
-
-
+                    <div class="fecha" fxFlex="10">
                         <mat-card-content>
-                            <h3>{{hvt.fecha}}</h3>
+                            <h3>Fecha: {{hvt.fecha}}</h3>
                         </mat-card-content>
                     </div>
                     <div fxFlex="10">
-                        <!--<img mat-card-image src="https://i.pinimg.com/originals/39/a7/a0/39a7a092fd760ac037cca51e495d6248.jpg" alt="Photo of a Shiba Inu" alt="">
-
-                    -->
                         <mat-card-content>
                             <youtube-player [videoId]="hvt.video_HVV"></youtube-player>
                         </mat-card-content>
                     </div>
-
-                    <div fxFlex="10px" fxFlexAlign="center">
-                        <mat-card-actions>
-
-                            <button mat-icon-button (click)="Delete(hvt)">
-                                <mat-icon>delete_forever</mat-icon>
-                                </button>
-
-                            <button mat-icon-button (click)="edit_HVV(hvt)">
-                                  <mat-icon>edit</mat-icon>
-                                  </button>
-                        </mat-card-actions>
-                    </div>
                 </div>
             </mat-card>
-
         </mat-list>
-
-
     </div>
-
-
 </div>
