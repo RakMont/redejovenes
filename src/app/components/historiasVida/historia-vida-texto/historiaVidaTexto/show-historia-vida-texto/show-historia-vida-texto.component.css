@@ -60,27 +60,27 @@ div.hvv {
     font-family: "Noto Sans", Helvetica, Arial, sans-serif;
 }
 
-.options{
+.options {
     float: right;
     margin-top: -50px;
     margin-right: auto;
 }
 
-.fecha{
+.fecha {
     float: left;
     margin-top: -5px;
     margin-left: 18px;
 }
 
-.card{
+.card {
     background-color: #323232;
 }
 
-.card-header{
+.card-header {
     color: #ffffff;
 }
 
-.contenidohvt{
+.contenidohvt {
     float: left;
     margin-left: -150px;
 }

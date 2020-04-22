@@ -1,1 +1,38 @@
-<p>show-historia-vida-audio works!</p>
+<div class="addbox-HVT">
+    <button class="mt-2" mat-raised-button (click)="AddHVA()" color="primary">
+        Agregar
+         <mat-icon>add_box</mat-icon>
+        </button>
+</div>
+
+<div class="container title">
+    <h1></h1>
+</div>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <mat-card-title>--------------------------------------------------------------------------------------------------------------</mat-card-title>
+        </div>
+        <mat-list *ngFor="let hvt of things">
+            <mat-card>
+                <div mat-card-avatar class="example-header-image">
+                    <img src="../../../../assets/HistoriaVidaAudio/ShowIcons/microphone.png" />
+                </div>
+                <div class="other">
+                    <!-- <mat-card-title>{{hvt.historiahva.titulo}}</mat-card-title>-->
+                    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                </div>
+                <audio controls>
+
+                         <source [src]="hvt.audiomp3" type="audio/mpeg">
+                 </audio>
+                <!-- <mat-basic-audio-player [audioUrl]="hvt.archivo_mp3" [title]="hvt.fecha" [autoPlay]="false" muted="muted" [displayTitle]="msbapDisplayTitle" [displayVolumeControls]="true"></mat-basic-audio-player>
+-->
+
+                <!--                <mat-basic-audio-player [value]="audi" [title]="hvt.fecha" [autoPlay]="false" muted="muted" [displayTitle]="msbapDisplayTitle" [displayVolumeControls]="true"></mat-basic-audio-player>
+-->
+            </mat-card>
+        </mat-list>
+    </div>
+</div>

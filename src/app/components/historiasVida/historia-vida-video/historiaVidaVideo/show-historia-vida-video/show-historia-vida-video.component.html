@@ -6,43 +6,47 @@
 </div>
 
 <div class="container title">
-    <h1>Historias de Vida Video</h1>
+    <h1></h1>
 </div>
 
 
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <mat-card-title>Lista de Videos</mat-card-title>
+            <!-- <mat-card-title>Lista de Videos</mat-card-title>-->
         </div>
-        <mat-list *ngFor="let hvt of historiasHVV">
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>Titulo: {{hvt.titulo}}</mat-card-title>
-                </mat-card-header>
-                <div class="options" fxFlex="10px" fxFlexAlign="center">
-                    <mat-card-actions>
-                        <button mat-icon-button (click)="edit_HVV(hvt)">
+        <!--<mat-list *ngFor="let hvt of historiasHVV">-->
+        <mat-grid-list cols="2">
+            <mat-grid-tile *ngFor="let hvt of historiasHVV">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>Titulo: {{hvt.titulo}}</mat-card-title>
+                    </mat-card-header>
+                    <div class="options" fxFlex="10px" fxFlexAlign="center">
+                        <mat-card-actions>
+                            <button mat-icon-button (click)="edit_HVV(hvt)">
                             <mat-icon>edit</mat-icon>
                         </button>
-                        <button mat-icon-button color="warn" (click)="Delete(hvt)">
+                            <button mat-icon-button color="warn" (click)="Delete(hvt)">
                             <mat-icon>delete_forever</mat-icon>
                         </button>
-                    </mat-card-actions>
-                </div>
-                <div fxLayout="row">
-                    <div class="fecha" fxFlex="10">
-                        <mat-card-content>
-                            <h3>Fecha: {{hvt.fecha}}</h3>
-                        </mat-card-content>
+                        </mat-card-actions>
                     </div>
-                    <div fxFlex="10">
-                        <mat-card-content>
-                            <youtube-player [videoId]="hvt.video_HVV"></youtube-player>
-                        </mat-card-content>
+                    <div fxLayout="row">
+                        <div class="fecha" fxFlex="10">
+                            <mat-card-content>
+                                <h3>Fecha: {{hvt.fecha}}</h3>
+                            </mat-card-content>
+                        </div>
+                        <div fxFlex="10">
+                            <mat-card-content>
+                                <youtube-player [videoId]="hvt.video_HVV"></youtube-player>
+                            </mat-card-content>
+                        </div>
                     </div>
-                </div>
-            </mat-card>
-        </mat-list>
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <!--</mat-list>-->
     </div>
 </div>

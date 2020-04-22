@@ -1,1 +1,38 @@
-<p>add-historia-vida-audio works!</p>
+<div class="container col-md-11">
+    <div class="d-flex justify-content-between">
+        <h4>ADD HISTORIA DE VIDA</h4>
+
+        <button mat-button (click)="close()">
+    <mat-icon>close</mat-icon>
+  </button>
+    </div>
+    <div style="overflow: auto;height: 450px;">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
+
+            <div class="mt-4 input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">TITULO</span>
+                </div>
+                <input required minlength="2" type="text" class="form-control" name="titulo" #titulo="ngModel" [(ngModel)]="service.formData.titulo">
+            </div>
+            <div class="text-left text-danger" *ngIf="titulo.invalid && titulo.touched">
+                Debes ingresar el titulo.
+            </div>
+
+            <div class="mt-4 input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Archivo_mp3</span>
+                </div>
+                <input type="file" class="form-control" accept="audio/*" (change)="onSelectFile($event)" style="height:100%">
+            </div>
+
+
+
+
+
+
+            <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">ADD</button>
+        </form>
+
+    </div>
+</div>

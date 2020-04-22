@@ -37,7 +37,7 @@ const routes: Routes = [
   {path: 'editHVT', component:EditHistoriaVidaTextoComponent},
   {path: 'showHVV', component:ShowHistoriaVidaVideoComponent},
   {path: 'editHVV', component:EditHistoriaVidaVideoComponent},
-  {path: 'showHVA', component:EditHistoriaVidaVideoComponent},
+  {path: 'showHVA', component:ShowHistoriaVidaAudioComponent},
   {path: 'showContactanos', component:ShowContactanosComponent},
   {path: 'showConvenios', component:ShowConvenioComponent},
   {path: 'showRefEducacion', component:ShowEducacionComponent},

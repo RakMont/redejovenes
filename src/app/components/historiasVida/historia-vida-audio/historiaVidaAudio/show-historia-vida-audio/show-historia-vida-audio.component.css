@@ -1,0 +1,24 @@
+img {
+    height: 120px;
+}
+
+.example-header-image {
+    /* background-image: url("src/assets/HistoriaVidaAudio/ShowIcons/microphone.png");*/
+    background-size: cover;
+}
+
+.mat-card-title {
+    align-items: center;
+}
+
+.other {
+    align-items: center;
+    text-align: center;
+    background-color: brown;
+    border-style: solid;
+    border-color: black;
+}
+
+source {
+    width: max-content;
+}
