@@ -14,21 +14,21 @@
         <div class="card-header">
             <mat-card-title>--------------------------------------------------------------------------------------------------------------</mat-card-title>
         </div>
-        <mat-list *ngFor="let hvt of things">
+        <mat-list *ngFor="let hvt of historiasHVA">
             <mat-card>
                 <div mat-card-avatar class="example-header-image">
                     <img src="../../../../assets/HistoriaVidaAudio/ShowIcons/microphone.png" />
                 </div>
                 <div class="other">
-                    <!-- <mat-card-title>{{hvt.historiahva.titulo}}</mat-card-title>-->
-                    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                    <mat-card-title>{{hvt.titulo}}</mat-card-title>
+                    <mat-card-subtitle>{{hvt.archivo_mp3}}</mat-card-subtitle>
                 </div>
-                <audio controls>
+                <!-- <audio controls>
 
                          <source [src]="hvt.audiomp3" type="audio/mpeg">
-                 </audio>
-                <!-- <mat-basic-audio-player [audioUrl]="hvt.archivo_mp3" [title]="hvt.fecha" [autoPlay]="false" muted="muted" [displayTitle]="msbapDisplayTitle" [displayVolumeControls]="true"></mat-basic-audio-player>
--->
+                 </audio>-->
+                <mat-basic-audio-player [audioUrl]="hvt.archivo_mp3" [title]="hvt.fecha" [autoPlay]="false" muted="muted" [displayTitle]="msbapDisplayTitle" [displayVolumeControls]="true"></mat-basic-audio-player>
+
 
                 <!--                <mat-basic-audio-player [value]="audi" [title]="hvt.fecha" [autoPlay]="false" muted="muted" [displayTitle]="msbapDisplayTitle" [displayVolumeControls]="true"></mat-basic-audio-player>
 -->
