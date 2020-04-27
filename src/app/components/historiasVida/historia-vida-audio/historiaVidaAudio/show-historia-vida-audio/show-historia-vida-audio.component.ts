@@ -25,11 +25,11 @@ import {MatSnackBar}from '@angular/material/snack-bar';
   styleUrls: ['./show-historia-vida-audio.component.css']
 })
 export class ShowHistoriaVidaAudioComponent implements OnInit {
-  public audios:any=[];
+  public aux;
+  public audios: FileList;
   public audiosShow:any=[];
-
-public things:any=[]
-
+public things;
+public hvaAudio: any=File;
   public counter=0;
   historiasHVA:HistoriaVidaAudio[];
   msbapTitle = 'Audio Title';
@@ -45,17 +45,31 @@ public things:any=[]
    }
 
   ngOnInit(): void {
+        let auxiliar:String;
+           this.historiaVidaAudioService.getHVAAudios().subscribe(response=>{
+        this.audios=response;
+          this.hvaAudio=this.audios[0];
+        auxiliar=this.audios[0].name;
+          console.log("this is ",auxiliar);
 
-  this.historiaVidaAudioService.getHVAAudios().subscribe(response=>{
-    this.audios=response;
+
+
+    //this.Convertlist();
+    //this.hvaAudio=this.aux;
+    //console.log("this is the name",this.hvaAudio);
+    const file=this.hvaAudio;
+
 });
   this.historiaVidaAudioService.getHVA()
    .subscribe(data =>{
      this.historiasHVA = data;
      this.convert();
-     this.Convertlist();
+      //this.Convertlist();
+
+
 
    });
+
   }
 
 
@@ -65,6 +79,7 @@ convert(){
     entry.archivo_mp3='../../../../assets/HistoriaVidaAudio/'+this.archivo+'.mp3';
   }
 }
+/*
 convert2(){
   for (let entry of this.audios) {
       for(let entry2 of this.historiasHVA){
@@ -75,7 +90,7 @@ convert2(){
       }
   }
 }
-
+*/
 
 AddHVA(){
   const dialogConfig=new MatDialogConfig();
@@ -84,19 +99,23 @@ AddHVA(){
   dialogConfig.width="70%";
   this.dialog.open(AddHistoriaVidaAudioComponent,dialogConfig);
  }
+ /*
 Convertlist(){
   for (let entry of this.historiasHVA) {
-    for(let audio of this.audios){
+    console.log(entry.id_HVA);
+    for(let audis of this.audios){
+      console.log(entry.titulo);
 
-          if(entry.archivo_mp3=audio){
+          if(entry.archivo_mp3==audis.name){
+
               this.things[this.counter]={
                     historiahva:entry,
-                    audiomp3:audio
+                    audiomp3:audis
               }
               this.counter=this.counter+1;
             }
     }
   }
 
-}
+}*/
 }

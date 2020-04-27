@@ -13,14 +13,27 @@ export class TeofrecemosService {
   formData: TeOfrecemos;
 
 
-  getTeOfrecemos() {
+  getTeOfrecemosBeca() {
     // obtengo todos los datos de esta url que hace ref a backend
-    return this.http.get<TeOfrecemos[]>(this.Url);
+    return this.http.get<TeOfrecemos[]>(this.Url+"/becas");
   }
-  createTeOfrecemos(teOfrecemos: TeOfrecemos){
-    return this.http.post<TeOfrecemos>(this.Url, teOfrecemos);
+  getTeOfrecemosTrabajo() {
+    // obtengo todos los datos de esta url que hace ref a backend
+    return this.http.get<TeOfrecemos[]>(this.Url+"/trabajos");
   }
-
+  getTeOfrecemosVivienda() {
+    // obtengo todos los datos de esta url que hace ref a backend
+    return this.http.get<TeOfrecemos[]>(this.Url+"/viviendas");
+  }
+  createTeOfrecemosBeca(teOfrecemos: TeOfrecemos){
+    return this.http.post<TeOfrecemos>(this.Url+"/beca", teOfrecemos);
+  }
+  createTeOfrecemosTrabajo(teOfrecemos: TeOfrecemos){
+    return this.http.post<TeOfrecemos>(this.Url+"/trabajo", teOfrecemos);
+  }
+  createTeOfrecemosVivienda(teOfrecemos: TeOfrecemos){
+    return this.http.post<TeOfrecemos>(this.Url+"/vivienda", teOfrecemos);
+  }
   getTeOfrecemosId(id_teOfrecemos:number){
     return this.http.get<TeOfrecemos>(this.Url + "/" + id_teOfrecemos);
   }

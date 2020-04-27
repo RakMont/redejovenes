@@ -25,72 +25,21 @@ export class ShowToBecaComponent implements OnInit {
 
   dataSource=null;
   constructor(private snackBar:MatSnackBar,private teofrecemosService: TeofrecemosService, private router: Router,private dialog: MatDialog) {
-    this.teofrecemosService.listen().subscribe((m:any)=>{
-      console.log(m);
-      this.charge();
 
-    });
    }
 
-
-   listData:MatTableDataSource<any>;
-
-   displayedColumns:string[]=['id_HVT','titulo','fecha','contenido','opciones'];
 
    @ViewChild(MatSort, {static: true}) sort: MatSort;
    //@ViewChild(MatSort, null) sort: MatSort;
 
    ngOnInit() {
-     this.teofrecemosService.getTeOfrecemos()
-    .subscribe(data =>{
-      this.teofrecemos = data;
-      this.charge();
-    });
+
    }
 
 
-   applyFilter(filtervalue:string){
-     this.listData.filter=filtervalue.trim().toLocaleLowerCase();
-   }
-/*
-   edit_HVT(te_ofrecemos: TeOfrecemos){
-     this.teofrecemosService.formData=te_ofrecemos;
-     const dialogConfig=new MatDialogConfig();
-    dialogConfig.disableClose=true;
-    dialogConfig.autoFocus=true;
-    dialogConfig.width="70%";
-    this.dialog.open(EditHistoriaVidaTextoComponent,dialogConfig);
 
-    localStorage.setItem("id_HVT", historiaVidaTexto.id_HVT.toString());
-   }
-*/
-/*
-   Delete(historiaVidaTexto: historiaVidaTexto){
-     if(confirm('Estas seguro de eliminar ? ')){
-       this.teofrecemosService.deleteHVT(historiaVidaTexto)
-       .subscribe(data=>{
-         //.historiasHVT=this.historiasHVT.filter(p=>p.id_HVT!==historiaVidaTexto.id_HVT);
-         this.charge();
-         this.snackBar.open('Eliminado Correctamente','',{
-           duration:5000,
-           verticalPosition:'top'
-         });
-      });
-     }
-    }
-*/
-    AddHVT(){
-     const dialogConfig=new MatDialogConfig();
-     dialogConfig.disableClose=true;
-     dialogConfig.autoFocus=true;
-     dialogConfig.width="70%";
-     this.dialog.open(AddToBecaComponent,dialogConfig);
-    }
-    charge(){
-     this.teofrecemosService
-     .getTeOfrecemos().subscribe(data=>{
-       this.teofrecemos=data;
-     });
-     }
+
+
+
 
  }

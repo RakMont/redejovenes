@@ -8,7 +8,32 @@
 <div class="container title">
     <h1></h1>
 </div>
+HVA
 
+<div *ngFor="let thing of things">
+    <audio controls>
+
+    {{thing.historiahva.titulo}}
+ </audio>
+    <audio controls>
+
+  <source [src]="thing.audiomp3" type="audio/mpeg">
+</audio>
+
+</div>
+<!--
+<div *ngFor="let audio of audios">
+    <audio controls>
+
+      <source [src]="audio" type="audio/mpeg">
+   </audio>
+    <audio controls>
+
+    <source [src]="hvaAudio" type="audio/mpeg">
+ </audio>
+
+</div>
+-->
 <div class="container">
     <div class="card">
         <div class="card-header">
