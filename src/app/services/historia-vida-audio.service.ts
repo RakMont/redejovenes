@@ -16,11 +16,16 @@ export class HistoriaVidaAudioService {
   saveAudio(formData:FormData):Observable<any>{
     return this.http.post('http://localhost:8090/historiasHVA/saveAudioFile',formData);
   }
-  getHVAAudios():Observable<any>{
+  /*
+  getHVAAudios():any{
+    return this.http.get('http://localhost:8090/historiasHVA/getHVAAudios');
+
+  }*/
+
+getHVAAudios():Observable<any>{
     return this.http.get('http://localhost:8090/historiasHVA/getHVAAudios');
 
   }
-
 
   getHVA() {
     // obtengo todos los datos de esta url que hace ref a backend

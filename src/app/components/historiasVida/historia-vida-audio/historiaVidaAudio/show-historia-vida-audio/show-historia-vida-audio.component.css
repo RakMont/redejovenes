@@ -19,6 +19,11 @@ img {
     border-color: black;
 }
 
+.audioBox {
+    margin-top: 80px;
+    position: center;
+}
+
 source {
     width: max-content;
 }

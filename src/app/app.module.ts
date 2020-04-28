@@ -5,6 +5,7 @@ import {MatTableModule}from '@angular/material/table';
 import {MatTableDataSource} from '@angular/material/table';
 import{MatDialogModule} from '@angular/material/dialog';
 
+//import { Hero } from './hero';
 //import * as THREE from 'three'
 import { MTLLoader, OBJLoader } from "three-obj-mtl-loader";
 import { NgxAudioPlayerModule } from 'ngx-audio-player';

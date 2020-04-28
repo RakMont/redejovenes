@@ -25,12 +25,21 @@ import {MatSnackBar}from '@angular/material/snack-bar';
   styleUrls: ['./show-historia-vida-audio.component.css']
 })
 export class ShowHistoriaVidaAudioComponent implements OnInit {
-  public aux;
-  public audios: FileList;
+
+  //public audios: FileList;
+  public audios:any=[];
+//public audios: FileList;
+
   public audiosShow:any=[];
-public things;
+
+  things=[];
+
 public hvaAudio: any=File;
-  public counter=0;
+
+  public counter:number;
+
+public aux;
+
   historiasHVA:HistoriaVidaAudio[];
   msbapTitle = 'Audio Title';
   msbapAudioUrl = '../../../../assets/HistoriaVidaAudio/euphoria.mp3';
@@ -45,30 +54,23 @@ public hvaAudio: any=File;
    }
 
   ngOnInit(): void {
-        let auxiliar:String;
-           this.historiaVidaAudioService.getHVAAudios().subscribe(response=>{
+        this.historiaVidaAudioService.getHVAAudios().subscribe(response=>{
         this.audios=response;
-          this.hvaAudio=this.audios[0];
-        auxiliar=this.audios[0].name;
-          console.log("this is ",auxiliar);
+        this.hvaAudio=this.audios[0];
+        //auxiliar=this.audios[0].name;
+       // console.log("this is ",this.hvaAudio);
+       this.Convertlist();
 
-
-
-    //this.Convertlist();
-    //this.hvaAudio=this.aux;
-    //console.log("this is the name",this.hvaAudio);
-    const file=this.hvaAudio;
-
-});
-  this.historiaVidaAudioService.getHVA()
+      });
+        this.historiaVidaAudioService.getHVA()
    .subscribe(data =>{
      this.historiasHVA = data;
+     this.aux=this.historiasHVA[0];
      this.convert();
-      //this.Convertlist();
-
-
-
+     console.log("this is ",this.aux);
+    this.Convertlist();
    });
+
 
   }
 
@@ -79,18 +81,7 @@ convert(){
     entry.archivo_mp3='../../../../assets/HistoriaVidaAudio/'+this.archivo+'.mp3';
   }
 }
-/*
-convert2(){
-  for (let entry of this.audios) {
-      for(let entry2 of this.historiasHVA){
-        if(entry2.archivo_mp3==entry.name){
-              this.audiosShow[this.counter]=entry;
-              this.counter=this.counter+1;
-        }
-      }
-  }
-}
-*/
+
 
 AddHVA(){
   const dialogConfig=new MatDialogConfig();
@@ -99,23 +90,34 @@ AddHVA(){
   dialogConfig.width="70%";
   this.dialog.open(AddHistoriaVidaAudioComponent,dialogConfig);
  }
- /*
+
 Convertlist(){
+  //this.counter=0;
+/*
   for (let entry of this.historiasHVA) {
     console.log(entry.id_HVA);
-    for(let audis of this.audios){
-      console.log(entry.titulo);
+    this.hvaAudio=this.audios[this.counter];
 
-          if(entry.archivo_mp3==audis.name){
-
-              this.things[this.counter]={
-                    historiahva:entry,
-                    audiomp3:audis
-              }
-              this.counter=this.counter+1;
-            }
+    //console.log(this.counter);
+    this.things[this.counter]={
+      historiahva:entry,
+      audiomp3: this.hvaAudio
     }
+    this.counter = this.counter + 1;
+
+  }*/
+  let c: number = 0;
+
+  for(let audio of this.audios){
+    this.aux=this.historiasHVA[c];
+    this.things.push({audio:audio,titulo:this.aux.titulo,fecha:this.aux.fecha});
+    /*this.things[this.counter]={
+      //historiahva:this.historiasHVA[this.counter],
+      audiomp3:audio
+    }
+    this.counter = this.counter + 1;*/
+    c=c+1;
   }
 
-}*/
+}
 }

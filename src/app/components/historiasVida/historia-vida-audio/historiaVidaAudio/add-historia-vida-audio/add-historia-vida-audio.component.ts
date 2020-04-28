@@ -16,7 +16,7 @@ import {ViewChild}from '@angular/core';
   styleUrls: ['./add-historia-vida-audio.component.css']
 })
 export class AddHistoriaVidaAudioComponent implements OnInit {
-  public audios:any=[];
+
   constructor(private snackBar:MatSnackBar, private router: Router,public dialogbox:MatDialogRef<AddHistoriaVidaAudioComponent>,public service:HistoriaVidaAudioService)
   {
 

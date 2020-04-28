@@ -9,28 +9,32 @@
     <h1></h1>
 </div>
 HVA
+<!--
+<audio controls>
+
+    <source [src]="hvaAudio" type="audio/mpeg">
+ </audio>
+
+
 
 <div *ngFor="let thing of things">
+
+
+    {{thing.titulo}}
+
     <audio controls>
 
-    {{thing.historiahva.titulo}}
- </audio>
-    <audio controls>
-
-  <source [src]="thing.audiomp3" type="audio/mpeg">
+  <source [src]="thing.audio" type="audio/mpeg">
 </audio>
 
-</div>
+</div>-->
 <!--
 <div *ngFor="let audio of audios">
     <audio controls>
 
       <source [src]="audio" type="audio/mpeg">
    </audio>
-    <audio controls>
 
-    <source [src]="hvaAudio" type="audio/mpeg">
- </audio>
 
 </div>
 -->
@@ -39,7 +43,7 @@ HVA
         <div class="card-header">
             <mat-card-title>--------------------------------------------------------------------------------------------------------------</mat-card-title>
         </div>
-        <mat-list *ngFor="let hvt of historiasHVA">
+        <mat-list *ngFor="let hvt of things">
             <mat-card>
                 <div mat-card-avatar class="example-header-image">
                     <img src="../../../../assets/HistoriaVidaAudio/ShowIcons/microphone.png" />
@@ -48,15 +52,20 @@ HVA
                     <mat-card-title>{{hvt.titulo}}</mat-card-title>
                     <mat-card-subtitle>{{hvt.archivo_mp3}}</mat-card-subtitle>
                 </div>
-                <!-- <audio controls>
+                <!-- <div class="audioBox">
+                    <audio controls>
 
-                         <source [src]="hvt.audiomp3" type="audio/mpeg">
-                 </audio>-->
-                <mat-basic-audio-player [audioUrl]="hvt.archivo_mp3" [title]="hvt.fecha" [autoPlay]="false" muted="muted" [displayTitle]="msbapDisplayTitle" [displayVolumeControls]="true"></mat-basic-audio-player>
-
-
-                <!--                <mat-basic-audio-player [value]="audi" [title]="hvt.fecha" [autoPlay]="false" muted="muted" [displayTitle]="msbapDisplayTitle" [displayVolumeControls]="true"></mat-basic-audio-player>
+                    <source [src]="hvt.audio" type="audio/mpeg">
+            </audio>
+                </div>
 -->
+                <div class="audioBox">
+                    <mat-basic-audio-player [audioUrl]="hvt.audio" [title]="hvt.fecha" [autoPlay]="false" muted="muted" [displayTitle]="msbapDisplayTitle" [displayVolumeControls]="true"></mat-basic-audio-player>
+
+                </div>
+
+
+
             </mat-card>
         </mat-list>
     </div>
