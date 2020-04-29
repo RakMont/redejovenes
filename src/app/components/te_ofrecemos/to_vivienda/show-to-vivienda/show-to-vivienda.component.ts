@@ -10,8 +10,8 @@ import { filter } from 'rxjs/operators';
 import{Subject}from 'rxjs';
 import {Observable} from 'rxjs';
 import {MatSnackBar}from '@angular/material/snack-bar';
-import { EditViviendaComponent } from 'src/app/components/referente/vivienda/edit-vivienda/edit-vivienda.component';
-import { AddViviendaComponent } from 'src/app/components/referente/vivienda/add-vivienda/add-vivienda.component';
+import { EditToViviendaComponent } from '../edit-to-vivienda/edit-to-vivienda.component';
+import { AddToViviendaComponent } from '../add-to-vivienda/add-to-vivienda.component';
 
 
 @Component({
@@ -53,7 +53,7 @@ export class ShowToViviendaComponent implements OnInit {
    dialogConfig.disableClose=true;
    dialogConfig.autoFocus=true;
    dialogConfig.width="70%";
-   this.dialog.open(EditViviendaComponent,dialogConfig);
+   this.dialog.open(EditToViviendaComponent,dialogConfig);
 
    localStorage.setItem("id_teOfrecemos", teOfrecemos.id_teOfrecemos .toString());
   }
@@ -77,7 +77,7 @@ export class ShowToViviendaComponent implements OnInit {
     dialogConfig.disableClose=true;
     dialogConfig.autoFocus=true;
     dialogConfig.width="70%";
-    this.dialog.open(AddViviendaComponent,dialogConfig);
+    this.dialog.open(AddToViviendaComponent,dialogConfig);
   }
 
 }
