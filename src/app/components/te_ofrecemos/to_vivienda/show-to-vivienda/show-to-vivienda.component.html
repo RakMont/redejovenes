@@ -1,60 +1,43 @@
-<div class="addbox-HVT">
-    <button class="mt-2" mat-raised-button (click)="AddVivienda()" color="primary">
-          Agregar
-           <mat-icon>add_box</mat-icon>
-          </button>
-</div>
-
 <div class="container title">
     <h1></h1>
 </div>
 
 
 <div class="container">
-    <div class="card">
-        <div class="card-header">
-            <mat-card-title>------------------------------------------------------------------------------------------------------------------------------------</mat-card-title>
-        </div>
-        <mat-list *ngFor="let tob of teofrecemos">
-            <mat-card>
-            
-                <div class="options" fxFlex="10px" fxFlexAlign="center">
-                    <mat-card-actions>
-                        <button mat-icon-button (click)="edit_Vivienda(tob)">
+    <div class="addbox-HVT">
+        <button class="mt-2" mat-raised-button (click)="AddVivienda()" color="primary">
+          Agregar
+           <mat-icon>add_box</mat-icon>
+          </button>
+    </div>
+    <h1 class="tit">VIVIENDAS</h1>
+    <div class="card-header">
+        <mat-card-title>----------------------------------------------------------------------------------------------------------------------------</mat-card-title>
+    </div>
+    <mat-list *ngFor="let tob of teofrecemos">
+        <mat-card>
+            <div mat-card-avatar class="example-header-image">
+                <img src="../../../../assets/vivienda.jpg" />
+            </div>
+            <div class="options" fxFlex="10px" fxFlexAlign="center">
+                <mat-card-actions>
+                    <button mat-icon-button class="coloicon" (click)="edit_Vivienda(tob)">
                             <mat-icon>edit</mat-icon>
                         </button>
-                        <button mat-icon-button color="warn" (click)="Delete(tob)">
+                    <button mat-icon-button (click)="Delete(tob)">
                             <mat-icon>delete_forever</mat-icon>
                         </button>
-                    </mat-card-actions>
-                </div>
-                <div fxLayout="row">
-                    <div fxFlex="10">
-                        <br>
-                        <div class="contenidohvt">
-                            <br>
-                            <h3>CONTENIDO: </h3>
-                        </div>
-                        <mat-card-content>
-                            <br>
-                            <h3>
-                                &nbsp;{{tob.contenido}}
-                            </h3>
-                        </mat-card-content>
-                    </div>
-                    <div fxFlex="10">
-                        <div class="contenidohvt">
-                            <h3>CONTACTO: </h3>
-                        </div>
-                        <mat-card-content>
-                            <h3>
-                                &nbsp;{{tob.contacto}}
-                            </h3>
-                        </mat-card-content>
-                    </div>
-                </div>
-            </mat-card>
-        </mat-list>
-    </div>
-</div>
+                </mat-card-actions>
+            </div>
 
+            <div class="other">
+
+                <mat-card-title>CONTACTO: {{tob.contacto}}</mat-card-title>
+                <mat-card-subtitle>CONTENIDO: {{tob.contenido}}</mat-card-subtitle>
+
+            </div>
+
+            <hr class="new4">
+        </mat-card>
+    </mat-list>
+</div>
