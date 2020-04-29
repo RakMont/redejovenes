@@ -90,6 +90,10 @@ import { EventosComponent } from './components/eventos/eventos.component';
 import { AddEventosComponent } from './components/eventos/add-eventos/add-eventos.component';
 import { ShowEventosComponent } from './components/eventos/show-eventos/show-eventos.component';
 import { EditEventosComponent } from './components/eventos/edit-eventos/edit-eventos.component';
+import { ShowTemaComponent } from './components/tema/show-tema/show-tema.component';
+import { CreateTemaComponent } from './components/tema/create-tema/create-tema.component';
+import { UpdateTemaComponent } from './components/tema/update-tema/update-tema.component';
+import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component';
 
 
 
@@ -153,6 +157,10 @@ import { EditEventosComponent } from './components/eventos/edit-eventos/edit-eve
     AddEventosComponent,
     ShowEventosComponent,
     EditEventosComponent,
+    ShowTemaComponent,
+    CreateTemaComponent,
+    UpdateTemaComponent,
+    QuienesSomosComponent,
 
 
 

@@ -27,6 +27,7 @@ import{ShowToBecaComponent}from './components/te_ofrecemos/to_beca/show-to-beca/
 import{ShowToViviendaComponent}from './components/te_ofrecemos/to_vivienda/show-to-vivienda/show-to-vivienda.component';
 
 import{ShowEventosComponent}from './components/eventos/show-eventos/show-eventos.component';
+import{QuienesSomosComponent}from './components/quienes-somos/quienes-somos.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -47,7 +48,8 @@ const routes: Routes = [
   {path: 'showPodcast', component:ShowPodcastComponent},
   {path: 'showToTrabajo', component:ShowToTrabajoComponent},
   {path: 'showToBeca', component:ShowToBecaComponent},
-  {path: 'showToVivienda', component:ShowToViviendaComponent}
+  {path: 'showToVivienda', component:ShowToViviendaComponent},
+  {path: 'showQuienesSomos', component:QuienesSomosComponent}
 
 
 ];
