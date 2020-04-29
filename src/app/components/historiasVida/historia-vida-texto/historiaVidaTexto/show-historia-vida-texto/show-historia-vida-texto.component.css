@@ -3,11 +3,6 @@
     margin-right: 15px;
 }
 
-.addbox-HVT {
-    float: left;
-    margin-left: 15px;
-}
-
 .title {
     margin-top: 50px;
     text-align: center;
@@ -25,21 +20,21 @@ div.hvv {
     margin-top: 5%;
 }
 
-.hvv {
-    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/f5f9c989-0119-44ae-a646-d28630ea2f16/d2yp07m-a084ef34-38cc-400f-9d3d-db11e88eb1e5.jpg");
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+hr.new4 {
+    border: 2px solid black;
+}
+
+.mat-card-footer {
+    margin: 1%;
+    text-align: right;
 }
 
 .mat-card {
-    max-width: 650px;
+    max-width: 80%;
     margin: auto;
     font-family: "Noto Sans", Helvetica, Arial, sans-serif;
-    background-color: #a1a1a1;
-    margin-bottom: 30px;
+    background-color: darkolivegreen;
+    margin-bottom: 2%;
     border-style: solid;
 }
 
@@ -58,6 +53,9 @@ div.hvv {
 .container {
     text-align: justify;
     font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+    background-color: black;
+    margin-bottom: 50px;
+    max-width: 70%;
 }
 
 .options {
@@ -77,10 +75,19 @@ div.hvv {
 }
 
 .card-header {
-    color: #ffffff;
+    margin-top: 2%;
 }
 
 .contenidohvt {
     float: left;
     margin-left: -150px;
+}
+
+.addbox-HVT {
+    margin-top: 2%;
+    margin-bottom: 5px;
+}
+
+.coloicon {
+    color: white;
 }

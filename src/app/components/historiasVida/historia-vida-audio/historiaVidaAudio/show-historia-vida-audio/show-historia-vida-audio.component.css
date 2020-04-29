@@ -1,5 +1,6 @@
 img {
     height: 120px;
+    margin-top: 20px;
 }
 
 .example-header-image {
@@ -11,19 +12,41 @@ img {
     align-items: center;
 }
 
+.classcard {
+    margin-bottom: 20px;
+    margin: 2%;
+}
+
 .other {
     align-items: center;
     text-align: center;
-    background-color: brown;
+    background-color: darkslategray;
     border-style: solid;
     border-color: black;
+    height: 110px;
+    margin-left: 16%;
+    margin-bottom: 0%;
 }
 
 .audioBox {
-    margin-top: 80px;
+    margin-top: 20px;
     position: center;
 }
 
 source {
     width: max-content;
+}
+
+.container {
+    background-color: black;
+    margin-bottom: 50px;
+    max-width: 80%;
+}
+
+hr.new4 {
+    border: 2px solid black;
+}
+
+.mat-card-title {
+    margin-top: 1%;
 }

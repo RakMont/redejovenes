@@ -6,13 +6,16 @@
 .addbox-HVT {
     float: left;
     margin-left: 15px;
+    margin-top: 20px;
 }
 
 .title {
-    margin-top: 50px;
+    margin-top: 10px;
     text-align: center;
 }
 
+
+/*
 div.hvv {
     background-size: cover;
     -webkit-background-size: cover;
@@ -20,13 +23,13 @@ div.hvv {
     -o-background-size: cover;
     background-size: cover;
 }
+*/
 
 div.hvv {
     margin-top: 5%;
 }
 
 .hvv {
-    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/f5f9c989-0119-44ae-a646-d28630ea2f16/d2yp07m-a084ef34-38cc-400f-9d3d-db11e88eb1e5.jpg");
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -36,45 +39,74 @@ div.hvv {
 
 .mat-card {
     max-width: 600px;
-    margin: auto;
     font-family: "Noto Sans", Helvetica, Arial, sans-serif;
-    background-color: #a1a1a1;
-    margin-bottom: 30px;
+    background-color: black;
+    color: white;
+    margin-bottom: 10px;
 }
 
+
+/*
 .mat-card-avatar {
     background-size: cover;
 }
+*/
 
+
+/*
 .mat-card-actions {
     display: flex;
 }
+*/
 
+
+/*
 .mat-card-actions .flex-spacer {
     width: 100%;
-}
+}*/
 
 .container {
     text-align: center;
     font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+    width: 100%;
 }
 
 .options {
     float: right;
     margin-top: -50px;
-    margin-right: auto;
+    /* margin-right: auto;*/
 }
 
+
+/*
 .fecha {
     float: left;
     margin-top: -5px;
     margin-left: 18px;
-}
+}*/
 
 .card {
     background-color: #323232;
+    width: 100%;
 }
 
 .card-header {
-    color: #ffffff;
+    color: black;
+}
+
+.mat-card-content {
+    width: 600px;
+    /*margin-right: 50px;*/
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    background-color: #323232;
+    max-width: 1300px;
+}
+
+.mat-card {
+    margin-bottom: 2%;
+    margin-top: 2%;
 }

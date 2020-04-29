@@ -1,72 +1,40 @@
-<div class="addbox-HVT">
-    <button class="mt-2" mat-raised-button (click)="AddHVA()" color="primary">
-        Agregar
-         <mat-icon>add_box</mat-icon>
-        </button>
-</div>
-
 <div class="container title">
     <h1></h1>
 </div>
-HVA
-<!--
-<audio controls>
-
-    <source [src]="hvaAudio" type="audio/mpeg">
- </audio>
 
 
-
-<div *ngFor="let thing of things">
-
-
-    {{thing.titulo}}
-
-    <audio controls>
-
-  <source [src]="thing.audio" type="audio/mpeg">
-</audio>
-
-</div>-->
-<!--
-<div *ngFor="let audio of audios">
-    <audio controls>
-
-      <source [src]="audio" type="audio/mpeg">
-   </audio>
-
-
-</div>
--->
 <div class="container">
-    <div class="card">
-        <div class="card-header">
-            <mat-card-title>--------------------------------------------------------------------------------------------------------------</mat-card-title>
-        </div>
-        <mat-list *ngFor="let hvt of things">
-            <mat-card>
-                <div mat-card-avatar class="example-header-image">
-                    <img src="../../../../assets/HistoriaVidaAudio/ShowIcons/microphone.png" />
-                </div>
-                <div class="other">
-                    <mat-card-title>{{hvt.titulo}}</mat-card-title>
-                    <mat-card-subtitle>{{hvt.archivo_mp3}}</mat-card-subtitle>
-                </div>
-                <!-- <div class="audioBox">
-                    <audio controls>
-
-                    <source [src]="hvt.audio" type="audio/mpeg">
-            </audio>
-                </div>
--->
-                <div class="audioBox">
-                    <mat-basic-audio-player [audioUrl]="hvt.audio" [title]="hvt.fecha" [autoPlay]="false" muted="muted" [displayTitle]="msbapDisplayTitle" [displayVolumeControls]="true"></mat-basic-audio-player>
-
-                </div>
-
-
-
-            </mat-card>
-        </mat-list>
+    <div class="addbox-HVT">
+        <button class="mt-2" mat-raised-button (click)="AddHVA()" color="primary">
+        Agregar
+         <mat-icon>add_box</mat-icon>
+        </button>
     </div>
+    <div class="card-header">
+        <mat-card-title>--------------------------------------------------------------------------------------------------------------</mat-card-title>
+    </div>
+    <mat-list *ngFor="let hvt of things">
+        <mat-card class="classcard">
+            <div mat-card-avatar class="example-header-image">
+                <img src="../../../../assets/HistoriaVidaAudio/ShowIcons/microphone.png" />
+            </div>
+            <div class="other">
+
+                <mat-card-title>{{hvt.titulo}}</mat-card-title>
+                <mat-card-subtitle>{{hvt.archivo_mp3}}</mat-card-subtitle>
+                <h3>Este podcast es para proteger la privacidad de la red de jovenes</h3>
+
+            </div>
+            <hr class="new4">
+
+
+            <div class="audioBox">
+                <mat-basic-audio-player [audioUrl]="hvt.audio" [title]="hvt.fecha" [autoPlay]="false" muted="muted" [displayTitle]="msbapDisplayTitle" [displayVolumeControls]="true"></mat-basic-audio-player>
+
+            </div>
+
+
+
+        </mat-card>
+    </mat-list>
 </div>

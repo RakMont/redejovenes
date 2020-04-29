@@ -1,52 +1,46 @@
-<div class="addbox-HVT">
-    <button class="mt-2" mat-raised-button (click)="AddHVV()" color="primary">
-          Agregar
-           <mat-icon>add_box</mat-icon>
-          </button>
-</div>
-
 <div class="container title">
     <h1></h1>
 </div>
 
 
 <div class="container">
-    <div class="card">
-        <div class="card-header">
-            <!-- <mat-card-title>Lista de Videos</mat-card-title>-->
-        </div>
-        <!--<mat-list *ngFor="let hvt of historiasHVV">-->
-        <mat-grid-list cols="2">
-            <mat-grid-tile *ngFor="let hvt of historiasHVV">
-                <mat-card>
-                    <mat-card-header>
-                        <mat-card-title>Titulo: {{hvt.titulo}}</mat-card-title>
-                    </mat-card-header>
-                    <div class="options" fxFlex="10px" fxFlexAlign="center">
-                        <mat-card-actions>
-                            <button mat-icon-button (click)="edit_HVV(hvt)">
+    <div class="addbox-HVT">
+        <button class="mt-2" mat-raised-button (click)="AddHVV()" color="primary">
+          Agregar
+           <mat-icon>add_box</mat-icon>
+          </button>
+    </div>
+    <div class="card-header">
+        <!-- <mat-card-title>Lista de Videos</mat-card-title>-->
+    </div>
+    <!--<mat-list *ngFor="let hvt of historiasHVV">-->
+    <mat-grid-list cols="2">
+        <mat-grid-tile *ngFor="let hvt of historiasHVV">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Titulo: {{hvt.titulo}}</mat-card-title>
+                </mat-card-header>
+                <div class="options" fxFlex="5px" fxFlexAlign="center">
+                    <mat-card-actions>
+                        <button mat-icon-button (click)="edit_HVV(hvt)">
                             <mat-icon>edit</mat-icon>
                         </button>
-                            <button mat-icon-button color="warn" (click)="Delete(hvt)">
+                        <button mat-icon-button color="warn" (click)="Delete(hvt)">
                             <mat-icon>delete_forever</mat-icon>
                         </button>
-                        </mat-card-actions>
+                    </mat-card-actions>
+                </div>
+                <div fxLayout="row">
+                    <div fxFlex="5px">
+                        <mat-card-content>
+                            <youtube-player [videoId]="hvt.video_HVV" [height]="300" [width]="550" suggestedQuality="large"></youtube-player>
+                        </mat-card-content>
                     </div>
-                    <div fxLayout="row">
-                        <div class="fecha" fxFlex="10">
-                            <mat-card-content>
-                                <h3>Fecha: {{hvt.fecha}}</h3>
-                            </mat-card-content>
-                        </div>
-                        <div fxFlex="10">
-                            <mat-card-content>
-                                <youtube-player [videoId]="hvt.video_HVV"></youtube-player>
-                            </mat-card-content>
-                        </div>
-                    </div>
-                </mat-card>
-            </mat-grid-tile>
-        </mat-grid-list>
-        <!--</mat-list>-->
-    </div>
+                    <mat-card-footer>
+                        <h3>Fecha: {{hvt.fecha}}</h3>
+                    </mat-card-footer>
+                </div>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
 </div>
