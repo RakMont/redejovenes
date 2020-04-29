@@ -48,7 +48,7 @@ export class ShowToTrabajoComponent implements OnInit {
     });
   }
 
-  edit_Beca(teOfrecemos: TeOfrecemos){
+  edit_Trabajo(teOfrecemos: TeOfrecemos){
     this.teofrecemosService.formData=teOfrecemos;
     const dialogConfig=new MatDialogConfig();
    dialogConfig.disableClose=true;
@@ -73,7 +73,7 @@ export class ShowToTrabajoComponent implements OnInit {
     }
    }
 
-  AddBeca(){
+  AddTrabajo(){
     const dialogConfig=new MatDialogConfig();
     dialogConfig.disableClose=true;
     dialogConfig.autoFocus=true;
