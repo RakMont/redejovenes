@@ -1,5 +1,4 @@
 import { Component, OnInit,ViewChild} from '@angular/core';
-
 import { Router } from '@angular/router';
 import { TeofrecemosService } from 'src/app/services/teofrecemos.service';
 import { Subscriber} from 'rxjs';
@@ -14,6 +13,8 @@ import { filter } from 'rxjs/operators';
 import{Subject}from 'rxjs';
 import {Observable} from 'rxjs';
 import {MatSnackBar}from '@angular/material/snack-bar';
+import { EditToBecaComponent } from '../edit-to-beca/edit-to-beca.component';
+
 
 @Component({
   selector: 'app-show-to-beca',
@@ -25,21 +26,60 @@ export class ShowToBecaComponent implements OnInit {
 
   dataSource=null;
   constructor(private snackBar:MatSnackBar,private teofrecemosService: TeofrecemosService, private router: Router,private dialog: MatDialog) {
+    this.teofrecemosService.listen().subscribe((m:any)=>{
+      console.log(m);
+      this.charge();
+    });
+  }
 
+
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
+  //@ViewChild(MatSort, null) sort: MatSort;
+
+  ngOnInit() {
+    this.teofrecemosService.getTeOfrecemosBeca().subscribe(data =>{
+      this.teofrecemos = data;
+      this.charge();
+    });
+  }
+
+  charge(){
+    this.teofrecemosService.getTeOfrecemosBeca().subscribe(data=>{
+      this.teofrecemos=data;
+    });
+  }
+
+  edit_Beca(teOfrecemos: TeOfrecemos){
+    this.teofrecemosService.formData=teOfrecemos;
+    const dialogConfig=new MatDialogConfig();
+   dialogConfig.disableClose=true;
+   dialogConfig.autoFocus=true;
+   dialogConfig.width="70%";
+   this.dialog.open(EditToBecaComponent,dialogConfig);
+
+   localStorage.setItem("id_teOfrecemos", teOfrecemos.id_teOfrecemos .toString());
+  }
+
+  Delete(teOfrecemos: TeOfrecemos){
+    if(confirm('Estas seguro de eliminar ? ')){
+      this.teofrecemosService.deleteHVT(teOfrecemos)
+      .subscribe(data=>{
+        //.historiasHVT=this.historiasHVT.filter(p=>p.id_HVT!==historiaVidaTexto.id_HVT);
+        this.charge();
+        this.snackBar.open('Eliminado Correctamente','',{
+          duration:5000,
+          verticalPosition:'top'
+        });
+     });
+    }
    }
 
+  AddBeca(){
+    const dialogConfig=new MatDialogConfig();
+    dialogConfig.disableClose=true;
+    dialogConfig.autoFocus=true;
+    dialogConfig.width="70%";
+    this.dialog.open(AddToBecaComponent,dialogConfig);
+  }
+}
 
-   @ViewChild(MatSort, {static: true}) sort: MatSort;
-   //@ViewChild(MatSort, null) sort: MatSort;
-
-   ngOnInit() {
-
-   }
-
-
-
-
-
-
-
- }
