@@ -1,4 +1,64 @@
 <div class="addbox-HVT">
-    <h1>Teofrecemos becas</h1>
+    <button class="mt-2" mat-raised-button (click)="AddBeca()" color="primary">
+          Agregar
+           <mat-icon>add_box</mat-icon>
+          </button>
 </div>
->
+
+
+<div class="container title">
+    <h1>Beca</h1>
+</div>
+
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <mat-card-title>------------------------------------------------------------------------------------------------------------------------------------</mat-card-title>
+        </div>
+        <mat-list *ngFor="let tofb of teofrecemos">
+            <mat-card>
+                <div class="options" fxFlex="10px" fxFlexAlign="center">
+                    <mat-card-actions>
+                        <button mat-icon-button (click)="edit_Beca(tofb)">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-icon-button color="warn" (click)="Delete(tofb)">
+                            <mat-icon>delete_forever</mat-icon>
+                        </button>
+                    </mat-card-actions>
+                </div>
+                <div fxLayout="row">
+                    <div fxFlex="10">
+                        <br>
+                        <div class="contenidohvt">
+                            <br>
+                            <h3>CONTENIDO: </h3>
+                        </div>
+                        <br>
+                        <mat-card-content>
+                            <br>
+                            <h4>
+                                {{tofb.contenido}}
+                            </h4>
+                        </mat-card-content>
+                    </div>
+                    <div fxFlex="10">
+                        <br>
+                        <div class="contenidohvt">
+                            <br>
+                            <h3>CONTACTO: </h3>
+                        </div>
+                        <br>
+                        <mat-card-content>
+                            <br>
+                            <h4>
+                                {{tofb.contacto}}
+                            </h4>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </mat-list>
+    </div>
+</div>
