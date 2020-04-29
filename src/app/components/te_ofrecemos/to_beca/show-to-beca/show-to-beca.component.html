@@ -5,9 +5,8 @@
           </button>
 </div>
 
-
 <div class="container title">
-    <h1>Beca</h1>
+    <h1></h1>
 </div>
 
 
@@ -16,14 +15,15 @@
         <div class="card-header">
             <mat-card-title>------------------------------------------------------------------------------------------------------------------------------------</mat-card-title>
         </div>
-        <mat-list *ngFor="let tofb of teofrecemos">
+        <mat-list *ngFor="let tob of teofrecemos">
             <mat-card>
+            
                 <div class="options" fxFlex="10px" fxFlexAlign="center">
                     <mat-card-actions>
-                        <button mat-icon-button (click)="edit_Beca(tofb)">
+                        <button mat-icon-button (click)="edit_Beca(tob)">
                             <mat-icon>edit</mat-icon>
                         </button>
-                        <button mat-icon-button color="warn" (click)="Delete(tofb)">
+                        <button mat-icon-button color="warn" (click)="Delete(tob)">
                             <mat-icon>delete_forever</mat-icon>
                         </button>
                     </mat-card-actions>
@@ -39,7 +39,7 @@
                         <mat-card-content>
                             <br>
                             <h4>
-                                {{tofb.contenido}}
+                                {{tob.contenido}}
                             </h4>
                         </mat-card-content>
                     </div>
@@ -53,7 +53,7 @@
                         <mat-card-content>
                             <br>
                             <h4>
-                                {{tofb.contacto}}
+                                {{tob.contacto}}
                             </h4>
                         </mat-card-content>
                     </div>

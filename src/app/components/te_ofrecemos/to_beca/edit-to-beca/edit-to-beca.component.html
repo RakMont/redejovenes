@@ -11,9 +11,16 @@
 
             <div class="m-2 input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">ID</span>
+                    <span class="input-group-text">ID: </span>
                 </div>
                 <input readonly="readonly" type="number" class="form-control" name="id_teOfrecemos" #id_teOfrecemos="ngModel" [(ngModel)]="service.formData.id_teOfrecemos">
+            </div>
+
+            <div class="m-2 input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">TEMA: </span>
+                </div>
+                <input readonly="readonly" type="text" class="form-control" name="tema" #tema="ngModel" [(ngModel)]="service.formData.tema">
             </div>
 
             <div class="m-2 input-group">
