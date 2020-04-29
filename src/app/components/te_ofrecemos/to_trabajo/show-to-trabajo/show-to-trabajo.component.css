@@ -139,3 +139,9 @@ hr.new4 {
 .coloicon {
     color: white;
 }
+
+.new1 {
+    /*color: white;*/
+    height: 0px;
+    border: 2px dashed;
+}

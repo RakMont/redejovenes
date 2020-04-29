@@ -50,3 +50,14 @@ hr.new4 {
 .mat-card-title {
     margin-top: 1%;
 }
+
+.new1 {
+    /*color: white;*/
+    height: 0px;
+    border: 2px dashed;
+}
+
+.tit {
+    color: white;
+    text-align: center;
+}

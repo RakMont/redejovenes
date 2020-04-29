@@ -4,9 +4,8 @@
 }
 
 .addbox-HVT {
-    float: left;
-    margin-left: 15px;
-    margin-top: 20px;
+    margin-top: 2%;
+    margin-bottom: 5px;
 }
 
 .title {
@@ -14,8 +13,6 @@
     text-align: center;
 }
 
-
-/*
 div.hvv {
     background-size: cover;
     -webkit-background-size: cover;
@@ -23,7 +20,6 @@ div.hvv {
     -o-background-size: cover;
     background-size: cover;
 }
-*/
 
 div.hvv {
     margin-top: 5%;
@@ -52,21 +48,16 @@ div.hvv {
 }
 */
 
-
-/*
 .mat-card-actions {
     display: flex;
 }
-*/
 
-
-/*
 .mat-card-actions .flex-spacer {
     width: 100%;
-}*/
+}
 
 .container {
-    text-align: center;
+    text-align: justify;
     font-family: "Noto Sans", Helvetica, Arial, sans-serif;
     width: 100%;
 }
@@ -92,6 +83,15 @@ div.hvv {
 
 .card-header {
     color: black;
+    align-items: left;
+    text-align: left;
+    align-content: left;
+}
+
+.new1 {
+    /*color: white;*/
+    height: 0px;
+    border: 2px dashed;
 }
 
 .mat-card-content {
@@ -103,10 +103,25 @@ div.hvv {
 
 .container {
     background-color: #323232;
+    margin-bottom: 50px;
     max-width: 1300px;
 }
 
 .mat-card {
     margin-bottom: 2%;
     margin-top: 2%;
+}
+
+.mat-card-footer {
+    margin: 1%;
+    text-align: center;
+}
+
+hr.new4 {
+    border: 2px solid white;
+}
+
+.tit {
+    color: white;
+    text-align: center;
 }
