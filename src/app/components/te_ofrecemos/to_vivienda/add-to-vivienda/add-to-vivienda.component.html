@@ -1,1 +1,37 @@
-<p>add-to-vivienda works!</p>
+<div class="container col-md-11">
+    <div class="d-flex justify-content-between">
+        <h4>ADD VIVIENDA</h4>
+
+        <button mat-button (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+    </div>
+    <div style="overflow: auto;height: 450px;">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
+
+            <div class="mt-4 input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">CONTENIDO</span>
+                </div>
+                <input required minlength="2" type="text" class="form-control" name="contenido" #contenido="ngModel" [(ngModel)]="service.formData.contenido">
+            </div>
+            <div class="text-left text-danger" *ngIf="contenido.invalid && contenido.touched">
+                Debes ingresar el contenido
+            </div>
+
+            <div class="mt-4 input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">CONTACTO</span>
+                </div>
+                <input required minlength="2" type="text" class="form-control" name="contacto" #contacto="ngModel" [(ngModel)]="service.formData.contacto">
+            </div>
+            <div class="text-left text-danger" *ngIf="contacto.invalid && contacto.touched">
+                Debes ingresar el contacto
+            </div>
+
+            <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">ADD</button>
+        </form>
+
+    </div>
+</div>
+
