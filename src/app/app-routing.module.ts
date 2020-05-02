@@ -11,16 +11,16 @@ import {EditHistoriaVidaVideoComponent} from './components/historiasVida/histori
 import{HomeComponent}from './components/home/home.component';
 import{ShowHistoriaVidaAudioComponent}from './components/historiasVida/historia-vida-audio/historiaVidaAudio/show-historia-vida-audio/show-historia-vida-audio.component';
 ///////CONTACTANOS
-import{ShowContactanosComponent} from './components/Contactanos/show-contactanos/show-contactanos.component';
+import{ShowContactanosComponent} from './components/contactanos/show-contactanos/show-contactanos.component';
 ///////CONVENIOS
-import{ShowConvenioComponent} from './components/Convenio/show-convenio/show-convenio.component';
+import{ShowConvenioComponent} from './components/convenio/show-convenio/show-convenio.component';
 ///////REFERENTES
-import{ShowEducacionComponent} from './components/Referente/Educacion/show-educacion/show-educacion.component';
-import{ShowSaludComponent} from './components/Referente/Salud/show-salud/show-salud.component';
-import{ShowTrabajoComponent} from './components/Referente/Trabajo/show-trabajo/show-trabajo.component';
-import{ShowViviendaComponent} from './components/Referente/Vivienda/show-vivienda/show-vivienda.component';
+import{ShowEducacionComponent} from './components/referente/educacion/show-educacion/show-educacion.component';
+import{ShowSaludComponent} from './components/referente/salud/show-salud/show-salud.component';
+import{ShowTrabajoComponent} from './components/referente/trabajo/show-trabajo/show-trabajo.component';
+import{ShowViviendaComponent} from './components/referente/vivienda/show-vivienda/show-vivienda.component';
 ////////PODCAST
-import{ShowPodcastComponent} from './components/Podcast/show-podcast/show-podcast.component';
+import{ShowPodcastComponent} from './components/podcast/show-podcast/show-podcast.component';
 ////////TE OFECEMOS
 import{ShowToTrabajoComponent}from './components/te_ofrecemos/to_trabajo/show-to-trabajo/show-to-trabajo.component';
 import{ShowToBecaComponent}from './components/te_ofrecemos/to_beca/show-to-beca/show-to-beca.component';
