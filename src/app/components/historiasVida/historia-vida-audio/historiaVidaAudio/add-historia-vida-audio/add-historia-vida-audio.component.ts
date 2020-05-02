@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
 import {MatSort}from '@angular/material/sort';
 import {ViewChild}from '@angular/core';
+import{ShowHistoriaVidaAudioComponent}from 'src/app/components/historiasVida/historia-vida-audio/historiaVidaAudio/show-historia-vida-audio/show-historia-vida-audio.component';
 
 @Component({
   selector: 'app-add-historia-vida-audio',
@@ -19,7 +20,6 @@ export class AddHistoriaVidaAudioComponent implements OnInit {
 
   constructor(private snackBar:MatSnackBar, private router: Router,public dialogbox:MatDialogRef<AddHistoriaVidaAudioComponent>,public service:HistoriaVidaAudioService)
   {
-
     this.service.listen().subscribe((m:any)=>{
       console.log(m);
       this.charge();
@@ -27,9 +27,11 @@ export class AddHistoriaVidaAudioComponent implements OnInit {
     });
    }
    listData:MatTableDataSource<any>;
+   //showHistory:ShowHistoriaVidaAudioComponent;
   public hvaAudio: any=File;
    @ViewChild(MatSort, {static: true}) sort: MatSort;
-
+  // variable : ViewChild(MyChildComponent)
+  // @ViewChild(ShowHistoriaVidaAudioComponent,{static:true})variable:ShowHistoriaVidaAudioComponent;
   ngOnInit(): void {
     this.resetForm();
   }
@@ -47,7 +49,7 @@ export class AddHistoriaVidaAudioComponent implements OnInit {
       archivo_mp3:''
 
     }
-    }
+ }
     onSubmit(form:NgForm){
       //console.log(form.value);
       const audio = form.value;
@@ -57,23 +59,14 @@ export class AddHistoriaVidaAudioComponent implements OnInit {
       this.service.saveAudio(formData).subscribe((res)=>{
         this.resetForm(form);
         this.dialogbox.close();
+        this.charge();
+
       this.service.filter("Register click");
         this.snackBar.open('Añadido correctamente','',{
           duration:5000,
           verticalPosition:'top'
       });
-
-/*
-      this.service.createHVA(form.value).subscribe(res=>{
-        this.resetForm(form);
-        this.dialogbox.close();
-      this.service.filter("Register click");
-        this.snackBar.open('Añadido correctamente','',{
-          duration:5000,
-          verticalPosition:'top'
-        });*/
       })
-
     }
   onSelectFile(event){
     //const file=event.target.file;
@@ -88,17 +81,5 @@ export class AddHistoriaVidaAudioComponent implements OnInit {
         this.listData.sort=this.sort;
       });
     }
-    Guardar() {
-      this.service.createHVA(this.service.formData)
-      .subscribe(data => {
-      this.snackBar.open('Añadido correctamente','',{
-        duration:5000,
-        verticalPosition:'top'
-      });
-      }
-      )
-      this.close();
-    }
-
 
 }

@@ -28,7 +28,6 @@ export class ShowHistoriaVidaAudioComponent implements OnInit {
 
   //public audios: FileList;
   public audios:any=[];
-//public audios: FileList;
 
   public audiosShow:any=[];
 
@@ -92,32 +91,35 @@ AddHVA(){
  }
 
 Convertlist(){
-  //this.counter=0;
-/*
-  for (let entry of this.historiasHVA) {
-    console.log(entry.id_HVA);
-    this.hvaAudio=this.audios[this.counter];
-
-    //console.log(this.counter);
-    this.things[this.counter]={
-      historiahva:entry,
-      audiomp3: this.hvaAudio
-    }
-    this.counter = this.counter + 1;
-
-  }*/
   let c: number = 0;
 
   for(let audio of this.audios){
     this.aux=this.historiasHVA[c];
-    this.things.push({audio:audio,titulo:this.aux.titulo,fecha:this.aux.fecha});
-    /*this.things[this.counter]={
-      //historiahva:this.historiasHVA[this.counter],
-      audiomp3:audio
-    }
-    this.counter = this.counter + 1;*/
+    this.things.push({audio:audio,titulo:this.aux.titulo,fecha:this.aux.fecha,id_HVA:this.aux.id_HVA});
     c=c+1;
   }
+
+}
+
+
+
+
+edit_HVV(historiaVidaVideo: HistoriaVidaAudio):void{
+}
+
+Delete(some){
+  let historiaVidaVideo=new HistoriaVidaAudio
+  historiaVidaVideo.id_HVA=some.id_HVA;
+  if(confirm('Estas seguro de eliminar ? ')){
+   this.historiaVidaAudioService.deleteHVT(historiaVidaVideo)
+   .subscribe(data=>{
+     //.historiasHVT=this.historiasHVT.filter(p=>p.id_HVT!==historiaVidaTexto.id_HVT);
+     this.snackBar.open('Eliminado Correctamente','',{
+       duration:5000,
+       verticalPosition:'top'
+     });
+  });
+ }
 
 }
 }
