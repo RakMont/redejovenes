@@ -1,1 +1,52 @@
-<p>edit-historia-vida-audio works!</p>
+<div class="container col-md-11">
+    <div class="d-flex justify-content-between">
+        <h4>ADD HISTORIA DE VIDA</h4>
+
+        <button mat-button (click)="close()">
+  <mat-icon>close</mat-icon>
+</button>
+
+    </div>
+    <div style="overflow: auto;height: 450px;">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
+            <div class="m-2 input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">ID</span>
+                </div>
+                <input readonly="readonly" type="text" class="form-control" name="id_HVA" #id_HVA="ngModel" [(ngModel)]="service.formData.id_HVA">
+            </div>
+            <input readonly="readonly" type="hidden" class="form-control" name="archivo_mp3" #archivo_mp3="ngModel" [(ngModel)]="service.formData.archivo_mp3">
+
+            <div class="mt-4 input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">TITULO</span>
+                </div>
+                <input required minlength="2" type="text" class="form-control" name="titulo" #titulo="ngModel" [(ngModel)]="service.formData.titulo">
+            </div>
+            <div class="text-left text-danger" *ngIf="titulo.invalid && titulo.touched">
+                Debes ingresar el titulo.
+            </div>
+
+            <div class="mt-4 input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Archivo_mp3</span>
+                </div>
+                <input required type="file" class="form-control" accept="audio/*" name="hvaAudio" (change)="onSelectFile($event)" style="height:100%">
+
+
+
+            </div>
+
+            <div class="audioBox">
+                <mat-basic-audio-player [audioUrl]="service.hvaAudio" [autoPlay]="false" muted="muted" [displayVolumeControls]="true"></mat-basic-audio-player>
+
+            </div>
+
+
+            <!--(change)="preview(service.hvaAudio)"-->
+
+            <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">ADD</button>
+        </form>
+
+    </div>
+</div>

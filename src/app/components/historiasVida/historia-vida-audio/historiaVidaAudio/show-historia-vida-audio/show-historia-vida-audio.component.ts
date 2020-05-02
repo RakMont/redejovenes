@@ -15,10 +15,6 @@ import{Subject}from 'rxjs';
 import {Observable} from 'rxjs';
 import {MatSnackBar}from '@angular/material/snack-bar';
 
-
-
-
-
 @Component({
   selector: 'app-show-historia-vida-audio',
   templateUrl: './show-historia-vida-audio.component.html',
@@ -65,7 +61,7 @@ public aux;
    .subscribe(data =>{
      this.historiasHVA = data;
      this.aux=this.historiasHVA[0];
-     this.convert();
+    // this.convert();
      console.log("this is ",this.aux);
     this.Convertlist();
    });
@@ -73,13 +69,13 @@ public aux;
 
   }
 
-
+/*
 convert(){
   for (let entry of this.historiasHVA) {
     this.archivo = entry.archivo_mp3;
     entry.archivo_mp3='../../../../assets/HistoriaVidaAudio/'+this.archivo+'.mp3';
   }
-}
+}*/
 
 
 AddHVA(){
@@ -95,7 +91,7 @@ Convertlist(){
 
   for(let audio of this.audios){
     this.aux=this.historiasHVA[c];
-    this.things.push({audio:audio,titulo:this.aux.titulo,fecha:this.aux.fecha,id_HVA:this.aux.id_HVA});
+    this.things.push({audio:audio,titulo:this.aux.titulo,fecha:this.aux.fecha,id_HVA:this.aux.id_HVA,archivo_mp3:this.aux.archivo_mp3});
     c=c+1;
   }
 
@@ -104,7 +100,24 @@ Convertlist(){
 
 
 
-edit_HVV(historiaVidaVideo: HistoriaVidaAudio):void{
+edit_HVV(some):void{
+  let historiaVidaAudio=new HistoriaVidaAudio
+  historiaVidaAudio.id_HVA=some.id_HVA;
+  historiaVidaAudio.titulo=some.titulo;
+  historiaVidaAudio.fecha=some.fecha;
+  historiaVidaAudio.archivo_mp3=some.archivo_mp3;
+  let dio: any=File;
+  dio=some.audio;
+  this.historiaVidaAudioService.formData=historiaVidaAudio;
+  this.historiaVidaAudioService.hvaAudio=dio;
+  const dialogConfig=new MatDialogConfig();
+ dialogConfig.disableClose=true;
+ dialogConfig.autoFocus=true;
+ dialogConfig.width="70%";
+ this.dialog.open(EditHistoriaVidaAudioComponent,dialogConfig);
+
+ localStorage.setItem("id_HVA", historiaVidaAudio.id_HVA.toString());
+
 }
 
 Delete(some){
