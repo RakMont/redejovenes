@@ -1,0 +1,104 @@
+.filter-HVT {
+    float: right;
+    margin-right: 15px;
+}
+
+.title {
+    margin-top: 50px;
+    text-align: center;
+}
+
+div.hvv {
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+div.hvv {
+    margin-top: 5%;
+}
+
+hr.new4 {
+    border: 2px solid black;
+}
+
+.mat-card-footer {
+    margin: 1%;
+    text-align: right;
+}
+
+.mat-card {
+    max-width: 80%;
+    margin: auto;
+    font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+    background-color: darkolivegreen;
+    margin-bottom: 2%;
+    border-style: solid;
+}
+
+.mat-card-avatar {
+    background-size: cover;
+}
+
+.mat-card-actions {
+    display: flex;
+}
+
+.mat-card-actions .flex-spacer {
+    width: 100%;
+}
+
+.container {
+    text-align: justify;
+    font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+    background-color: black;
+    margin-bottom: 50px;
+    max-width: 70%;
+}
+
+.options {
+    float: right;
+    margin-top: -50px;
+    margin-right: auto;
+}
+
+.fecha {
+    float: left;
+    margin-top: -5px;
+    margin-left: 18px;
+}
+
+.card {
+    background-color: #323232;
+}
+
+.card-header {
+    margin-top: 2%;
+}
+
+.contenidohvt {
+    float: left;
+    margin-left: -150px;
+}
+
+.addbox-HVT {
+    margin-top: 2%;
+    margin-bottom: 5px;
+}
+
+.coloicon {
+    color: white;
+}
+
+.new1 {
+    /*color: white;*/
+    height: 0px;
+    border: 2px dashed;
+}
+
+.tit {
+    color: white;
+    text-align: center;
+}

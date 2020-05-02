@@ -34,14 +34,14 @@ export class ShowHistoriaVidaTextoComponent implements OnInit {
     });
   }
 
-  
+
   listData:MatTableDataSource<any>;
 
   displayedColumns:string[]=['id_HVT','titulo','fecha','contenido','opciones'];
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   //@ViewChild(MatSort, null) sort: MatSort;
-  
+
   ngOnInit() {
     this.historiaVidaTextoService.getHVT()
    .subscribe(data =>{
@@ -59,7 +59,7 @@ export class ShowHistoriaVidaTextoComponent implements OnInit {
   applyFilter(filtervalue:string){
     this.listData.filter=filtervalue.trim().toLocaleLowerCase();
   }
-  
+
   edit_HVT(historiaVidaTexto: historiaVidaTexto){
     this.historiaVidaTextoService.formData=historiaVidaTexto;
     const dialogConfig=new MatDialogConfig();
@@ -98,18 +98,5 @@ export class ShowHistoriaVidaTextoComponent implements OnInit {
       this.historiasHVT=data;
     });
     }
-/*
-  public onDate(event): void {
-    this.formData.date = event;
-    this.getData(this.roomsFilter.date);
-  }
 
-  charge(){
-    this.historiaVidaTextoService
-    .getHVT().subscribe(data=>{
-      this.listData= new MatTableDataSource(data);
-      this.listData.sort=this.sort;
-    });
-  }
-*/
 }

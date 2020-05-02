@@ -29,6 +29,9 @@ import{ShowToViviendaComponent}from './components/te_ofrecemos/to_vivienda/show-
 import{ShowEventosComponent}from './components/eventos/show-eventos/show-eventos.component';
 import{QuienesSomosComponent}from './components/quienes-somos/quienes-somos.component';
 
+import{ShowTemaComponent}from './components/tema/show-tema/show-tema.component';
+
+
 const routes: Routes = [
   {path: '', component:HomeComponent},
   {path: 'edit_mision', component:EditMisionComponent},
@@ -49,8 +52,8 @@ const routes: Routes = [
   {path: 'showToTrabajo', component:ShowToTrabajoComponent},
   {path: 'showToBeca', component:ShowToBecaComponent},
   {path: 'showToVivienda', component:ShowToViviendaComponent},
-  {path: 'showQuienesSomos', component:QuienesSomosComponent}
-
+  {path: 'showQuienesSomos', component:QuienesSomosComponent},
+  {path: 'temas', component:ShowTemaComponent}
 
 ];
 
