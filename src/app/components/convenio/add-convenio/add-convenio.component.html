@@ -1,1 +1,55 @@
-<p>add-convenio works!</p>
+<div class="container col-md-11">
+    <div class="d-flex justify-content-between">
+        <h4>ADD HISTORIA DE VIDA</h4>
+
+        <button mat-button (click)="close()">
+  <mat-icon>close</mat-icon>
+</button>
+    </div>
+    <div style="overflow: auto;height: 450px;">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
+
+            <div class="mt-4 input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">INSTITUCION</span>
+                </div>
+                <input matInput required minlength="2" type="text" class="form-control" name="institucion" #institucion="ngModel" [(ngModel)]="service.formData.institucion">
+            </div>
+            <div class="text-left text-danger" *ngIf="institucion.invalid && institucion.touched">
+                Debes ingresar la institucion.
+            </div>
+            <div class="mt-4 input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">DESCRIPCION</span>
+                </div>
+                <input matInput required minlength="2" type="text" class="form-control" name="descripcion" #descripcion="ngModel" [(ngModel)]="service.formData.descripcion">
+            </div>
+            <div class="text-left text-danger" *ngIf="descripcion.invalid && descripcion.touched">
+                Debes ingresar la descripcion.
+            </div>
+            <div class="mt-4 input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">DIRECCION</span>
+                </div>
+                <input matInput required minlength="2" type="text" class="form-control" name="direccion" #direccion="ngModel" [(ngModel)]="service.formData.direccion">
+            </div>
+            <div class="text-left text-danger" *ngIf="direccion.invalid && direccion.touched">
+                Debes ingresar la direccion.
+            </div>
+            <div class="mt-4 input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Imagen</span>
+                </div>
+                <input type="file" class="form-control" accept="image/*" (change)="onSelectFile($event)" style="height:100%">
+            </div>
+
+
+
+
+
+
+            <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">ADD</button>
+        </form>
+
+    </div>
+</div>

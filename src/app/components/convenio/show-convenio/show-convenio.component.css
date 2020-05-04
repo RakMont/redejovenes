@@ -1,0 +1,88 @@
+.title {
+    margin-top: 50px;
+    text-align: center;
+}
+
+img {
+    height: 200px;
+    max-width: 250px;
+}
+
+.example-header-image {
+    /* background-image: url("src/assets/HistoriaVidaAudio/ShowIcons/microphone.png");*/
+    background-size: cover;
+}
+
+hr.new4 {
+    border: 2px solid black;
+    margin-top: 1%;
+}
+
+.other {
+    max-height: 300px;
+    background-color: teal;
+    align-content: right;
+    text-align: right;
+    align-self: right;
+}
+
+.new1 {
+    /*color: white;*/
+    border: 2px dashed;
+}
+
+.tit {
+    color: white;
+    text-align: center;
+}
+
+.mat-card {
+    font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+    background-color: darkolivegreen;
+}
+
+.mat-card-avatar {
+    background-size: cover;
+}
+
+.mat-card-actions {}
+
+.mat-card-actions .flex-spacer {
+    width: 100%;
+}
+
+.container {
+    font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+    background-color: black;
+    max-width: 95%;
+}
+
+.options {
+    margin-top: -250px;
+    margin-right: auto;
+    align-self: right;
+}
+
+.addbox-HVT {
+    margin-top: 2%;
+    margin-bottom: 5px;
+}
+
+.coloicon {
+    color: white;
+}
+
+.mat-grid-tile {
+    background-color: tomato;
+    border: 2px solid black;
+}
+
+.mat-grid-tile-header {
+    align-self: right;
+    align-content: right;
+    background-color: teal;
+}
+
+.content {
+    margin-top: 10%;
+}

@@ -22,7 +22,6 @@ import {MatSnackBar}from '@angular/material/snack-bar';
 })
 export class ShowHistoriaVidaAudioComponent implements OnInit {
 
-  //public audios: FileList;
   public audios:any=[];
 
   public audiosShow:any=[];
@@ -69,13 +68,7 @@ public aux;
 
   }
 
-/*
-convert(){
-  for (let entry of this.historiasHVA) {
-    this.archivo = entry.archivo_mp3;
-    entry.archivo_mp3='../../../../assets/HistoriaVidaAudio/'+this.archivo+'.mp3';
-  }
-}*/
+
 
 
 AddHVA(){

@@ -27,7 +27,7 @@ export class ConvenioService {
 
 
   getConvenios():Observable<any>{
-    return this.http.get('http://localhost:8090/historiasHVA/getConvenios');
+    return this.http.get('http://localhost:8090/convenios/getConvenios');
 
   }
 
@@ -44,7 +44,7 @@ export class ConvenioService {
   }
 
 
-  deleteHVT(convenio: Convenio){
+  deleteConvenio(convenio: Convenio){
     return this.http.delete<Convenio>(this.Url+"/"+convenio.id_convenio);
 
   }
