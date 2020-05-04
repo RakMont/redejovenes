@@ -1,0 +1,97 @@
+
+.title {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.par{
+    color: white !important;
+}
+.addbox-HVT {
+    margin-top: 2%;
+    margin-bottom: 5px;
+}
+.mat-card {
+    max-width: 600px;
+    font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+    background-color: black;
+    color: white;
+    margin-bottom: 10px;
+}
+
+
+/*
+.mat-card-avatar {
+    background-size: cover;
+}
+*/
+
+.mat-card-actions {
+    display: flex;
+}
+
+.mat-card-actions .flex-spacer {
+    width: 100%;
+}
+
+.container {
+    text-align: justify;
+    font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+    width: 100%;
+}
+
+.options {
+    float: right;
+    margin-top: -50px;
+    /* margin-right: auto;*/
+}
+
+.card {
+    background-color: #323232;
+    width: 100%;
+}
+
+.card-header {
+    color: black;
+    align-items: left;
+    text-align: left;
+    align-content: left;
+}
+
+.new1 {
+    /*color: white;*/
+    height: 0px;
+    border: 2px dashed;
+}
+
+.mat-card-content {
+    width: 600px;
+    /*margin-right: 50px;*/
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    background-color: #323232;
+    margin-bottom: 50px;
+    max-width: 1300px;
+}
+
+.mat-card {
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+.mat-card-footer {
+    margin: 1%;
+    text-align: center;
+}
+
+hr.new4 {
+    border: 2px solid white;
+}
+
+.tit {
+    color: white;
+    text-align: center;
+}
