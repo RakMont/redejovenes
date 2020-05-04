@@ -59,9 +59,8 @@ export class AddConvenioComponent implements OnInit {
   formData.append('file',this.hvaAudio);
   this.service.saveConvenioFile(formData).subscribe((res)=>{
     this.resetForm(form);
-    this.dialogbox.close();
     this.charge();
-
+    this.dialogbox.close();
   this.service.filter("Register click");
     this.snackBar.open('Añadido correctamente','',{
       duration:5000,
@@ -76,6 +75,10 @@ console.log(file);
 this.hvaAudio=file;
 }
 charge(){
-
+  this.service
+  .getConv().subscribe(data=>{
+    this.listData= new MatTableDataSource(data);
+    this.listData.sort=this.sort;
+  });
 }
 }

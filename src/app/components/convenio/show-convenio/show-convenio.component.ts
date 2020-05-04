@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild} from '@angular/core';
 import {MTLLoader, OBJLoader} from 'three-obj-mtl-loader';
 import { Router } from '@angular/router';
 import { ConvenioService } from 'src/app/services/convenio.service';
@@ -21,6 +21,7 @@ import {MatSnackBar}from '@angular/material/snack-bar';
 })
 export class ShowConvenioComponent implements OnInit {
   public photos:any=[];
+  convenios:Convenio[];
 
  // public audiosShow:any=[];
 //////////////
@@ -30,15 +31,25 @@ public hvaAudio: any=File;
 
 
 public aux;
-convenios:Convenio[];
 
 
-  constructor(private snackBar:MatSnackBar,private convenioservice: ConvenioService, private router: Router,private dialog: MatDialog) { }
+  constructor(private snackBar:MatSnackBar,private convenioservice: ConvenioService, private router: Router,private dialog: MatDialog) {
+    this.convenioservice.listen().subscribe((m:any)=>{
+      console.log(m);
+      //this.charge();
 
-  ngOnInit(): void {
+    });
+  }
+  listData:MatTableDataSource<any>;
+
+  displayedColumns:string[]=['id_HVT','titulo','fecha','contenido','opciones'];
+
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
+  //@ViewChild(MatSort, null) sort: MatSort;
+
+  ngOnInit() {
     this.convenioservice.getConvenios().subscribe(response=>{
       this.photos=response;
-      //this.hvaAudio=this.photos[0];
     this.Convertlist();
 
     });
@@ -46,9 +57,8 @@ convenios:Convenio[];
       .subscribe(data =>{
    this.convenios = data;
    this.aux=this.convenios[0];
-  // this.convert();
    console.log("this is ",this.aux);
-   this.Convertlist();
+  // this.Convertlist();
  });
   }
 
@@ -93,6 +103,7 @@ convenios:Convenio[];
    this.dialog.open(EditConvenioComponent,dialogConfig);
 
    localStorage.setItem("id_convenio", convenio.id_convenio.toString());
+   this.router.navigate(["showConvenios"]); //in  app routing.ts => edit
 
   }
 
@@ -102,7 +113,8 @@ convenios:Convenio[];
     if(confirm('Estas seguro de eliminar ?')){
      this.convenioservice.deleteConvenio(convenio)
      .subscribe(data=>{
-       //.historiasHVT=this.historiasHVT.filter(p=>p.id_HVT!==historiaVidaTexto.id_HVT);
+      this.charge();
+
        this.snackBar.open('Eliminado Correctamente','',{
          duration:5000,
          verticalPosition:'top'
@@ -110,5 +122,16 @@ convenios:Convenio[];
     });
    }
 
+  }
+
+  charge(){
+    this.convenioservice.getConvenios().subscribe(response=>{
+      this.photos=response;
+      this.Convertlist();
+    });
+    this.convenioservice.getConv()
+      .subscribe(data =>{
+   this.convenios = data;
+ });
   }
 }

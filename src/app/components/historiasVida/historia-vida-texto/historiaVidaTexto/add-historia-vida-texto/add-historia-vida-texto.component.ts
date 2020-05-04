@@ -70,16 +70,6 @@ charge(){
     this.listData.sort=this.sort;
   });
 }
-Guardar() {
-  this.service.createHVT(this.service.formData)
-  .subscribe(data => {
-  this.snackBar.open('Añadido correctamente','',{
-    duration:5000,
-    verticalPosition:'top'
-  });
-  }
-  )
-  this.close();
-}
+
 }
 

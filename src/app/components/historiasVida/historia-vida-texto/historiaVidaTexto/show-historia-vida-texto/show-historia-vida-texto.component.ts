@@ -49,13 +49,13 @@ export class ShowHistoriaVidaTextoComponent implements OnInit {
      this.charge();
    });
   }
-
-  /*fetchData() {
-    this.historiaVidaTextoService.getHVT().subscribe(data =>{
-      this.listData= new MatTableDataSource(data);
-
+  charge(){
+    this.historiaVidaTextoService
+    .getHVT().subscribe(data=>{
+      this.historiasHVT=data;
     });
-  }*/
+    }
+
   applyFilter(filtervalue:string){
     this.listData.filter=filtervalue.trim().toLocaleLowerCase();
   }
@@ -92,11 +92,6 @@ export class ShowHistoriaVidaTextoComponent implements OnInit {
     dialogConfig.width="70%";
     this.dialog.open(AddHistoriaVidaTextoComponent,dialogConfig);
    }
-   charge(){
-    this.historiaVidaTextoService
-    .getHVT().subscribe(data=>{
-      this.historiasHVT=data;
-    });
-    }
+
 
 }

@@ -10,6 +10,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import {MatSort}from '@angular/material/sort';
 import {ViewChild}from '@angular/core';
 import{ShowHistoriaVidaAudioComponent}from 'src/app/components/historiasVida/historia-vida-audio/historiaVidaAudio/show-historia-vida-audio/show-historia-vida-audio.component';
+import{Convenio}from 'src/app/models/Convenio';
 
 @Component({
   selector: 'app-edit-convenio',
@@ -26,6 +27,11 @@ export class EditConvenioComponent implements OnInit {
     });
   }
   listData:MatTableDataSource<any>;
+  public photos:any=[];
+  convenios:Convenio[];
+  public aux;
+  things=[];
+
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   public hvaAudio: any=File;
   ngOnInit(): void {
@@ -52,11 +58,9 @@ export class EditConvenioComponent implements OnInit {
     formData.append('convenio',JSON.stringify(audio));
     formData.append('file',this.hvaAudio);
     this.service.UpdateConvenioFile(formData).subscribe((res)=>{
-      this.resetForm(form);
+      //this.resetForm(form);
       this.dialogbox.close();
       this.charge();
-
-      this.dialogbox.close();
       this.service.filter("Register click");
       this.snackBar.open('Editado con exito','',{
         duration:5000,
@@ -71,14 +75,6 @@ export class EditConvenioComponent implements OnInit {
     console.log(file);
     this.hvaAudio=file;
   }
-    charge(){
-      this.service
-      .getConv().subscribe(data=>{
-        this.listData= new MatTableDataSource(data);
-        this.listData.sort=this.sort;
-      });
-    }
-
 
     preview(files) {
       const mimeType = files.target;
@@ -89,4 +85,28 @@ export class EditConvenioComponent implements OnInit {
         this.hvaAudio = reader.result;
       }
     }
+
+  charge(){
+      this.service.getConvenios().subscribe(response=>{
+        this.photos=response;
+        this.Convertlist();
+      });
+      this.service.getConv()
+        .subscribe(data =>{
+     this.convenios = data;
+   });
+
+   console.log("llega aqui");
+  }
+  Convertlist(){
+    let c: number = 0;
+
+    for(let photo of this.photos){
+      this.aux=this.convenios[c];
+      this.things.push({photo:photo,imagen:this.aux.imagen,id_convenio:this.aux.id_convenio,institucion:this.aux.institucion,descripcion:this.aux.descripcion,direccion:this.aux.direccion});
+      c=c+1;
+    }
+
+  }
+
 }
