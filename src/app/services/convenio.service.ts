@@ -20,7 +20,6 @@ export class ConvenioService {
   }
 
   UpdateConvenioFile(formData:FormData):Observable<any>{
-    //let hva: HistoriaVidaAudio;
 
     return this.http.post('http://localhost:8090/convenios/UpdateConvenioFile', formData);
   }

@@ -27,6 +27,8 @@ export class AddConvenioComponent implements OnInit {
    }
    listData:MatTableDataSource<any>;
   public hvaAudio: any=File;
+  public imagen: any=File;
+
    @ViewChild(MatSort, {static: true}) sort: MatSort;
   ngOnInit(): void {
     this.resetForm();

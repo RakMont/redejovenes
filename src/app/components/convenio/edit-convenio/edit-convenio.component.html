@@ -1,1 +1,63 @@
-<p>edit-convenio works!</p>
+<div class="container col-md-11">
+    <div class="d-flex justify-content-between">
+        <h4>ADD HISTORIA DE VIDA</h4>
+
+        <button mat-button (click)="close()">
+<mat-icon>close</mat-icon>
+</button>
+    </div>
+    <div style="overflow: auto;height: 450px;">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
+            <input readonly="readonly" type="hidden" class="form-control" name="id_convenio" #id_convenio="ngModel" [(ngModel)]="service.formData.id_convenio">
+            <input readonly="readonly" class="form-control" name="imagen" #imagen="ngModel" [(ngModel)]="service.formData.imagen">
+
+            <mat-form-field class="example-full-width">
+
+                <mat-label>INSTITUCION</mat-label>
+
+                <input matInput required minlength="2" type="text" class="form-control" name="institucion" #institucion="ngModel" [(ngModel)]="service.formData.institucion">
+                <div class="text-left text-danger" *ngIf="institucion.invalid && institucion.touched">
+                    Debes ingresar la institucion.
+                </div>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="example-full-width">
+                <mat-label>
+                    DESCRIPCION
+                </mat-label>
+                <input matInput required minlength="2" type="text" class="form-control" name="descripcion" #descripcion="ngModel" [(ngModel)]="service.formData.descripcion">
+                <div class="text-left text-danger" *ngIf="descripcion.invalid && descripcion.touched">
+                    Debes ingresar la descripcion.
+                </div>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>
+                    DIRECCION
+                </mat-label>
+                <input matInput required minlength="2" type="text" class="form-control" name="direccion" #direccion="ngModel" [(ngModel)]="service.formData.direccion">
+                <div class="text-left text-danger" *ngIf="direccion.invalid && direccion.touched">
+                    Debes ingresar la direccion.
+                </div>
+            </mat-form-field>
+            <br>
+
+            <div class="mt-4 input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Imagen</span>
+                </div>
+                <input #imagen type="file" name="imagen" class="form-control" accept="image/*" (change)="onSelectFile($event)" style="height:100%" id="imagen" required="true">
+                <div class="text-left text-danger" *ngIf="imagen.invalid && imagen.touched">
+                    Debes ingresar la imagen.
+                </div>
+            </div>
+            <div mat-card-avatar class="example-header-image">
+                <img class="img-fluid img-thumbnail" [src]="service.ConvImage" alt="">
+            </div>
+
+            <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="imagen.invalid" [disabled]="form.invalid">ADD</button>
+        </form>
+
+    </div>
+</div>

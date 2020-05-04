@@ -67,7 +67,7 @@ convenios:Convenio[];
 
     for(let photo of this.photos){
       this.aux=this.convenios[c];
-      this.things.push({imagen:photo,id_convenio:this.aux.id_convenio,institucion:this.aux.institucion,descripcion:this.aux.descripcion,direccion:this.aux.direccion});
+      this.things.push({photo:photo,imagen:this.aux.imagen,id_convenio:this.aux.id_convenio,institucion:this.aux.institucion,descripcion:this.aux.descripcion,direccion:this.aux.direccion});
       c=c+1;
     }
 
@@ -80,10 +80,10 @@ convenios:Convenio[];
     convenio.institucion=some.institucion;
     convenio.descripcion=some.descripcion;
     convenio.direccion=some.direccion;
-    convenio.imagen=some.photo;
+    convenio.imagen=some.imagen;
 
     let dio: any=File;
-    dio=some.audio;
+    dio=some.photo;
     this.convenioservice.formData=convenio;
     this.convenioservice.ConvImage=dio;
     const dialogConfig=new MatDialogConfig();
