@@ -26,7 +26,7 @@
                 </div>
             </mat-form-field>
             <br>
-			<button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">AGREGAR</button>
+			<button class="mt-4" mat-raised-button color="primary" (click)="close()" type="submit" [disabled]="form.invalid">AGREGAR</button>
         </form>
     </div>
 </div>
