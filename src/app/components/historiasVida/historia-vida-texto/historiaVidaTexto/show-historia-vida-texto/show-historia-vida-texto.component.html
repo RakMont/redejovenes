@@ -1,9 +1,6 @@
-<div class="container title">
-    <h1></h1>
-</div>
-
-
 <div class="container">
+    <h1 class="tit">HISTORIAS DE VIDA TEXTO</h1>
+
     <div class="addbox-HVT">
         <button class="mt-2" mat-raised-button (click)="AddHVT()" color="primary">
       Agregar
@@ -11,18 +8,15 @@
       </button>
     </div>
 
-    <h1 class="tit">HISTORIAS DE VIDA EN TEXTO</h1>
-    <div class="card-header">
-        <hr class="new1">
-
-    </div>
     <mat-list *ngFor="let hvt of historiasHVT">
         <mat-card>
-            <mat-card-header>
+            <mat-card-header [ngClass]="{'custom-card':true}">
                 <mat-card-title>
+                    <br>
                     <h1>Titulo: {{hvt.titulo}}</h1>
                 </mat-card-title>
             </mat-card-header>
+
             <div class="options" fxFlex="10px" fxFlexAlign="center">
                 <mat-card-actions>
                     <button mat-icon-button class="coloicon" (click)="edit_HVT(hvt)">
@@ -33,14 +27,11 @@
                         </button>
                 </mat-card-actions>
             </div>
+
             <hr class="new4">
-
             <div fxLayout="row">
-
                 <div fxFlex="10">
-
-                    <mat-card-content>
-
+                    <mat-card-content [ngClass]="{'custom-card-content':true}">
                         <h4>
                             <h3>CONTENIDO: </h3>
                             {{hvt.contenido}}
@@ -48,7 +39,9 @@
                     </mat-card-content>
                 </div>
             </div>
+
             <mat-card-footer>Fecha: {{hvt.fecha}}</mat-card-footer>
+
         </mat-card>
     </mat-list>
 </div>

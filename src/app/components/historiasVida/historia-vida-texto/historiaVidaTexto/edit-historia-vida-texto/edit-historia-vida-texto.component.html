@@ -1,56 +1,36 @@
 <div class="container col-md-11">
     <div class="d-flex justify-content-between">
-        <h4>ADD HISTORIA DE VIDA</h4>
+        <h4>EDITAR HISTORIA DE VIDA TEXTO</h4>
 
         <button mat-button (click)="close()">
-    <mat-icon>close</mat-icon>
-  </button>
+<mat-icon>close</mat-icon>
+</button>
     </div>
-    <div style="overflow: auto;height: 450px;">
+    <div style="overflow: auto;height: 350px;">
         <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
+            <input readonly="readonly" type="hidden" class="form-control" name="id_HVT" #id_HVT="ngModel" [(ngModel)]="service.formData.id_HVT">
+            
+            <mat-form-field class="example-full-width">
 
-            <div class="m-2 input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">ID</span>
+                <mat-label>TITULO</mat-label>
+
+                <input matInput required minlength="2" type="text" class="form-control" name="titulo" #titulo="ngModel" [(ngModel)]="service.formData.titulo">
+                <div class="text-left text-danger" *ngIf="titulo.invalid && titulo.touched">
+                    Debes ingresar la institucion.
                 </div>
-                <input readonly="readonly" type="text" class="form-control" name="id_HVT" #id_HVT="ngModel" [(ngModel)]="service.formData.id_HVT">
-            </div>
-
-
-
-            <div class="m-2 input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">TITULO</span>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="example-full-width">
+                <mat-label>
+                    CONTENIDO
+                </mat-label>
+                <input matInput required minlength="2" type="text" class="form-control" name="contenido" #contenido="ngModel" [(ngModel)]="service.formData.contenido">
+                <div class="text-left text-danger" *ngIf="contenido.invalid && contenido.touched">
+                    Debes ingresar la descripcion.
                 </div>
-                <input required minlength="2" type="text" class="form-control" name="titulo" #titulo="ngModel" [(ngModel)]="service.formData.titulo">
-            </div>
-            <div class="text-left text-danger" *ngIf="titulo.invalid && titulo.touched">
-                Debes ingresar el titulo.
-            </div>
-
-            <div class="m-2 input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">CONTENIDO</span>
-                </div>
-                <input required minlength="2" type="text" class="form-control" name="contenido" #contenido="ngModel" [(ngModel)]="service.formData.contenido">
-            </div>
-            <div class="text-left text-danger" *ngIf="contenido.invalid && contenido.touched">
-                Debes ingresar el contenido.
-            </div>
-
-            <!--
-            <div class="m-2 input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">FECHA</span>
-                </div>
-                <input required minlength="2" [matDatepicker]="picker" class="form-control" type="text" name="fecha" #fecha="ngModel" [(ngModel)]="service.formData.fecha">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker touchUi="true" #picker [(ngModel)]="service.formData.fecha"></mat-datepicker>
-
-            </div>
--->
-
-            <button class="m-2" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">ADD</button>
+            </mat-form-field>
+            <br>
+			<button class="m-2" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">AGREGAR</button>
         </form>
 
     </div>
