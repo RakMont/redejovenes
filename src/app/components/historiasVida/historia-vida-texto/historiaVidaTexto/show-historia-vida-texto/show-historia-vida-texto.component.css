@@ -1,67 +1,41 @@
-.filter-HVT {
-    float: right;
-    margin-right: 15px;
+.container{
+    text-align: justify;
+    font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+    background-color: #b6b6b6;
+    margin-bottom: 10%;
+    max-width: 85%;
+    border-radius: 25px;
 }
 
-.title {
-    margin-top: 50px;
-    text-align: center;
-}
-
-div.hvv {
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-div.hvv {
+.tit {
+    color: #000000;
     margin-top: 5%;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box; 
 }
 
-hr.new4 {
-    border: 2px solid black;
-}
-
-.mat-card-footer {
-    margin: 1%;
-    text-align: right;
+.addbox-HVT {
+    margin-left: 2%;
+    margin-top: -30px;
+    margin-bottom: 5px;
 }
 
 .mat-card {
     max-width: 80%;
     margin: auto;
     font-family: "Noto Sans", Helvetica, Arial, sans-serif;
-    background-color: darkolivegreen;
-    margin-bottom: 2%;
-    border-style: solid;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 6px inset;
 }
 
-.mat-card-avatar {
-    background-size: cover;
-}
-
-.mat-card-actions {
-    display: flex;
-}
-
-.mat-card-actions .flex-spacer {
-    width: 100%;
-}
-
-.container {
-    text-align: justify;
-    font-family: "Noto Sans", Helvetica, Arial, sans-serif;
-    background-color: black;
-    margin-bottom: 50px;
-    max-width: 70%;
-}
-
-.options {
-    float: right;
-    margin-top: -50px;
-    margin-right: auto;
+.mat-card-footer {
+    margin: 1%;
+    text-align: right;
 }
 
 .fecha {
@@ -70,35 +44,41 @@ hr.new4 {
     margin-left: 18px;
 }
 
+hr.new4 {
+    border: 2px solid #b6b6b6 ;
+}
+
+.options {
+    float: right;
+    margin-top: -65px;
+    margin-right: 2%;
+}
+
 .card {
-    background-color: #323232;
+    background-color: #919191;
 }
 
 .card-header {
     margin-top: 2%;
 }
 
-.contenidohvt {
-    float: left;
-    margin-left: -150px;
+.mat-card-actions {
+    display: flex;
+}
+.custom-card {
+    background: linear-gradient(70deg, white, rgb(70, 69, 69));
+    margin: left;
+    text-align: justify;
+    margin-top: 10%;
+    border-radius: 10px;
+    border: 2px inset;
 }
 
-.addbox-HVT {
-    margin-top: 2%;
-    margin-bottom: 5px;
+.custom-card-content{
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .coloicon {
     color: white;
-}
-
-.new1 {
-    /*color: white;*/
-    height: 0px;
-    border: 2px dashed;
-}
-
-.tit {
-    color: white;
-    text-align: center;
 }
