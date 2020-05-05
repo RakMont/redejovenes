@@ -173,3 +173,41 @@ svg#clouds {
     z-index: -10;
     width: 1920px;
 }
+.container{
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.mision{
+    width: 33%;
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.vision{
+    width: 33%;
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.objetivo{
+    width: 33%;
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 800px){
+    .mision{
+        width: 100%;
+    }
+    .vision{
+        width: 100%;
+    }
+    .objetivo{
+        width: 100%;
+    }
+}

@@ -1,14 +1,16 @@
-<div class="container objetivo">
-    <h2>Objetivos</h2>
-</div>
-<div *ngIf="objetivo">
-    <div>
-        {{objetivo.contenido}}
+<div class="contenedor-objetivo">
+    <div class="container-objetivo">
+        <h2>Objetivos</h2>
     </div>
+    <div *ngIf="objetivo">
+        <div>
+            {{objetivo.contenido}}
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="container-botton-objetivo">
+        <button (click)="edit_objetivo(objetivo)" class="btn btn-success">Editar</button>
+    </div>
+    <br>
 </div>
-<br>
-<br>
-<div class="container botton-objetivo">
-    <button (click)="edit_objetivo(objetivo)" class="btn btn-success">Editar</button>
-</div>
-<br>

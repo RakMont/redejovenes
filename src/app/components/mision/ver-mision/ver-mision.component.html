@@ -1,14 +1,16 @@
-<div class="container mision">
-    <h2>Mision</h2>
-</div>
-<div *ngIf="mision">
-    <div>
-        {{mision.contenido}}
+<div class="contenedor-mision">
+    <div class="container-mision">
+        <h2>Mision</h2>
     </div>
+    <div *ngIf="mision">
+        <div>
+            {{mision.contenido}}
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="container-botton-mision">
+        <button (click)="edit_mision(mision)" class="btn btn-success">Editar</button>
+    </div>
+    <br>
 </div>
-<br>
-<br>
-<div class="container botton-mision">
-    <button (click)="edit_mision(mision)" class="btn btn-success">Editar</button>
-</div>
-<br>
