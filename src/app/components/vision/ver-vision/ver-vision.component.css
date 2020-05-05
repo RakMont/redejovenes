@@ -1,3 +1,14 @@
 div {
-    color: white;
+    color: black;
+}
+.container-vision{
+    text-align: center;
+}
+.vision{
+    text-align: justify;
+}
+.container-botton-vision{
+    width: 100px; /* Para que no se rompa en dos líneas, y lo translade tal cual. */
+    margin-left: 50%;
+    transform: translateX(-35%);
 }

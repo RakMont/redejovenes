@@ -1,3 +1,21 @@
 div {
-    color: white;
+    color: black;
 }
+.container-mision{
+    text-align: center;
+}
+.mision{
+    text-align: justify;
+}
+.container-botton-mision{
+    width: 100px; /* Para que no se rompa en dos líneas, y lo translade tal cual. */
+    margin-left: 50%;
+    transform: translateX(-35%);
+}
+
+/*.contendor-mision{
+    width: 30%;
+    max-width: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+}*/

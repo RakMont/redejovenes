@@ -1,3 +1,14 @@
 div {
-    color: white;
+    color: black;
+}
+.container-objetivo{
+    text-align: center;
+}
+.objetivo{
+    text-align: justify;
+}
+.container-botton-objetivo{
+    width: 100px;
+    margin-left: 50%;
+    transform: translateX(-35%);
 }

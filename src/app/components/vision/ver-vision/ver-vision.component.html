@@ -1,14 +1,17 @@
-<div class="container vision">
-    <h2>Vision</h2>
-</div>
-<div *ngIf="vision">
-    <div>
-        {{vision.contenido}}
+<div class="contenedor-vision">
+    <div class="container-vision">
+        <h2>Vision</h2>
     </div>
+    <div *ngIf="vision">
+        <div>
+            {{vision.contenido}}
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="container-botton-vision">
+        <button (click)="edit_vision(vision)" class="btn btn-success">Editar</button>
+    </div>
+    <br>
 </div>
-<br>
-<br>
-<div class="container botton-vision">
-    <button (click)="edit_vision(vision)" class="btn btn-success">Editar</button>
-</div>
-<br>
+
