@@ -69,7 +69,7 @@ public aux;
     const dialogConfig=new MatDialogConfig();
     dialogConfig.disableClose=true;
     dialogConfig.autoFocus=true;
-    dialogConfig.width="70%";
+    dialogConfig.width="60%";
     this.dialog.open(AddPodcastComponent,dialogConfig);
    }
 

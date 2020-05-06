@@ -1,6 +1,6 @@
 <div class="container col-md-11">
     <div class="d-flex justify-content-between">
-        <h4>ADD HISTORIA DE VIDA</h4>
+        <h1>Añadir Podcast</h1>
 
         <button mat-button (click)="close()">
   <mat-icon>close</mat-icon>
@@ -9,26 +9,35 @@
     <div style="overflow: auto;height: 450px;">
         <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
 
-            <h4>mat-select</h4>
-            <mat-form-field>
-                <mat-label>Selecciona el Tema del podcast</mat-label>
-                <mat-select [(ngModel)]="service.formData.tema" name="tema" class="form-control" required #tema="ngModel">
+            <mat-form-field class="example-full-width">
+                <mat-label>Tema del podcast</mat-label>
+                <br>
+                <mat-select [(ngModel)]="service.formData.tema" name="tema" required #tema="ngModel">
                     <mat-option *ngFor="let tema of temas" [value]="tema">
                         {{tema.nombreTema}}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
-            <p> Selected food: {{selectedValue}} </p>
 
-            <div class="mt-4 input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">TITULO</span>
-                </div>
-                <input required minlength="2" type="text" class="form-control" name="titulo" #titulo="ngModel" [(ngModel)]="service.formData.titulo">
-            </div>
-            <div class="text-left text-danger" *ngIf="titulo.invalid && titulo.touched">
-                Debes ingresar el titulo.
-            </div>
+
+            <mat-form-field class="example-full-width">
+
+                <mat-label>Titulo</mat-label>
+
+                <input matInput required minlength="2" type="text" class="form-control" name="titulo" #titulo="ngModel" [(ngModel)]="service.formData.titulo">
+                <div class="text-left text-danger" *ngIf="titulo.invalid && titulo.touched">
+                    Debes ingresar el titulo </div>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="example-full-width">
+
+                <mat-label>Descripcion</mat-label>
+
+                <input matInput required minlength="2" type="text" class="form-control" name="descripcion" #descripcion="ngModel" [(ngModel)]="service.formData.descripcion">
+                <div class="text-left text-danger" *ngIf="descripcion.invalid && descripcion.touched">
+                    Debes ingresar la descripcion </div>
+            </mat-form-field>
+            <br>
 
             <div class="mt-4 input-group">
                 <div class="input-group-prepend">

@@ -97,6 +97,7 @@ import { ShowTemaComponent } from './components/tema/show-tema/show-tema.compone
 import { CreateTemaComponent } from './components/tema/create-tema/create-tema.component';
 import { UpdateTemaComponent } from './components/tema/update-tema/update-tema.component';
 import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component';
+import { HistoriaVidaAudioService } from './services/historia-vida-audio.service';
 
 
 
@@ -197,7 +198,7 @@ import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.
     ReactiveFormsModule
 
   ],
-  providers: [HistoriaVidaTextoService,HistoriaVidaVideoService],
+  providers: [HistoriaVidaTextoService,HistoriaVidaVideoService,HistoriaVidaAudioService],
   bootstrap: [AppComponent],
   entryComponents:[AddHistoriaVidaTextoComponent,EditHistoriaVidaTextoComponent]
 })
