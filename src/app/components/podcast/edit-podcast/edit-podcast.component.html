@@ -1,1 +1,64 @@
-<p>edit-podcast works!</p>
+<div class="container col-md-11">
+    <div class="d-flex justify-content-between">
+        <h1>Añadir Podcast</h1>
+
+        <button mat-button (click)="close()">
+<mat-icon>close</mat-icon>
+</button>
+    </div>
+    <div style="overflow: auto;height: 450px;">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
+
+            <input readonly="readonly" type="text" class="form-control" name="id_podcast" #id_podcast="ngModel" [(ngModel)]="service.formData.id_podcast">
+            <input readonly="readonly" type="hidden" class="form-control" name="archivoMP3" #archivoMP3="ngModel" [(ngModel)]="service.formData.archivoMP3">
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Tema del podcast</mat-label>
+                <br>
+                <mat-select [(ngModel)]="service.formData.tema" name="tema" required #tema="ngModel">
+                    <mat-option *ngFor="let tema of temas" [value]="tema">
+                        {{tema.nombreTema}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+
+            <mat-form-field class="example-full-width">
+
+                <mat-label>Titulo</mat-label>
+
+                <input matInput required minlength="2" type="text" class="form-control" name="titulo" #titulo="ngModel" [(ngModel)]="service.formData.titulo">
+                <div class="text-left text-danger" *ngIf="titulo.invalid && titulo.touched">
+                    Debes ingresar el titulo </div>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="example-full-width">
+
+                <mat-label>Descripcion</mat-label>
+
+                <input matInput required minlength="2" type="text" class="form-control" name="descripcion" #descripcion="ngModel" [(ngModel)]="service.formData.descripcion">
+                <div class="text-left text-danger" *ngIf="descripcion.invalid && descripcion.touched">
+                    Debes ingresar la descripcion </div>
+            </mat-form-field>
+            <br>
+
+            <div class="mt-4 input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Archivo_mp3</span>
+                </div>
+                <input type="file" class="form-control" accept="audio/*" (change)="onSelectFile($event)" style="height:100%">
+            </div>
+
+            <div class="audioBox">
+                <mat-basic-audio-player [audioUrl]="service.hvaAudio" [autoPlay]="false" muted="muted" [displayVolumeControls]="true"></mat-basic-audio-player>
+
+            </div>
+
+
+
+
+            <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="tema.invalid" [disabled]="form.invalid">ADD</button>
+        </form>
+
+    </div>
+</div>

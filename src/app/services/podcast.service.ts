@@ -18,10 +18,10 @@ export class PodcastService {
     return this.http.post('http://localhost:8090/podcasts/savePodcastFile',formData);
   }
 
-  updateHVT(formData:FormData):Observable<any>{
+  UpdatePodcastFile(formData:FormData):Observable<any>{
     //let hva: HistoriaVidaAudio;
 
-    return this.http.post('http://localhost:8090/podcasts/UpdateAudioFile', formData);
+    return this.http.post('http://localhost:8090/podcasts/UpdatePodcastFile', formData);
   }
 
 

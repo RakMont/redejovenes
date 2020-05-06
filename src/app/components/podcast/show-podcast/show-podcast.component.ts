@@ -93,6 +93,7 @@ public aux;
     podcast.titulo=some.titulo;
     podcast.fecha=some.fecha;
     podcast.archivoMP3=some.archivoMP3;
+    podcast.descripcion=some.descripcion;
     let dio: any=File;
     dio=some.audio;
     this.podcastService.formData=podcast;
