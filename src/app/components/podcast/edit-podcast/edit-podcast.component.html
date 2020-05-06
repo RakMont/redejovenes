@@ -9,7 +9,7 @@
     <div style="overflow: auto;height: 450px;">
         <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
 
-            <input readonly="readonly" type="text" class="form-control" name="id_podcast" #id_podcast="ngModel" [(ngModel)]="service.formData.id_podcast">
+            <input readonly="readonly" type="hidden" class="form-control" name="id_podcast" #id_podcast="ngModel" [(ngModel)]="service.formData.id_podcast">
             <input readonly="readonly" type="hidden" class="form-control" name="archivoMP3" #archivoMP3="ngModel" [(ngModel)]="service.formData.archivoMP3">
 
             <mat-form-field class="example-full-width">

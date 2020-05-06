@@ -12,9 +12,23 @@ img {
     align-items: center;
 }
 
+.addbox-HVT {
+    align-items: left;
+    align-content: left;
+    text-align: left;
+    margin-top: 2%;
+}
+
 .classcard {
     margin-bottom: 20px;
     margin: 2%;
+}
+
+.addbox-Tema {
+    align-items: right;
+    align-content: right;
+    text-align: right;
+    margin-top: -1%;
 }
 
 .other {

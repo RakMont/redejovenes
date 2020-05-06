@@ -9,6 +9,7 @@ import {MatSort}from '@angular/material/sort';
 import{MatDialog,MatDialogConfig}from '@angular/material/dialog';
 import{AddPodcastComponent}from 'src/app/components/podcast/add-podcast/add-podcast.component';
 import{EditPodcastComponent}from 'src/app/components/podcast/edit-podcast/edit-podcast.component';
+import{CreateTemaComponent}from 'src/app/components/tema/create-tema/create-tema.component';
 
 import { filter } from 'rxjs/operators';
 import{Subject}from 'rxjs';
@@ -85,7 +86,14 @@ public aux;
   }
 
 
-
+  addTema(){
+    const dialogConfig=new MatDialogConfig();
+    dialogConfig.disableClose=true;
+    dialogConfig.autoFocus=true;
+    dialogConfig.width="50%";
+    dialogConfig.height="50%";
+    this.dialog.open(CreateTemaComponent,dialogConfig);
+  }
 
   edit_HVV(some):void{
     let podcast=new Podcast
