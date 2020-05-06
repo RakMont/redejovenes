@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import{MatDialogRef}from '@angular/material/dialog';
 import{PodcastService}from 'src/app/services/podcast.service';
+import{TemaService}from 'src/app/services/tema.service';
+import {FormControl, Validators} from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
+
 import{NgForm}from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -18,19 +22,29 @@ import{Tema}from 'src/app/models/Tema';
 })
 export class AddPodcastComponent implements OnInit {
 
-  constructor(private snackBar:MatSnackBar, private router: Router,public dialogbox:MatDialogRef<AddPodcastComponent>,public service:PodcastService) {
+  constructor(private snackBar:MatSnackBar, private router: Router,public dialogbox:MatDialogRef<AddPodcastComponent>,public service:PodcastService,public serviceTema:TemaService) {
     this.service.listen().subscribe((m:any)=>{
       console.log(m);
       this.charge();
 
     });
    }
+   selectedValue: string;
+   selectedCar: string;
+   animalControl = new FormControl('', Validators.required);
+   selectFormControl = new FormControl('', Validators.required);
    listData:MatTableDataSource<any>;
    //showHistory:ShowHistoriaVidaAudioComponent;
   public hvaAudio: any=File;
+  temas:Tema[];
+
    @ViewChild(MatSort, {static: true}) sort: MatSort;
   ngOnInit(): void {
+    this.serviceTema.getTema().subscribe(response=>{
+      this.temas=response;
+    });
     this.resetForm();
+
   }
   close(){
     this.dialogbox.close();

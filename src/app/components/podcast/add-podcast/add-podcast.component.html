@@ -9,6 +9,17 @@
     <div style="overflow: auto;height: 450px;">
         <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
 
+            <h4>mat-select</h4>
+            <mat-form-field>
+                <mat-label>Selecciona el Tema del podcast</mat-label>
+                <mat-select [(ngModel)]="service.formData.tema" name="tema" class="form-control" required #tema="ngModel">
+                    <mat-option *ngFor="let tema of temas" [value]="tema">
+                        {{tema.nombreTema}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <p> Selected food: {{selectedValue}} </p>
+
             <div class="mt-4 input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">TITULO</span>
@@ -31,7 +42,7 @@
 
 
 
-            <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">ADD</button>
+            <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="tema.invalid" [disabled]="form.invalid">ADD</button>
         </form>
 
     </div>

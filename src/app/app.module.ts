@@ -4,6 +4,9 @@ import { MatSliderModule } from '@angular/material/slider';
 import {MatTableModule}from '@angular/material/table';
 import {MatTableDataSource} from '@angular/material/table';
 import{MatDialogModule} from '@angular/material/dialog';
+import {MatSelectModule} from '@angular/material/select';
+import {FormControl, Validators} from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
 
 //import { Hero } from './hero';
 //import * as THREE from 'three'
@@ -189,7 +192,9 @@ import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.
     BrowserModule,
     NgxYoutubePlayerModule,
     MatGridListModule,
-    NgxAudioPlayerModule
+    NgxAudioPlayerModule,
+    MatSelectModule,
+    ReactiveFormsModule
 
   ],
   providers: [HistoriaVidaTextoService,HistoriaVidaVideoService],
