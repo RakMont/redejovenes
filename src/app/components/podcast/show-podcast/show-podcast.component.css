@@ -3,6 +3,18 @@ img {
     margin-top: 20px;
 }
 
+.mat-form-field {
+    color: white;
+}
+
+.filter {
+    background-color: white;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    color: white;
+}
+
 .example-header-image {
     /* background-image: url("src/assets/HistoriaVidaAudio/ShowIcons/microphone.png");*/
     background-size: cover;

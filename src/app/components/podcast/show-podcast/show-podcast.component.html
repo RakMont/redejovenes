@@ -1,8 +1,21 @@
 <div class="container title">
     <h1></h1>
 </div>
+<div class="filter">
+    <form #form="ngForm" (ngSubmit)="filtrarTema(temaFiltrado)" autocomplete="off">
+        <mat-form-field class="example-full-width">
+            <mat-label>Tema del podcast</mat-label>
+            <br>
+            <mat-select [(ngModel)]="temaFiltrado" name="tema" required #tema="ngModel">
+                <mat-option *ngFor="let tema of temas" [value]="tema">
+                    {{tema.nombreTema}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
 
-
+        <button class="mt-4" mat-raised-button color="warn" type="submit" [disabled]="tema.invalid" [disabled]="form.invalid">ADD</button>
+    </form>
+</div>
 <div class="container">
     <div class="addbox-HVT">
         <button class="mt-2" mat-raised-button (click)="AddHVA()" color="primary">

@@ -197,6 +197,7 @@ import { HistoriaVidaAudioService } from './services/historia-vida-audio.service
     MatSelectModule,
     ReactiveFormsModule
 
+
   ],
   providers: [HistoriaVidaTextoService,HistoriaVidaVideoService,HistoriaVidaAudioService],
   bootstrap: [AppComponent],

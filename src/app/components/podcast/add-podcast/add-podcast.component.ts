@@ -70,9 +70,10 @@ export class AddPodcastComponent implements OnInit {
       formData.append('podcast',JSON.stringify(podcast));
       formData.append('file',this.hvaAudio);
       this.service.savePodcast(formData).subscribe((res)=>{
+        this.router.navigate([ "showPodcast" ]);
         this.resetForm(form);
         this.dialogbox.close();
-        this.charge();
+        //this.charge();
 
       this.service.filter("Register click");
         this.snackBar.open('Añadido correctamente','',{
@@ -80,6 +81,7 @@ export class AddPodcastComponent implements OnInit {
           verticalPosition:'top'
       });
       })
+
     }
   onSelectFile(event){
     //const file=event.target.file;

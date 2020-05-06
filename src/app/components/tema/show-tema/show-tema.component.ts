@@ -42,9 +42,11 @@ export class ShowTemaComponent implements OnInit {
      this.temas = data;
      this.charge();
    });
+
   }
   applyFilter(filtervalue:string){
     this.listData.filter=filtervalue.trim().toLocaleLowerCase();
+
   }
 
   edit_Tema(temas: Tema){

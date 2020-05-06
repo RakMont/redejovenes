@@ -13,6 +13,9 @@ export class PodcastService {
   Url = 'http://localhost:8090/podcasts';
   formData:Podcast;
   hvaAudio: any=File;
+  public podcasts:Podcast[];
+  public audios:any=[];
+
 
   savePodcast(formData:FormData):Observable<any>{
     return this.http.post('http://localhost:8090/podcasts/savePodcastFile',formData);
@@ -26,6 +29,7 @@ export class PodcastService {
 
 
   getPodcastAllAudios():Observable<any>{
+    this.audios=this.http.get('http://localhost:8090/podcasts/getPodcastAllAudios');
     return this.http.get('http://localhost:8090/podcasts/getPodcastAllAudios');
 
   }
@@ -35,6 +39,7 @@ export class PodcastService {
   }
   getPodcast() {
     // obtengo todos los datos de esta url que hace ref a backend
+   // this.podcasts=this.http.get<Podcast[]>(this.Url);
     return this.http.get<Podcast[]>(this.Url);
   }
   getPodcastByTema(id_tema:number) {
