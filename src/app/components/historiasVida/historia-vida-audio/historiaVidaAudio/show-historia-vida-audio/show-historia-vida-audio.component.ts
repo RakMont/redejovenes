@@ -120,6 +120,10 @@ Delete(some){
    this.historiaVidaAudioService.deleteHVT(historiaVidaVideo)
    .subscribe(data=>{
      //.historiasHVT=this.historiasHVT.filter(p=>p.id_HVT!==historiaVidaTexto.id_HVT);
+     //this.podcasts=this.podcasts.filter(p=>p.id_podcast!==podcast.id_podcast);
+     //this.audios=this.audios.filter(p=>p!==podcast);
+    // this.Convertlist();
+     this.things=this.things.filter(t=>t!==some);
      this.snackBar.open('Eliminado Correctamente','',{
        duration:5000,
        verticalPosition:'top'

@@ -69,7 +69,7 @@ selectedValue: string;
    this.podcasts = data;
    this.aux=this.podcasts[0];
    console.log("this is ",this.aux);
-   this.Convertlist();
+  // this.Convertlist();
    this.serviceTema.getTema().subscribe(response=>{
     this.temas=response;
   });
@@ -84,11 +84,22 @@ selectedValue: string;
 
   }
 
-  refresh(){
+
+  AddHVA(){
+    const dialogConfig=new MatDialogConfig();
+    dialogConfig.disableClose=true;
+    dialogConfig.autoFocus=true;
+    dialogConfig.width="60%";
+    this.dialog.open(AddPodcastComponent,dialogConfig);
+
+
+    //this.podcasts=this.podcasts.filter(p=>p.id_podcast!==podcast.id_podcast);
+    //this.audios=this.audios.filter(p=>p!==podcast);
+    //this.ngOnInit()
     this.podcastService.getPodcastAllAudios().subscribe(response=>{
       this.audios=response;
       this.hvaAudio=this.audios[0];
-      this.Convertlist();
+     // this.Convertlist();
 
     });
     this.podcastService.getPodcast()
@@ -96,24 +107,11 @@ selectedValue: string;
    this.podcasts = data;
    this.aux=this.podcasts[0];
    console.log("this is ",this.aux);
-   this.Convertlist();
-   this.serviceTema.getTema().subscribe(response=>{
-    this.temas=response;
-  });
-  this.router.navigateByUrl("/showPodcast",{skipLocationChange:true}).then(()=>{
-    console.log(decodeURI(this._location.path()));
-    this._router.navigate([decodeURI(this._location.path())]);
-  });
-});
+ });
+    //this.Convertlist();
+    //console.log("el primero es",this.things[0].titulo)
+    //this.things=this.things;
 
-
-  }
-  AddHVA(){
-    const dialogConfig=new MatDialogConfig();
-    dialogConfig.disableClose=true;
-    dialogConfig.autoFocus=true;
-    dialogConfig.width="60%";
-    this.dialog.open(AddPodcastComponent,dialogConfig);
    }
 
 
@@ -141,7 +139,7 @@ selectedValue: string;
 
   Convertlist(){
     let c: number = 0;
-
+    //.log("el ultimo es ",this.audios[0])
     for(let audio of this.audios){
       this.aux=this.podcasts[c];
       this.things.push({ audio:audio,titulo:this.aux.titulo,fecha:this.aux.fecha,id_podcast:this.aux.id_podcast,archivoMP3:this.aux.archivoMP3,descripcion:this.aux.descripcion});
