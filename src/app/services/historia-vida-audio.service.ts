@@ -24,16 +24,7 @@ export class HistoriaVidaAudioService {
 
     return this.http.post('http://localhost:8090/historiasHVA/UpdateAudioFile', formData);
   }
-  /*updateHVT(formData:FormData):Observable<any>{
-    let hva: HistoriaVidaAudio;
 
-    return this.http.put<HistoriaVidaAudio>(this.Url+"/"+formData.id_HVA, formData);
-  } */
-  /*
-  getHVAAudios():any{
-    return this.http.get('http://localhost:8090/historiasHVA/getHVAAudios');
-
-  }*/
 
 getHVAAudios():Observable<any>{
     return this.http.get('http://localhost:8090/historiasHVA/getHVAAudios');

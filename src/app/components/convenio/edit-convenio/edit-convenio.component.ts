@@ -53,8 +53,10 @@ export class EditConvenioComponent implements OnInit {
     }
  }
   onSubmit(form:NgForm){
+    console.log("llega aqui",this.service.ConvImage);
     const audio = form.value;
     const formData=new FormData;
+    this.hvaAudio=this.service.ConvImage;
     formData.append('convenio',JSON.stringify(audio));
     formData.append('file',this.hvaAudio);
     this.service.UpdateConvenioFile(formData).subscribe((res)=>{
@@ -74,6 +76,7 @@ export class EditConvenioComponent implements OnInit {
     const file=event.target.files[0];
     console.log(file);
     this.hvaAudio=file;
+    this.service.ConvImage=file;
   }
 
     preview(files) {

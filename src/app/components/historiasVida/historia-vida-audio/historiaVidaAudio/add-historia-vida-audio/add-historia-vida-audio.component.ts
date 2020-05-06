@@ -25,7 +25,7 @@ export class AddHistoriaVidaAudioComponent implements OnInit {
       this.charge();
 
     });
-   }
+  }
    listData:MatTableDataSource<any>;
    //showHistory:ShowHistoriaVidaAudioComponent;
   public hvaAudio: any=File;

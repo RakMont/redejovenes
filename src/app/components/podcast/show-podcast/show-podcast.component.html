@@ -1,1 +1,55 @@
-<p>show-podcast works!</p>
+<div class="container title">
+    <h1></h1>
+</div>
+
+
+<div class="container">
+    <div class="addbox-HVT">
+        <button class="mt-2" mat-raised-button (click)="AddHVA()" color="primary">
+      Agregar
+       <mat-icon>add_box</mat-icon>
+      </button>
+    </div>
+    <h1 class="tit">THIS IS PODCASTS</h1>
+
+    <div class="card-header">
+        <hr class="new1">
+
+    </div>
+    <mat-list *ngFor="let hvt of things">
+        <mat-card class="classcard">
+            <div mat-card-avatar class="example-header-image">
+                <img src="../../../../assets/HistoriaVidaAudio/ShowIcons/microphone.png" />
+            </div>
+            <div class="options" fxFlex="5px" fxFlexAlign="center">
+                <mat-card-actions>
+                    <button mat-icon-button (click)="edit_HVV(hvt)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                    <button mat-icon-button color="warn" (click)="Delete(hvt)">
+                    <mat-icon>delete_forever</mat-icon>
+                </button>
+                </mat-card-actions>
+            </div>
+
+            <div class="other">
+
+                <mat-card-title>{{hvt.titulo}}</mat-card-title>
+                <mat-card-subtitle>{{hvt.archivo_mp3}}</mat-card-subtitle>
+                <h3>{{hvt.descripcion}}</h3>
+                <h3>{{hvt.archivoMP3}}</h3>
+
+            </div>
+            <hr class="new4">
+
+
+            <div class="audioBox">
+                <mat-basic-audio-player [audioUrl]="hvt.audio" [title]="hvt.fecha" [autoPlay]="false" muted="muted" [displayTitle]="msbapDisplayTitle" [displayVolumeControls]="true"></mat-basic-audio-player>
+
+            </div>
+
+
+
+        </mat-card>
+    </mat-list>
+</div>
