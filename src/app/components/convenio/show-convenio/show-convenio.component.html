@@ -1,9 +1,9 @@
 <div class="container">
     <div class="addbox-HVT">
         <button class="mt-2" mat-raised-button (click)="AddHVA()" color="primary">
-        Agregar
-         <mat-icon>add_box</mat-icon>
-        </button>
+      Agregar
+       <mat-icon>add_box</mat-icon>
+      </button>
     </div>
     <h1 class="tit">CONVENIOS</h1>
 
@@ -15,28 +15,24 @@
         <mat-grid-tile *ngFor="let hvt of things">
             <mat-grid-tile-header>
                 <button mat-icon-button (click)="edit_HVV(hvt)">
-                        <mat-icon>edit</mat-icon>
-                  </button>
+                      <mat-icon>edit</mat-icon>
+                </button>
                 <button mat-icon-button color="warn" (click)="Delete(hvt)">
-                         <mat-icon>delete_forever</mat-icon>
-                  </button>
+                       <mat-icon>delete_forever</mat-icon>
+                </button>
             </mat-grid-tile-header>
-            <div class="content">
-                <div class="contentimage">
-                    <div mat-card-avatar class="example-header-image">
-                        <img class="img-fluid img-thumbnail" [src]="hvt.photo" alt="">
-                    </div>
+            <div class="contentimage">
+                <div mat-card-avatar class="example-header-image">
+                    <img class="img-fluid img-thumbnail" [src]="hvt.photo" alt="">
                 </div>
-
-                <div class="other">
-
-                    <h3>INSTITUCION: {{hvt.institucion}}</h3>
-                    <h3>DESCRIPCION: {{hvt.descripcion}}</h3>
-                    <h3>DIRECCION: {{hvt.direccion}}</h3>
-                </div>
-
             </div>
-            <hr class="new4">
+
+            <div class="other">
+
+                <h3>INSTITUCION: {{hvt.institucion}}</h3>
+                <h3>DESCRIPCION: {{hvt.descripcion}}</h3>
+                <h3>DIRECCION: {{hvt.direccion}}</h3>
+            </div>
 
         </mat-grid-tile>
     </mat-grid-list>

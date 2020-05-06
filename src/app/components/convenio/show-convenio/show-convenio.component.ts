@@ -58,7 +58,7 @@ public aux;
    this.convenios = data;
    this.aux=this.convenios[0];
    console.log("this is ",this.aux);
-  // this.Convertlist();
+   this.Convertlist();
  });
   }
 
@@ -113,8 +113,8 @@ public aux;
     if(confirm('Estas seguro de eliminar ?')){
      this.convenioservice.deleteConvenio(convenio)
      .subscribe(data=>{
-      this.charge();
-
+     // this.charge();
+      this.things=this.things.filter(t=>t!==some);
        this.snackBar.open('Eliminado Correctamente','',{
          duration:5000,
          verticalPosition:'top'
