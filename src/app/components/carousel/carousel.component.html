@@ -1,7 +1,17 @@
 <ngb-carousel *ngIf="images">
     <ng-template ngbSlide>
         <div class="picsum-img-wrapper" >
-            <img class="d-block mx-auto" [src]="images[0]" alt="Random first slide">
+            <img
+            src="https://guiaegreso.org.ar/wp-content/uploads/2018/11/LeyEgreso_porque_y_como.jpg"
+            class="vc_single_image-img attachment-full d-block mx-auto alt=" alt=""
+            srcset="https://guiaegreso.org.ar/wp-content/uploads/2018/11/LeyEgreso_porque_y_como.jpg 1920w,
+            https://guiaegreso.org.ar/wp-content/uploads/2018/11/LeyEgreso_porque_y_como-300x136.jpg 300w,
+            https://guiaegreso.org.ar/wp-content/uploads/2018/11/LeyEgreso_porque_y_como-768x348.jpg 768w,
+            https://guiaegreso.org.ar/wp-content/uploads/2018/11/LeyEgreso_porque_y_como-1024x463.jpg 1024w,
+            https://guiaegreso.org.ar/wp-content/uploads/2018/11/LeyEgreso_porque_y_como-1116x505.jpg 1116w,
+            https://guiaegreso.org.ar/wp-content/uploads/2018/11/LeyEgreso_porque_y_como-806x365.jpg 806w,
+            https://guiaegreso.org.ar/wp-content/uploads/2018/11/LeyEgreso_porque_y_como-558x253.jpg 558w, https://guiaegreso.org.ar/wp-content/uploads/2018/11/LeyEgreso_porque_y_como-655x296.jpg 655w"
+             sizes="(max-width: 1920px) 100vw, 1920px">
         </div>
         <div class="carousel-caption">
             <h3>10 seconds between slides...</h3>
@@ -10,11 +20,23 @@
     </ng-template>
     <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-            <img class="d-block mx-auto" [src]="images[1]" alt="Random second slide">
+            <img src="https://guiaegreso.org.ar/wp-content/uploads/2018/11/Presentacion2.jpg"
+             class="vc_single_image-img attachment-full d-block mx-auto alt=" 
+             srcset="https://guiaegreso.org.ar/wp-content/uploads/2018/11/Presentacion2.jpg 1631w,
+             https://guiaegreso.org.ar/wp-content/uploads/2018/11/Presentacion2-300x199.jpg 300w,
+             https://guiaegreso.org.ar/wp-content/uploads/2018/11/Presentacion2-768x509.jpg 768w,
+             https://guiaegreso.org.ar/wp-content/uploads/2018/11/Presentacion2-1024x678.jpg 1024w,
+             https://guiaegreso.org.ar/wp-content/uploads/2018/11/Presentacion2-1116x739.jpg 1116w,
+             https://guiaegreso.org.ar/wp-content/uploads/2018/11/Presentacion2-806x534.jpg 806w,
+             https://guiaegreso.org.ar/wp-content/uploads/2018/11/Presentacion2-558x369.jpg 558w,
+             https://guiaegreso.org.ar/wp-content/uploads/2018/11/Presentacion2-655x434.jpg 655w"
+             sizes="(max-width: 1920px) 100vw, 1920px">
         </div>
         <div class="carousel-caption">
-            <h3>No mouse events...</h3>
+            <!--<h3>No mouse events...</h3>
             <p>This carousel doesn't pause or resume on mouse events</p>
+            -->
         </div>
+
     </ng-template>
 </ngb-carousel>
