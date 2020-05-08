@@ -11,7 +11,7 @@ export class ShowContactanosComponent implements OnInit {
   constructor(private https: HttpClient) { }
 
   onSubmit(){
-    this.https.post<Details>('http://localhost:4200/showContactanos/getdetails',
+    this.https.post<Details>('http://localhost:8090/showContactanos/getdetails',
     this.dataset).subscribe(
       res => {
         this.dataset = res;
@@ -22,9 +22,8 @@ export class ShowContactanosComponent implements OnInit {
         this.dataset.message = '';
       });
   }
-
   dataset: Details = {
-    name:'',
+  name:'',
     email:'',
     message:''
   };
