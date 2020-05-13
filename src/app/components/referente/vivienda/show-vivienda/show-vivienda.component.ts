@@ -6,7 +6,7 @@ import { Referente } from 'src/app/models/Referente';
 import { MatTableDataSource } from '@angular/material/table';
 import {MatSort}from '@angular/material/sort';
 import{MatDialog,MatDialogConfig}from '@angular/material/dialog';
-import{EditTrabajoComponent}from 'src/app/components/referente/trabajo/edit-trabajo/edit-trabajo.component';
+import{EditViviendaComponent}from 'src/app/components/referente/vivienda/edit-vivienda/edit-vivienda.component';
 
 import { filter } from 'rxjs/operators';
 import{Subject}from 'rxjs';
@@ -44,7 +44,7 @@ export class ShowViviendaComponent implements OnInit {
     dialogConfig.disableClose=true;
     dialogConfig.autoFocus=true;
     dialogConfig.width="70%";
-    this.dialog.open(EditTrabajoComponent,dialogConfig);
+    this.dialog.open(EditViviendaComponent,dialogConfig);
 
     localStorage.setItem("id_referente", referente.id_referente.toString());
   }
