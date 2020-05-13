@@ -10,6 +10,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import {MatSort}from '@angular/material/sort';
 import {ViewChild}from '@angular/core';
 import{ShowHistoriaVidaAudioComponent}from 'src/app/components/historiasVida/historia-vida-audio/historiaVidaAudio/show-historia-vida-audio/show-historia-vida-audio.component';
+import { Convenio } from 'src/app/models/Convenio';
 
 @Component({
   selector: 'app-add-convenio',
@@ -17,7 +18,11 @@ import{ShowHistoriaVidaAudioComponent}from 'src/app/components/historiasVida/his
   styleUrls: ['./add-convenio.component.css']
 })
 export class AddConvenioComponent implements OnInit {
-
+  public photos:any=[];
+  convenios:Convenio[];
+  things=[];
+  public hvaAudio: any=File;
+  public aux;
   constructor(private snackBar:MatSnackBar, private router: Router,public dialogbox:MatDialogRef<AddConvenioComponent>,public service:ConvenioService) {
     this.service.listen().subscribe((m:any)=>{
       console.log(m);
@@ -26,7 +31,6 @@ export class AddConvenioComponent implements OnInit {
     });
    }
    listData:MatTableDataSource<any>;
-  public hvaAudio: any=File;
   public imagen: any=File;
 
    @ViewChild(MatSort, {static: true}) sort: MatSort;
@@ -59,7 +63,6 @@ export class AddConvenioComponent implements OnInit {
   formData.append('file',this.hvaAudio);
   this.service.saveConvenioFile(formData).subscribe((res)=>{
     this.resetForm(form);
-    this.charge();
     this.dialogbox.close();
   this.service.filter("Register click");
     this.snackBar.open('Añadido correctamente','',{
@@ -67,7 +70,29 @@ export class AddConvenioComponent implements OnInit {
       verticalPosition:'top'
   });
   })
+  this.service.getConvenios().subscribe(response=>{
+    this.photos=response;
+  this.Convertlist();
+
+  });
+  this.service.getConv()
+    .subscribe(data =>{
+ this.convenios = data;
+});
+this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+    this.router.navigate(["showConvenios"]));
 }
+Convertlist(){
+  let c: number = 0;
+
+  for(let photo of this.photos){
+    this.aux=this.convenios[c];
+    this.things.push({photo:photo,imagen:this.aux.imagen,id_convenio:this.aux.id_convenio,institucion:this.aux.institucion,descripcion:this.aux.descripcion,direccion:this.aux.direccion});
+    c=c+1;
+  }
+
+}
+
 onSelectFile(event){
 //const file=event.target.file;
 const file=event.target.files[0];

@@ -10,6 +10,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import {MatSort}from '@angular/material/sort';
 import {ViewChild}from '@angular/core';
 import { HistoriaVidaVideoService } from 'src/app/services/historia-vida-video.service';
+import{HistoriaVidaAudio}from 'src/app/models/HistoriaVidaAudio';
+
 @Component({
   selector: 'app-edit-historia-vida-audio',
   templateUrl: './edit-historia-vida-audio.component.html',
@@ -25,8 +27,14 @@ export class EditHistoriaVidaAudioComponent implements OnInit {
     });
    }
    listData:MatTableDataSource<any>;
-   @ViewChild(MatSort, {static: true}) sort: MatSort;
    public hvaAudio: any=File;
+  public audios:any=[];
+  historiasHVA:HistoriaVidaAudio[];
+  public audiosShow:any=[];
+  public aux;
+
+  things=[];
+   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   ngOnInit(): void {
   }
@@ -63,6 +71,29 @@ export class EditHistoriaVidaAudioComponent implements OnInit {
         verticalPosition:'top'
       })
     })
+    this.service.getHVAAudios().subscribe(response=>{
+      this.audios=response;
+      this.Convertlist();
+
+    });
+    this.service.getHVA()
+        .subscribe(data =>{
+   this.historiasHVA = data;
+  // this.convert();
+   console.log("this is ",this.aux);
+ });
+ this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+    this.router.navigate(["showHVA"]));
+  }
+
+  Convertlist(){
+    let c: number = 0;
+
+    for(let audio of this.audios){
+      this.aux=this.historiasHVA[c];
+      this.things.push({audio:audio,titulo:this.aux.titulo,fecha:this.aux.fecha,id_HVA:this.aux.id_HVA,archivo_mp3:this.aux.archivo_mp3});
+      c=c+1;
+    }
 
   }
   onSelectFile(event){
