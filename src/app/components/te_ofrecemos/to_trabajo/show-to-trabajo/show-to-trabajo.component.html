@@ -1,26 +1,21 @@
-<div class="container title">
-    <h1></h1>
-</div>
-
-
 <div class="container">
-    <div class="addbox-HVT">
-        <button class="mt-2" mat-raised-button (click)="AddTrabajo()" color="primary">
-          Agregar
-           <mat-icon>add_box</mat-icon>
-          </button>
-    </div>
     <h1 class="tit">TRABAJOS</h1>
 
-    <div class="card-header">
-        <hr class="new1">
+    <div class="addbox-HVT">
+        <button class="mt-2" mat-raised-button (click)="AddTrabajo()" color="primary">
+      Agregar
+       <mat-icon>add_box</mat-icon>
+      </button>
     </div>
     <mat-list *ngFor="let tob of teofrecemos">
         <mat-card>
-            <div mat-card-avatar class="example-header-image">
-                <img src="../../../../assets/trabajo.jpg" />
-            </div>
-            <div class="options" fxFlex="10px" fxFlexAlign="center">
+            <mat-card-header [ngClass]="{'custom-card':true}">
+                <mat-card-title>
+                    
+                    <br>
+                </mat-card-title>
+            </mat-card-header>
+            <div class="options" fxFlex="5px" fxFlexAlign="center">
                 <mat-card-actions>
                     <button mat-icon-button class="coloicon" (click)="edit_Trabajo(tob)">
                             <mat-icon>edit</mat-icon>
@@ -30,6 +25,10 @@
                         </button>
                 </mat-card-actions>
             </div>
+            <div mat-card-avatar class="example-header-image">
+                <img src="../../../../assets/trabajo.jpg" />
+            </div>
+
             <div class="other">
 
                 <mat-card-title>CONTACTO: {{tob.contacto}}</mat-card-title>
