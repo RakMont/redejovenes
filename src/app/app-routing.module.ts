@@ -31,6 +31,8 @@ import{QuienesSomosComponent}from './components/quienes-somos/quienes-somos.comp
 
 import{ShowTemaComponent}from './components/tema/show-tema/show-tema.component';
 
+import{SignupComponent}from './components/signup/signup.component';
+import{LoginComponent}from './components/login/login.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -53,7 +55,9 @@ const routes: Routes = [
   {path: 'showToBeca', component:ShowToBecaComponent},
   {path: 'showToVivienda', component:ShowToViviendaComponent},
   {path: 'showQuienesSomos', component:QuienesSomosComponent},
-  {path: 'temas', component:ShowTemaComponent}
+  {path: 'temas', component:ShowTemaComponent},
+  {path: 'signup', component:SignupComponent},
+  {path: 'login', component:LoginComponent}
 
 ];
 
