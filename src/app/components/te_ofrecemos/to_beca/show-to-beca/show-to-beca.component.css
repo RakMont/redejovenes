@@ -1,120 +1,63 @@
-.filter-HVT {
-    float: right;
-    margin-right: 15px;
-}
-
-.title {
-    margin-top: 50px;
-    text-align: center;
-}
-
-div.hvv {
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-div.hvv {
-    margin-top: 5%;
-}
-
-.mat-card-title {
-    margin-top: 1%;
-    margin-left: 1%;
-}
-
-.mat-card-subtitle {
-    margin-top: 1%;
-    margin-left: 1%;
-}
-
 img {
     height: 190px;
     margin-top: 0%;
     max-width: 200px;
-}
-
-.hvv {
-    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/f5f9c989-0119-44ae-a646-d28630ea2f16/d2yp07m-a084ef34-38cc-400f-9d3d-db11e88eb1e5.jpg");
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    margin-left: 30px;
 }
 
 .other {
+    width: 60%;
     align-items: center;
     text-align: justify;
-    background-color: darkolivegreen;
+    background: linear-gradient(to right, #3dc9c9, #9b00b0);
     border-style: solid;
     border-color: black;
     height: 150px;
     margin-left: 25%;
     margin-bottom: 0%;
-}
-
-.example-header-image {
-    /* background-image: url("src/assets/HistoriaVidaAudio/ShowIcons/microphone.png");*/
-    background-size: cover;
-}
-
-hr.new4 {
-    border: 2px solid black;
-}
-
-.mat-card-footer {
-    margin: 1%;
-    text-align: right;
-}
-
-.new1 {
-    /*color: white;*/
-    height: 0px;
-    border: 2px dashed;
-}
-
-.tit {
-    color: white;
-    text-align: center;
-}
-
-.mat-card {
-    max-width: 80%;
-    margin: auto;
-    font-family: "Noto Sans", Helvetica, Arial, sans-serif;
-    background-color: darkolivegreen;
-    margin-bottom: 2%;
-    border-style: solid;
-    max-width: 90%;
-}
-
-.mat-card-avatar {
-    background-size: cover;
-}
-
-.mat-card-actions {
-    display: flex;
-}
-
-.mat-card-actions .flex-spacer {
-    width: 100%;
+    border-radius: 25px;
+    border: 5px inset;
 }
 
 .container {
     text-align: justify;
     font-family: "Noto Sans", Helvetica, Arial, sans-serif;
-    background-color: black;
-    margin-bottom: 50px;
-    max-width: 70%;
+    background: linear-gradient(to right, #0ab481, #796a73);
+    margin-bottom: 10%;
+    max-width: 85%;
+    border-radius: 25px;
 }
 
-.options {
-    float: right;
-    margin-top: -50px;
-    margin-right: auto;
+.tit {
+    color: #000000;
+    margin-top: 5%;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.addbox-HVT {
+    margin-left: 2%;
+    margin-top: -30px;
+    margin-bottom: 5px;
+}
+
+.mat-card {
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+    font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 6px inset;
+}
+
+.mat-card-footer {
+    margin: 1%;
+    text-align: right;
 }
 
 .fecha {
@@ -123,25 +66,75 @@ hr.new4 {
     margin-left: 18px;
 }
 
+hr.new4 {
+    border: 2px solid #b6b6b6;
+}
+
+.options {
+    float: right;
+    margin-top: -55px;
+    margin-right: 2%;
+}
+
 .card {
-    background-color: #323232;
+    background-color: #919191;
 }
 
 .card-header {
-    /*: #ffffff;*/
     margin-top: 2%;
 }
 
-.contenidohvt {
-    float: left;
-    margin-left: 0px;
+.mat-card-actions {
+    display: flex;
 }
 
-.addbox-HVT {
-    margin-top: 2%;
-    margin-bottom: 5px;
+.custom-card {
+    background: #00b09b;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #96c93d, #00b09b);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #96c93d, #00b09b);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin: left;
+    text-align: justify;
+    margin-top: -10px;
+    border-radius: 10px;
+    border: 2px inset;
+    max-height: 50px;
+}
+
+.custom-card-content {
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .coloicon {
     color: white;
+}
+
+.mat-card-title{
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.mat-card-subtitle{
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 1000px){
+    img{
+        height: 0px;
+    }
+    .mat-card{
+        width: 100%;
+    }
+    .other{
+        width: 100%;
+        margin-left: 0px;
+    }
 }

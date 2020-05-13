@@ -102,14 +102,21 @@ div.hvv {
 }
 
 .container {
-    background-color: #323232;
-    margin-bottom: 50px;
-    max-width: 1300px;
+    text-align: justify;
+    font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+    background: linear-gradient(to right, #0ab481, #796a73);
+    margin-bottom: 10%;
+    max-width: 85%;
+    border-radius: 25px;    
 }
 
 .mat-card {
     margin-bottom: 2%;
     margin-top: 2%;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 6px inset;
+    background: #000000;
 }
 
 .mat-card-footer {
@@ -125,3 +132,4 @@ hr.new4 {
     color: white;
     text-align: center;
 }
+
