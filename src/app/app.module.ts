@@ -61,7 +61,6 @@ import { HomeComponent } from './components/home/home.component';
 import { ShowConvenioComponent } from './components/convenio/show-convenio/show-convenio.component';
 import { EditConvenioComponent } from './components/convenio/edit-convenio/edit-convenio.component';
 import { TrabajoComponent } from './components/referente/trabajo/trabajo.component';
-import { EditContactanosComponent } from './components/contactanos/edit-contactanos/edit-contactanos.component';
 import { ShowContactanosComponent } from './components/contactanos/show-contactanos/show-contactanos.component';
 import { AddConvenioComponent } from './components/convenio/add-convenio/add-convenio.component';
 import { AddTrabajoComponent } from './components/referente/trabajo/add-trabajo/add-trabajo.component';
@@ -89,9 +88,7 @@ import { AddToViviendaComponent } from './components/te_ofrecemos/to_vivienda/ad
 import { EditToViviendaComponent } from './components/te_ofrecemos/to_vivienda/edit-to-vivienda/edit-to-vivienda.component';
 import { ShowToViviendaComponent } from './components/te_ofrecemos/to_vivienda/show-to-vivienda/show-to-vivienda.component';
 import { EventosComponent } from './components/eventos/eventos.component';
-import { AddEventosComponent } from './components/eventos/add-eventos/add-eventos.component';
 import { ShowEventosComponent } from './components/eventos/show-eventos/show-eventos.component';
-import { EditEventosComponent } from './components/eventos/edit-eventos/edit-eventos.component';
 import { ShowTemaComponent } from './components/tema/show-tema/show-tema.component';
 import { CreateTemaComponent } from './components/tema/create-tema/create-tema.component';
 import { UpdateTemaComponent } from './components/tema/update-tema/update-tema.component';
@@ -128,7 +125,6 @@ import { HistoriaVidaAudioService } from './services/historia-vida-audio.service
     ShowConvenioComponent,
     EditConvenioComponent,
     TrabajoComponent,
-    EditContactanosComponent,
     ShowContactanosComponent,
     AddConvenioComponent,
     AddTrabajoComponent,
@@ -156,9 +152,7 @@ import { HistoriaVidaAudioService } from './services/historia-vida-audio.service
     EditToViviendaComponent,
     ShowToViviendaComponent,
     EventosComponent,
-    AddEventosComponent,
     ShowEventosComponent,
-    EditEventosComponent,
     ShowTemaComponent,
     CreateTemaComponent,
     UpdateTemaComponent,
