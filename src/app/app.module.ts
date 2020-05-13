@@ -61,7 +61,6 @@ import { HomeComponent } from './components/home/home.component';
 import { ShowConvenioComponent } from './components/convenio/show-convenio/show-convenio.component';
 import { EditConvenioComponent } from './components/convenio/edit-convenio/edit-convenio.component';
 import { TrabajoComponent } from './components/referente/trabajo/trabajo.component';
-import { AddContactanosComponent } from './components/contactanos/add-contactanos/add-contactanos.component';
 import { EditContactanosComponent } from './components/contactanos/edit-contactanos/edit-contactanos.component';
 import { ShowContactanosComponent } from './components/contactanos/show-contactanos/show-contactanos.component';
 import { AddConvenioComponent } from './components/convenio/add-convenio/add-convenio.component';
@@ -129,7 +128,6 @@ import { HistoriaVidaAudioService } from './services/historia-vida-audio.service
     ShowConvenioComponent,
     EditConvenioComponent,
     TrabajoComponent,
-    AddContactanosComponent,
     EditContactanosComponent,
     ShowContactanosComponent,
     AddConvenioComponent,
