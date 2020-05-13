@@ -97,6 +97,8 @@ import { CreateTemaComponent } from './components/tema/create-tema/create-tema.c
 import { UpdateTemaComponent } from './components/tema/update-tema/update-tema.component';
 import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component';
 import { HistoriaVidaAudioService } from './services/historia-vida-audio.service';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 
 
@@ -163,6 +165,8 @@ import { HistoriaVidaAudioService } from './services/historia-vida-audio.service
     CreateTemaComponent,
     UpdateTemaComponent,
     QuienesSomosComponent,
+    LoginComponent,
+    SignupComponent,
 
 
 
