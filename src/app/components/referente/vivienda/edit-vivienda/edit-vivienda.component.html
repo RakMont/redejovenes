@@ -1,1 +1,47 @@
-<p>edit-vivienda works!</p>
+<div class="container col-md-11">
+    <div class="d-flex justify-content-between">
+        <h4>ADD HISTORIA DE VIDA</h4>
+
+        <button mat-button (click)="close()">
+<mat-icon>close</mat-icon>
+</button>
+    </div>
+    <div style="overflow: auto;height: 450px;">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
+
+
+            <input readonly="readonly" type="hidden" class="form-control" name="id_referente" #id_referente="ngModel" [(ngModel)]="service.formData.id_referente">
+
+            <div class="m-2 input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">TITULO</span>
+                </div>
+                <input required minlength="2" type="text" class="form-control" name="titulo" #titulo="ngModel" [(ngModel)]="service.formData.titulo">
+            </div>
+            <div class="text-left text-danger" *ngIf="titulo.invalid && titulo.touched">
+                Debes ingresar el titulo.
+            </div>
+            <div class="m-2 input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">DESCRIPCION</span>
+                </div>
+                <input required minlength="2" type="text" class="form-control" name="descripcion" #descripcion="ngModel" [(ngModel)]="service.formData.descripcion">
+            </div>
+            <div class="text-left text-danger" *ngIf="descripcion.invalid && descripcion.touched">
+                Debes ingresar la descripcion.
+            </div>
+            <div class="m-2 input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">URL</span>
+                </div>
+                <input required minlength="2" type="text" class="form-control" placeholder="https://www.youtube.com/....." name="video_referente" #video_referente="ngModel" [(ngModel)]="service.formData.video_referente">
+            </div>
+            <div class="text-left text-danger" *ngIf="video_referente.invalid && video_referente.touched">
+                Debes ingresar la URL de tu video
+            </div>
+
+            <button class="m-2" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">ADD</button>
+        </form>
+
+    </div>
+</div>

@@ -29,18 +29,21 @@ export class ReferenteService {
     // obtengo todos los datos de esta url que hace ref a backend
     return this.http.get<Referente>(this.Url+"/getReferenteSalud");
   }
+  updateHVV(historiaVidaVideo: Referente){
+    return this.http.put<Referente>(this.Url+"/"+historiaVidaVideo.id_referente, historiaVidaVideo);
+  }
   ///////////////////////////////////////////////////////////////
   editarReferenteTrabajo(referente: Referente){
-    return this.http.post<Referente>(this.Url+"/editarReferenteTrabajo", referente);
+    return this.http.put<Referente>(this.Url+"/editarReferenteTrabajo", referente);
   }
   editarReferenteVivienda(referente: Referente){
-    return this.http.post<Referente>(this.Url+"/editarReferenteVivienda", referente);
+    return this.http.put<Referente>(this.Url+"/editarReferenteVivienda", referente);
   }
   editarReferenteEducacion(referente: Referente){
-    return this.http.post<Referente>(this.Url+"/editarReferenteEducacion", referente);
+    return this.http.put<Referente>(this.Url+"/editarReferenteEducacion", referente);
   }
   editarReferenteSalud(referente: Referente){
-    return this.http.post<Referente>(this.Url + "/editarReferenteSalud",referente);
+    return this.http.put<Referente>(this.Url + "/editarReferenteSalud",referente);
   }
 
   updateTeOfrecemos(teOfrecemos: Referente){

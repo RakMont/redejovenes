@@ -9,12 +9,8 @@
     <div style="overflow: auto;height: 450px;">
         <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
 
-            <div class="m-2 input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">ID</span>
-                </div>
-                <input readonly="readonly" type="text" class="form-control" name="id_HVV" #id_HVV="ngModel" [(ngModel)]="service.formData.id_HVV">
-            </div>
+
+            <input readonly="readonly" type="text" class="form-control" name="id_HVV" #id_HVV="ngModel" [(ngModel)]="service.formData.id_HVV">
 
 
 
