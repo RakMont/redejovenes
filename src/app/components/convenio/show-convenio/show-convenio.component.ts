@@ -22,15 +22,9 @@ import {MatSnackBar}from '@angular/material/snack-bar';
 export class ShowConvenioComponent implements OnInit {
   public photos:any=[];
   convenios:Convenio[];
-
- // public audiosShow:any=[];
-//////////////
   things=[];
-//////////////
-public hvaAudio: any=File;
-
-
-public aux;
+  public hvaAudio: any=File;
+  public aux;
 
 
   constructor(private snackBar:MatSnackBar,private convenioservice: ConvenioService, private router: Router,private dialog: MatDialog) {

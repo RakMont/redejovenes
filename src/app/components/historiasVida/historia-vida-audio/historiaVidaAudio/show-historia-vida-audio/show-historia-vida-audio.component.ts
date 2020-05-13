@@ -23,7 +23,7 @@ import {MatSnackBar}from '@angular/material/snack-bar';
 export class ShowHistoriaVidaAudioComponent implements OnInit {
 
   public audios:any=[];
-
+  historiasHVA:HistoriaVidaAudio[];
   public audiosShow:any=[];
 
   things=[];
@@ -34,7 +34,7 @@ public hvaAudio: any=File;
 
 public aux;
 
-  historiasHVA:HistoriaVidaAudio[];
+
   msbapTitle = 'Audio Title';
   msbapAudioUrl = '../../../../assets/HistoriaVidaAudio/euphoria.mp3';
   msaapDisplayVolumeControls = true;

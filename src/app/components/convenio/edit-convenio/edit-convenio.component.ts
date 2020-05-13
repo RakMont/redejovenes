@@ -62,13 +62,32 @@ export class EditConvenioComponent implements OnInit {
     this.service.UpdateConvenioFile(formData).subscribe((res)=>{
       //this.resetForm(form);
       this.dialogbox.close();
-      this.charge();
       this.service.filter("Register click");
       this.snackBar.open('Editado con exito','',{
         duration:5000,
         verticalPosition:'top'
       })
     })
+    this.service.getConvenios().subscribe(response=>{
+      this.photos=response;
+    this.Convertlist();
+
+    });
+    this.service.getConv()
+      .subscribe(data =>{
+   this.convenios = data;
+  });
+  this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+    this.router.navigate(["showConvenios"]));
+  }
+  Convertlist(){
+    let c: number = 0;
+
+    for(let photo of this.photos){
+      this.aux=this.convenios[c];
+      this.things.push({photo:photo,imagen:this.aux.imagen,id_convenio:this.aux.id_convenio,institucion:this.aux.institucion,descripcion:this.aux.descripcion,direccion:this.aux.direccion});
+      c=c+1;
+    }
 
   }
   onSelectFile(event){
@@ -101,15 +120,6 @@ export class EditConvenioComponent implements OnInit {
 
    console.log("llega aqui");
   }
-  Convertlist(){
-    let c: number = 0;
 
-    for(let photo of this.photos){
-      this.aux=this.convenios[c];
-      this.things.push({photo:photo,imagen:this.aux.imagen,id_convenio:this.aux.id_convenio,institucion:this.aux.institucion,descripcion:this.aux.descripcion,direccion:this.aux.direccion});
-      c=c+1;
-    }
-
-  }
 
 }

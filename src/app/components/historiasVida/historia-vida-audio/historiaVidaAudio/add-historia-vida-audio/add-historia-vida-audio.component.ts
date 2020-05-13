@@ -10,6 +10,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import {MatSort}from '@angular/material/sort';
 import {ViewChild}from '@angular/core';
 import{ShowHistoriaVidaAudioComponent}from 'src/app/components/historiasVida/historia-vida-audio/historiaVidaAudio/show-historia-vida-audio/show-historia-vida-audio.component';
+import{HistoriaVidaAudio}from 'src/app/models/HistoriaVidaAudio';
 
 @Component({
   selector: 'app-add-historia-vida-audio',
@@ -29,6 +30,12 @@ export class AddHistoriaVidaAudioComponent implements OnInit {
    listData:MatTableDataSource<any>;
    //showHistory:ShowHistoriaVidaAudioComponent;
   public hvaAudio: any=File;
+  public audios:any=[];
+  historiasHVA:HistoriaVidaAudio[];
+  public audiosShow:any=[];
+  public aux;
+
+  things=[];
    @ViewChild(MatSort, {static: true}) sort: MatSort;
   // variable : ViewChild(MyChildComponent)
   // @ViewChild(ShowHistoriaVidaAudioComponent,{static:true})variable:ShowHistoriaVidaAudioComponent;
@@ -59,7 +66,6 @@ export class AddHistoriaVidaAudioComponent implements OnInit {
       this.service.saveAudio(formData).subscribe((res)=>{
         this.resetForm(form);
         this.dialogbox.close();
-        this.charge();
 
       this.service.filter("Register click");
         this.snackBar.open('Añadido correctamente','',{
@@ -67,6 +73,30 @@ export class AddHistoriaVidaAudioComponent implements OnInit {
           verticalPosition:'top'
       });
       })
+      this.service.getHVAAudios().subscribe(response=>{
+        this.audios=response;
+        this.Convertlist();
+
+      });
+      this.service.getHVA()
+          .subscribe(data =>{
+     this.historiasHVA = data;
+    // this.convert();
+     console.log("this is ",this.aux);
+   });
+   this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+      this.router.navigate(["showHVA"]));
+    }
+
+    Convertlist(){
+      let c: number = 0;
+
+      for(let audio of this.audios){
+        this.aux=this.historiasHVA[c];
+        this.things.push({audio:audio,titulo:this.aux.titulo,fecha:this.aux.fecha,id_HVA:this.aux.id_HVA,archivo_mp3:this.aux.archivo_mp3});
+        c=c+1;
+      }
+
     }
   onSelectFile(event){
     //const file=event.target.file;
