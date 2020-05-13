@@ -1,36 +1,36 @@
 <div class="container col-md-11">
     <div class="d-flex justify-content-between">
-        <h4>ADD TRABAJO</h4>
-
+        <h4>AGREGAR TRABAJO</h4>
         <button mat-button (click)="close()">
-      <mat-icon>close</mat-icon>
-    </button>
+            <mat-icon>close</mat-icon>
+        </button>
     </div>
     <div style="overflow: auto;height: 450px;">
         <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
-
-            <div class="mt-4 input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">CONTENIDO</span>
+            <mat-form-field class="example-full-width">
+                <mat-label>
+                    CONTENIDO
+                </mat-label>
+                <input matInput required minlength="2" type="text" class="form-control" name="contenido" #contenido="ngModel" [(ngModel)]="service.formData.contenido">
+                <div class="text-left text-danger" *ngIf="contenido.invalid && contenido.touched">
+                    Debes ingresar el contenido.
                 </div>
-                <input required minlength="2" type="text" class="form-control" name="contenido" #contenido="ngModel" [(ngModel)]="service.formData.contenido">
-            </div>
-            <div class="text-left text-danger" *ngIf="contenido.invalid && contenido.touched">
-                Debes ingresar el contenido
-            </div>
+            </mat-form-field>
+            <br>
 
-            <div class="mt-4 input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">CONTACTO</span>
+            <mat-form-field class="example-full-width">
+                <mat-label>
+                    CONTACTO
+                </mat-label>
+                <input matInput required minlength="2" type="text" class="form-control" name="contacto" #contacto="ngModel" [(ngModel)]="service.formData.contacto">
+                <div class="text-left text-danger" *ngIf="contacto.invalid && contacto.touched">
+                    Debes ingresar el contacto.
                 </div>
-                <input required minlength="2" type="text" class="form-control" name="contacto" #contacto="ngModel" [(ngModel)]="service.formData.contacto">
-            </div>
-            <div class="text-left text-danger" *ngIf="contacto.invalid && contacto.touched">
-                Debes ingresar el contacto
-            </div>
+            </mat-form-field>
+            <br>
 
-            <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">ADD</button>
+            <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">AGREGAR</button>
         </form>
-
     </div>
 </div>
+
