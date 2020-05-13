@@ -28,6 +28,7 @@ import {MatSnackBar}from '@angular/material/snack-bar';
 })
 export class ShowPodcastComponent implements OnInit {
   public audios:any=[];
+  podcasts:Podcast[];
 
   public audiosShow:any=[];
   temaFiltrado :Tema;
@@ -43,7 +44,6 @@ selectedValue: string;
    selectedCar: string;
    animalControl = new FormControl('', Validators.required);
    selectFormControl = new FormControl('', Validators.required);
-  podcasts:Podcast[];
   msbapTitle = 'Audio Title';
   msbapAudioUrl = '../../../../assets/HistoriaVidaAudio/euphoria.mp3';
   msaapDisplayVolumeControls = true;
@@ -74,13 +74,7 @@ selectedValue: string;
     this.temas=response;
   });
  });
- /*
-    this.router.events.pipe(
-    filter((event: RouterEvent) => event instanceof NavigationEnd)
-  ).subscribe(() => {
-    this.charge();
-  });*/
-  //this.refresh();
+
 
   }
 
@@ -93,24 +87,7 @@ selectedValue: string;
     this.dialog.open(AddPodcastComponent,dialogConfig);
 
 
-    //this.podcasts=this.podcasts.filter(p=>p.id_podcast!==podcast.id_podcast);
-    //this.audios=this.audios.filter(p=>p!==podcast);
-    //this.ngOnInit()
-    this.podcastService.getPodcastAllAudios().subscribe(response=>{
-      this.audios=response;
-      this.hvaAudio=this.audios[0];
-     // this.Convertlist();
 
-    });
-    this.podcastService.getPodcast()
-      .subscribe(data =>{
-   this.podcasts = data;
-   this.aux=this.podcasts[0];
-   console.log("this is ",this.aux);
- });
-    //this.Convertlist();
-    //console.log("el primero es",this.things[0].titulo)
-    //this.things=this.things;
 
    }
 

@@ -32,6 +32,7 @@ export class EditEducacionComponent implements OnInit {
     });
   }
   listData:MatTableDataSource<any>;
+  referente:Referente;
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   ngOnInit(): void {
@@ -50,6 +51,11 @@ export class EditEducacionComponent implements OnInit {
         verticalPosition:'top'
       })
     })
-
+    this.service
+    .getReferenteEducacion().subscribe(data=>{
+      this.referente=data;
+    });
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+    this.router.navigate(["showRefEducacion"]));
   }
 }

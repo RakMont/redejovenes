@@ -11,7 +11,9 @@ export class ReferenteService {
   constructor(private http: HttpClient) { }
   Url = 'http://localhost:8090/referentes';
   formData: Referente;
-
+  getReferenteId(id_vision:number){
+    return this.http.get<Referente>(this.Url + "/" + id_vision);
+  }
   getReferenteTrabajo() {
     // obtengo todos los datos de esta url que hace ref a backend
     return this.http.get<Referente>(this.Url+"/getReferenteTrabajo");

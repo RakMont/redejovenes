@@ -23,18 +23,23 @@ import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
   styleUrls: ['./edit-vivienda.component.css']
 })
 export class EditViviendaComponent implements OnInit {
+
   constructor(private snackBar:MatSnackBar,private router: Router,public dialogbox:MatDialogRef<EditViviendaComponent>,public service:ReferenteService) {
     this.service.listen().subscribe((m:any)=>{
       console.log(m);
 
-
     });
   }
+
   listData:MatTableDataSource<any>;
+  referente:Referente;
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   ngOnInit(): void {
+
+
   }
+
 
   close(){
     this.dialogbox.close();
@@ -49,7 +54,12 @@ export class EditViviendaComponent implements OnInit {
         verticalPosition:'top'
       })
     })
-
+    this.service
+    .getReferenteVivienda().subscribe(data=>{
+      this.referente=data;
+    });
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+    this.router.navigate(["showRefVivienda"]));
   }
 
 }

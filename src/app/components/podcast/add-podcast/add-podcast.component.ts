@@ -4,6 +4,7 @@ import{PodcastService}from 'src/app/services/podcast.service';
 import{TemaService}from 'src/app/services/tema.service';
 import {FormControl, Validators} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
+import{Podcast}from 'src/app/models/Podcast';
 
 import{NgForm}from '@angular/forms';
 import { DatePipe } from '@angular/common';
@@ -37,6 +38,10 @@ export class AddPodcastComponent implements OnInit {
    //showHistory:ShowHistoriaVidaAudioComponent;
   public hvaAudio: any=File;
   temas:Tema[];
+  public audios:any=[];
+  podcasts:Podcast[];
+  things=[];
+  public aux;
 
    @ViewChild(MatSort, {static: true}) sort: MatSort;
   ngOnInit(): void {
@@ -81,6 +86,19 @@ export class AddPodcastComponent implements OnInit {
           verticalPosition:'top'
       });
       })
+      this.service.getPodcastAllAudios().subscribe(response=>{
+        this.audios=response;
+        this.hvaAudio=this.audios[0];
+        this.Convertlist();
+
+      });
+      this.service.getPodcast()
+        .subscribe(data =>{
+     this.podcasts = data;
+
+    });
+      this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+      this.router.navigate(["showPodcast"]));
 
     }
   onSelectFile(event){
@@ -95,5 +113,20 @@ export class AddPodcastComponent implements OnInit {
         this.listData= new MatTableDataSource(data);
         this.listData.sort=this.sort;
       });
+    }
+
+
+
+
+
+    Convertlist(){
+      let c: number = 0;
+      //.log("el ultimo es ",this.audios[0])
+      for(let audio of this.audios){
+        this.aux=this.podcasts[c];
+        this.things.push({ audio:audio,titulo:this.aux.titulo,fecha:this.aux.fecha,id_podcast:this.aux.id_podcast,archivoMP3:this.aux.archivoMP3,descripcion:this.aux.descripcion});
+        c=c+1;
+      }
+
     }
 }

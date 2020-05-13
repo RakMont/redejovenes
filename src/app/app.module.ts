@@ -193,7 +193,8 @@ import { HistoriaVidaAudioService } from './services/historia-vida-audio.service
     MatGridListModule,
     NgxAudioPlayerModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
 
 
   ],

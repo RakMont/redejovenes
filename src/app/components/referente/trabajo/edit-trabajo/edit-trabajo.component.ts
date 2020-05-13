@@ -32,6 +32,7 @@ export class EditTrabajoComponent implements OnInit {
     });
   }
   listData:MatTableDataSource<any>;
+  referente:Referente;
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   ngOnInit(): void {
@@ -50,7 +51,12 @@ export class EditTrabajoComponent implements OnInit {
         verticalPosition:'top'
       })
     })
-
+    this.service
+    .getReferenteTrabajo().subscribe(data=>{
+      this.referente=data;
+    });
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+    this.router.navigate(["showRefTrabajo"]));
   }
 
 }

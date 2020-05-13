@@ -24,7 +24,7 @@ export class ShowViviendaComponent implements OnInit {
   referente:Referente;
   dataSource=null;
   link;
-
+  referentes: Referente[];
   constructor(private snackBar:MatSnackBar,private service: ReferenteService, private router: Router,private dialog: MatDialog) { }
 
   ngOnInit() {
