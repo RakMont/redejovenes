@@ -59,6 +59,8 @@ hr.new4 {
     font-family: "Noto Sans", Helvetica, Arial, sans-serif;
     background-color: black;
     max-width: 95%;
+    min-height: 100vh ;
+    margin-bottom: 20px;
 }
 
 .options {

@@ -41,6 +41,8 @@ source {
     background-color: black;
     margin-bottom: 50px;
     max-width: 80%;
+    min-height: 100vh;
+    margin-bottom: 20px;
 }
 
 hr.new4 {
