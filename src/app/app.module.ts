@@ -96,6 +96,14 @@ import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.
 import { HistoriaVidaAudioService } from './services/historia-vida-audio.service';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { Home2Component } from './components/home2/home2.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { BoardAdminComponent } from './components/board-admin/board-admin.component';
+import { BoardModeratorComponent } from './components/board-moderator/board-moderator.component';
+import { BoardUserComponent } from './components/board-user/board-user.component';
+//import * as auth0 from "auth0-js";
+
+//import { authInterceptorProviders } from './_helpers/auth.interceptor';
 
 
 
@@ -161,6 +169,11 @@ import { SignupComponent } from './components/signup/signup.component';
     QuienesSomosComponent,
     LoginComponent,
     SignupComponent,
+    Home2Component,
+    ProfileComponent,
+    BoardAdminComponent,
+    BoardModeratorComponent,
+    BoardUserComponent,
 
 
 
