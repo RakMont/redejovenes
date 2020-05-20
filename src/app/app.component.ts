@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component,OnInit  } from '@angular/core';
 import { Router } from '@angular/router';
 import { MisionService } from 'src/app/services/mision.service';
 import { Subscriber } from 'rxjs';
 import { Mision } from './models/Mision';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-root',
@@ -11,13 +12,36 @@ import { CarouselComponent } from './components/carousel/carousel.component';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
-  
+export class AppComponent implements OnInit{
+  private roles: string[];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  username: string;
+
   title = 'frontend';
-  
+
   HVTScreen;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private tokenStorageService: TokenStorageService) { }
+  ngOnInit() {
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+
+      this.username = user.username;
+    }
+  }
+
+  logout() {
+    this.tokenStorageService.signOut();
+    window.location.reload();
+  }
 }
 
 

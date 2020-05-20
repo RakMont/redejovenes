@@ -10,6 +10,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import {MatSort}from '@angular/material/sort';
 import {ViewChild}from '@angular/core';
 import{Usuario}from 'src/app/models/Usuario';
+import{AuthService}from 'src/app/services/auth.service';
+import{TokenStorageService}from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -17,8 +19,13 @@ import{Usuario}from 'src/app/models/Usuario';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  form: any = {};
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
+  roles: string[] = [];
 
-  constructor(private snackBar:MatSnackBar, private router: Router,public dialogbox:MatDialogRef<LoginComponent>,public service:UsuarioService) { }
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService,private snackBar:MatSnackBar, private router: Router,public dialogbox:MatDialogRef<LoginComponent>,public service:UsuarioService) { }
   usuario:Usuario;
   close(){
     this.dialogbox.close();
@@ -28,6 +35,10 @@ export class LoginComponent implements OnInit {
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   ngOnInit(): void {
+    if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
+      this.roles = this.tokenStorage.getUser().roles;
+    }
     this.resetForm();
   }
   resetForm(form?:NgForm){
@@ -45,14 +56,31 @@ export class LoginComponent implements OnInit {
     }
 
 }
-onSubmit(form:NgForm){
+onSubmit(){
 
-    this.resetForm(form);
+    //this.resetForm(form);
+    this.authService.login(this.form).subscribe(
+      data => {
+        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveUser(data);
+
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        this.roles = this.tokenStorage.getUser().roles;
+        this.reloadPage();
+      },
+      err => {
+        this.errorMessage = err.error.message;
+        this.isLoginFailed = true;
+      }
+    );
     this.dialogbox.close();
 
 
 
 
 }
-
+reloadPage() {
+  window.location.reload();
+}
 }

@@ -10,48 +10,34 @@ import { MatTableDataSource } from '@angular/material/table';
 import {MatSort}from '@angular/material/sort';
 import {ViewChild}from '@angular/core';
 import{Usuario}from 'src/app/models/Usuario';
+import{AuthService}from 'src/app/services/auth.service';
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
-  constructor(private snackBar:MatSnackBar, private router: Router,public dialogbox:MatDialogRef<SignupComponent>,public service:UsuarioService) { }
-  usuario:Usuario;
-  close(){
-    this.dialogbox.close();
+  form: any = {};
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
+  constructor(private authService: AuthService) { }
+  ngOnInit() {
   }
-  listData:MatTableDataSource<any>;
 
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
-
-  ngOnInit(): void {
-    this.resetForm();
+  onSubmit() {
+    this.authService.register(this.form).subscribe(
+      data => {
+        console.log(data);
+        this.isSuccessful = true;
+        this.isSignUpFailed = false;
+      },
+      err => {
+        this.errorMessage = err.error.message;
+        this.isSignUpFailed = true;
+      }
+    );
   }
-  resetForm(form?:NgForm){
-    if(form!=null)
-    form.resetForm();
-    this.service.formData={
-      id_usuario:0,
-      nombre:'',
-      apellido:'',
-      fecha_nacimiento:new Date,
-      username:'',
-      password:'',
-      lugar_acogida:''
-
-    }
-
-}
-onSubmit(form:NgForm){
-
-    this.resetForm(form);
-    this.dialogbox.close();
-
-
-
-
-}
 
 }

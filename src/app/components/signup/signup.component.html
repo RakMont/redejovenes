@@ -1,51 +1,51 @@
-<div class="container col-md-11">
-    <div class="d-flex justify-content-between">
-        <h1>REGISTRO</h1>
-        <button mat-button (click)="close()">
-<mat-icon>close</mat-icon>
-</button>
-    </div>
-    <div style="overflow: auto;height: 600px;">
-        <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
-            <mat-form-field class="example-full-width">
-                <mat-label>NOMBRE</mat-label>
-                <input matInput required minlength="2" type="text" class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]="service.formData.nombre">
-                <div class="text-left text-danger" *ngIf="nombre.invalid && nombre.touched">
-                    Debes ingresar el nombre </div>
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-                <mat-label>APELLIDO</mat-label>
-                <input matInput required minlength="2" type="text" class="form-control" name="apellido" #apellido="ngModel" [(ngModel)]="service.formData.apellido">
-                <div class="text-left text-danger" *ngIf="apellido.invalid && apellido.touched">
-                    Debes ingresar tu apellido </div>
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-                <mat-label>USERNAME</mat-label>
-                <input matInput required minlength="2" type="text" class="form-control" name="username" #username="ngModel" [(ngModel)]="service.formData.username">
-                <div class="text-left text-danger" *ngIf="username.invalid && username.touched">
-                    Debes ingresar el Username </div>
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-                <mat-label>Password</mat-label>
-                <input matInput required minlength="2" type="text" class="form-control" name="password" #password="ngModel" [(ngModel)]="service.formData.password">
-                <div class="text-left text-danger" *ngIf="password.invalid && password.touched">
-                    Debes ingresar la contraseña </div>
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-                <mat-label>FECHA DE NACIMIENTO</mat-label>
-                <input matInput required minlength="2" type="text" class="form-control" name="fecha_nacimiento" #fecha_nacimiento="ngModel" [(ngModel)]="service.formData.fecha_nacimiento">
-                <div class="text-left text-danger" *ngIf="fecha_nacimiento.invalid && fecha_nacimiento.touched">
-                    Debes ingresar tu fecha de nacimiento </div>
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-                <mat-label>HOGAR DE ACOGIDA</mat-label>
-                <input matInput required minlength="2" type="text" class="form-control" name="lugar_acogida" #lugar_acogida="ngModel" [(ngModel)]="service.formData.lugar_acogida">
-                <div class="text-left text-danger" *ngIf="lugar_acogida.invalid && lugar_acogida.touched">
-                    Debes ingresar el Username </div>
-            </mat-form-field>
-            <br>
-            <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">ADD</button>
+<div class="col-md-12">
+    <div class="card card-container">
+        <img id="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" class="profile-img-card" />
+        <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required minlength="3" maxlength="20" #username="ngModel" />
+                <div class="alert-danger" *ngIf="f.submitted && username.invalid">
+                    <div *ngIf="username.errors.required">Username is required</div>
+                    <div *ngIf="username.errors.minlength">
+                        Username must be at least 3 characters
+                    </div>
+                    <div *ngIf="username.errors.maxlength">
+                        Username must be at most 20 characters
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email #email="ngModel" />
+                <div class="alert-danger" *ngIf="f.submitted && email.invalid">
+                    <div *ngIf="email.errors.required">Email is required</div>
+                    <div *ngIf="email.errors.email">
+                        Email must be a valid email address
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required minlength="6" #password="ngModel" />
+                <div class="alert-danger" *ngIf="f.submitted && password.invalid">
+                    <div *ngIf="password.errors.required">Password is required</div>
+                    <div *ngIf="password.errors.minlength">
+                        Password must be at least 6 characters
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block">Sign Up</button>
+            </div>
+
+            <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+                Signup failed!<br />{{ errorMessage }}
+            </div>
         </form>
 
+        <div class="alert alert-success" *ngIf="isSuccessful">
+            Your registration is successful!
+        </div>
     </div>
 </div>

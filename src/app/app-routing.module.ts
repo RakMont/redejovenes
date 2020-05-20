@@ -33,6 +33,14 @@ import{ShowTemaComponent}from './components/tema/show-tema/show-tema.component';
 
 import{SignupComponent}from './components/signup/signup.component';
 import{LoginComponent}from './components/login/login.component';
+import{Home2Component}from './components/home2/home2.component';
+import{ProfileComponent}from './components/profile/profile.component';
+
+import{BoardAdminComponent}from './components/board-admin/board-admin.component';
+
+import{BoardModeratorComponent}from './components/board-moderator/board-moderator.component';
+
+import{BoardUserComponent}from './components/board-user/board-user.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -57,8 +65,12 @@ const routes: Routes = [
   {path: 'showQuienesSomos', component:QuienesSomosComponent},
   {path: 'temas', component:ShowTemaComponent},
   {path: 'signup', component:SignupComponent},
-  {path: 'login', component:LoginComponent}
-
+  {path: 'login', component:LoginComponent},
+  { path: 'home', component: HomeComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'user', component: BoardUserComponent },
+  { path: 'mod', component: BoardModeratorComponent },
+  { path: 'admin', component: BoardAdminComponent }
 ];
 
 @NgModule({
