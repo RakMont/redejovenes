@@ -104,10 +104,9 @@ div.hvv {
 .container {
     text-align: justify;
     font-family: "Noto Sans", Helvetica, Arial, sans-serif;
-    background: linear-gradient(to right, #0ab481, #796a73);
+    background-color: white;
     margin-bottom: 10%;
     max-width: 85%;
-    border-radius: 25px;    
 }
 
 .mat-card {
@@ -129,7 +128,6 @@ hr.new4 {
 }
 
 .tit {
-    color: white;
+    color: black;
     text-align: center;
 }
-
