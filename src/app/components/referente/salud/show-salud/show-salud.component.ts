@@ -15,6 +15,8 @@ import {MatSnackBar}from '@angular/material/snack-bar';
 
 import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 
+import{ShowComentarioSaludComponent}from 'src/app/components/comentario/salud/show-comentario-salud/show-comentario-salud.component';
+
 @Component({
   selector: 'app-show-salud',
   templateUrl: './show-salud.component.html',

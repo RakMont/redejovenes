@@ -14,6 +14,7 @@ import {Observable} from 'rxjs';
 import {MatSnackBar}from '@angular/material/snack-bar';
 
 import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
+import{ShowComentarioViviendaComponent}from 'src/app/components/comentario/vivienda/show-comentario-vivienda/show-comentario-vivienda.component';
 
 @Component({
   selector: 'app-show-vivienda',

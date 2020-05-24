@@ -12,7 +12,7 @@ import { filter } from 'rxjs/operators';
 import{Subject}from 'rxjs';
 import {Observable} from 'rxjs';
 import {MatSnackBar}from '@angular/material/snack-bar';
-
+import{ShowComentarioTrabajoComponent}from 'src/app/components/comentario/trabajo/show-comentario-trabajo/show-comentario-trabajo.component';
 import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 @Component({
   selector: 'app-show-trabajo',

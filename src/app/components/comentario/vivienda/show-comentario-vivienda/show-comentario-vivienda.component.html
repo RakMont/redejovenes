@@ -1,1 +1,33 @@
-<p>show-comentario-vivienda works!</p>
+<div class="conrainer">
+    <mat-list *ngFor="let hvt of comentariosRaw">
+        <mat-card>
+            <mat-card-header [ngClass]="{'custom-card':true}">
+                <mat-card-title>
+                    <br>
+                    <h1>Titulo: {{hvt.comentario}}</h1>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-footer>Fecha: {{hvt.fecha}}</mat-card-footer>
+
+        </mat-card>
+        <mat-list *ngFor="let comen of comentarios">
+            <div *ngIf="hvt.id_comentario==comen.id_comentario_ref">
+                <hr class="new4">
+                <div fxLayout="row">
+                    <div fxFlex="10">
+                        <mat-card-content [ngClass]="{'custom-card-content':true}">
+                            <h4>
+                                <h3>CONTENIDO: </h3>
+                                {{comen.comentario}}
+                            </h4>
+                        </mat-card-content>
+                    </div>
+                </div>
+
+                <mat-card-footer>Fecha: {{comen.fecha}}</mat-card-footer>
+            </div>
+        </mat-list>
+
+    </mat-list>
+
+</div>

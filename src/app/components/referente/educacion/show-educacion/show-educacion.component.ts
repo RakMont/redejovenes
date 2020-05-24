@@ -14,6 +14,7 @@ import {Observable} from 'rxjs';
 import {MatSnackBar}from '@angular/material/snack-bar';
 
 import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
+import{ShowComentarioEducacionComponent}from 'src/app/components/comentario/educacion/show-comentario-educacion/show-comentario-educacion.component';
 
 @Component({
   selector: 'app-show-educacion',
