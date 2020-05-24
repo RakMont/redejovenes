@@ -101,12 +101,18 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { BoardAdminComponent } from './components/board-admin/board-admin.component';
 import { BoardModeratorComponent } from './components/board-moderator/board-moderator.component';
 import { BoardUserComponent } from './components/board-user/board-user.component';
-import { AddComentarioComponent } from './components/comentario/add-comentario/add-comentario.component';
-import { ShowComentarioComponent } from './components/comentario/show-comentario/show-comentario.component';
-import { EditComentarioComponent } from './components/comentario/edit-comentario/edit-comentario.component';
-//import * as auth0 from "auth0-js";
-
-//import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { AddComentarioTrabajoComponent } from './components/comentario/trabajo/add-comentario-trabajo/add-comentario-trabajo.component';
+import { EditComentarioTrabajoComponent } from './components/comentario/trabajo/edit-comentario-trabajo/edit-comentario-trabajo.component';
+import { ShowComentarioTrabajoComponent } from './components/comentario/trabajo/show-comentario-trabajo/show-comentario-trabajo.component';
+import { ShowComentarioViviendaComponent } from './components/comentario/vivienda/show-comentario-vivienda/show-comentario-vivienda.component';
+import { AddComentarioViviendaComponent } from './components/comentario/vivienda/add-comentario-vivienda/add-comentario-vivienda.component';
+import { EditComentarioViviendaComponent } from './components/comentario/vivienda/edit-comentario-vivienda/edit-comentario-vivienda.component';
+import { EditComentarioEducacionComponent } from './components/comentario/educacion/edit-comentario-educacion/edit-comentario-educacion.component';
+import { AddComentarioEducacionComponent } from './components/comentario/educacion/add-comentario-educacion/add-comentario-educacion.component';
+import { ShowComentarioEducacionComponent } from './components/comentario/educacion/show-comentario-educacion/show-comentario-educacion.component';
+import { ShowComentarioSaludComponent } from './components/comentario/salud/show-comentario-salud/show-comentario-salud.component';
+import { AddComentarioSaludComponent } from './components/comentario/salud/add-comentario-salud/add-comentario-salud.component';
+import { EditComentarioSaludComponent } from './components/comentario/salud/edit-comentario-salud/edit-comentario-salud.component';
 
 
 
@@ -177,9 +183,19 @@ import { EditComentarioComponent } from './components/comentario/edit-comentario
     BoardAdminComponent,
     BoardModeratorComponent,
     BoardUserComponent,
-    AddComentarioComponent,
-    ShowComentarioComponent,
-    EditComentarioComponent,
+    AddComentarioTrabajoComponent,
+    EditComentarioTrabajoComponent,
+    ShowComentarioTrabajoComponent,
+    ShowComentarioViviendaComponent,
+    AddComentarioViviendaComponent,
+    EditComentarioViviendaComponent,
+    EditComentarioEducacionComponent,
+    AddComentarioEducacionComponent,
+    ShowComentarioEducacionComponent,
+    ShowComentarioSaludComponent,
+    AddComentarioSaludComponent,
+    EditComentarioSaludComponent,
+
 
 
 

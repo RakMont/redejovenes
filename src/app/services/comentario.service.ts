@@ -74,8 +74,19 @@ export class ComentarioService {
     return this.http.post<Comentario>(this.Url+"/agregarComentarioSalud", comentario);
   }
 
+  editarComentarioTrabajo(comentario: Comentario){
+    return this.http.put<Comentario>(this.Url + "/editarComentarioTrabajo",comentario);
+  }
 
-
+  editarComentarioVivienda(comentario: Comentario){
+    return this.http.put<Comentario>(this.Url + "/editarComentarioVivienda",comentario);
+  }
+  editarComentarioEducacion(comentario: Comentario){
+    return this.http.put<Comentario>(this.Url + "/editarComentarioEducacion",comentario);
+  }
+  editarComentarioSalud(comentario: Comentario){
+    return this.http.put<Comentario>(this.Url + "/editarComentarioSalud",comentario);
+  }
   getHVT() {
     // obtengo todos los datos de esta url que hace ref a backend
     return this.http.get<Comentario[]>(this.Url);

@@ -41,6 +41,7 @@ import{BoardAdminComponent}from './components/board-admin/board-admin.component'
 import{BoardModeratorComponent}from './components/board-moderator/board-moderator.component';
 
 import{BoardUserComponent}from './components/board-user/board-user.component';
+import{ShowComentarioEducacionComponent}from './components/comentario/educacion/show-comentario-educacion/show-comentario-educacion.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -70,7 +71,8 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'user', component: BoardUserComponent },
   { path: 'mod', component: BoardModeratorComponent },
-  { path: 'admin', component: BoardAdminComponent }
+  { path: 'admin', component: BoardAdminComponent },
+  { path: 'comentariosEdu', component: ShowComentarioEducacionComponent }
 ];
 
 @NgModule({
