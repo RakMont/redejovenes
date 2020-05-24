@@ -1,9 +1,107 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
+import { Comentario } from '../models/Comentario';
+import{Subject}from 'rxjs';
+import {Observable} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class ComentarioService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+  Url = 'http://localhost:8090/comentarios';
+  formData:Comentario;
+
+  listComentariosRawTrabajo() {
+    // obtengo todos los datos de esta url que hace ref a backend
+    return this.http.get<Comentario[]>(this.Url+"/listComentariosRawTrabajo");
+  }
+  listComentariosTrabajo() {
+    // obtengo todos los datos de esta url que hace ref a backend
+    return this.http.get<Comentario[]>(this.Url+"/listComentariosTrabajo");
+  }
+
+
+
+
+  listComentariosRawVivienda() {
+    // obtengo todos los datos de esta url que hace ref a backend
+    return this.http.get<Comentario[]>(this.Url+"/listComentariosRawVivienda");
+  }
+  listComentariosVivienda() {
+    // obtengo todos los datos de esta url que hace ref a backend
+    return this.http.get<Comentario[]>(this.Url+"/listComentariosVivienda");
+  }
+
+
+
+  listComentariosRawEducacion() {
+    // obtengo todos los datos de esta url que hace ref a backend
+    return this.http.get<Comentario[]>(this.Url+"/listComentariosRawEducacion");
+  }
+  listComentariosEducacion() {
+    // obtengo todos los datos de esta url que hace ref a backend
+    return this.http.get<Comentario[]>(this.Url+"/listComentariosEducacion");
+  }
+
+
+
+
+  listComentariosRawSalud() {
+    // obtengo todos los datos de esta url que hace ref a backend
+    return this.http.get<Comentario[]>(this.Url+"/listComentariosRawSalud");
+  }
+  listComentariosSalud() {
+    // obtengo todos los datos de esta url que hace ref a backend
+    return this.http.get<Comentario[]>(this.Url+"/listComentariosSalud");
+  }
+
+
+  agregarComentarioTrabajo(comentario: Comentario){
+    return this.http.post<Comentario>(this.Url+"/agregarComentarioTrabajo", comentario);
+  }
+
+  agregarComentarioVivienda(comentario: Comentario){
+    return this.http.post<Comentario>(this.Url+"/agregarComentarioVivienda", comentario);
+  }
+
+
+  agregarComentarioEducacion(comentario: Comentario){
+    return this.http.post<Comentario>(this.Url+"/agregarComentarioEducacion", comentario);
+  }
+
+  agregarComentarioSalud(comentario: Comentario){
+    return this.http.post<Comentario>(this.Url+"/agregarComentarioSalud", comentario);
+  }
+
+
+
+  getHVT() {
+    // obtengo todos los datos de esta url que hace ref a backend
+    return this.http.get<Comentario[]>(this.Url);
+  }
+  createHVT(comentario: Comentario){
+    return this.http.post<Comentario>(this.Url, comentario);
+  }
+
+  getHVTId(id_HVT:number){
+    return this.http.get<Comentario>(this.Url + "/" + id_HVT);
+  }
+
+  updateHVT(comentario: Comentario){
+    return this.http.put<Comentario>(this.Url+"/"+comentario.id_comentario, comentario);
+  }
+  deleteHVT(comentario: Comentario){
+    return this.http.delete<Comentario>(this.Url+"/"+comentario.id_comentario);
+
+  }
+
+    private _listeners = new Subject<any>();
+    listen(): Observable<any>{
+      return this._listeners.asObservable();
+    }
+    filter(filterBy:string){
+      this._listeners.next(filterBy);
+    }
+
 }
