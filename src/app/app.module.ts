@@ -101,6 +101,9 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { BoardAdminComponent } from './components/board-admin/board-admin.component';
 import { BoardModeratorComponent } from './components/board-moderator/board-moderator.component';
 import { BoardUserComponent } from './components/board-user/board-user.component';
+import { AddComentarioComponent } from './components/comentario/add-comentario/add-comentario.component';
+import { ShowComentarioComponent } from './components/comentario/show-comentario/show-comentario.component';
+import { EditComentarioComponent } from './components/comentario/edit-comentario/edit-comentario.component';
 //import * as auth0 from "auth0-js";
 
 //import { authInterceptorProviders } from './_helpers/auth.interceptor';
@@ -174,6 +177,9 @@ import { BoardUserComponent } from './components/board-user/board-user.component
     BoardAdminComponent,
     BoardModeratorComponent,
     BoardUserComponent,
+    AddComentarioComponent,
+    ShowComentarioComponent,
+    EditComentarioComponent,
 
 
 
