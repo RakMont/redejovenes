@@ -15,6 +15,7 @@ import {Observable} from 'rxjs';
 import {MatSnackBar}from '@angular/material/snack-bar';
 import { EditHistoriaVidaVideoComponent } from '../../../historia-vida-video/historiaVidaVideo/edit-historia-vida-video/edit-historia-vida-video.component';
 
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-show-historia-vida-texto',
@@ -25,8 +26,12 @@ export class ShowHistoriaVidaTextoComponent implements OnInit {
   historiasHVT:historiaVidaTexto[];
 
   dataSource=null;
-
-  constructor(private snackBar:MatSnackBar,private historiaVidaTextoService: HistoriaVidaTextoService, private router: Router,private dialog: MatDialog) {
+  private roles: string[];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  username: string;
+  constructor(private tokenStorageService: TokenStorageService,private snackBar:MatSnackBar,private historiaVidaTextoService: HistoriaVidaTextoService, private router: Router,private dialog: MatDialog) {
     this.historiaVidaTextoService.listen().subscribe((m:any)=>{
       console.log(m);
       this.charge();
@@ -48,6 +53,17 @@ export class ShowHistoriaVidaTextoComponent implements OnInit {
      this.historiasHVT = data;
      this.charge();
    });
+   this.isLoggedIn = !!this.tokenStorageService.getToken();
+
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+
+      this.username = user.username;
+    }
   }
   charge(){
     this.historiaVidaTextoService

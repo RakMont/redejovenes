@@ -9,6 +9,7 @@ import {MatSort}from '@angular/material/sort';
 import{MatDialog,MatDialogConfig}from '@angular/material/dialog';
 import{AddHistoriaVidaAudioComponent}from 'src/app/components/historiasVida/historia-vida-audio/historiaVidaAudio/add-historia-vida-audio/add-historia-vida-audio.component';
 import{EditHistoriaVidaAudioComponent}from 'src/app/components/historiasVida/historia-vida-audio/historiaVidaAudio/edit-historia-vida-audio/edit-historia-vida-audio.component';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 import { filter } from 'rxjs/operators';
 import{Subject}from 'rxjs';
@@ -33,14 +34,18 @@ public hvaAudio: any=File;
   public counter:number;
 
 public aux;
-
+private roles: string[];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  username: string;
 
   msbapTitle = 'Audio Title';
   msbapAudioUrl = '../../../../assets/HistoriaVidaAudio/euphoria.mp3';
   msaapDisplayVolumeControls = true;
   archivo:String
   msbapDisplayTitle = true;
-  constructor(private snackBar:MatSnackBar,private historiaVidaAudioService: HistoriaVidaAudioService, private router: Router,private dialog: MatDialog) {
+  constructor(private tokenStorageService: TokenStorageService,private snackBar:MatSnackBar,private historiaVidaAudioService: HistoriaVidaAudioService, private router: Router,private dialog: MatDialog) {
     this.historiaVidaAudioService.getHVAAudios().subscribe(response=>{
       this.audios=response;
 
@@ -64,7 +69,17 @@ public aux;
      console.log("this is ",this.aux);
     this.Convertlist();
    });
+   this.isLoggedIn = !!this.tokenStorageService.getToken();
 
+   if (this.isLoggedIn) {
+     const user = this.tokenStorageService.getUser();
+     this.roles = user.roles;
+
+     this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+     this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+
+     this.username = user.username;
+   }
 
   }
 

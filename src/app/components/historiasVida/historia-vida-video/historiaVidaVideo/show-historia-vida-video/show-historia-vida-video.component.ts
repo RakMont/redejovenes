@@ -8,6 +8,7 @@ import {MatSort}from '@angular/material/sort';
 import{MatDialog,MatDialogConfig}from '@angular/material/dialog';
 import{AddHistoriaVidaVideoComponent}from 'src/app/components/historiasVida/historia-vida-video/historiaVidaVideo/add-historia-vida-video/add-historia-vida-video.component';
 import{EditHistoriaVidaVideoComponent}from 'src/app/components/historiasVida/historia-vida-video/historiaVidaVideo/edit-historia-vida-video/edit-historia-vida-video.component';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 import { filter } from 'rxjs/operators';
 import{Subject}from 'rxjs';
@@ -27,7 +28,11 @@ export class ShowHistoriaVidaVideoComponent implements OnInit {
   dataSource=null;
   player: YT.Player;
   private id: string = 'qDuKsiwS5xw';
-
+  private roles: string[];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  username: string;
   savePlayer(player) {
     this.player = player;
     console.log('player instance', player.getVideoUrl());
@@ -35,7 +40,7 @@ export class ShowHistoriaVidaVideoComponent implements OnInit {
   onStateChange(event) {
     console.log('player state', event.data);
   }
-  constructor(private snackBar:MatSnackBar,private historiaVidaVideoService: HistoriaVidaVideoService, private router: Router,private dialog: MatDialog) {
+  constructor(private tokenStorageService: TokenStorageService,private snackBar:MatSnackBar,private historiaVidaVideoService: HistoriaVidaVideoService, private router: Router,private dialog: MatDialog) {
     this.historiaVidaVideoService.listen().subscribe((m:any)=>{
       console.log(m);
       this.charge();
@@ -49,6 +54,17 @@ export class ShowHistoriaVidaVideoComponent implements OnInit {
      this.historiasHVV = data;
      this.charge();
    });
+   this.isLoggedIn = !!this.tokenStorageService.getToken();
+
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+
+      this.username = user.username;
+    }
   }
    edit_HVV(historiaVidaVideo: HistoriaVidaVideo):void{
      historiaVidaVideo.video_HVV="https://www.youtube.com/watch?v="+historiaVidaVideo.video_HVV;
