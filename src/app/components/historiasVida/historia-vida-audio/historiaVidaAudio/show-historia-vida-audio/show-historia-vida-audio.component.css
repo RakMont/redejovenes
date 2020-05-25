@@ -15,12 +15,17 @@ img {
 .classcard {
     margin-bottom: 20px;
     margin: 2%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 0 40px -10px #000;
+    margin: calc(35px) auto;
 }
 
 .other {
     align-items: center;
     text-align: center;
-    background-color: darkslategray;
+    background: linear-gradient(to right, #c228aa, #00AcDC);
     border-style: solid;
     border-color: black;
     height: 110px;
@@ -38,7 +43,6 @@ source {
 }
 
 .container {
-    background-color: black;
     margin-bottom: 50px;
     max-width: 80%;
     min-height: 100vh;
@@ -60,8 +64,10 @@ hr.new4 {
 }
 
 .tit {
-    color: white;
+    color: #000000;
     text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .options {

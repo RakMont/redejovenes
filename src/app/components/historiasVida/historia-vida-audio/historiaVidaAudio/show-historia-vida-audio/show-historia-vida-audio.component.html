@@ -1,15 +1,11 @@
 <div class="container">
+
+    <h1 class="tit">HISTORIAS DE VIDA EN AUDIO</h1>
     <div class="addbox-HVT" *ngIf="showAdminBoard || showModeratorBoard">
         <button class="mt-2" mat-raised-button (click)="AddHVA()" color="primary">
         Agregar
          <mat-icon>add_box</mat-icon>
         </button>
-    </div>
-    <h1 class="tit">HISTORIAS DE VIDA EN AUDIO</h1>
-
-    <div class="card-header">
-        <hr class="new1">
-
     </div>
     <mat-list *ngFor="let hvt of things">
         <mat-card class="classcard">
