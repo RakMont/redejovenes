@@ -1,11 +1,11 @@
 <div class="container">
-    <div class="addbox-HVT">
+    <div class="addbox-HVT" *ngIf="showAdminBoard || showModeratorBoard">
         <button class="mt-2" mat-raised-button (click)="AddHVA()" color="primary">
       Agregar
        <mat-icon>add_box</mat-icon>
       </button>
     </div>
-    <div class="addbox-Tema">
+    <div class="addbox-Tema" *ngIf="showAdminBoard || showModeratorBoard">
         <button mat-raised-button color="warn" (click)="addTema()">AgregarTema
         <mat-icon>add_box</mat-icon>
       </button>
@@ -31,7 +31,7 @@
                 <img src="../../../../assets/HistoriaVidaAudio/ShowIcons/microphone.png" />
             </div>
             <div class="options" fxFlex="5px" fxFlexAlign="center">
-                <mat-card-actions>
+                <mat-card-actions *ngIf="showAdminBoard || showModeratorBoard">
                     <button mat-icon-button (click)="edit_HVV(hvt)">
                     <mat-icon>edit</mat-icon>
                 </button>
@@ -47,7 +47,7 @@
                 <!--                <mat-card-subtitle>{{hvt.archivo_mp3}}</mat-card-subtitle>
 -->
                 <h3>{{hvt.descripcion}}</h3>
-                
+
 
             </div>
             <hr class="new4">

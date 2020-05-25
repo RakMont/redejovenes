@@ -15,6 +15,7 @@ import{CreateTemaComponent}from 'src/app/components/tema/create-tema/create-tema
 import {FormControl, Validators} from '@angular/forms';
 import{TemaService}from 'src/app/services/tema.service';
 import{Tema}from 'src/app/models/Tema';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 import { filter } from 'rxjs/operators';
 import{Subject}from 'rxjs';
@@ -29,7 +30,11 @@ import {MatSnackBar}from '@angular/material/snack-bar';
 export class ShowPodcastComponent implements OnInit {
   public audios:any=[];
   podcasts:Podcast[];
-
+  private roles: string[];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  username: string;
   public audiosShow:any=[];
   temaFiltrado :Tema;
   things=[];
@@ -50,7 +55,7 @@ selectedValue: string;
   archivo:String
   msbapDisplayTitle = true;
 
-  constructor(public _router:Router,public _location:Location ,private snackBar:MatSnackBar,private podcastService: PodcastService, public serviceTema:TemaService,private router: Router,private dialog: MatDialog) {
+  constructor(private tokenStorageService: TokenStorageService,public _router:Router,public _location:Location ,private snackBar:MatSnackBar,private podcastService: PodcastService, public serviceTema:TemaService,private router: Router,private dialog: MatDialog) {
     this.podcastService.getPodcastAllAudios().subscribe(response=>{
       this.audios=response;
 
@@ -75,7 +80,17 @@ selectedValue: string;
   });
  });
 
+ this.isLoggedIn = !!this.tokenStorageService.getToken();
 
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+
+      this.username = user.username;
+    }
   }
 
 

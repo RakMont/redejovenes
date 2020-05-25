@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="addbox-HVT">
+    <div class="addbox-HVT" *ngIf="showAdminBoard || showModeratorBoard">
         <button class="mt-2" mat-raised-button (click)="AddHVA()" color="primary">
       Agregar
        <mat-icon>add_box</mat-icon>
@@ -13,7 +13,7 @@
     </div>
     <mat-grid-list cols="2" rowHeight="2:1" rowWidth="200px">
         <mat-grid-tile *ngFor="let hvt of things">
-            <mat-grid-tile-header>
+            <mat-grid-tile-header *ngIf="showAdminBoard || showModeratorBoard">
                 <button mat-icon-button (click)="edit_HVV(hvt)">
                       <mat-icon>edit</mat-icon>
                 </button>

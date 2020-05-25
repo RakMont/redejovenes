@@ -60,9 +60,7 @@ p:before {
     color: #5a5a5a
 }
 
-p {
-    font-family: Lato;
-}
+p {}
 
 .error-message {
     color: red;

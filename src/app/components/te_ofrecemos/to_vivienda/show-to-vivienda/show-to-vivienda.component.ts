@@ -12,6 +12,7 @@ import {Observable} from 'rxjs';
 import {MatSnackBar}from '@angular/material/snack-bar';
 import { EditToViviendaComponent } from '../edit-to-vivienda/edit-to-vivienda.component';
 import { AddToViviendaComponent } from '../add-to-vivienda/add-to-vivienda.component';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 
 @Component({
@@ -22,14 +23,29 @@ import { AddToViviendaComponent } from '../add-to-vivienda/add-to-vivienda.compo
 export class ShowToViviendaComponent implements OnInit {
 
   teofrecemos:TeOfrecemos[];
-
+  private roles: string[];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  username: string;
   dataSource=null;
 
-  constructor(private snackBar:MatSnackBar,private teofrecemosService: TeofrecemosService, private router: Router,private dialog: MatDialog) { 
+  constructor(private tokenStorageService: TokenStorageService,private snackBar:MatSnackBar,private teofrecemosService: TeofrecemosService, private router: Router,private dialog: MatDialog) {
     this.teofrecemosService.listen().subscribe((m:any)=>{
       console.log(m);
       this.charge();
     });
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+
+      this.username = user.username;
+    }
   }
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;

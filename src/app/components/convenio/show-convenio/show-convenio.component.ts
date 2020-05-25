@@ -9,6 +9,7 @@ import {MatSort}from '@angular/material/sort';
 import{MatDialog,MatDialogConfig}from '@angular/material/dialog';
 import{AddConvenioComponent}from 'src/app/components/convenio/add-convenio/add-convenio.component';
 import{EditConvenioComponent}from 'src/app/components/convenio/edit-convenio/edit-convenio.component';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 import { filter } from 'rxjs/operators';
 import{Subject}from 'rxjs';
@@ -25,9 +26,13 @@ export class ShowConvenioComponent implements OnInit {
   things=[];
   public hvaAudio: any=File;
   public aux;
+  private roles: string[];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  username: string;
 
-
-  constructor(private snackBar:MatSnackBar,private convenioservice: ConvenioService, private router: Router,private dialog: MatDialog) {
+  constructor(private tokenStorageService: TokenStorageService,private snackBar:MatSnackBar,private convenioservice: ConvenioService, private router: Router,private dialog: MatDialog) {
     this.convenioservice.listen().subscribe((m:any)=>{
       console.log(m);
       //this.charge();
@@ -54,6 +59,17 @@ export class ShowConvenioComponent implements OnInit {
    console.log("this is ",this.aux);
    this.Convertlist();
  });
+ this.isLoggedIn = !!this.tokenStorageService.getToken();
+
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+
+      this.username = user.username;
+    }
   }
 
 

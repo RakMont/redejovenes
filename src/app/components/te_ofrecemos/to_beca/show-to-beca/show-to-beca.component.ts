@@ -8,6 +8,7 @@ import {MatSort}from '@angular/material/sort';
 import{MatDialog,MatDialogConfig}from '@angular/material/dialog';
 import{AddToBecaComponent}from 'src/app/components/te_ofrecemos/to_beca/add-to-beca/add-to-beca.component';
 import{EditHistoriaVidaTextoComponent}from 'src/app/components/historiasVida/historia-vida-texto/historiaVidaTexto/edit-historia-vida-texto/edit-historia-vida-texto.component';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 import { filter } from 'rxjs/operators';
 import{Subject}from 'rxjs';
@@ -23,9 +24,13 @@ import { EditToBecaComponent } from '../edit-to-beca/edit-to-beca.component';
 })
 export class ShowToBecaComponent implements OnInit {
   teofrecemos:TeOfrecemos[];
-
+  private roles: string[];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  username: string;
   dataSource=null;
-  constructor(private snackBar:MatSnackBar,private teofrecemosService: TeofrecemosService, private router: Router,private dialog: MatDialog) {
+  constructor(private tokenStorageService: TokenStorageService,private snackBar:MatSnackBar,private teofrecemosService: TeofrecemosService, private router: Router,private dialog: MatDialog) {
     this.teofrecemosService.listen().subscribe((m:any)=>{
       console.log(m);
       this.charge();
@@ -41,6 +46,17 @@ export class ShowToBecaComponent implements OnInit {
       this.teofrecemos = data;
       this.charge();
     });
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+
+      this.username = user.username;
+    }
   }
 
   charge(){
