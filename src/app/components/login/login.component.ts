@@ -48,6 +48,7 @@ export class LoginComponent implements OnInit {
       id_usuario:0,
       nombre:'',
       apellido:'',
+      email:'',
       fecha_nacimiento:new Date,
       username:'',
       password:'',
