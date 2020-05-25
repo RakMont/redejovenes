@@ -1,13 +1,11 @@
 .container {
     text-align: justify;
-    background-color: black;
     margin-bottom: 10%;
     max-width: 85%;
 }
 
 .tit {
-    color: white;
-    margin-top: 5%;
+    color: #000000;
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
@@ -20,13 +18,16 @@
 }
 
 .mat-card {
+    width: 100%;
     max-width: 80%;
     margin: auto;
+    background-color: #ffffff;
     margin-bottom: 20px;
     padding: 10px;
     box-sizing: border-box;
-    border-radius: 25px;
-    border: 6px inset;
+    border-radius: 8px;
+    box-shadow: 0 0 40px -10px #000;
+    margin: calc(35px) auto;
 }
 
 .mat-card-footer {
@@ -66,7 +67,7 @@ hr.new4 {
     /*background: #00b09b;
     background: -webkit-linear-gradient(to right, #96c93d, #00b09b);
     background: linear-gradient(to right, #96c93d, #00b09b);*/
-    background-color: lightslategrey;
+    background: linear-gradient(to right, #c228aa, #00AcDC);
     margin: left;
     text-align: justify;
     margin-top: 10%;

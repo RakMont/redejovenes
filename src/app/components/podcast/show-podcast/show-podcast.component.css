@@ -9,12 +9,7 @@ img {
 }
 
 .filter {
-    background: #ECE9E6;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #FFFFFF, #ECE9E6);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin-top: -45px;
     align-items: center;
     align-content: center;
     text-align: center;
@@ -40,6 +35,11 @@ img {
 .classcard {
     margin-bottom: 20px;
     margin: 2%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 0 40px -10px #000;
+    margin: calc(35px) auto;
 }
 
 .addbox-Tema {
@@ -52,7 +52,7 @@ img {
 .other {
     align-items: center;
     text-align: center;
-    background-color: darkslategray;
+    background: linear-gradient(to right, #c228aa, #00AcDC);
     border-style: solid;
     border-color: black;
     height: 110px;
@@ -70,7 +70,6 @@ source {
 }
 
 .container {
-    background-color: black;
     margin-bottom: 50px;
     max-width: 80%;
 }
@@ -90,8 +89,10 @@ hr.new4 {
 }
 
 .tit {
-    color: white;
+    color: #000000;
     text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .options {

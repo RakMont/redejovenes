@@ -1,40 +1,29 @@
-<div class="container title">
-    <h1></h1>
-</div>
-<div class="filter">
-    <form #form="ngForm" (ngSubmit)="filtrarTema(temaFiltrado)" autocomplete="off">
-        <mat-form-field class="example-full-width">
-            <mat-label>Tema del podcast</mat-label>
-            <br>
-            <mat-select [(ngModel)]="temaFiltrado" name="tema" required #tema="ngModel">
-                <mat-option *ngFor="let tema of temas" [value]="tema">
-                    {{tema.nombreTema}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-        <button class="mt-4" mat-raised-button color="warn" type="submit" [disabled]="tema.invalid" [disabled]="form.invalid">FILTRAR</button>
-    </form>
-</div>
 <div class="container">
     <div class="addbox-HVT">
         <button class="mt-2" mat-raised-button (click)="AddHVA()" color="primary">
       Agregar
        <mat-icon>add_box</mat-icon>
       </button>
-
-
     </div>
     <div class="addbox-Tema">
         <button mat-raised-button color="warn" (click)="addTema()">AgregarTema
         <mat-icon>add_box</mat-icon>
       </button>
     </div>
-
     <h1 class="tit"> PODCASTS</h1>
-
-    <div class="card-header">
-        <hr class="new1">
-
+    <div class="filter">
+        <form #form="ngForm" (ngSubmit)="filtrarTema(temaFiltrado)" autocomplete="off">
+            <mat-form-field class="example-full-width">
+                <mat-label>Tema del podcast</mat-label>
+                <br>
+                <mat-select [(ngModel)]="temaFiltrado" name="tema" required #tema="ngModel">
+                    <mat-option *ngFor="let tema of temas" [value]="tema">
+                        {{tema.nombreTema}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button class="mt-4" mat-raised-button color="warn" type="submit" [disabled]="tema.invalid" [disabled]="form.invalid">FILTRAR</button>
+        </form>
     </div>
     <mat-list *ngFor="let hvt of things">
         <mat-card class="classcard">
@@ -58,7 +47,7 @@
                 <!--                <mat-card-subtitle>{{hvt.archivo_mp3}}</mat-card-subtitle>
 -->
                 <h3>{{hvt.descripcion}}</h3>
-                <h3>{{hvt.archivoMP3}}</h3>
+                
 
             </div>
             <hr class="new4">

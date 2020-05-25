@@ -3,19 +3,18 @@ img {
     margin-top: 0%;
     max-width: 200px;
     margin-left: 30px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .other {
     width: 60%;
     align-items: center;
     text-align: justify;
-    border-style: solid;
-    border-color: black;
     height: 150px;
     margin-left: 25%;
     margin-bottom: 0%;
-    border-radius: 25px;
-    border: 5px inset;
+
 }
 
 .container {
@@ -26,7 +25,7 @@ img {
 
 .tit {
     color: #000000;
-    margin-top: 5%;
+    /*margin-top: 5%;*/
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
@@ -46,8 +45,9 @@ img {
     margin-bottom: 20px;
     padding: 10px;
     box-sizing: border-box;
-    border-radius: 25px;
-    border: 6px inset;
+    border-radius: 8px;
+    box-shadow: 0 0 40px -10px #000;
+    margin: calc(35px) auto;
 }
 
 .mat-card-footer {
@@ -88,7 +88,7 @@ hr.new4 {
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #96c93d, #00b09b);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #96c93d, #00b09b);
+    background: linear-gradient(to right, #c228aa, #00AcDC);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     margin: left;
     text-align: justify;
