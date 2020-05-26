@@ -34,4 +34,16 @@ export class AuthService {
       lugar_acogida:user.lugar_acogida
     }, httpOptions);
   }
+  register_moderator(user:Usuario): Observable<any> {
+    return this.http.post(AUTH_API + 'signup', {
+      username: user.username,
+      email: user.email,
+      password: user.password,
+      nombre:user.nombre,
+      apellido:user.apellido,
+      fecha_nacimiento:user.fecha_nacimiento,
+      lugar_acogida:user.lugar_acogida,
+      role:["mod"]
+    }, httpOptions);
+  }
 }

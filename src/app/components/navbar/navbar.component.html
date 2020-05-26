@@ -21,11 +21,16 @@
                 </a>
             </li>
         </ul>
-
         <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
-            <!-- <li class="nav-item">
-                <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
-            </li>-->
+            <li class="nav-item" *ngIf="showAdminBoard">
+                <p>ERES EL ADMINISTRADOR PRINCIPAL</p>
+            </li>
+            <li class="nav-item" *ngIf="showModeratorBoard">
+                <p>ERES UN MODERADOR</p>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+
             <li class="nav-item" *ngIf="showAdminBoard">
                 <a href="/profile" class="nav-link" routerLink="registermod">Registrar Moderador</a>
             </li>
@@ -34,15 +39,7 @@
             </li>
         </ul>
         <ul class="navbar-nav " routerLinkActive="active">
-            <!-- <li class="nav-item">
-              <a href="/home" class="nav-link" routerLink="home">Home </a>
-          </li>
-          <li class="nav-item" *ngIf="showAdminBoard">
-              <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
-          </li>
-          <li class="nav-item" *ngIf="showModeratorBoard">
-              <a href="/mod" class="nav-link" routerLink="mod">Moderator Board</a>
-          </li>-->
+
             <li class="nav-item">
                 <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">
                     <mat-icon>account_circle</mat-icon>

@@ -34,7 +34,7 @@ export class RegisterModeratorComponent implements OnInit {
     this.form.fecha_nacimiento="2020-05-06";
     ///console.log(this.date.value);
     console.log(this.form);
-    this.authService.register(this.form).subscribe(
+    this.authService.register_moderator(this.form).subscribe(
       data => {
         console.log(data);
         this.isSuccessful = true;
