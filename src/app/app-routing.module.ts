@@ -45,6 +45,7 @@ import{ShowComentarioEducacionComponent}from './components/comentario/educacion/
 import{ShowComentarioTrabajoComponent}from './components/comentario/trabajo/show-comentario-trabajo/show-comentario-trabajo.component';
 import{ShowComentarioViviendaComponent}from './components/comentario/vivienda/show-comentario-vivienda/show-comentario-vivienda.component';
 import{ShowComentarioSaludComponent}from './components/comentario/salud/show-comentario-salud/show-comentario-salud.component';
+import{RegisterModeratorComponent}from './components/register-moderator/register-moderator.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -78,7 +79,8 @@ const routes: Routes = [
   { path: 'comentariosEdu', component: ShowComentarioEducacionComponent },
   { path: 'comentariosViv', component: ShowComentarioViviendaComponent },
   { path: 'comentariosTrab', component: ShowComentarioTrabajoComponent },
-  { path: 'comentariosSalud', component: ShowComentarioSaludComponent }
+  { path: 'comentariosSalud', component: ShowComentarioSaludComponent },
+  { path: 'registermod', component: RegisterModeratorComponent }
 ];
 
 @NgModule({

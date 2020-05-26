@@ -12,18 +12,18 @@
         </div>
         <div class="col-lg-5 col-md-6  col-sm-12">
             <div class="card card-container">
-                <h1 class="ion-text-center">Register</h1>
+                <h1 class="ion-text-center">Registrar</h1>
                 <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required minlength="3" maxlength="20" #username="ngModel" />
                         <div class="alert-danger" *ngIf="f.submitted && username.invalid">
-                            <div *ngIf="username.errors.required">Username is required</div>
+                            <div *ngIf="username.errors.required">Username es requerido</div>
                             <div *ngIf="username.errors.minlength">
-                                Username must be at least 3 characters
+                                Username debe tener al menos 3 caracteres
                             </div>
                             <div *ngIf="username.errors.maxlength">
-                                Username must be at most 20 characters
+                                Username debe tener como maximo 20 caracteres
                             </div>
                         </div>
                     </div>
@@ -31,12 +31,12 @@
                         <label for="nombre">Nombre</label>
                         <input type="text" class="form-control" name="nombre" [(ngModel)]="form.nombre" required minlength="3" maxlength="20" #nombre="ngModel" />
                         <div class="alert-danger" *ngIf="f.submitted && nombre.invalid">
-                            <div *ngIf="nombre.errors.required">nombre is required</div>
+                            <div *ngIf="nombre.errors.required">nombre es requerido</div>
                             <div *ngIf="nombre.errors.minlength">
-                                nombre must be at least 3 characters
+                                nombre debe tener al menos 3 caracteres
                             </div>
                             <div *ngIf="username.errors.maxlength">
-                                nombre must be at most 20 characters
+                                nombre debe tener como maximo 20 caracteres
                             </div>
                         </div>
                     </div>
@@ -44,12 +44,12 @@
                         <label for="apellido">Apellido</label>
                         <input type="text" class="form-control" name="apellido" [(ngModel)]="form.apellido" required minlength="3" maxlength="20" #apellido="ngModel" />
                         <div class="alert-danger" *ngIf="f.submitted && apellido.invalid">
-                            <div *ngIf="apellido.errors.required">apellido is required</div>
+                            <div *ngIf="apellido.errors.required">apellido es requerido</div>
                             <div *ngIf="apellido.errors.minlength">
-                                apellido must be at least 3 characters
+                                apellido debe tener al menos 3 caracteres
                             </div>
                             <div *ngIf="apellido.errors.maxlength">
-                                apellido must be at most 20 characters
+                                apellido debe tener como maximo 20 caracteres
                             </div>
                         </div>
                     </div>
@@ -57,12 +57,12 @@
                         <label for="lugar_acogida">Lugar de Acogida</label>
                         <input type="text" class="form-control" name="lugar_acogida" [(ngModel)]="form.lugar_acogida" required minlength="3" maxlength="20" #lugar_acogida="ngModel" />
                         <div class="alert-danger" *ngIf="f.submitted && lugar_acogida.invalid">
-                            <div *ngIf="lugar_acogida.errors.required">lugar_acogida is required</div>
+                            <div *ngIf="lugar_acogida.errors.required">lugar_acogida es requerido</div>
                             <div *ngIf="lugar_acogida.errors.minlength">
-                                nombre must be at least 3 characters
+                                nombre debe tener al menos 3 caracteres
                             </div>
                             <div *ngIf="lugar_acogida.errors.maxlength">
-                                lugar_acogida must be at most 20 characters
+                                lugar_acogida debe tener como maximo 20 caracteres
                             </div>
                         </div>
                     </div>
@@ -70,9 +70,9 @@
                         <label for="email">Correo</label>
                         <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email #email="ngModel" />
                         <div class="alert-danger" *ngIf="f.submitted && email.invalid">
-                            <div *ngIf="email.errors.required">Email is required</div>
+                            <div *ngIf="email.errors.required">Correo es requerido</div>
                             <div *ngIf="email.errors.email">
-                                Email must be a valid email address
+                                Correo debe ser un correo valido
                             </div>
                         </div>
                     </div>
@@ -90,8 +90,8 @@
                         <label for="password">Confirmar contraseña</label>
                         <input type="password" [(ngModel)]="form.confirmpassword" name="confirmpassword" placeholder="Confirm Password" class="form-control" required #confirmpassword="ngModel" pattern="{{ password.value }}" />
                         <div *ngIf=" confirmpassword.invalid && (form.submitted || confirmpassword.touched)" class="alert alert-danger">
-                            <div *ngIf="confirmpassword.errors.required"> Confirm password is required. </div>
-                            <div *ngIf="confirmpassword.errors.pattern"> Password & Confirm Password does not match.</div>
+                            <div *ngIf="confirmpassword.errors.required"> Confirmar contraseña es requerido. </div>
+                            <div *ngIf="confirmpassword.errors.pattern"> contraseña & Confirmar contraseña no son iguales.</div>
                         </div>
                     </div>
                     <div class="form-group">

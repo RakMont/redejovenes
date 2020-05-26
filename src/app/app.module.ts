@@ -113,6 +113,7 @@ import { ShowComentarioEducacionComponent } from './components/comentario/educac
 import { ShowComentarioSaludComponent } from './components/comentario/salud/show-comentario-salud/show-comentario-salud.component';
 import { AddComentarioSaludComponent } from './components/comentario/salud/add-comentario-salud/add-comentario-salud.component';
 import { EditComentarioSaludComponent } from './components/comentario/salud/edit-comentario-salud/edit-comentario-salud.component';
+import { RegisterModeratorComponent } from './components/register-moderator/register-moderator.component';
 
 
 
@@ -195,6 +196,7 @@ import { EditComentarioSaludComponent } from './components/comentario/salud/edit
     ShowComentarioSaludComponent,
     AddComentarioSaludComponent,
     EditComentarioSaludComponent,
+    RegisterModeratorComponent,
 
 
 
