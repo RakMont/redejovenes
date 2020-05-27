@@ -1,41 +1,53 @@
 <div class="container pt-4">
-    <div class="row">
-
-        <div class="col-8 containerVideo">
-            <mat-card-title>Titulo: {{referente.titulo}}</mat-card-title>
-            <mat-card-title>Titulo: {{referente.descripcion}}</mat-card-title>
-
-            <div class="options" fxFlex="5px" fxFlexAlign="center">
-                <mat-card-actions>
-                    <button mat-icon-button (click)="edit_referente(referente)">
-                        <mat-icon>edit</mat-icon>
-                    </button>
-
-                </mat-card-actions>
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto" style="background: #a311d2">
+            <h1>
+                {{referente.titulo}}
+            </h1>
+            <button mat-icon-button (click)="edit_referente(referente)">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <div class="options" fxFlex="5px" fxFlexAlign="center"></div>
+            <div class="row justify-content-center align-items-center">
+                <youtube-player width="640" height="360" [videoId]="link" suggestedQuality="large"></youtube-player>
             </div>
-            <mat-card-content>
-                <youtube-player [videoId]="referente.video_referente" [height]="315" [width]="600" suggestedQuality="large"></youtube-player>
-            </mat-card-content>
-            <div>
-                <p class="par">
-                    En esta etapa, es muy importante que el trabajo no impida que puedas continuar con tus estudios. Lo ideal es buscar algo flexible y de medio tiempo.
-                </p>
-                <p class="par">
-                    Encontrar un trabajo no es fácil, lleva tiempo y muchas veces puede ser frustrante. No te rindas enseguida.
-                </p>
-                <p class="par">
-                    Entre los 16 y los 18 años, lxs adolescentes tenemos derecho a un empleo con “protección especial”. Es decir, que el trabajo no debe afectar nuestro desarrollo personal y emocional, ni ser nocivo para la salud. No puede ser un trabajo nocturno ni debe
-                    impedir el ejercicio de otros derechos, como la educación. No debe extenderse más de 6 horas por día y hasta 36 horas por semana y debe permitir que asistas a la escuela
-                </p>
-            </div>>
-
+            <mat-card-content>{{referente.descripcion}}</mat-card-content>
+            <p>
+                Encontrar un trabajo no es fácil, lleva tiempo y muchas veces puede ser frustrante. No te rindas
+                enseguida.
+            </p>
+            <p>De acuerdo al grado de concienciación alcanzado, estos valores pueden durar toda la vida o sólo un cierto
+                periodo de tiempo.</p>
+            <p>En el caso de los niños, la educación busca fomentar el proceso de estructuración del pensamiento y de
+                las formas de expresión.</p>
+            <p>
+                Ayuda en el proceso madurativo sensorio-motor y estimula la integración y la convivencia grupal.
+            </p>
+            <p>De acuerdo al grado de concienciación alcanzado, estos valores pueden durar toda la vida o sólo un cierto
+                periodo de tiempo.</p>
+            <p>En el caso de los niños, la educación busca fomentar el proceso de estructuración del pensamiento y de
+                las formas de expresión.</p>
+            <p>
+                Ayuda en el proceso madurativo sensorio-motor y estimula la integración y la convivencia grupal.
+            </p>
+            <p>De acuerdo al grado de concienciación alcanzado, estos valores pueden durar toda la vida o sólo un cierto
+                periodo de tiempo.</p>
+            <p>En el caso de los niños, la educación busca fomentar el proceso de estructuración del pensamiento y de
+                las formas de expresión.</p>
+            <p>
+                Ayuda en el proceso madurativo sensorio-motor y estimula la integración y la convivencia grupal.
+            </p>
+            <p>De acuerdo al grado de concienciación alcanzado, estos valores pueden durar toda la vida o sólo un cierto
+                periodo de tiempo.</p>
+            <p>En el caso de los niños, la educación busca fomentar el proceso de estructuración del pensamiento y de
+                las formas de expresión.</p>
+            <p>
+                Ayuda en el proceso madurativo sensorio-motor y estimula la integración y la convivencia grupal.
+            </p>
         </div>
 
-        <div class="col-4 bg-warning">
-            Comentarios
-            <app-show-comentario-vivienda>
-
-            </app-show-comentario-vivienda>
+        <div class="col-sm" style="background: #00addc">
+            <app-show-comentario-educacion></app-show-comentario-educacion>
         </div>
     </div>
 </div>

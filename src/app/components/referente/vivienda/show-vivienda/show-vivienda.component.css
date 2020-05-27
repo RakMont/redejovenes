@@ -1,27 +1,29 @@
+.container {
+    min-height: 100vh;
+}
+
 .containerVideo {
     text-align: justify;
     font-family: "Noto Sans", Helvetica, Arial, sans-serif;
     width: 100%;
     background: #232526;
-    /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #414345, #232526);
-    /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #414345, #232526);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.container{
-    min-height: 100vh ;
+
+
+.container {
+    text-align: justify;
+    margin-bottom: 10%;
+    max-width: 85%;
 }
 
-.options {
-    color: white;
+.textContent {
+    border: 1px solid;
+    padding: 10px;
+    width: 100px;
+    word-wrap: break-word;
 }
 
-.par {
-    color: white !important;
-}
-
-.mat-card-title {
-    color: white;
-}
+h1 {text-align: center}
