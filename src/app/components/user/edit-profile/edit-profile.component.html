@@ -1,1 +1,99 @@
-<p>edit-profile works!</p>
+<div class="container col-md-11">
+    <div class="d-flex justify-content-between">
+        <h4>EDITAR HISTORIA DE VIDA TEXTO</h4>
+
+        <button mat-button (click)="close()">
+<mat-icon>close</mat-icon>
+</button>
+    </div>
+    <div style="overflow: auto;height: 700px;">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
+            <input readonly="readonly" type="hidden" class="form-control" name="id" #id="ngModel" [(ngModel)]="userservice.formData.id">
+
+            <mat-form-field class="example-full-width">
+
+                <mat-label>Username</mat-label>
+                <input matInput required minlength="2" type="text" class="form-control" name="username" #username="ngModel" [(ngModel)]="userservice.formData.username">
+                <div class="text-left text-danger" *ngIf="username.invalid && username.touched">
+                    Debes ingresar el username.
+                </div>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="example-full-width">
+                <mat-label>
+                    Nombre
+                </mat-label>
+                <input matInput required minlength="2" type="text" class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]="userservice.formData.nombre">
+                <div class="text-left text-danger" *ngIf="nombre.invalid && nombre.touched">
+                    Debes ingresar el nombre.
+                </div>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="example-full-width">
+                <mat-label>
+                    Apellido
+                </mat-label>
+                <input matInput required minlength="2" type="text" class="form-control" name="apellido" #apellido="ngModel" [(ngModel)]="userservice.formData.apellido">
+                <div class="text-left text-danger" *ngIf="apellido.invalid && apellido.touched">
+                    Debes ingresar el apellido.
+                </div>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>
+                    Lugar_acogida
+                </mat-label>
+                <input readonly="readonly" matInput required minlength="2" type="text" class="form-control" name="lugar_acogida" #lugar_acogida="ngModel" [(ngModel)]="userservice.formData.lugar_acogida">
+                <div class="text-left text-danger" *ngIf="lugar_acogida.invalid && lugar_acogida.touched">
+                    Debes ingresar el lugar de acogida.
+                </div>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>
+                    Correo
+                </mat-label>
+                <input matInput required minlength="2" type="text" class="form-control" name="email" #email="ngModel" [(ngModel)]="userservice.formData.email">
+                <div class="text-left text-danger" *ngIf="email.invalid && email.touched">
+                    Debes ingresar el Correo.
+                </div>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>
+                    Contraseña
+                </mat-label>
+
+                <input matInput required type="password" [(ngModel)]="userservice.formData.password" name="password" class="form-control" required #password="ngModel" pattern="(?=.*\d)(?=.*[a-z]).{6,}" />
+                <div *ngIf="password.invalid && (form.submitted || password.touched)" class="alert alert-danger">
+                    <div *ngIf="password.errors.required"> La contraseña es requerida. </div>
+                    <div *ngIf="password.errors.pattern"> La contraseña debe tener un minimo de 6 caracteres.</div>
+                </div>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>
+                    Confirmar Contraseña
+                </mat-label>
+                <input matInput required type="password" [(ngModel)]="confirm_password" name="confirmpassword" class="form-control" required #confirmpassword="ngModel" pattern="{{ password.value }}" />
+                <div *ngIf=" confirmpassword.invalid && (form.submitted || confirmpassword.touched)" class="alert alert-danger">
+                    <div *ngIf="confirmpassword.errors.required"> Confirmar contraseña es requerido. </div>
+                    <div *ngIf="confirmpassword.errors.pattern"> contraseña & Confirmar contraseña no son iguales.</div>
+                </div>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+
+                <mat-label>
+                    Fecha de nacimiento
+                </mat-label>
+                <input matInput [matDatepicker]="picker" [(ngModel)]="userservice.formData.fecha_nacimiento" name="fecha_nacimiento">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker [startAt]="startDate"></mat-datepicker>
+            </mat-form-field>
+            <button class="m-2" mat-raised-button color="primary" (click)="close()" type="submit" [disabled]="form.invalid">EDITAR</button>
+            <div class="alert alert-warning" *ngIf="form.submitted && isSignUpFailed">
+                REGISTRO FALLIDO!!!!<br />{{ errorMessage }}
+            </div>
+        </form>
+        <div class="alert alert-success" *ngIf="isSuccessful">
+            EL REGISTRO FUE EXITOSO!
+        </div>
+    </div>
+</div>

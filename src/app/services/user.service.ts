@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Usuario } from '../models/Usuario';
+import{Subject}from 'rxjs';
 
 
 const API_URL = 'http://localhost:8090/api/test/';
@@ -10,6 +11,7 @@ const API_URL = 'http://localhost:8090/api/test/';
   providedIn: 'root'
 })
 export class UserService {
+  formData:Usuario;
 
   constructor(private http: HttpClient) { }
   getPublicContent(): Observable<any> {
@@ -30,5 +32,18 @@ export class UserService {
 
   getUserProfile(username:String){
     return this.http.get<Usuario>(API_URL + 'getprofile/'+username);
+  }
+
+  editProfile(usuario:Usuario){
+  // return this.http.put<historiaVidaTexto>(this.Url+"/"+historiaVidaTexto.id_HVT, historiaVidaTexto);
+
+    return this.http.put<Usuario>(API_URL + 'updateprofile/'+usuario.username,usuario);
+  }
+  private _listeners = new Subject<any>();
+  listen(): Observable<any>{
+    return this._listeners.asObservable();
+  }
+  filter(filterBy:string){
+    this._listeners.next(filterBy);
   }
 }
