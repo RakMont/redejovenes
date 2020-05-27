@@ -35,7 +35,10 @@ export class UserService {
   getUserProfile(username:String){
     return this.http.get<Usuario>(API_URL + 'getprofile/'+username);
   }
-
+  getAllusers(){
+    return this.http.get<Usuario[]>(API_URL + 'getallusers/');
+    //return this.http.get<Tema[]>(this.Url);
+  }
   editProfile(user:Usuario): Observable<any>{
   // return this.http.put<historiaVidaTexto>(this.Url+"/"+historiaVidaTexto.id_HVT, historiaVidaTexto);
 
