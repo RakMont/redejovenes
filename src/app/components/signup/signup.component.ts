@@ -11,7 +11,7 @@ import {MatSort}from '@angular/material/sort';
 import {ViewChild}from '@angular/core';
 import{Usuario}from 'src/app/models/Usuario';
 import{AuthService}from 'src/app/services/auth.service';
-import {FormControl} from '@angular/forms';
+import {FormControl, Validators} from '@angular/forms';
 
 
 @Component({
@@ -21,13 +21,22 @@ import {FormControl} from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
   form: any = {};
+  lugar_acogida:String;
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
   confirmpassword = false;
   startDate = new Date(2000, 0, 1);
   date = new FormControl(new Date(2000, 0, 1));
-
+  selectedValue: string;
+   selectedCar: string;
+   animalControl = new FormControl('', Validators.required);
+   selectFormControl = new FormControl('', Validators.required);
+  lugares=[
+    "lugar 1",
+    "lugar2",
+    "lugar3"
+  ]
 
   constructor(private authService: AuthService) { }
   ngOnInit() {
@@ -35,8 +44,7 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
 
-    //this.form.fecha_nacimiento="2020-05-06";
-    ///console.log(this.date.value);
+
     console.log(this.form);
     this.authService.register(this.form).subscribe(
       data => {

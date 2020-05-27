@@ -11,7 +11,7 @@ import {MatSort}from '@angular/material/sort';
 import {ViewChild}from '@angular/core';
 import{Usuario}from 'src/app/models/Usuario';
 import{AuthService}from 'src/app/services/auth.service';
-import {FormControl} from '@angular/forms';
+import {FormControl, Validators} from '@angular/forms';
 @Component({
   selector: 'app-register-moderator',
   templateUrl: './register-moderator.component.html',
@@ -25,6 +25,15 @@ export class RegisterModeratorComponent implements OnInit {
   confirmpassword = false;
   startDate = new Date(2000, 0, 1);
   date = new FormControl(new Date(2000, 0, 1));
+  selectedValue: string;
+   selectedCar: string;
+   animalControl = new FormControl('', Validators.required);
+   selectFormControl = new FormControl('', Validators.required);
+  lugares=[
+    "lugar 1",
+    "lugar2",
+    "lugar3"
+  ]
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
