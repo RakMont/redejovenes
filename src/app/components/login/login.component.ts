@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
     if(form!=null)
     form.resetForm();
     this.service.formData={
-      id_usuario:0,
+      id:0,
       nombre:'',
       apellido:'',
       email:'',
