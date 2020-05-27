@@ -1,45 +1,49 @@
 <div class="container pt-4">
-    <div class="row">
-
-        <div class="col-8 containerVideo">
-            <mat-card-title>Titulo: {{referente.titulo}}</mat-card-title>
-
-            <div class="options" fxFlex="5px" fxFlexAlign="center">
-                <mat-card-actions>
-                    <button mat-icon-button (click)="edit_referente(referente)">
-                          <mat-icon>edit</mat-icon>
-                      </button>
-
-                </mat-card-actions>
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto" style="background: #a311d2">
+            <h1>
+                {{referente.titulo}}
+            </h1>
+            <button mat-icon-button (click)="edit_referente(referente)">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <div class="options" fxFlex="5px" fxFlexAlign="center"></div>
+            <div class="row justify-content-center align-items-center">
+                <youtube-player width="640" height="360" [videoId]="link" suggestedQuality="large"></youtube-player>
             </div>
-            <mat-card-content>
-                <youtube-player [videoId]="link" [height]="315" [width]="600" suggestedQuality="large"></youtube-player>
-            </mat-card-content>
+            <mat-card-content>{{referente.descripcion}}</mat-card-content>
 
-            <mat-card-title>Titulo: {{referente.descripcion}}</mat-card-title>
-            <div>
-                <p>
-                    En esta etapa, es muy importante que el trabajo no impida que puedas continuar con tus estudios. Lo ideal es buscar algo flexible y de medio tiempo.
-                </p>
-                <p>
-                    Encontrar un trabajo no es fácil, lleva tiempo y muchas veces puede ser frustrante. No te rindas enseguida.
-                </p>
-                <p>
-                    Entre los 16 y los 18 años, lxs adolescentes tenemos derecho a un empleo con “protección especial”. Es decir, que el trabajo no debe afectar nuestro desarrollo personal y emocional, ni ser nocivo para la salud. No puede ser un trabajo nocturno ni debe
-                    impedir el ejercicio de otros derechos, como la educación. No debe extenderse más de 6 horas por día y hasta 36 horas por semana y debe permitir que asistas a la escuela
-                </p>
-                <p>
-                    Se denomina trabajo a toda aquella actividad ya sea de origen manual o intelectual que se realiza a cambio de una compensación económica por las labores concretadas.
-                </p>
-                <p>
-                    Pero, no será hasta el primer cuarto del siglo XX que los trabajadores alcanzarán su plenitud de derecho laboral
-                </p>
-            </div>
-
+            <p>
+                En esta etapa, es muy importante que el trabajo no impida que puedas continuar con tus estudios. Lo
+                ideal es buscar algo flexible y de medio tiempo.
+            </p>
+            <p>
+                Encontrar un trabajo no es fácil, lleva tiempo y muchas veces puede ser frustrante. No te rindas
+                enseguida.
+            </p>
+            <p>
+                Entre los 16 y los 18 años, lxs adolescentes tenemos derecho a un empleo con “protección especial”.</p>
+            <p> Es
+                decir, que el trabajo no debe afectar nuestro desarrollo personal y emocional, ni ser nocivo para la
+                salud.
+            </p>
+            <p>No puede ser un trabajo nocturno ni debe
+                impedir el ejercicio de otros derechos, como la educación.
+            </p>
+            <p> No debe extenderse más de 6 horas por día y
+                hasta 36 horas por semana y debe permitir que asistas a la escuela
+            </p>
+            <p>
+                El proceso educativo se materializa en una serie de habilidades y valores, que producen cambios
+                intelectuales, emocionales y sociales en el individuo.
+            </p>
+            <p>
+                Pero, no será hasta el primer cuarto del siglo XX que los trabajadores alcanzarán su plenitud de derecho
+                laboral
+            </p>
         </div>
 
-        <div class="col-4 bg-warning">
-            Comentarios
+        <div class="col-sm" style="background: #00addc">
             <app-show-comentario-trabajo></app-show-comentario-trabajo>
         </div>
     </div>
