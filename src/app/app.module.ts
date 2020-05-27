@@ -114,6 +114,8 @@ import { ShowComentarioSaludComponent } from './components/comentario/salud/show
 import { AddComentarioSaludComponent } from './components/comentario/salud/add-comentario-salud/add-comentario-salud.component';
 import { EditComentarioSaludComponent } from './components/comentario/salud/edit-comentario-salud/edit-comentario-salud.component';
 import { RegisterModeratorComponent } from './components/register-moderator/register-moderator.component';
+import { EditProfileComponent } from './components/user/edit-profile/edit-profile.component';
+import { ShowAllUsersComponent } from './components/admin/show-all-users/show-all-users.component';
 
 
 
@@ -197,6 +199,8 @@ import { RegisterModeratorComponent } from './components/register-moderator/regi
     AddComentarioSaludComponent,
     EditComentarioSaludComponent,
     RegisterModeratorComponent,
+    EditProfileComponent,
+    ShowAllUsersComponent,
 
 
 
