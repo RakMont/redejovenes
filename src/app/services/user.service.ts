@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Usuario } from '../models/Usuario';
 
 
 const API_URL = 'http://localhost:8090/api/test/';
@@ -25,5 +26,9 @@ export class UserService {
 
   getAdminBoard(): Observable<any> {
     return this.http.get(API_URL + 'admin', { responseType: 'text' });
+  }
+
+  getUserProfile(username:String){
+    return this.http.get<Usuario>(API_URL + 'getprofile/'+username);
   }
 }

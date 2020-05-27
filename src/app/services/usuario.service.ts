@@ -11,26 +11,10 @@ import {Observable} from 'rxjs';
 export class UsuarioService {
 
   constructor(private http: HttpClient) { }
-  Url = 'http://localhost:8090/temas';
+  Url = 'http://localhost:8090/api/auth/';
   formData:Usuario;
-  getTema() {
-    // obtengo todos los datos de esta url que hace ref a backend
-    return this.http.get<Tema[]>(this.Url);
-  }
-  createTema(tema: Tema){
-    return this.http.post<Tema>(this.Url, tema);
-  }
-
-  getTemaId(id_tema:number){
-    return this.http.get<Tema>(this.Url + "/" + id_tema);
-  }
-
-  updateTema(tema: Tema){
-    return this.http.put<Tema>(this.Url+"/"+tema.id_tema, tema);
-  }
-  deleteTema(tema: Tema){
-    return this.http.delete<Tema>(this.Url+"/"+tema.id_tema);
-
+  getUserProfile(id:number){
+    return this.http.get<Usuario>(this.Url + "/getprofile" + id);
   }
   private _listeners = new Subject<any>();
     listen(): Observable<any>{
