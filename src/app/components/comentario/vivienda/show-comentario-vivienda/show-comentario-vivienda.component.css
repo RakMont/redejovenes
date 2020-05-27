@@ -1,0 +1,12 @@
+.example-card {
+    max-width: 500px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://previews.123rf.com/images/djvstock/djvstock1704/djvstock170413754/76351770-young-boy-draw-icon-vector-illustration-graphic-design.jpg');
+    background-size: cover;
+  }
+
+  .mat-dialog-actions {
+    justify-content: flex-end;
+}
