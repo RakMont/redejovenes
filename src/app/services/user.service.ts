@@ -54,7 +54,10 @@ export class UserService {
 
     }, httpOptions);
   }
+  deleteHVT(user:Usuario){
+    return this.http.delete<Usuario>(API_URL+'deleteuser/'+user.username);
 
+  }
 
   private _listeners = new Subject<any>();
   listen(): Observable<any>{

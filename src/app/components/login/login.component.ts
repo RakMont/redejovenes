@@ -52,7 +52,8 @@ export class LoginComponent implements OnInit {
       fecha_nacimiento:new Date,
       username:'',
       password:'',
-      lugar_acogida:''
+      lugar_acogida:'',
+      roles:[""]
 
     }
 

@@ -2,3 +2,7 @@
     width: 2em;
     height: 2em;
 }
+
+.container {
+    height: 100%;
+}

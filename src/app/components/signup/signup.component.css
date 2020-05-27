@@ -71,6 +71,11 @@ label {
     font-size: 20px;
 }
 
+.container {
+    height: 100%;
+    margin-bottom: 10%;
+}
+
 button {
     float: right;
     padding: 8px 12px;

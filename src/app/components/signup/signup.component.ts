@@ -124,7 +124,7 @@ export class SignupComponent implements OnInit {
 "Zapatito"
   ]
 
-  constructor(private authService: AuthService) { }
+  constructor(private router: Router,private authService: AuthService) { }
   ngOnInit() {
   }
 
@@ -143,6 +143,7 @@ export class SignupComponent implements OnInit {
         this.isSignUpFailed = true;
       }
     );
+
   }
 
 

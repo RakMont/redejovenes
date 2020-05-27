@@ -29,7 +29,7 @@ export class NavbarComponent implements OnInit {
   showModeratorBoard = false;
   username: string;
 
-  constructor(private dialog: MatDialog,private tokenStorageService: TokenStorageService) { }
+  constructor(private router: Router,private dialog: MatDialog,private tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
@@ -42,6 +42,7 @@ export class NavbarComponent implements OnInit {
       this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
 
       this.username = user.username;
+
     }
   }
 
@@ -55,6 +56,8 @@ export class NavbarComponent implements OnInit {
     dialogConfig.autoFocus=true;
     dialogConfig.width="40%";
     this.dialog.open(LoginComponent,dialogConfig);
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+      this.router.navigate(["/"]));
    }
    /*
    signup(){
