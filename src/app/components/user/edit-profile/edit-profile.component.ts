@@ -45,18 +45,13 @@ export class EditProfileComponent implements OnInit {
   close(){
     this.dialogbox.close();
   }
-  onSubmit(form:NgForm){
-    this.userservice.editProfile(this.form).subscribe(
+  onSubmit(){
+    console.log(this.userservice.formData);
+    this.userservice.editProfile(this.userservice.formData).subscribe(
       data => {
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
-        this.dialogbox.close();
-        this.userservice.filter("Register click");
-        this.snackBar.open('Editado con exito','',{
-        duration:5000,
-        verticalPosition:'top'
-      })
       },
       err => {
         this.errorMessage = err.error.message;
@@ -64,12 +59,16 @@ export class EditProfileComponent implements OnInit {
       }
     );
 
-    this.userservice
-    .getUserProfile(this.userservice.formData.username).subscribe(data=>{
-      this.userprof=data;
-    });
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
-    this.router.navigate(["user"]));
+    if(this.isSuccessful==true){
+            this.dialogbox.close();
+            this.userservice.filter("Register click");
+            this.snackBar.open('Editado con exito','',{
+        duration:5000,
+        verticalPosition:'top'
+      })
+            this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+        this.router.navigate(["user"]));
+      }
 
   }
 }

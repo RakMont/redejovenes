@@ -23,7 +23,7 @@ export class BoardUserComponent implements OnInit {
   email:String;
   id;
   userprof:Usuario
-  constructor(private dialog: MatDialog,private tokenStorageService: TokenStorageService,private usuarioservice:UsuarioService,private userservice:UserService) { }
+  constructor(private dialog: MatDialog,private tokenStorageService: TokenStorageService,private userservice:UserService) { }
 
 
     ngOnInit(): void {
@@ -38,12 +38,14 @@ export class BoardUserComponent implements OnInit {
 
         this.username = user.username;
         this.id=user.id;
-      }
-      this.userservice.getUserProfile(this.username)
+        this.email=user.email;
+        this.userservice.getUserProfile(this.username)
       .subscribe(data =>{
       this.userprof = data;
       console.log(this.userprof);
     });
+      }
+
   }
   edit_profile(usuario:Usuario){
     this.userservice.formData=usuario;

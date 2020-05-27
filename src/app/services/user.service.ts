@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Usuario } from '../models/Usuario';
 import{Subject}from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 const API_URL = 'http://localhost:8090/api/test/';
-
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 @Injectable({
   providedIn: 'root'
 })
@@ -34,11 +36,23 @@ export class UserService {
     return this.http.get<Usuario>(API_URL + 'getprofile/'+username);
   }
 
-  editProfile(usuario:Usuario){
+  editProfile(user:Usuario): Observable<any>{
   // return this.http.put<historiaVidaTexto>(this.Url+"/"+historiaVidaTexto.id_HVT, historiaVidaTexto);
 
-    return this.http.put<Usuario>(API_URL + 'updateprofile/'+usuario.username,usuario);
+    return this.http.put(API_URL + 'updateprofile',{
+      id:user.id,
+      username: user.username,
+      email: user.email,
+      password: user.password,
+      nombre:user.nombre,
+      apellido:user.apellido,
+      fecha_nacimiento:user.fecha_nacimiento,
+      lugar_acogida:user.lugar_acogida,
+
+    }, httpOptions);
   }
+
+
   private _listeners = new Subject<any>();
   listen(): Observable<any>{
     return this._listeners.asObservable();

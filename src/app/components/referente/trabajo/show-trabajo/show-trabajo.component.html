@@ -4,7 +4,7 @@
             <h1>
                 {{referente.titulo}}
             </h1>
-            <button mat-icon-button (click)="edit_referente(referente)">
+            <button *ngIf="showAdminBoard || showModeratorBoard" mat-icon-button (click)="edit_referente(referente)">
                 <mat-icon>edit</mat-icon>
             </button>
             <div class="options" fxFlex="5px" fxFlexAlign="center"></div>
@@ -14,32 +14,24 @@
             <mat-card-content>{{referente.descripcion}}</mat-card-content>
 
             <p>
-                En esta etapa, es muy importante que el trabajo no impida que puedas continuar con tus estudios. Lo
-                ideal es buscar algo flexible y de medio tiempo.
+                En esta etapa, es muy importante que el trabajo no impida que puedas continuar con tus estudios. Lo ideal es buscar algo flexible y de medio tiempo.
             </p>
             <p>
-                Encontrar un trabajo no es fácil, lleva tiempo y muchas veces puede ser frustrante. No te rindas
-                enseguida.
+                Encontrar un trabajo no es fácil, lleva tiempo y muchas veces puede ser frustrante. No te rindas enseguida.
             </p>
             <p>
                 Entre los 16 y los 18 años, lxs adolescentes tenemos derecho a un empleo con “protección especial”.</p>
-            <p> Es
-                decir, que el trabajo no debe afectar nuestro desarrollo personal y emocional, ni ser nocivo para la
-                salud.
+            <p> Es decir, que el trabajo no debe afectar nuestro desarrollo personal y emocional, ni ser nocivo para la salud.
             </p>
-            <p>No puede ser un trabajo nocturno ni debe
-                impedir el ejercicio de otros derechos, como la educación.
+            <p>No puede ser un trabajo nocturno ni debe impedir el ejercicio de otros derechos, como la educación.
             </p>
-            <p> No debe extenderse más de 6 horas por día y
-                hasta 36 horas por semana y debe permitir que asistas a la escuela
+            <p> No debe extenderse más de 6 horas por día y hasta 36 horas por semana y debe permitir que asistas a la escuela
             </p>
             <p>
-                El proceso educativo se materializa en una serie de habilidades y valores, que producen cambios
-                intelectuales, emocionales y sociales en el individuo.
+                El proceso educativo se materializa en una serie de habilidades y valores, que producen cambios intelectuales, emocionales y sociales en el individuo.
             </p>
             <p>
-                Pero, no será hasta el primer cuarto del siglo XX que los trabajadores alcanzarán su plenitud de derecho
-                laboral
+                Pero, no será hasta el primer cuarto del siglo XX que los trabajadores alcanzarán su plenitud de derecho laboral
             </p>
         </div>
 

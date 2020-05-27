@@ -14,6 +14,7 @@ import {Observable} from 'rxjs';
 import {MatSnackBar}from '@angular/material/snack-bar';
 
 import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 import{ShowComentarioSaludComponent}from 'src/app/components/comentario/salud/show-comentario-salud/show-comentario-salud.component';
 
@@ -26,17 +27,30 @@ export class ShowSaludComponent implements OnInit {
   referente:Referente;
   dataSource=null;
   link;
-
-  constructor(private snackBar:MatSnackBar,private service: ReferenteService, private router: Router,private dialog: MatDialog) { }
+  private roles: string[];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  username: string;
+  constructor(private tokenStorageService: TokenStorageService,private snackBar:MatSnackBar,private service: ReferenteService, private router: Router,private dialog: MatDialog) { }
 
   ngOnInit() {
     this.service.getReferenteSalud()
     .subscribe(data =>{
       this.referente = data;
       this.link=this.referente.video_referente;
-
-
     });
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+
+      this.username = user.username;
+    }
   }
   edit_referente(referente: Referente):void{
 

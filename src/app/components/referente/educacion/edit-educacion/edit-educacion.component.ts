@@ -23,6 +23,7 @@ import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
   styleUrls: ['./edit-educacion.component.css']
 })
 export class EditEducacionComponent implements OnInit {
+  private roles: string[];
 
   constructor(private snackBar:MatSnackBar,private router: Router,public dialogbox:MatDialogRef<EditEducacionComponent>,public service:ReferenteService) {
     this.service.listen().subscribe((m:any)=>{
@@ -36,6 +37,7 @@ export class EditEducacionComponent implements OnInit {
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   ngOnInit(): void {
+
   }
 
   close(){

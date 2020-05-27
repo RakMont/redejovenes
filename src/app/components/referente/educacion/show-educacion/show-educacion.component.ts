@@ -12,6 +12,7 @@ import { filter } from 'rxjs/operators';
 import{Subject}from 'rxjs';
 import {Observable} from 'rxjs';
 import {MatSnackBar}from '@angular/material/snack-bar';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 import{ShowComentarioEducacionComponent}from 'src/app/components/comentario/educacion/show-comentario-educacion/show-comentario-educacion.component';
@@ -25,8 +26,13 @@ export class ShowEducacionComponent implements OnInit {
   referente:Referente;
   dataSource=null;
   link;
+  private roles: string[];
 
-  constructor(private snackBar:MatSnackBar,private service: ReferenteService, private router: Router,private dialog: MatDialog) { }
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  username: string;
+  constructor(private tokenStorageService: TokenStorageService,private snackBar:MatSnackBar,private service: ReferenteService, private router: Router,private dialog: MatDialog) { }
 
   ngOnInit() {
     this.service.getReferenteEducacion()
@@ -36,6 +42,17 @@ export class ShowEducacionComponent implements OnInit {
 
 
     });
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+
+      this.username = user.username;
+    }
   }
   edit_referente(referente: Referente):void{
 
