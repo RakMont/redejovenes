@@ -109,4 +109,8 @@ img {
     .form{
         column-count: 1;
     }
+    img{
+        margin-left: 20%;
+        margin-right: 20%;
+    }
 }
