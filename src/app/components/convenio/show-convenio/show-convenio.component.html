@@ -1,39 +1,48 @@
 <div class="container">
+    
+    <h1 class="tit">CONVENIOS</h1>
+
     <div class="addbox-HVT" *ngIf="showAdminBoard || showModeratorBoard">
         <button class="mt-2" mat-raised-button (click)="AddHVA()" color="primary">
       Agregar
        <mat-icon>add_box</mat-icon>
       </button>
     </div>
-    <h1 class="tit">CONVENIOS</h1>
-
-    <div class="card-header">
-        <hr class="new1">
-
-    </div>
-    <mat-grid-list cols="2" rowHeight="2:1" rowWidth="200px">
-        <mat-grid-tile *ngFor="let hvt of things">
-            <mat-grid-tile-header *ngIf="showAdminBoard || showModeratorBoard">
-                <button mat-icon-button (click)="edit_HVV(hvt)">
-                      <mat-icon>edit</mat-icon>
-                </button>
-                <button mat-icon-button color="warn" (click)="Delete(hvt)">
-                       <mat-icon>delete_forever</mat-icon>
-                </button>
-            </mat-grid-tile-header>
-            <div class="contentimage">
-                <div mat-card-avatar class="example-header-image">
-                    <img class="img-fluid img-thumbnail" [src]="hvt.photo" alt="">
+    <div class="form">
+        <mat-list *ngFor="let hvt of things">
+            <mat-card>
+                <mat-card-header [ngClass]="{'custom-card':true}">
+                    <mat-card-title>
+                        <br>
+                    </mat-card-title>
+                </mat-card-header>
+    
+                <div class="options" fxFlex="10px" fxFlexAlign="center">
+                    <mat-card-actions *ngIf="showAdminBoard || showModeratorBoard">
+                        <button mat-icon-button class="coloicon" (click)="edit_HVV(hvt)">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                        <button mat-icon-button (click)="Delete(hvt)">
+                                <mat-icon>delete_forever</mat-icon>
+                            </button>
+                    </mat-card-actions>
                 </div>
-            </div>
-
-            <div class="other">
-
-                <h3>INSTITUCION: {{hvt.institucion}}</h3>
-                <h3>DESCRIPCION: {{hvt.descripcion}}</h3>
-                <h3>DIRECCION: {{hvt.direccion}}</h3>
-            </div>
-
-        </mat-grid-tile>
-    </mat-grid-list>
+                <br>
+                <div class="card">
+                    <div class="row no-gutters">
+                      <div class="col-md-4 d-none d-md-block">
+                        <img class="img-fluid img-thumbnail" [src]="hvt.photo" alt="">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h4 class="card-title">Institucion: {{hvt.institucion}}</h4>
+                          <h4 class="card-title">Descripcion: {{hvt.descripcion}}</h4>
+                          <h4 class="card-title">Direccion: {{hvt.direccion}}</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </mat-card>
+        </mat-list>
+    </div>
 </div>
