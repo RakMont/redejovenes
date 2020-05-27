@@ -1,38 +1,54 @@
-<!--<div class="container pt-4">
-    <div class="row">
-
-        <div class="col-8 containerVideo">
-            
-
-        </div>
-
-        <div class="col-4 bg-warning">
-            
-        </div>
-    </div>
-</div>
--->
-
-    <div class="bo">
-        <div class="izq containerVideo container">
-            <mat-card-title>Titulo: {{referente.titulo}}</mat-card-title>
-            <mat-card-title>Titulo: {{referente.descripcion}}</mat-card-title>
+<div class="container pt-4">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto" style="background: #a311d2">
+            <h1>
+                {{referente.titulo}}
+            </h1>
+            <button mat-icon-button (click)="edit_referente(referente)">
+                <mat-icon>edit</mat-icon>
+            </button>
             <div class="options" fxFlex="5px" fxFlexAlign="center">
-                <mat-card-actions>
-                    <button mat-icon-button (click)="edit_referente(referente)">
-                    <mat-icon>edit</mat-icon>
-                </button>
 
-                </mat-card-actions>
-            </div>
-            <mat-card-content>
-                <youtube-player [videoId]="link" [height]="315" [width]="600" suggestedQuality="large"></youtube-player>
-            </mat-card-content>
-            <div>
+
 
             </div>
-        </div>    
-        <div class="der">
+            <div class=" row justify-content-center align-items-center">
+                <youtube-player width="640" height="360" [videoId]="link" suggestedQuality="large"></youtube-player>
+
+            </div>
+            <mat-card-content>{{referente.descripcion}}</mat-card-content>
+            <p>De acuerdo al grado de concienciación alcanzado, estos valores pueden durar toda la vida o sólo un cierto
+                periodo de tiempo.</p>
+            <p>En el caso de los niños, la educación busca fomentar el proceso de estructuración del pensamiento y de
+                las formas de expresión.</p>
+            <p>
+                Ayuda en el proceso madurativo sensorio-motor y estimula la integración y la convivencia grupal.
+            </p>
+            <p>De acuerdo al grado de concienciación alcanzado, estos valores pueden durar toda la vida o sólo un cierto
+                periodo de tiempo.</p>
+            <p>En el caso de los niños, la educación busca fomentar el proceso de estructuración del pensamiento y de
+                las formas de expresión.</p>
+            <p>
+                Ayuda en el proceso madurativo sensorio-motor y estimula la integración y la convivencia grupal.
+            </p>
+            <p>De acuerdo al grado de concienciación alcanzado, estos valores pueden durar toda la vida o sólo un cierto
+                periodo de tiempo.</p>
+            <p>En el caso de los niños, la educación busca fomentar el proceso de estructuración del pensamiento y de
+                las formas de expresión.</p>
+            <p>
+                Ayuda en el proceso madurativo sensorio-motor y estimula la integración y la convivencia grupal.
+            </p>
+            <p>De acuerdo al grado de concienciación alcanzado, estos valores pueden durar toda la vida o sólo un cierto
+                periodo de tiempo.</p>
+            <p>En el caso de los niños, la educación busca fomentar el proceso de estructuración del pensamiento y de
+                las formas de expresión.</p>
+            <p>
+                Ayuda en el proceso madurativo sensorio-motor y estimula la integración y la convivencia grupal.
+            </p>
+        </div>
+
+        <div class="col-sm " style="background: #00addc">
             <app-show-comentario-educacion></app-show-comentario-educacion>
         </div>
     </div>
+</div>

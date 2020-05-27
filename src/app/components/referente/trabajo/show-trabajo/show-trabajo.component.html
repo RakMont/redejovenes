@@ -3,7 +3,6 @@
 
         <div class="col-8 containerVideo">
             <mat-card-title>Titulo: {{referente.titulo}}</mat-card-title>
-            <mat-card-title>Titulo: {{referente.descripcion}}</mat-card-title>
 
             <div class="options" fxFlex="5px" fxFlexAlign="center">
                 <mat-card-actions>
@@ -16,6 +15,8 @@
             <mat-card-content>
                 <youtube-player [videoId]="link" [height]="315" [width]="600" suggestedQuality="large"></youtube-player>
             </mat-card-content>
+
+            <mat-card-title>Titulo: {{referente.descripcion}}</mat-card-title>
             <div>
                 <p class="par">
                     En esta etapa, es muy importante que el trabajo no impida que puedas continuar con tus estudios. Lo ideal es buscar algo flexible y de medio tiempo.
