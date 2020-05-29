@@ -47,6 +47,7 @@ import{ShowComentarioViviendaComponent}from './components/comentario/vivienda/sh
 import{ShowComentarioSaludComponent}from './components/comentario/salud/show-comentario-salud/show-comentario-salud.component';
 import{RegisterModeratorComponent}from './components/register-moderator/register-moderator.component';
 import{ShowAllUsersComponent}from './components/admin/show-all-users/show-all-users.component';
+import{ShowmoderatorComponent}from './components/admin/showmoderator/showmoderator.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -82,7 +83,9 @@ const routes: Routes = [
   { path: 'comentariosTrab', component: ShowComentarioTrabajoComponent },
   { path: 'comentariosSalud', component: ShowComentarioSaludComponent },
   { path: 'registermod', component: RegisterModeratorComponent },
-  { path: 'allusers', component: ShowAllUsersComponent }
+  { path: 'allusers', component: ShowAllUsersComponent },
+  { path: 'allmoders', component: ShowmoderatorComponent }
+
 ];
 
 @NgModule({
