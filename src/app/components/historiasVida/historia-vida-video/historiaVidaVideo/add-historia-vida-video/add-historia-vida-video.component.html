@@ -1,12 +1,12 @@
 <div class="container col-md-11">
     <div class="d-flex justify-content-between">
-        <h4>AGREGAR HISTORIA DE VIDA VIDEO</h4>
+        <h4></h4>
 
         <button mat-button (click)="close()">
     <mat-icon>close</mat-icon>
   </button>
     </div>
-    <div style="overflow: auto;height: 450px;">
+    <div style="overflow: auto;height: 350px;">
         <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
 
             <mat-form-field class="example-full-width">
@@ -26,7 +26,7 @@
                 <input required minlength="2" type="text" class="form-control" placeholder="https://www.youtube.com/....." name="video_HVV" #video_HVV="ngModel" [(ngModel)]="service.formData.video_HVV">
             </div>
             <div class="text-left text-danger" *ngIf="video_HVV.invalid && video_HVV.touched">
-                Debes ingresar la URL de tu video
+                Debes ingresar la URL del video
             </div>
 
             <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">AGREGAR</button>

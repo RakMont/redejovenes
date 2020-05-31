@@ -1,6 +1,6 @@
 <div class="container col-md-11">
     <div class="d-flex justify-content-between">
-        <h4>AGREGAR HISTORIA DE VIDA</h4>
+        <h4></h4>
 
         <button mat-button (click)="close()">
   			<mat-icon>close</mat-icon>
@@ -10,7 +10,7 @@
         <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
             <mat-form-field class="example-full-width">
 
-                <mat-label>TITULO</mat-label>
+                <mat-label>TITULO:</mat-label>
 
                 <input matInput required minlength="2" type="text" class="form-control" name="titulo" #titulo="ngModel" [(ngModel)]="service.formData.titulo">
                 <div class="text-left text-danger" *ngIf="titulo.invalid && titulo.touched">
@@ -19,8 +19,8 @@
             </mat-form-field>
             <br>
             <mat-form-field class="example-full-width">
-                <mat-label>CONTENIDO</mat-label>
-                <input matInput required minlength="2" type="text" class="form-control" name="contenido" #contenido="ngModel" [(ngModel)]="service.formData.contenido">
+                <mat-label>CONTENIDO:</mat-label>
+                <textarea matInput required minlength="2" type="text" class="form-control" name="contenido" #contenido="ngModel" [(ngModel)]="service.formData.contenido"></textarea>
                 <div class="text-left text-danger" *ngIf="contenido.invalid && contenido.touched">
                     Debes ingresar el contenido.
                 </div>
