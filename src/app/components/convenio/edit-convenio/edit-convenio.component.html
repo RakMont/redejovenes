@@ -1,6 +1,6 @@
 <div class="container col-md-11">
     <div class="d-flex justify-content-between">
-        <h4>ADD HISTORIA DE VIDA</h4>
+        <h4></h4>
 
         <button mat-button (click)="close()">
 <mat-icon>close</mat-icon>
@@ -15,7 +15,7 @@
 
                 <mat-label>INSTITUCION</mat-label>
 
-                <input matInput required minlength="2" type="text" class="form-control" name="institucion" #institucion="ngModel" [(ngModel)]="service.formData.institucion">
+                <textarea matInput required minlength="2" type="text" class="form-control" name="institucion" #institucion="ngModel" [(ngModel)]="service.formData.institucion"></textarea>
                 <div class="text-left text-danger" *ngIf="institucion.invalid && institucion.touched">
                     Debes ingresar la institucion.
                 </div>
@@ -25,7 +25,7 @@
                 <mat-label>
                     DESCRIPCION
                 </mat-label>
-                <input matInput required minlength="2" type="text" class="form-control" name="descripcion" #descripcion="ngModel" [(ngModel)]="service.formData.descripcion">
+                <textarea matInput required minlength="2" type="text" class="form-control" name="descripcion" #descripcion="ngModel" [(ngModel)]="service.formData.descripcion"></textarea>
                 <div class="text-left text-danger" *ngIf="descripcion.invalid && descripcion.touched">
                     Debes ingresar la descripcion.
                 </div>
@@ -36,7 +36,7 @@
                 <mat-label>
                     DIRECCION
                 </mat-label>
-                <input matInput required minlength="2" type="text" class="form-control" name="direccion" #direccion="ngModel" [(ngModel)]="service.formData.direccion">
+                <textarea matInput required minlength="2" type="text" class="form-control" name="direccion" #direccion="ngModel" [(ngModel)]="service.formData.direccion"></textarea>
                 <div class="text-left text-danger" *ngIf="direccion.invalid && direccion.touched">
                     Debes ingresar la direccion.
                 </div>
@@ -54,7 +54,7 @@
                 <img class="img-fluid img-thumbnail" [src]="service.ConvImage" alt="">
             </div>
 
-            <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">ADD</button>
+            <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Actualizar</button>
         </form>
 
     </div>

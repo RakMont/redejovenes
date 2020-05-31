@@ -12,7 +12,7 @@
 
                 <mat-label>INSTITUCION</mat-label>
 
-                <input matInput required minlength="2" type="text" class="form-control" name="institucion" #institucion="ngModel" [(ngModel)]="service.formData.institucion">
+                <textarea matInput required minlength="2" type="text" class="form-control" name="institucion" #institucion="ngModel" [(ngModel)]="service.formData.institucion"></textarea>
                 <div class="text-left text-danger" *ngIf="institucion.invalid && institucion.touched">
                     Debes ingresar la institucion.
                 </div>
@@ -22,7 +22,7 @@
                 <mat-label>
                     DESCRIPCION
                 </mat-label>
-                <input matInput required minlength="2" type="text" class="form-control" name="descripcion" #descripcion="ngModel" [(ngModel)]="service.formData.descripcion">
+                <textarea matInput required minlength="2" type="text" class="form-control" name="descripcion" #descripcion="ngModel" [(ngModel)]="service.formData.descripcion"></textarea>
                 <div class="text-left text-danger" *ngIf="descripcion.invalid && descripcion.touched">
                     Debes ingresar la descripcion.
                 </div>
@@ -33,7 +33,7 @@
                 <mat-label>
                     DIRECCION
                 </mat-label>
-                <input matInput required minlength="2" type="text" class="form-control" name="direccion" #direccion="ngModel" [(ngModel)]="service.formData.direccion">
+                <textarea matInput required minlength="2" type="text" class="form-control" name="direccion" #direccion="ngModel" [(ngModel)]="service.formData.direccion"></textarea>
                 <div class="text-left text-danger" *ngIf="direccion.invalid && direccion.touched">
                     Debes ingresar la direccion.
                 </div>
@@ -51,7 +51,7 @@
             </div>
 
 
-            <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="imagen.invalid" [disabled]="form.invalid">ADD</button>
+            <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="imagen.invalid" [disabled]="form.invalid">Agregar</button>
         </form>
 
     </div>
