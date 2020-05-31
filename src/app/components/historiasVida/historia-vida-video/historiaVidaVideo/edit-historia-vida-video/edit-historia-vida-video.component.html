@@ -1,16 +1,16 @@
-<div class="container col-md-11">
+<div class="container col-md-12">
     <div class="d-flex justify-content-between">
-        <h4>EDITAR HISTORIA DE VIDA</h4>
+        <h4></h4>
             <button mat-button (click)="close()">
                 <mat-icon>close</mat-icon>
             </button>
     </div>
-    <div style="overflow: auto;height: 450px;">
+    <div style="overflow: auto;height: 350px;">
         <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
             <input readonly="readonly" type="hidden" class="form-control" name="id_HVV" #id_HVV="ngModel" [(ngModel)]="service.formData.id_HVV">
             
             <mat-form-field class="example-full-width">
-
+                <br>
                 <mat-label>TITULO</mat-label>
 
                 <input matInput required minlength="2" type="text" class="form-control" name="titulo" #titulo="ngModel" [(ngModel)]="service.formData.titulo">
@@ -18,7 +18,7 @@
                     Debes ingresar el titulo.
                 </div>
             </mat-form-field>
-
+            <br>
             <div class="m-2 input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">URL</span>

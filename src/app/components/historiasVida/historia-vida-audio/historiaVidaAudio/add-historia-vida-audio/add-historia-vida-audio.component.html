@@ -1,11 +1,11 @@
 <div class="container col-md-11">
     <div class="d-flex justify-content-between">
-        <h4>AGREGAR HISTORIA DE VIDA AUDIO</h4>
+        <h4></h4>
         <button mat-button (click)="close()">
             <mat-icon>close</mat-icon>
         </button>
     </div>
-    <div style="overflow: auto;height: 450px;">
+    <div style="overflow: auto;height: 350px;">
         <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
             <mat-form-field class="example-full-width">
                 <mat-label>
@@ -24,7 +24,7 @@
                 <input type="file" class="form-control" accept="audio/*" (change)="onSelectFile($event)" style="height:100%">
             </div>
 
-            <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">ADD</button>
+            <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Agregar</button>
         </form>
     </div>
 </div>
