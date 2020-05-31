@@ -1,6 +1,6 @@
 <div class="container col-md-11">
     <div class="d-flex justify-content-between">
-        <h4>EDITAR HISTORIA DE VIDA TEXTO</h4>
+        <h4>ACTUALIZAR</h4>
 
         <button mat-button (click)="close()">
 <mat-icon>close</mat-icon>
@@ -12,25 +12,25 @@
             
             <mat-form-field class="example-full-width">
 
-                <mat-label>TITULO</mat-label>
+                <mat-label>TITULO:</mat-label>
 
                 <input matInput required minlength="2" type="text" class="form-control" name="titulo" #titulo="ngModel" [(ngModel)]="service.formData.titulo">
                 <div class="text-left text-danger" *ngIf="titulo.invalid && titulo.touched">
-                    Debes ingresar la institucion.
+                    Debes ingresar el titulo.
                 </div>
             </mat-form-field>
             <br>
             <mat-form-field class="example-full-width">
                 <mat-label>
-                    CONTENIDO
+                    CONTENIDO:
                 </mat-label>
-                <input matInput required minlength="2" type="text" class="form-control" name="contenido" #contenido="ngModel" [(ngModel)]="service.formData.contenido">
+                <textarea matInput required minlength="2" type="text" class="form-control" name="contenido" #contenido="ngModel" [(ngModel)]="service.formData.contenido"></textarea>
                 <div class="text-left text-danger" *ngIf="contenido.invalid && contenido.touched">
-                    Debes ingresar la descripcion.
+                    Debes ingresar la contenido.
                 </div>
             </mat-form-field>
             <br>
-			<button class="m-2" mat-raised-button color="primary" (click)="close()" type="submit" [disabled]="form.invalid">AGREGAR</button>
+			<button class="m-2" mat-raised-button color="primary" (click)="close()" type="submit" [disabled]="form.invalid">ACTUALIZAR</button>
         </form>
 
     </div>
