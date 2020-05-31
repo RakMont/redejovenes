@@ -1,17 +1,17 @@
 <div class="container col-md-11">
     <div class="d-flex justify-content-between">
-        <h4>AGREGAR BECA</h4>
+        <h4></h4>
         <button mat-button (click)="close()">
             <mat-icon>close</mat-icon>
         </button>
     </div>
-    <div style="overflow: auto;height: 450px;">
+    <div style="overflow: auto;height: 300px;">
         <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
             <mat-form-field class="example-full-width">
                 <mat-label>
                     CONTENIDO
                 </mat-label>
-                <input matInput required minlength="2" type="text" class="form-control" name="contenido" #contenido="ngModel" [(ngModel)]="service.formData.contenido">
+                <textarea matInput required minlength="2" type="text" class="form-control" name="contenido" #contenido="ngModel" [(ngModel)]="service.formData.contenido"></textarea>
                 <div class="text-left text-danger" *ngIf="contenido.invalid && contenido.touched">
                     Debes ingresar el contenido.
                 </div>
@@ -22,14 +22,14 @@
                 <mat-label>
                     CONTACTO
                 </mat-label>
-                <input matInput required minlength="2" type="text" class="form-control" name="contacto" #contacto="ngModel" [(ngModel)]="service.formData.contacto">
+                <textarea matInput required minlength="2" type="text" class="form-control" name="contacto" #contacto="ngModel" [(ngModel)]="service.formData.contacto"></textarea>
                 <div class="text-left text-danger" *ngIf="contacto.invalid && contacto.touched">
                     Debes ingresar el contacto.
                 </div>
             </mat-form-field>
             <br>
 
-            <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">AGREGAR</button>
+            <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Agregar Beca</button>
         </form>
     </div>
 </div>
