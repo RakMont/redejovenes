@@ -1,6 +1,6 @@
 <div class="container col-md-11">
     <div class="d-flex justify-content-between">
-        <h4>EDITAR HISTORIA DE VIDA TEXTO</h4>
+        <h4>EDITAR PERFIL</h4>
 
         <button mat-button (click)="close()">
 <mat-icon>close</mat-icon>
@@ -12,10 +12,10 @@
 
             <mat-form-field class="example-full-width">
 
-                <mat-label>Username</mat-label>
+                <mat-label>Nombre de usuario</mat-label>
                 <input matInput required minlength="2" type="text" class="form-control" name="username" #username="ngModel" [(ngModel)]="userservice.formData.username">
                 <div class="text-left text-danger" *ngIf="username.invalid && username.touched">
-                    Debes ingresar el username.
+                    Debes ingresar el nombre de usuario.
                 </div>
             </mat-form-field>
             <br>
@@ -41,11 +41,11 @@
 
             <mat-form-field class="example-full-width">
                 <mat-label>
-                    Lugar_acogida
+                    Centro de egreso
                 </mat-label>
                 <input readonly="readonly" matInput required minlength="2" type="text" class="form-control" name="lugar_acogida" #lugar_acogida="ngModel" [(ngModel)]="userservice.formData.lugar_acogida">
                 <div class="text-left text-danger" *ngIf="lugar_acogida.invalid && lugar_acogida.touched">
-                    Debes ingresar el lugar de acogida.
+                    Debes ingresar el centro de egreso.
                 </div>
             </mat-form-field>
             <mat-form-field class="example-full-width">
