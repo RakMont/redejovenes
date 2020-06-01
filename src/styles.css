@@ -3,7 +3,28 @@
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Mission Gothic'; }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Mission Gothic'; }
+
+@font-face {
+    font-family: 'Mission Gothic';
+    src: url('../src/assets/fonts/Mission Gothic Black.otf') format("opentype");
+    src: url('../src/assets/fonts/Mission Gothic Black Italic.otf') format("opentype");
+    src: url('../src/assets/fonts/Mission Gothic Bold.otf') format("opentype");
+    src: url('../src/assets/fonts/Mission Gothic Bold Italic.otf') format("opentype");
+    src: url('../src/assets/fonts/Mission Gothic Light.otf') format("opentype");
+    src: url('../src/assets/fonts/Mission Gothic Light Italic.otf') format("opentype");
+    src: url('../src/assets/fonts/Mission Gothic Regular.otf') format("opentype");
+    src: url('../src/assets/fonts/Mission Gothic Regular Italic.otf') format("opentype");
+    src: url('../src/assets/fonts/Mission Gothic Thin.otf') format("opentype");
+    src: url('./assets/fonts/Mission Gothic Thin Italic.otf') format("opentype");
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Mission Gothic';
+  }
