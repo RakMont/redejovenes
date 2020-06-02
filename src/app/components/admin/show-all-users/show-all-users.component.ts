@@ -1,10 +1,7 @@
 import { Component, OnInit,ViewChild} from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
-import { Subscriber} from 'rxjs';
-import { historiaVidaTexto } from 'src/app/models/historiaVidaTexto-model';
-import { MatTableDataSource } from '@angular/material/table';
-import {MatSort}from '@angular/material/sort';
+
 import{MatDialog,MatDialogConfig}from '@angular/material/dialog';
 
 import { filter } from 'rxjs/operators';
