@@ -31,7 +31,9 @@ export class AuthService {
       nombre:user.nombre,
       apellido:user.apellido,
       fecha_nacimiento:user.fecha_nacimiento,
-      lugar_acogida:user.lugar_acogida
+      lugar_acogida:user.lugar_acogida,
+      telefono:user.telefono,
+      genero:user.genero
     }, httpOptions);
   }
   register_moderator(user:Usuario): Observable<any> {

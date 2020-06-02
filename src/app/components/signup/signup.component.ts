@@ -32,6 +32,7 @@ export class SignupComponent implements OnInit {
    selectedCar: string;
    animalControl = new FormControl('', Validators.required);
    selectFormControl = new FormControl('', Validators.required);
+   generos=["Masculino","Femenino","OTRO"]
   lugares=[
     "OTRO",
     "Albergue Nuestra Casa",
