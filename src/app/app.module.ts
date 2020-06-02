@@ -117,6 +117,8 @@ import { RegisterModeratorComponent } from './components/register-moderator/regi
 import { EditProfileComponent } from './components/user/edit-profile/edit-profile.component';
 import { ShowAllUsersComponent } from './components/admin/show-all-users/show-all-users.component';
 import { ShowmoderatorComponent } from './components/admin/showmoderator/showmoderator.component';
+import { AddcomentarioComponent } from './components/comentario/addcomentario/addcomentario.component';
+import { EditperfilComponent } from './components/user/editperfil/editperfil.component';
 
 
 
@@ -203,6 +205,8 @@ import { ShowmoderatorComponent } from './components/admin/showmoderator/showmod
     EditProfileComponent,
     ShowAllUsersComponent,
     ShowmoderatorComponent,
+    AddcomentarioComponent,
+    EditperfilComponent,
 
 
 

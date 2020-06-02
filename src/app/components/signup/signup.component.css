@@ -8,16 +8,20 @@
     padding: 20px 30px;
     max-width: calc(100vw - 40px);
     box-sizing: border-box;
-    position: relative
+    position: relative;
 }
 
 .container {
+    /* max-width: 100%;
+    margin-top: 8%;
+    position: absolute;*/
     max-width: 100%;
     margin-bottom: 50px;
-    max-width: 80%;
     min-height: 100vh;
     margin-bottom: 20px;
 }
+
+.card-container {}
 
 .formText {
     width: 350px;
@@ -73,11 +77,6 @@ p {}
 label {
     margin-left: 2%;
     font-size: 20px;
-}
-
-.container {
-    height: 100%;
-    margin-bottom: 10%;
 }
 
 button {

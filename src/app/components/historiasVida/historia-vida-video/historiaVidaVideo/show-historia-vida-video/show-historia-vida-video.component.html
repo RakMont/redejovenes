@@ -7,7 +7,7 @@
        <mat-icon>add_box</mat-icon>
       </button>
     </div>
-    <mat-grid-list cols="2">
+    <mat-grid-list cols="2" *ngIf="historiasHVV">
         <mat-grid-tile *ngFor="let hvt of historiasHVV">
             <mat-card>
                 <mat-card-header>
