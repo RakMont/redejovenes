@@ -54,7 +54,7 @@
                 <img class="img-fluid img-thumbnail" [src]="service.ConvImage" alt="">
             </div>
 
-            <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Actualizar</button>
+            <button class="mt-4" mat-raised-button color="primary" (click)="close" type="submit" [disabled]="form.invalid">Actualizar</button>
         </form>
 
     </div>
