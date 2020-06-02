@@ -67,12 +67,12 @@ hr.new4 {
     /*background: #00b09b;
     background: -webkit-linear-gradient(to right, #96c93d, #00b09b);
     background: linear-gradient(to right, #96c93d, #00b09b);*/
-    background: linear-gradient(to right, #c228aa, #00AcDC);
+    /*background: linear-gradient(to right, #c228aa, #00AcDC);*/
     margin: left;
     text-align: justify;
     margin-top: 10%;
-    border-radius: 10px;
-    border: 2px inset;
+    /*border-radius: 10px;
+    border: 2px inset;*/
 }
 
 .custom-card-content {

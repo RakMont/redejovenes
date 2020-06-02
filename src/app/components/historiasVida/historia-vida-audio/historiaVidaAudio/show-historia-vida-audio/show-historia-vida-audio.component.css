@@ -25,9 +25,9 @@ img {
 .other {
     align-items: center;
     text-align: center;
-    background: linear-gradient(to right, #c228aa, #00AcDC);
+    /*background: linear-gradient(to right, #c228aa, #00AcDC);
     border-style: solid;
-    border-color: black;
+    border-color: black;*/
     height: 110px;
     margin-left: 16%;
     margin-bottom: 0%;
@@ -74,4 +74,23 @@ hr.new4 {
     float: right;
     margin-top: -50px;
     /* margin-right: auto;*/
+}
+
+@media screen and (max-width: 800px){
+    .classcard{
+        width: 110%;
+        margin-left: -20px;
+    }
+    .example-header-image{
+        visibility: hidden;
+    }
+    .audioBox{
+        width: 100%;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+    .other{
+        text-align: justify;
+        width: 83%;
+    }
 }
