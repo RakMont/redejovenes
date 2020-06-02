@@ -39,14 +39,14 @@ a{
 
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
-    color: #952C6E;
+    color: #03A0C3;
 }
 
 
 /* for dropdown only - change the color of droodown */
 
 .navbar-custom .dropdown-menu {
-    background-color: #952C6E;
+    background-color: #03A0C3;
 }
 
 .navbar-custom .dropdown-item {

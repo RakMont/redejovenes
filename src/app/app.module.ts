@@ -87,7 +87,6 @@ import { ShowToBecaComponent } from './components/te_ofrecemos/to_beca/show-to-b
 import { AddToViviendaComponent } from './components/te_ofrecemos/to_vivienda/add-to-vivienda/add-to-vivienda.component';
 import { EditToViviendaComponent } from './components/te_ofrecemos/to_vivienda/edit-to-vivienda/edit-to-vivienda.component';
 import { ShowToViviendaComponent } from './components/te_ofrecemos/to_vivienda/show-to-vivienda/show-to-vivienda.component';
-import { EventosComponent } from './components/eventos/eventos.component';
 import { ShowEventosComponent } from './components/eventos/show-eventos/show-eventos.component';
 import { ShowTemaComponent } from './components/tema/show-tema/show-tema.component';
 import { CreateTemaComponent } from './components/tema/create-tema/create-tema.component';
@@ -176,7 +175,6 @@ import { EditperfilComponent } from './components/user/editperfil/editperfil.com
     AddToViviendaComponent,
     EditToViviendaComponent,
     ShowToViviendaComponent,
-    EventosComponent,
     ShowEventosComponent,
     ShowTemaComponent,
     CreateTemaComponent,
