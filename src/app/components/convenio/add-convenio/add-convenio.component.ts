@@ -79,8 +79,8 @@ export class AddConvenioComponent implements OnInit {
     .subscribe(data =>{
  this.convenios = data;
 });
-this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
-    this.router.navigate(["showConvenios"]));
+/*this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+    this.router.navigate(["showConvenios"]));*/
 }
 Convertlist(){
   let c: number = 0;
@@ -90,7 +90,7 @@ Convertlist(){
     this.things.push({photo:photo,imagen:this.aux.imagen,id_convenio:this.aux.id_convenio,institucion:this.aux.institucion,descripcion:this.aux.descripcion,direccion:this.aux.direccion});
     c=c+1;
   }
-
+  window.location.reload();
 }
 
 onSelectFile(event){

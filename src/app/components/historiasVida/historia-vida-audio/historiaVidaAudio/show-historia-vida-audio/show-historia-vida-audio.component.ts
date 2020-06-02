@@ -65,7 +65,6 @@ private roles: string[];
    .subscribe(data =>{
      this.historiasHVA = data;
      this.aux=this.historiasHVA[0];
-    // this.convert();
      console.log("this is ",this.aux);
     this.Convertlist();
    });
@@ -92,6 +91,7 @@ AddHVA(){
   dialogConfig.autoFocus=true;
   dialogConfig.width="70%";
   this.dialog.open(AddHistoriaVidaAudioComponent,dialogConfig);
+
  }
 
 Convertlist(){

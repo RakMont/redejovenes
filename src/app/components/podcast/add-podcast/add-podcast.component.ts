@@ -97,15 +97,16 @@ export class AddPodcastComponent implements OnInit {
      this.podcasts = data;
 
     });
-      this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+      /*this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
       this.router.navigate(["showPodcast"]));
-
+*/
     }
   onSelectFile(event){
     //const file=event.target.file;
     const file=event.target.files[0];
     console.log(file);
     this.hvaAudio=file;
+
   }
     charge(){
       this.service
@@ -127,6 +128,6 @@ export class AddPodcastComponent implements OnInit {
         this.things.push({ audio:audio,titulo:this.aux.titulo,fecha:this.aux.fecha,id_podcast:this.aux.id_podcast,archivoMP3:this.aux.archivoMP3,descripcion:this.aux.descripcion});
         c=c+1;
       }
-
+      window.location.reload();
     }
 }

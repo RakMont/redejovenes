@@ -84,8 +84,8 @@ export class AddHistoriaVidaAudioComponent implements OnInit {
     // this.convert();
      console.log("this is ",this.aux);
    });
-   this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
-      this.router.navigate(["showHVA"]));
+   /*this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+      this.router.navigate(["showHVA"]));*/
     }
 
     Convertlist(){
@@ -96,7 +96,7 @@ export class AddHistoriaVidaAudioComponent implements OnInit {
         this.things.push({audio:audio,titulo:this.aux.titulo,fecha:this.aux.fecha,id_HVA:this.aux.id_HVA,archivo_mp3:this.aux.archivo_mp3});
         c=c+1;
       }
-
+      window.location.reload();
     }
   onSelectFile(event){
     //const file=event.target.file;
