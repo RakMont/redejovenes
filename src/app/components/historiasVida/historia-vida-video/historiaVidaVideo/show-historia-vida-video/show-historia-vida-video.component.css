@@ -113,9 +113,9 @@ div.hvv {
     margin-bottom: 2%;
     margin-top: 2%;
     box-sizing: border-box;
-    border-radius: 25px;
+    /*border-radius: 25px;
     border: 6px inset;
-    background: #000000;
+    background: #000000;*/
 }
 
 .mat-card-footer {
