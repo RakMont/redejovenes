@@ -8,8 +8,8 @@
 }
 
 a{
-    font-family: 'Mission Gothic Bold';
-    font-size:18px;
+    font-size:21px;
+    font-weight: bold;
 }
 /* change the brand and text color */
 
@@ -30,7 +30,8 @@ a{
 /* change the link color */
 
 .navbar-custom .navbar-nav .nav-link {
-    color: rgba(255, 255, 255, .5);
+    color: #ffffff;
+    font-size: 20px;
 }
 
 
@@ -38,14 +39,14 @@ a{
 
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
-    color: #ffffff;
+    color: #952C6E;
 }
 
 
 /* for dropdown only - change the color of droodown */
 
 .navbar-custom .dropdown-menu {
-    background-color: #777777;
+    background-color: #952C6E;
 }
 
 .navbar-custom .dropdown-item {
