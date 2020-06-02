@@ -1,14 +1,18 @@
 div {
     color: black;
 }
-.container-mision{
+
+.container-mision {
     text-align: center;
 }
-.mision{
+
+.mision {
     text-align: justify;
 }
-.container-botton-mision{
-    width: 100px; /* Para que no se rompa en dos líneas, y lo translade tal cual. */
+
+.container-botton-mision {
+    width: 100px;
+    /* Para que no se rompa en dos líneas, y lo translade tal cual. */
     margin-left: 50%;
     transform: translateX(-35%);
 }
@@ -19,3 +23,16 @@ div {
     margin: 0 auto;
     overflow: hidden;
 }*/
+
+h2 {
+    font-family: 'Mission Gothic Bold';
+    color: #952C6E;
+    font-size: xx-large;
+}
+
+p {
+    font-size: medium;
+    justify-content: center;
+    text-align: justify;
+    font-family: 'Mission Gothic Ligth'
+}
