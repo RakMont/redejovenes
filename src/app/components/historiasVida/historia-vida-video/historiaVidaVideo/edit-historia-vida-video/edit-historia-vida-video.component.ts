@@ -42,6 +42,7 @@ export class EditHistoriaVidaVideoComponent implements OnInit {
    this.dialogbox.close();
  }
  onSubmit(form:NgForm){
+
    this.service.updateHVV(form.value).subscribe(res=>
    {
      this.dialogbox.close();

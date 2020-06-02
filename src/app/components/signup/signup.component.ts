@@ -145,6 +145,8 @@ export class SignupComponent implements OnInit {
     );
 
   }
-
+  reloadpage(){
+    window.location.reload();
+  }
 
 }

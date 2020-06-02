@@ -20,7 +20,7 @@
                         <div class="alert-danger" *ngIf="f.submitted && username.invalid">
                             <div *ngIf="username.errors.required">El nombre de usuario es requerido</div>
                             <div *ngIf="username.errors.minlength">
-                                 nombre de usuario debe tener al menos 3 caracteres
+                                nombre de usuario debe tener al menos 3 caracteres
                             </div>
                             <div *ngIf="username.errors.maxlength">
                                 nombre de usuario debe tener como maximo 20 caracteres
@@ -107,6 +107,8 @@
 
                     <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
                         REGISTRO FALLIDO!!!!<br />{{ errorMessage }}
+                        <button class="btn  btn-block" (click)="reloadpage()" mat-raised-button>Intentar nuevamente</button>
+
                     </div>
                 </form>
 

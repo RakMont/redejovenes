@@ -7,5 +7,8 @@ export class Usuario{
   apellido:String;
   fecha_nacimiento:Date;
   lugar_acogida:String;
+  telefono:number;
+  perfil:String;
+  genero:String;
   roles:String[];
 }

@@ -1,19 +1,19 @@
 <div class="container col-md-12">
     <div class="d-flex justify-content-between">
         <h4></h4>
-            <button mat-button (click)="close()">
+        <button mat-button (click)="close()">
                 <mat-icon>close</mat-icon>
             </button>
     </div>
     <div style="overflow: auto;height: 350px;">
         <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
             <input readonly="readonly" type="hidden" class="form-control" name="id_HVV" #id_HVV="ngModel" [(ngModel)]="service.formData.id_HVV">
-            
+
             <mat-form-field class="example-full-width">
                 <br>
                 <mat-label>TITULO</mat-label>
 
-                <input matInput required minlength="2" type="text" class="form-control" name="titulo" #titulo="ngModel" [(ngModel)]="service.formData.titulo">
+                <input matInput required minlength="2" maxlenght="40" type="text" class="form-control" name="titulo" #titulo="ngModel" [(ngModel)]="service.formData.titulo">
                 <div class="text-left text-danger" *ngIf="titulo.invalid && titulo.touched">
                     Debes ingresar el titulo.
                 </div>
