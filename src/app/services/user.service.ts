@@ -51,6 +51,10 @@ export class UserService {
       apellido:user.apellido,
       fecha_nacimiento:user.fecha_nacimiento,
       lugar_acogida:user.lugar_acogida,
+      telefono:user.telefono,
+      genero:user.genero,
+      perfil:user.perfil,
+
 
     }, httpOptions);
   }

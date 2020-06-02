@@ -53,6 +53,9 @@ export class LoginComponent implements OnInit {
       username:'',
       password:'',
       lugar_acogida:'',
+      telefono:0,
+      perfil:'',
+      genero:'',
       roles:[""]
 
     }

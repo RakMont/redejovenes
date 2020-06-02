@@ -13,7 +13,7 @@
                 <mat-label>
                     TITULO
                 </mat-label>
-                <input matInput required minlength="2" type="text" class="form-control" name="titulo" #titulo="ngModel" [(ngModel)]="service.formData.titulo">
+                <input matInput required minlength="2" maxlenght="40" type="text" class="form-control" name="titulo" #titulo="ngModel" [(ngModel)]="service.formData.titulo">
                 <div class="text-left text-danger" *ngIf="titulo.invalid && titulo.touched">
                     Debes ingresar el titulo.
                 </div>

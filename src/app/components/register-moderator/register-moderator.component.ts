@@ -125,6 +125,9 @@ export class RegisterModeratorComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  reloadpage(){
+    window.location.reload();
+  }
   onSubmit() {
 
     this.form.fecha_nacimiento="2020-05-06";
