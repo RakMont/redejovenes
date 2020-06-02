@@ -31,11 +31,7 @@ hr.new4 {
 
 .mat-card {
     max-width: 80%;
-    margin: auto;
-    font-family: "Noto Sans", Helvetica, Arial, sans-serif;
-    background-color: darkolivegreen;
     margin-bottom: 2%;
-    border-style: solid;
 }
 
 .mat-card-avatar {
@@ -52,8 +48,6 @@ hr.new4 {
 
 .container {
     text-align: justify;
-    font-family: "Noto Sans", Helvetica, Arial, sans-serif;
-    background-color: black;
     margin-bottom: 50px;
     max-width: 70%;
 }
@@ -86,10 +80,16 @@ hr.new4 {
 .addbox-HVT {
     margin-top: 2%;
     margin-bottom: 5px;
+    color: #ffffff;
 }
 
 .coloicon {
-    color: white;
+    color: #952C6E;
+}
+
+.mt-2 {
+    background-color: #952C6E;
+    color: #ffffff;
 }
 
 .new1 {

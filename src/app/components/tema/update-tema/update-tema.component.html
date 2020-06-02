@@ -1,1 +1,26 @@
-<p>update-tema works!</p>
+<div class="container col-md-11">
+    <div class="d-flex justify-content-between">
+        <h1></h1>
+
+        <button mat-button (click)="close()">
+<mat-icon>close</mat-icon>
+</button>
+    </div>
+    <div style="overflow: auto;height: 250px;">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
+
+            <mat-form-field class="example-full-width">
+
+                <mat-label>NOMBRE DEL TEMA</mat-label>
+                <input readonly="readonly" type="hidden" class="form-control" name="id_tema" #id_tema="ngModel" [(ngModel)]="service.formData.id_tema">
+
+                <input matInput required minlength="2" type="text" class="form-control" name="nombreTema" #nombreTema="ngModel" [(ngModel)]="service.formData.nombreTema">
+                <div class="text-left text-danger" *ngIf="nombreTema.invalid && nombreTema.touched">
+                    Debes ingresar el Nombre </div>
+            </mat-form-field>
+            <br>
+            <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Agregar</button>
+        </form>
+
+    </div>
+</div>

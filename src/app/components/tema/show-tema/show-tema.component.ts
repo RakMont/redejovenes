@@ -87,4 +87,9 @@ export class ShowTemaComponent implements OnInit {
       this.temas=data;
     });
     }
+
+    gopodcast(){
+      this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+      this.router.navigate(["showPodcast"]));
+    }
 }

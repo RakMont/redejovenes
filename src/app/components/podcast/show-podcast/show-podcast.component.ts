@@ -16,6 +16,7 @@ import {FormControl, Validators} from '@angular/forms';
 import{TemaService}from 'src/app/services/tema.service';
 import{Tema}from 'src/app/models/Tema';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
+import{UpdateTemaComponent}from 'src/app/components/tema/update-tema/update-tema.component';
 
 import { filter } from 'rxjs/operators';
 import{Subject}from 'rxjs';
@@ -191,7 +192,17 @@ selectedValue: string;
    }
 
   }
-  edittema(id:number){
+  edittema(tema:Tema){
+    const dialogConfig=new MatDialogConfig();
+    dialogConfig.disableClose=true;
+    dialogConfig.autoFocus=true;
+    dialogConfig.width="50%";
+    dialogConfig.height="50%";
+    this.dialog.open(UpdateTemaComponent,dialogConfig);
 
+  }
+  goTemas(){
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+    this.router.navigate(["temas"]));
   }
 }

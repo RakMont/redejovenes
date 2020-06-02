@@ -5,10 +5,11 @@
 
 <div class="container">
     <div class="addbox-HVT">
-        <button class="mt-2" mat-raised-button (click)="AddTema()" color="primary">
-    Agregar
-     <mat-icon>add_box</mat-icon>
+        <button class="mt-2" mat-raised-button (click)="gopodcast()">
+    RETORNAR A PODCAST
+     <mat-icon>exit_to_app</mat-icon>
     </button>
+
     </div>
 
     <h1 class="tit">HISTORIAS DE VIDA EN TEXTO</h1>
@@ -28,9 +29,7 @@
                     <button mat-icon-button class="coloicon" (click)="edit_Tema(hvt)">
                           <mat-icon>edit</mat-icon>
                       </button>
-                    <button mat-icon-button (click)="Delete(hvt)">
-                          <mat-icon>delete_forever</mat-icon>
-                      </button>
+
                 </mat-card-actions>
             </div>
             <hr class="new4">

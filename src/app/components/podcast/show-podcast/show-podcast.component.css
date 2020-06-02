@@ -102,20 +102,31 @@ hr.new4 {
     /* margin-right: auto;*/
 }
 
-@media screen and (max-width: 800px){
-    .classcard{
+.mt-2 {
+    background-color: #952C6E;
+    color: #ffffff;
+}
+
+.mt-3 {
+    background-color: #03a0c3;
+    color: black;
+    margin-right: 5px;
+}
+
+@media screen and (max-width: 800px) {
+    .classcard {
         width: 110%;
         margin-left: -20px;
     }
-    .example-header-image{
+    .example-header-image {
         visibility: hidden;
     }
-    .audioBox{
+    .audioBox {
         width: 100%;
         padding: 5px;
         box-sizing: border-box;
     }
-    .other{
+    .other {
         text-align: justify;
         width: 83%;
     }

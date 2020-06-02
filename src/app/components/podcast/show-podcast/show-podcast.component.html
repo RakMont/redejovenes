@@ -5,10 +5,17 @@
        <mat-icon>add_box</mat-icon>
       </button>
     </div>
+
+
+
     <div class="addbox-Tema" *ngIf="showAdminBoard || showModeratorBoard">
-        <button mat-raised-button color="warn" (click)="addTema()">AgregarTema
+        <button class="mt-3" mat-raised-button (click)="addTema()">AgregarTema
         <mat-icon>add_box</mat-icon>
       </button>
+        <button class="mt-2" mat-raised-button (click)="goTemas()">
+        Editar Temas
+         <mat-icon>exit_to_app</mat-icon>
+        </button>
     </div>
     <h1 class="tit"> PODCASTS</h1>
     <div class="filter">
@@ -53,7 +60,7 @@
 
 
             </div>
-            <hr class="new4">   
+            <hr class="new4">
 
 
             <div class="audioBox">
