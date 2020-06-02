@@ -19,6 +19,9 @@
                 <mat-select [(ngModel)]="temaFiltrado" name="tema" required #tema="ngModel">
                     <mat-option *ngFor="let tema of temas" [value]="tema">
                         {{tema.nombreTema}}
+                        <button mat-icon-button (click)="edittema(tema.id_tema)">
+                          <mat-icon>edit</mat-icon>
+                      </button>
                     </mat-option>
                 </mat-select>
             </mat-form-field>

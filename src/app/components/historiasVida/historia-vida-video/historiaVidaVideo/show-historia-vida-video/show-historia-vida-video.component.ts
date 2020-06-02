@@ -29,6 +29,7 @@ export class ShowHistoriaVidaVideoComponent implements OnInit {
   player: YT.Player;
   private id: string = 'qDuKsiwS5xw';
   private roles: string[];
+  therearehvv=false;
   isLoggedIn = false;
   showAdminBoard = false;
   showModeratorBoard = false;
@@ -54,6 +55,8 @@ export class ShowHistoriaVidaVideoComponent implements OnInit {
      this.historiasHVV = data;
      this.charge();
    });
+
+   this.therearehvv=true;
    this.isLoggedIn = !!this.tokenStorageService.getToken();
 
     if (this.isLoggedIn) {

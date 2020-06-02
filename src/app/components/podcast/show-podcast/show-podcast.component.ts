@@ -191,4 +191,7 @@ selectedValue: string;
    }
 
   }
+  edittema(id:number){
+
+  }
 }

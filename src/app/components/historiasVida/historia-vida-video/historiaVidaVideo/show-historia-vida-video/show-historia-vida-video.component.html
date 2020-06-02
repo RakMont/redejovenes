@@ -7,7 +7,7 @@
        <mat-icon>add_box</mat-icon>
       </button>
     </div>
-    <mat-grid-list cols="2" *ngIf="historiasHVV">
+    <mat-grid-list cols="2" *ngIf="therearehvv">
         <mat-grid-tile *ngFor="let hvt of historiasHVV">
             <mat-card>
                 <mat-card-header>
@@ -37,4 +37,9 @@
             </mat-card>
         </mat-grid-tile>
     </mat-grid-list>
+
+    <div *ngIf="!therearehvv">
+        NO EXISTEN VIDEOS AUN
+        <img src="https://image.shutterstock.com/image-vector/404-error-page-not-found-600w-603779531.jpg" alt="">
+    </div>
 </div>
