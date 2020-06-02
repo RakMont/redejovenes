@@ -12,3 +12,16 @@ div {
     margin-left: 50%;
     transform: translateX(-35%);
 }
+
+h2{
+    font-family: 'Mission Gothic Bold';
+    color: #952C6E;
+    font-size: xx-large;
+}
+
+p {
+    font-size: medium;
+    justify-content: center;
+    text-align: justify;
+    font-family: 'Mission Gothic Ligth'
+}
