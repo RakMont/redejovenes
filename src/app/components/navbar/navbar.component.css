@@ -7,13 +7,24 @@
     padding: 1px 5px;
 }
 
-
+a{
+    font-family: 'Mission Gothic Bold';
+    font-size:18px;
+}
 /* change the brand and text color */
 
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-text {
     color: rgba(255, 255, 255, .8);
 }
+
+.mdc-button{
+    background-color: #952C6E;
+    color: #ffffff;
+    font-size: 15px;
+    font-family: 'Mission Gothic Bold Italic';
+}
+
 
 
 /* change the link color */
