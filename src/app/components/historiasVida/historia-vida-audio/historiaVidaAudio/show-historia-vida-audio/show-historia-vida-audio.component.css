@@ -49,6 +49,12 @@ source {
     margin-bottom: 20px;
 }
 
+.container-fluid {
+    margin-bottom: 50px;
+    max-width: 80%;
+    margin-bottom: 20px;
+}
+
 hr.new4 {
     border: 2px solid black;
 }
@@ -99,4 +105,18 @@ hr.new4 {
     font-family: 'Mission Gothic Bold';
     color: #952C6E;
     font-size: xx-large;
+}
+
+p {
+    font-size: medium;
+    justify-content: center;
+    text-align: justify;
+    font-family: 'Mission Gothic Ligth'
+}
+
+.decorator-hr{
+    height:4px;
+    border-width:0;
+    color:#952C6E;
+    background-color:#952C6E;
 }
