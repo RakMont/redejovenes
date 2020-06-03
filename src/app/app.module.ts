@@ -32,7 +32,6 @@ import {MatInputModule} from '@angular/material/input';
 import { ShowHistoriaVidaTextoComponent } from './components/historiasVida/historia-vida-texto/historiaVidaTexto/show-historia-vida-texto/show-historia-vida-texto.component';
 import { EditHistoriaVidaTextoComponent } from './components/historiasVida/historia-vida-texto/historiaVidaTexto/edit-historia-vida-texto/edit-historia-vida-texto.component';
 import { AddHistoriaVidaTextoComponent } from './components/historiasVida/historia-vida-texto/historiaVidaTexto/add-historia-vida-texto/add-historia-vida-texto.component';
-import { HistoriaVidaTextoComponent } from './components/historiasVida/historia-vida-texto/historia-vida-texto.component';
 import { AddHistoriaVidaAudioComponent } from './components/historiasVida/historia-vida-audio/historiaVidaAudio/add-historia-vida-audio/add-historia-vida-audio.component';
 import { EditHistoriaVidaAudioComponent } from './components/historiasVida/historia-vida-audio/historiaVidaAudio/edit-historia-vida-audio/edit-historia-vida-audio.component';
 import { ShowHistoriaVidaAudioComponent } from './components/historiasVida/historia-vida-audio/historiaVidaAudio/show-historia-vida-audio/show-historia-vida-audio.component';
@@ -128,7 +127,6 @@ import { MatGridListResponsiveModule } from '../lib/mat-grid-list-responsive/mat
     ShowHistoriaVidaTextoComponent,
     EditHistoriaVidaTextoComponent,
     AddHistoriaVidaTextoComponent,
-    HistoriaVidaTextoComponent,
     AddHistoriaVidaAudioComponent,
     EditHistoriaVidaAudioComponent,
     ShowHistoriaVidaAudioComponent,

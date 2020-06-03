@@ -136,3 +136,10 @@ p {
     text-align: justify;
     font-family: 'Mission Gothic Ligth'
 }
+
+.decorator-hr{
+    height:4px;
+    border-width:0;
+    color:#952C6E;
+    background-color:#952C6E;
+}
