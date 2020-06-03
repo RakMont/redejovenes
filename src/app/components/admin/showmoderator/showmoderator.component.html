@@ -1,45 +1,33 @@
 <div class="container">
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
-                <h3>LISTA DE MODERADORES</h3>
 
-            </div>
-            <div class="card-body">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>CORREO</th>
-                            <th>NOMBRE DE USUARIO</th>
-                            <th>NOMBRE</th>
-                            <th>APELLIDO</th>
-                            <th>FECHA DE NACIMIENTO</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let usuario of usuarios" class="text-center">
-
-                            <td>{{usuario.email}}</td>
-                            <td>{{usuario.username}}</td>
-                            <td>{{usuario.nombre}}</td>
-                            <td>{{usuario.apellido}}</td>
-                            <td>{{usuario.fecha_nacimiento}}</td>
-                            <td>
+    <div class="content">
 
 
-                                <button mat-icon-button color="warn" (click)="Delete(usuario)">
-                              <mat-icon>delete_forever</mat-icon>
-                          </button>
 
-                            </td>
-                        </tr>
-                    </tbody>
+        <mat-grid-list [responsive]="responsive" (responsiveColsChange)="cols = $event" rowHeight="700px" gutterSize="100px">
+            <mat-grid-tile *ngFor="let folder of usuarios">
 
-                </table>
 
-            </div>
-        </div>
+                <div class="card">
+                    <img src="../../../../assets/aguila.jpg" alt="John" style="width:100%">
+                    <h1>John Doe</h1>
+                    <p class="title">CEO & Founder, Example</p>
+                    <p>{{folder.username}}</p>
+                    <p>{{folder.email}}</p>
+                    <p>{{folder.nombre}}</p>
+                    <p>{{folder.apellido}}</p>
+                    <p>{{folder.fecha_nacimiento}}</p>
+
+
+
+                    <button color="white" (click)="Delete(folder)">
+                    <mat-icon>delete_forever</mat-icon>
+                </button>
+                </div>
+
+            </mat-grid-tile>
+        </mat-grid-list>
+
 
     </div>
-
 </div>
