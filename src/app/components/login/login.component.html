@@ -1,6 +1,6 @@
 <div class="container col-md-11">
     <div class="d-flex justify-content-between">
-        <h1>LOGIN</h1>
+        <h1>Iniciar Sesion</h1>
         <button mat-button (click)="close()">
 <mat-icon>close</mat-icon>
 </button>
@@ -10,26 +10,26 @@
         <!-- <img id="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" class="profile-img-card" />-->
         <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
             <mat-form-field class="example-full-width">
-                <mat-label>USERNAME</mat-label>
+                <mat-label>Nombre de Usuario:</mat-label>
                 <!--<input type="text" class="form-control" name="username" [(ngModel)]="form.username" required #username="ngModel" />
                 --><input matInput required minlength="2" type="text" class="form-control" name="username" #username="ngModel" [(ngModel)]="form.username">
                 <div class="text-left text-danger" *ngIf="username.invalid && username.touched">
-                    Debes ingresar el Username </div>
+                    Debes ingresar el Nombre de Usuario </div>
             </mat-form-field>
             <mat-form-field class="example-full-width">
-                <mat-label>Password</mat-label>
+                <mat-label>Contraseña:</mat-label>
                 <!-- <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required minlength="6" #password="ngModel" />
                --><input matInput required minlength="6" type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="form.password">
                 <div class="alert alert-danger" role="alert" *ngIf="f.submitted && password.invalid">
-                    <div *ngIf="password.errors.required">Password is required</div>
+                    <div *ngIf="password.errors.required">Contraseña es requerida</div>
                     <div *ngIf="password.errors.minlength">
-                        Password must be at least 6 characters
+                        La contraseña debe de tener mas de 6 caracteres
                     </div>
                 </div>
             </mat-form-field>
             <div class="form-group">
                 <button class="mt-4" mat-raised-button color="primary" [disabled]="f.invalid">
-          Login
+          Iniciar Sesion
         </button>
             </div>
             <div class="form-group">
