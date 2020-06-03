@@ -35,18 +35,12 @@ div.hvv {
 
 .mat-card {
     max-width: 600px;
-    font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+    font-family: "Mission Gothic Bold";
     background-color: black;
     color: white;
     margin-bottom: 10px;
+    border: 7px solid gray;
 }
-
-
-/*
-.mat-card-avatar {
-    background-size: cover;
-}
-*/
 
 .mat-card-actions {
     display: flex;
@@ -124,10 +118,16 @@ div.hvv {
 }
 
 hr.new4 {
-    border: 2px solid white;
+    border: 1px solid gray;
 }
 
 .tit {
     color: black;
     text-align: center;
+}
+
+h2 {
+    font-family: 'Mission Gothic Bold';
+    color: #952C6E;
+    font-size: xx-large;
 }

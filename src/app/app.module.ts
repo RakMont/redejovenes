@@ -37,7 +37,6 @@ import { AddHistoriaVidaAudioComponent } from './components/historiasVida/histor
 import { EditHistoriaVidaAudioComponent } from './components/historiasVida/historia-vida-audio/historiaVidaAudio/edit-historia-vida-audio/edit-historia-vida-audio.component';
 import { ShowHistoriaVidaAudioComponent } from './components/historiasVida/historia-vida-audio/historiaVidaAudio/show-historia-vida-audio/show-historia-vida-audio.component';
 import { HistoriaVidaAudioComponent } from './components/historiasVida/historia-vida-audio/historia-vida-audio.component';
-import { HistoriaVidaVideoComponent } from './components/historiasVida/historia-vida-video/historia-vida-video.component';
 import { EditHistoriaVidaVideoComponent } from './components/historiasVida/historia-vida-video/historiaVidaVideo/edit-historia-vida-video/edit-historia-vida-video.component';
 import { AddHistoriaVidaVideoComponent } from './components/historiasVida/historia-vida-video/historiaVidaVideo/add-historia-vida-video/add-historia-vida-video.component';
 import { ShowHistoriaVidaVideoComponent } from './components/historiasVida/historia-vida-video/historiaVidaVideo/show-historia-vida-video/show-historia-vida-video.component';
@@ -134,7 +133,6 @@ import { MatGridListResponsiveModule } from '../lib/mat-grid-list-responsive/mat
     EditHistoriaVidaAudioComponent,
     ShowHistoriaVidaAudioComponent,
     HistoriaVidaAudioComponent,
-    HistoriaVidaVideoComponent,
     EditHistoriaVidaVideoComponent,
     AddHistoriaVidaVideoComponent,
     ShowHistoriaVidaVideoComponent,

@@ -1,6 +1,7 @@
+<div style="justify-content: center; text-align: center;">
+    <h2 class="pt-4">HISTORIAS DE VIDA VIDEO</h2>
+</div>
 <div class="container">
-    <h1 class="tit">HISTORIAS DE VIDA VIDEO</h1>
-
     <div class="addbox-HVT" *ngIf="showAdminBoard || showModeratorBoard">
         <button class="mt-2" mat-raised-button (click)="AddHVV()" color="primary">
       Agregar
@@ -31,7 +32,7 @@
                     </div>
                     <hr class="new4">
                     <mat-card-footer>
-                        <h3>{{hvt.fecha}}</h3>
+                        {{hvt.fecha}}
                     </mat-card-footer>
                 </div>
             </mat-card>
