@@ -1,6 +1,20 @@
+<div style="justify-content: center; text-align: center;">
+    <h2 class="pt-4 h2-title">HISTORIAS DE VIDA TEXTO</h2>
+</div>
+<div class="container mb-0 p-4" >
+    <div class="row">
+        <div class="p-0">
+            <div class="text-center m-0 d-flex flex-column justify-content-center">
+                <p>Aquí les compartimos las historias de los jóvenes que forman parte de Dejando Huellas.
+                    Sonhistorias de inspiración, retos, alegrías, y aprendizajes. Esperamos que pueden servir como
+                    ejemplos de experiencias que demuestran que todos podemos salir adelante. No siempre es
+                    fácil pero si nos apoyamos todo es posible.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container">
-    <h1 class="tit">HISTORIAS DE VIDA TEXTO</h1>
-
     <div class="addbox-HVT" *ngIf="showAdminBoard">
         <button class="mt-2" mat-raised-button (click)="AddHVT()" color="primary">
       Agregar
@@ -10,14 +24,12 @@
 
     <mat-list *ngFor="let hvt of historiasHVT">
         <mat-card>
+            <hr class="decorator-hrb">
             <mat-card-header [ngClass]="{'custom-card':true}">
-                <mat-card-title>
-                    <br>
-                    <h1>{{hvt.titulo}}</h1>
-                </mat-card-title>
+                    <h2>{{hvt.titulo}}</h2>
             </mat-card-header>
 
-            <div class="options" fxFlex="10px" fxFlexAlign="center">
+            <div class="options mb-0" fxFlex="10px" fxFlexAlign="center">
                 <mat-card-actions *ngIf="showAdminBoard || showModeratorBoard">
                     <button mat-icon-button (click)="edit_HVT(hvt)">
                             <mat-icon>edit</mat-icon>
@@ -28,20 +40,16 @@
                 </mat-card-actions>
             </div>
 
-            <br>
             <div fxLayout="row">
                 <div fxFlex="10">
                     <mat-card-content [ngClass]="{'custom-card-content':true}">
-                        <h4>
-                            <h3></h3>
-                            {{hvt.contenido}}
-                        </h4>
+                        <p>{{hvt.contenido}}</p>
                     </mat-card-content>
                 </div>
             </div>
-
             <mat-card-footer>{{hvt.fecha}}</mat-card-footer>
-
+            <hr class="decorator-hrb">
         </mat-card>
+        
     </mat-list>
 </div>

@@ -4,13 +4,6 @@
     max-width: 85%;
 }
 
-.tit {
-    color: #000000;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
 .addbox-HVT {
     margin-left: 2%;
     margin-top: -30px;
@@ -20,14 +13,16 @@
 .mat-card {
     width: 100%;
     max-width: 80%;
+    font-family: "Mission Gothic Bold";
     margin: auto;
-    background-color: #ffffff;
+    background-color: white;
     margin-bottom: 20px;
     padding: 10px;
     box-sizing: border-box;
     border-radius: 8px;
-    box-shadow: 0 0 40px -10px #000;
-    margin: calc(35px) auto;
+    transition: none !important;
+    box-shadow: none !important;
+    border-left: #03A0C3;
 }
 
 .mat-card-footer {
@@ -41,19 +36,12 @@
     margin-left: 18px;
 }
 
-hr.new4 {
-    border: 2px solid #b6b6b6;
-}
-
 .options {
     float: right;
     margin-top: -65px;
     margin-right: 2%;
 }
 
-.card {
-    background-color: #919191;
-}
 
 .card-header {
     margin-top: 2%;
@@ -64,15 +52,9 @@ hr.new4 {
 }
 
 .custom-card {
-    /*background: #00b09b;
-    background: -webkit-linear-gradient(to right, #96c93d, #00b09b);
-    background: linear-gradient(to right, #96c93d, #00b09b);*/
-    /*background: linear-gradient(to right, #c228aa, #00AcDC);*/
     margin: left;
     text-align: justify;
-    margin-top: 10%;
-    /*border-radius: 10px;
-    border: 2px inset;*/
+    margin-top: 0;
 }
 
 .custom-card-content {
@@ -82,4 +64,37 @@ hr.new4 {
 
 .coloicon {
     color: white;
+}
+
+p {
+    font-size: medium;
+    justify-content: center;
+    text-align: justify;
+    font-family: 'Mission Gothic Ligth'
+}
+
+.decorator-hr{
+    height:4px;
+    border-width:0;
+    color:#952C6E;
+    background-color:#952C6E;
+}
+
+.decorator-hrb{
+    height:2px;
+    border-width:0;
+    color:#03A0C3;
+    background-color:#03A0C3;
+}
+
+h2 {
+    font-family: 'Mission Gothic Bold';
+    color: #03A0C3;
+    font-size: x-large;
+}
+
+.h2-title {
+    font-family: 'Mission Gothic Bold';
+    color: #952C6E;
+    font-size: xx-large;
 }
