@@ -21,33 +21,34 @@
                 </a>
             </li>
         </ul>
-        <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
-            <li class="nav-item" *ngIf="showAdminBoard">
+        <ul class="navbar-nav" *ngIf="isLoggedIn">
+            <li style="font-weight: bold;" *ngIf="showAdminBoard">
                 <p>ERES EL ADMINISTRADOR PRINCIPAL</p>
             </li>
-            <li class="nav-item" *ngIf="showModeratorBoard">
+            <li style="font-weight: bold;" *ngIf="showModeratorBoard">
                 <p>ERES UN MODERADOR</p>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
             <li class="nav-item" *ngIf="showAdminBoard">
-                <a href="/profile" class="nav-link" routerLink="allmoders">MODERADORES</a>
+                <a href="/profile" class="btn cabecera" routerLink="allmoders"> Ver moderadores</a>
+                
             </li>
-            <li class="nav-item" *ngIf="showAdminBoard">
-                <a href="/profile" class="nav-link" routerLink="allusers">USUARIOS</a>
+            <li class="nav-item " *ngIf="showAdminBoard">
+                <a href="/profile" class="btn cabecera" routerLink="allusers"> Ver usuarios  </a>
             </li>
 
             <li class="nav-item" *ngIf="showAdminBoard">
-                <a href="/profile" class="nav-link" routerLink="registermod">Registrar Moderador</a>
+                <a href="/profile" class="btn cabecera" routerLink="registermod"> Registrar Moderadores  </a>
             </li>
             <li class="nav-item">
-                <a href class="nav-link" (click)="logout()">Cerrar Sesion</a>
+                <a href class="btn cabecera" (click)="logout()"> Cerrar Sesion </a>
             </li>
         </ul>
         <ul class="navbar-nav " routerLinkActive="active">
 
             <li class="nav-item">
-                <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">
+                <a href="/user" class="btn cabecera" *ngIf="isLoggedIn" routerLink="user">
                     <mat-icon>account_circle</mat-icon>
                 </a>
             </li>
