@@ -44,7 +44,11 @@ export class UserService {
     //return this.http.get<Tema[]>(this.Url);
   }
   saveProfilePhoto(formData:FormData):Observable<any>{
-    return this.http.post(API_URL+'saveAudioFile',formData);
+    return this.http.post(API_URL+'UpdateUserFile',formData);
+  }
+  getprofile(username:String):Observable<any>{
+    return this.http.get(API_URL+'getprofilephoto/'+username);
+
   }
   editProfile(user:Usuario): Observable<any>{
   // return this.http.put<historiaVidaTexto>(this.Url+"/"+historiaVidaTexto.id_HVT, historiaVidaTexto);

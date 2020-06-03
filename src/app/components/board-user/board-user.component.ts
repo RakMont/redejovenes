@@ -18,13 +18,16 @@ import {MatSnackBar}from '@angular/material/snack-bar';
 })
 export class BoardUserComponent implements OnInit {
   private roles: string[];
+  public image: any=File;
   isLoggedIn = false;
   showAdminBoard = false;
   showModeratorBoard = false;
   username: string;
   email:String;
   id;
-  userprof:Usuario
+  userprof:Usuario;
+  public images:any=[];
+
   constructor(private dialog: MatDialog,private tokenStorageService: TokenStorageService,private userservice:UserService) { }
 
 
@@ -41,12 +44,20 @@ export class BoardUserComponent implements OnInit {
         this.username = user.username;
         this.id=user.id;
         this.email=user.email;
+
         this.userservice.getUserProfile(this.username)
       .subscribe(data =>{
       this.userprof = data;
       console.log(this.userprof);
     });
+
       }
+      this.userservice.getprofile(this.username).subscribe(data =>{
+          this.images=data;
+          this.image=this.images[0];
+          console.log(this.image);
+        });
+
 
   }
   edit_photo(usuario:Usuario){

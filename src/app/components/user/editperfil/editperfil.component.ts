@@ -54,7 +54,9 @@ export class EditperfilComponent implements OnInit {
     formData.append('user',JSON.stringify(user));
     formData.append('photo',this.hvaAudio);
     this.service.saveProfilePhoto(formData).subscribe((res)=>{
-
+      data => {
+        console.log(data);
+      };
       this.dialogbox.close();
 
     this.service.filter("Register click");
@@ -63,7 +65,7 @@ export class EditperfilComponent implements OnInit {
         verticalPosition:'top'
     });
     })
-    this.service.editProfile(this.service.formData).subscribe(
+    /*this.service.editProfile(this.service.formData).subscribe(
        data => {
          console.log(data);
          this.isSuccessful = true;
@@ -85,6 +87,8 @@ export class EditperfilComponent implements OnInit {
              this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
          this.router.navigate(["user"]));
        }
+*/
+window.location.reload();
 
    }
 
