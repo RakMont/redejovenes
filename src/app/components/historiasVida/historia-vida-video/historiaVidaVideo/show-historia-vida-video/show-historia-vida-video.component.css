@@ -52,7 +52,6 @@ div.hvv {
 
 .container {
     text-align: justify;
-    font-family: "Noto Sans", Helvetica, Arial, sans-serif;
     width: 100%;
 }
 
@@ -98,14 +97,12 @@ div.hvv {
 .container {
     text-align: justify;
     font-family: "Noto Sans", Helvetica, Arial, sans-serif;
-    background-color: white;
+    background-color:white;
     margin-bottom: 10%;
     max-width: 85%;
 }
 
 .mat-card {
-    margin-bottom: 2%;
-    margin-top: 2%;
     box-sizing: border-box;
     /*border-radius: 25px;
     border: 6px inset;
@@ -130,4 +127,12 @@ h2 {
     font-family: 'Mission Gothic Bold';
     color: #952C6E;
     font-size: xx-large;
+}
+
+
+p {
+    font-size: medium;
+    justify-content: center;
+    text-align: justify;
+    font-family: 'Mission Gothic Ligth'
 }
