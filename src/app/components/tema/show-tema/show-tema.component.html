@@ -12,18 +12,11 @@
 
     </div>
 
-    <h1 class="tit">HISTORIAS DE VIDA EN TEXTO</h1>
-    <div class="card-header">
-        <hr class="new1">
-
-    </div>
     <mat-list *ngFor="let hvt of temas">
         <mat-card>
-            <mat-card-header>
-                <mat-card-title>
-                    <h1>Titulo: {{hvt.nombreTema}}</h1>
-                </mat-card-title>
-            </mat-card-header>
+
+            <h1>NOMBRE {{hvt.nombreTema}}
+            </h1>
             <div class="options" fxFlex="10px" fxFlexAlign="center">
                 <mat-card-actions>
                     <button mat-icon-button class="coloicon" (click)="edit_Tema(hvt)">

@@ -12,6 +12,7 @@
         <button class="mt-3" mat-raised-button (click)="addTema()">AgregarTema
         <mat-icon>add_box</mat-icon>
       </button>
+
         <button class="mt-2" mat-raised-button (click)="goTemas()">
         Editar Temas
          <mat-icon>exit_to_app</mat-icon>
@@ -26,9 +27,7 @@
                 <mat-select [(ngModel)]="temaFiltrado" name="tema" required #tema="ngModel">
                     <mat-option *ngFor="let tema of temas" [value]="tema">
                         {{tema.nombreTema}}
-                        <button mat-icon-button (click)="edittema(tema.id_tema)">
-                          <mat-icon>edit</mat-icon>
-                      </button>
+
                     </mat-option>
                 </mat-select>
             </mat-form-field>
@@ -40,6 +39,8 @@
             <div mat-card-avatar class="example-header-image">
                 <img src="../../../../assets/HistoriaVidaAudio/ShowIcons/microphone.png" />
             </div>
+
+
             <div class="options" fxFlex="5px" fxFlexAlign="center">
                 <mat-card-actions *ngIf="showAdminBoard || showModeratorBoard">
                     <button mat-icon-button (click)="edit_HVV(hvt)">
@@ -52,12 +53,12 @@
             </div>
 
             <div class="other">
-
-                <mat-card-title>{{hvt.titulo}}</mat-card-title>
-                <!--                <mat-card-subtitle>{{hvt.archivo_mp3}}</mat-card-subtitle>
+                <div class="vl">
+                    <mat-card-title>{{hvt.titulo}}</mat-card-title>
+                    <!--                <mat-card-subtitle>{{hvt.archivo_mp3}}</mat-card-subtitle>
 -->
-                <h3>{{hvt.descripcion}}</h3>
-
+                    <h3>{{hvt.descripcion}}</h3>
+                </div>
 
             </div>
             <hr class="new4">

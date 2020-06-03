@@ -20,6 +20,18 @@ import { Usuario } from 'src/app/models/Usuario';
 export class ShowAllUsersComponent implements OnInit {
   usuarios:Usuario[];
   user:Usuario;
+  ///////////////////////////////////
+  folders = [
+    { name: 'Folder 1', link: '#1' },
+    { name: 'Folder 2', link: '#2' },
+    { name: 'Folder 3', link: '#3' },
+    { name: 'Folder 4', link: '#4' },
+    { name: 'Folder 5', link: '#5' }
+  ];
+
+  responsive = true;
+  cols = 1;
+  /////////////////////////////////
   constructor(private tokenStorageService: TokenStorageService,private snackBar:MatSnackBar,private service: UserService, private router: Router,private dialog: MatDialog) { }
 
   ngOnInit(): void {

@@ -1,6 +1,8 @@
 img {
     height: 120px;
     margin-top: 20px;
+    margin-left: 20px;
+    position: absolute;
 }
 
 .mat-form-field {
@@ -105,6 +107,12 @@ hr.new4 {
 .mt-2 {
     background-color: #952C6E;
     color: #ffffff;
+}
+
+.vl {
+    border-left: 6px solid #952C6E;
+    height: 120px;
+    border-left: 6px solid black;
 }
 
 .mt-3 {

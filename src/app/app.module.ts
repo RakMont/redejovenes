@@ -42,7 +42,6 @@ import { EditHistoriaVidaVideoComponent } from './components/historiasVida/histo
 import { AddHistoriaVidaVideoComponent } from './components/historiasVida/historia-vida-video/historiaVidaVideo/add-historia-vida-video/add-historia-vida-video.component';
 import { ShowHistoriaVidaVideoComponent } from './components/historiasVida/historia-vida-video/historiaVidaVideo/show-historia-vida-video/show-historia-vida-video.component';
 import {HttpClientModule} from '@angular/common/http';
-
 import { CommonModule } from "@angular/common";
 
 import {MisionService} from './services/mision.service';
@@ -119,7 +118,10 @@ import { ShowmoderatorComponent } from './components/admin/showmoderator/showmod
 import { AddcomentarioComponent } from './components/comentario/addcomentario/addcomentario.component';
 import { EditperfilComponent } from './components/user/editperfil/editperfil.component';
 
+import{MatMenuModule} from '@angular/material/menu';
+import{MatSlideToggleModule}from '@angular/material/slide-toggle';
 
+import { MatGridListResponsiveModule } from '../lib/mat-grid-list-responsive/mat-grid-list-responsive.module';
 
 @NgModule({
   declarations: [
@@ -237,6 +239,12 @@ import { EditperfilComponent } from './components/user/editperfil/editperfil.com
     NgxAudioPlayerModule,
     MatSelectModule,
     ReactiveFormsModule,
+    MatCardModule,
+    MatIconModule,
+    MatGridListModule,
+    MatMenuModule,
+    MatSlideToggleModule,
+    MatGridListResponsiveModule,
 
 
 

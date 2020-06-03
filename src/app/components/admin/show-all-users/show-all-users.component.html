@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="card">
+    <!-- <div class="card">
         <div class="card-header">
             <h3>LISTA DE USUARIOS</h3>
 
@@ -37,6 +37,33 @@
             </table>
 
         </div>
-    </div>
+    </div>-->
+    <div class="content">
 
+
+
+        <mat-grid-list [responsive]="responsive" (responsiveColsChange)="cols = $event" rowHeight="700px" gutterSize="50px">
+            <mat-grid-tile *ngFor="let folder of usuarios">
+
+
+                <div class="card">
+                    <img src="../../../../assets/aguila.jpg" alt="John" style="width:100%">
+                    <h1>John Doe</h1>
+                    <p class="title">CEO & Founder, Example</p>
+                    <p>{{folder.username}}</p>
+                    <p>{{folder.email}}</p>
+                    <p>{{folder.nombre}}</p>
+                    <p>{{folder.apellido}}</p>
+                    <p>{{folder.fecha_nacimiento}}</p>
+
+
+
+                    <p><button>Contact</button></p>
+                </div>
+
+            </mat-grid-tile>
+        </mat-grid-list>
+
+
+    </div>
 </div>
