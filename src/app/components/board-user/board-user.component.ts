@@ -4,6 +4,8 @@ import { Usuario } from 'src/app/models/Usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { UserService } from 'src/app/services/user.service';
 import { EditProfileComponent } from 'src/app/components/user/edit-profile/edit-profile.component';
+import { EditperfilComponent } from 'src/app/components/user/editperfil/editperfil.component';
+
 import{MatDialog,MatDialogConfig}from '@angular/material/dialog';
 import{Subject}from 'rxjs';
 import {Observable} from 'rxjs';
@@ -45,6 +47,16 @@ export class BoardUserComponent implements OnInit {
       console.log(this.userprof);
     });
       }
+
+  }
+  edit_photo(usuario:Usuario){
+    this.userservice.formData=usuario;
+    const dialogConfig=new MatDialogConfig();
+   dialogConfig.disableClose=true;
+   dialogConfig.autoFocus=true;
+   dialogConfig.width="70%";
+   this.dialog.open(EditperfilComponent,dialogConfig);
+   localStorage.setItem("id", usuario.id.toString());
 
   }
   edit_profile(usuario:Usuario){

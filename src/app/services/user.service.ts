@@ -43,6 +43,9 @@ export class UserService {
     return this.http.get<Usuario[]>(API_URL + 'getallmoderator/');
     //return this.http.get<Tema[]>(this.Url);
   }
+  saveProfilePhoto(formData:FormData):Observable<any>{
+    return this.http.post(API_URL+'saveAudioFile',formData);
+  }
   editProfile(user:Usuario): Observable<any>{
   // return this.http.put<historiaVidaTexto>(this.Url+"/"+historiaVidaTexto.id_HVT, historiaVidaTexto);
 

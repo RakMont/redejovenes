@@ -1,1 +1,31 @@
-<p>editperfil works!</p>
+<div class="container col-md-11">
+    <div class="d-flex justify-content-between">
+        <h4></h4>
+        <button mat-button (click)="close()">
+          <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <div style="overflow: auto;height: 350px;">
+        <form #form="ngForm" (ngSubmit)="onSubmit()" autocomplete="off">
+            <input readonly="readonly" type="hidden" class="form-control" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
+            <input type="hidden" class="form-control" name="username" #username="ngModel" [(ngModel)]="service.formData.username">
+            <input type="hidden" class="form-control" name="email" #email="ngModel" [(ngModel)]="service.formData.email">
+            <input type="hidden" class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]="service.formData.nombre">
+            <input type="hidden" class="form-control" name="apellido" #apellido="ngModel" [(ngModel)]="service.formData.apellido">
+            <input type="hidden" class="form-control" name="fecha_nacimiento" #fecha_nacimiento="ngModel" [(ngModel)]="service.formData.fecha_nacimiento">
+            <input type="hidden" class="form-control" name="lugar_acogida" #lugar_acogida="ngModel" [(ngModel)]="service.formData.lugar_acogida">
+            <input type="hidden" class="form-control" name="telefono" #telefono="ngModel" [(ngModel)]="service.formData.telefono">
+            <input type="hidden" class="form-control" name="genero" #genero="ngModel" [(ngModel)]="service.formData.genero">
+
+            <br>
+            <div class="mt-4 input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">FOTO DE PERFIL</span>
+                </div>
+                <input type="file" class="form-control" accept="image/*" (change)="onSelectFile($event)" style="height:100%">
+            </div>
+
+            <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Agregar</button>
+        </form>
+    </div>
+</div>
