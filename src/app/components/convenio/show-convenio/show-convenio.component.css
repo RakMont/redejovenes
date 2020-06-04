@@ -16,7 +16,7 @@
     
 }
 .mat-card{
-    height: 450px;
+    height: 460px;
     width: 500px;
 }
  
@@ -76,10 +76,17 @@
     object-fit: contain;
  
 }
+
+.decorator-hr{
+    height:4px;
+    border-width:0;
+    color:#952C6E;
+    background-color:#952C6E;
+}
  
 @media screen and (max-width:1000px){
     .mat-card{
-        height: 450px;
+        height: 460px;
         width: 500px;
     }
     .form{
@@ -110,7 +117,7 @@
     }
  
     .mat-card{
-        height: 550px;
+        height: 560px;
         width: 500px;
     }
     .mat-card-actions {
