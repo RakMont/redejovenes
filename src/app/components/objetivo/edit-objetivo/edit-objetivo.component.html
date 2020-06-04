@@ -15,7 +15,7 @@
                 <input readonly="readonly" type="hidden" class="form-control" name="id_objetivos" #id_objetivos="ngModel" [(ngModel)]="service.formData.id_objetivos">
                 <mat-form-field class="example-full-width">
                     <mat-label>CONTENIDO</mat-label>
-                    <textarea matInput required minlength="2" type="text" class="form-control" name="contenido" #contenido="ngModel" [(ngModel)]="service.formData.contenido"></textarea>
+                    <textarea matInput required minlength="2" type="text" maxlength="255" class="form-control" name="contenido" #contenido="ngModel" [(ngModel)]="service.formData.contenido"></textarea>
                     <div class="text-left text-danger" *ngIf="contenido.invalid && contenido.touched">
                         Debes ingresar la contenido.
                     </div>
