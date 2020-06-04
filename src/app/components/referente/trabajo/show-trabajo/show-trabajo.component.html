@@ -9,7 +9,7 @@
             </button>
             <div class="options" fxFlex="5px" fxFlexAlign="center"></div>
             <div class="row justify-content-center align-items-center">
-                <youtube-player width="640" height="360" [videoId]="link" suggestedQuality="large"></youtube-player>
+                <youtube-player width="840" height="460" [videoId]="link" suggestedQuality="large"></youtube-player>
             </div>
             <mat-card-content>{{referente.descripcion}}</mat-card-content>
 
@@ -36,6 +36,13 @@
         </div>
 
         <div class="col-sm" style="background: #00addc">
+            <div class="addbox-Tema" *ngIf="isLoggedIn">
+
+                <button class="mt-2" mat-raised-button (click)="crearcomentario()">
+            Añadir Comentario
+             <mat-icon>exit_to_app</mat-icon>
+            </button>
+            </div>
             <app-show-comentario-trabajo></app-show-comentario-trabajo>
         </div>
     </div>
