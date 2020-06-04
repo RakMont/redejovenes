@@ -17,6 +17,7 @@ import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 import{ShowComentarioSaludComponent}from 'src/app/components/comentario/salud/show-comentario-salud/show-comentario-salud.component';
+import { AddComentarioSaludComponent } from 'src/app/components/comentario/salud/add-comentario-salud/add-comentario-salud.component';
 
 @Component({
   selector: 'app-show-salud',
@@ -69,5 +70,14 @@ export class ShowSaludComponent implements OnInit {
     .getReferenteSalud().subscribe(data=>{
       this.referente=data;
     });
+  }
+  crearcomentario(){
+    const dialogConfig=new MatDialogConfig();
+    dialogConfig.disableClose=true;
+    dialogConfig.autoFocus=true;
+    dialogConfig.width="50%";
+    dialogConfig.height="50%";
+    this.dialog.open(AddComentarioSaludComponent,dialogConfig);
+
   }
 }
