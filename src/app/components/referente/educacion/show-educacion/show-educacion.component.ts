@@ -16,6 +16,7 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 import{ShowComentarioEducacionComponent}from 'src/app/components/comentario/educacion/show-comentario-educacion/show-comentario-educacion.component';
+import { AddComentarioEducacionComponent } from 'src/app/components/comentario/educacion/add-comentario-educacion/add-comentario-educacion.component';
 
 @Component({
   selector: 'app-show-educacion',
@@ -71,6 +72,15 @@ export class ShowEducacionComponent implements OnInit {
     .getReferenteEducacion().subscribe(data=>{
       this.referente=data;
     });
+  }
+  crearcomentario(){
+    const dialogConfig=new MatDialogConfig();
+    dialogConfig.disableClose=true;
+    dialogConfig.autoFocus=true;
+    dialogConfig.width="50%";
+    dialogConfig.height="50%";
+    this.dialog.open(AddComentarioEducacionComponent,dialogConfig);
+
   }
 }
 
