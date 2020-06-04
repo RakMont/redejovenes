@@ -11,7 +11,7 @@
                 <mat-label>
                     CONTENIDO
                 </mat-label>
-                <textarea matInput required minlength="2" type="text" class="form-control" name="contenido" #contenido="ngModel" [(ngModel)]="service.formData.contenido"></textarea>
+                <textarea matInput required minlength="2" maxlength="255" type="text" class="form-control" name="contenido" #contenido="ngModel" [(ngModel)]="service.formData.contenido"></textarea>
                 <div class="text-left text-danger" *ngIf="contenido.invalid && contenido.touched">
                     Debes ingresar el contenido.
                 </div>
@@ -22,7 +22,7 @@
                 <mat-label>
                     CONTACTO
                 </mat-label>
-                <textarea matInput required minlength="2" type="text" class="form-control" name="contacto" #contacto="ngModel" [(ngModel)]="service.formData.contacto"></textarea>
+                <textarea matInput required minlength="2" maxlength="50" type="text" class="form-control" name="contacto" #contacto="ngModel" [(ngModel)]="service.formData.contacto"></textarea>
                 <div class="text-left text-danger" *ngIf="contacto.invalid && contacto.touched">
                     Debes ingresar el contacto.
                 </div>
@@ -33,4 +33,3 @@
         </form>
     </div>
 </div>
-
