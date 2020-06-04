@@ -1,12 +1,8 @@
-img {
-    height: 120px;
-    margin-top: 20px;
-}
 
 .example-header-image {
-    /* background-image: url("src/assets/HistoriaVidaAudio/ShowIcons/microphone.png");*/
+    background-image: url('https://img2.freepng.es/20190620/byr/kisspng-microphone-sound-computer-icons-clip-art-vector-gr-mic-a-svg-png-icon-free-download-411793-onlin-5d0c436f81bb67.2068817515610847835314.jpg');
     background-size: cover;
-}
+  }
 
 .mat-card-title {
     align-items: center;
@@ -15,27 +11,26 @@ img {
 .classcard {
     margin-bottom: 20px;
     margin: 2%;
+    font-family: "Mission Gothic Bold";
     padding: 10px;
     box-sizing: border-box;
     border-radius: 8px;
-    box-shadow: 0 0 40px -10px #000;
     margin: calc(35px) auto;
+    transition: none !important;
+    box-shadow: none !important;
 }
 
 .other {
     align-items: center;
     text-align: center;
-    /*background: linear-gradient(to right, #c228aa, #00AcDC);
-    border-style: solid;
-    border-color: black;*/
     height: 110px;
     margin-left: 16%;
     margin-bottom: 0%;
 }
 
 .audioBox {
-    margin-top: 20px;
-    position: center;
+    margin-top: 0px;
+    position: rigth;
 }
 
 source {
@@ -49,8 +44,10 @@ source {
     margin-bottom: 20px;
 }
 
-hr.new4 {
-    border: 2px solid black;
+.container-fluid {
+    margin-bottom: 50px;
+    max-width: 80%;
+    margin-bottom: 20px;
 }
 
 .mat-card-title {
@@ -93,4 +90,30 @@ hr.new4 {
         text-align: justify;
         width: 83%;
     }
+}
+
+.h2-title {
+    font-family: 'Mission Gothic Bold';
+    color: #952C6E;
+    font-size: xx-large;
+}
+
+p {
+    font-size: medium;
+    justify-content: center;
+    text-align: justify;
+    font-family: 'Mission Gothic Ligth'
+}
+
+.decorator-hr{
+    height:4px;
+    border-width:0;
+    color:#952C6E;
+    background-color:#952C6E;
+}
+
+h2 {
+    font-family: 'Mission Gothic Bold';
+    color: #952C6E;
+    font-size: x-large;
 }

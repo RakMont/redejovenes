@@ -50,10 +50,18 @@ export class UserService {
     return this.http.get(API_URL+'getprofilephoto/'+username);
 
   }
+  getAllusersphoto():Observable<any>{
+    return this.http.get(API_URL+'getUsersPhotos/');
+
+  }
+  getAllmoderatorsphoto():Observable<any>{
+    return this.http.get(API_URL+'getModersPhotos/');
+
+  }
   editProfile(user:Usuario): Observable<any>{
   // return this.http.put<historiaVidaTexto>(this.Url+"/"+historiaVidaTexto.id_HVT, historiaVidaTexto);
 
-    return this.http.put(API_URL + 'updateprofile',{
+    return this.http.post(API_URL + 'updateprofile',{
       id:user.id,
       username: user.username,
       email: user.email,

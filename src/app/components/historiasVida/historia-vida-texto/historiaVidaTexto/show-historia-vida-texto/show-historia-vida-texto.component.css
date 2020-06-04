@@ -22,7 +22,6 @@
     border-radius: 8px;
     transition: none !important;
     box-shadow: none !important;
-    border-left: #03A0C3;
 }
 
 .mat-card-footer {
@@ -81,7 +80,7 @@ p {
 }
 
 .decorator-hrb{
-    height:2px;
+    height:4px;
     border-width:0;
     color:#03A0C3;
     background-color:#03A0C3;
@@ -89,7 +88,7 @@ p {
 
 h2 {
     font-family: 'Mission Gothic Bold';
-    color: #03A0C3;
+    color: #952C6E;
     font-size: x-large;
 }
 

@@ -21,10 +21,13 @@ export class EditProfileComponent implements OnInit {
   form: any = {};
   lugar_acogida:String;
   isSuccessful = false;
+  firstusername;
   isSignUpFailed = false;
   errorMessage = '';
   confirmpassword = false;
   startDate = new Date(2000, 0, 1);
+  generos=["Masculino","Femenino","OTRO"];
+
   constructor(private snackBar:MatSnackBar, private router: Router,public dialogbox:MatDialogRef<EditProfileComponent>,public userservice:UserService) {
     this.userservice.listen().subscribe((m:any)=>{
       console.log(m);
@@ -40,12 +43,14 @@ export class EditProfileComponent implements OnInit {
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   ngOnInit(): void {
     this.userservice.formData.password="";
+    this.firstusername=this.userservice.formData.username;
   }
 
   close(){
     this.dialogbox.close();
   }
   onSubmit(){
+
     console.log(this.userservice.formData);
     this.userservice.editProfile(this.userservice.formData).subscribe(
       data => {

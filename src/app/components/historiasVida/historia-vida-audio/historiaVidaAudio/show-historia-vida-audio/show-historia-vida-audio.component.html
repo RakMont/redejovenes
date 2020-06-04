@@ -1,45 +1,49 @@
+<div style="justify-content: center; text-align: center;">
+    <h2 class="pt-4 h2-title">HISTORIAS DE VIDA AUDIO</h2>
+</div>
+<div class="container-fluid mb-0 p-4">
+    <div class="row">
+        <div class="p-0">
+            <div class="text-center m-0 d-flex flex-column justify-content-center">
+                <p>Aquí les compartimos las historias de los jóvenes que forman parte de Dejando Huellas.
+                    Sonhistorias de inspiración, retos, alegrías, y aprendizajes. Esperamos que pueden servir como
+                    ejemplos de experiencias que demuestran que todos podemos salir adelante. No siempre es
+                    fácil pero si nos apoyamos todo es posible.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container">
-
-    <h1 class="tit">HISTORIAS DE VIDA EN AUDIO</h1>
     <div class="addbox-HVT" *ngIf="showAdminBoard || showModeratorBoard">
         <button class="mt-2" mat-raised-button (click)="AddHVA()" color="primary">
-        Agregar
-         <mat-icon>add_box</mat-icon>
+            Agregar
+            <mat-icon>add_box</mat-icon>
         </button>
     </div>
     <mat-list *ngFor="let hvt of things">
         <mat-card class="classcard">
-            <div mat-card-avatar class="example-header-image">
-                <img src="../../../../assets/HistoriaVidaAudio/ShowIcons/microphone.png" />
-            </div>
-            <div class="options" fxFlex="5px" fxFlexAlign="center">
+            <hr class="decorator-hr">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <h2>{{hvt.titulo}}</h2>
+            </mat-card-header>
+            <div class="options mb-0" fxFlex="10px" fxFlexAlign="center">
                 <mat-card-actions *ngIf="showAdminBoard || showModeratorBoard">
                     <button mat-icon-button (click)="edit_HVV(hvt)">
-                      <mat-icon>edit</mat-icon>
-                  </button>
+                        <mat-icon>edit</mat-icon>
+                    </button>
                     <button mat-icon-button color="warn" (click)="Delete(hvt)">
-                      <mat-icon>delete_forever</mat-icon>
-                  </button>
+                        <mat-icon>delete_forever</mat-icon>
+                    </button>
                 </mat-card-actions>
             </div>
-
-            <div class="other">
-
-                <mat-card-title>{{hvt.titulo}}</mat-card-title>
-                <!--<mat-card-subtitle>{{hvt.archivo_mp3}}</mat-card-subtitle>-->
-                <h3>Este podcast es para proteger la privacidad de la red de jovenes</h3>
-
-            </div>
-            <hr class="new4">
-
-
-            <div class="audioBox">
-                <mat-basic-audio-player [audioUrl]="hvt.audio" [title]="hvt.fecha" [autoPlay]="false" muted="muted" [displayTitle]="msbapDisplayTitle" [displayVolumeControls]="true"></mat-basic-audio-player>
-
-            </div>
-
-
-
+            <mat-card-content class="large mat-card-content">
+                <mat-basic-audio-player [audioUrl]="hvt.audio" [title]="hvt.fecha"
+                    [autoPlay]="false" muted="muted" [displayTitle]="msbapDisplayTitle" [displayVolumeControls]="true">
+                </mat-basic-audio-player>
+            </mat-card-content>
+            <hr class="decorator-hr">
         </mat-card>
     </mat-list>
 </div>

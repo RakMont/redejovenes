@@ -1,1 +1,25 @@
-<p>add-comentario-salud works!</p>
+<div class="container col-md-11">
+    <div class="d-flex justify-content-between">
+        <h4></h4>
+
+        <button mat-button (click)="close()">
+  <mat-icon>close</mat-icon>
+</button>
+    </div>
+    <div style="overflow: auto;height: 200px;">
+        <form #form="ngForm" (ngSubmit)="onSubmit()" autocomplete="off">
+            <mat-form-field class="example-full-width">
+
+                <mat-label>COMENTARIO:</mat-label>
+
+                <input matInput required minlength="2" type="text" class="form-control" name="titulo" #titulo="ngModel" [(ngModel)]="service.formData.comentario">
+                <div class="text-left text-danger" *ngIf="titulo.invalid && titulo.touched">
+                    Debes ingresar el titulo.
+                </div>
+            </mat-form-field>
+            <br>
+            <br>
+            <button class="mt-4" mat-raised-button color="primary" (click)="close()" type="submit" [disabled]="form.invalid">AGREGAR</button>
+        </form>
+    </div>
+</div>

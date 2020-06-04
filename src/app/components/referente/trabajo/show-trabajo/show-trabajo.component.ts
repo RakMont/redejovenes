@@ -8,6 +8,7 @@ import {MatSort}from '@angular/material/sort';
 import{MatDialog,MatDialogConfig}from '@angular/material/dialog';
 import{EditTrabajoComponent}from 'src/app/components/referente/trabajo/edit-trabajo/edit-trabajo.component';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
+import{AddComentarioTrabajoComponent}from 'src/app/components/comentario/trabajo/add-comentario-trabajo/add-comentario-trabajo.component';
 
 import { filter } from 'rxjs/operators';
 import{Subject}from 'rxjs';
@@ -66,5 +67,14 @@ export class ShowTrabajoComponent implements OnInit {
     .getReferenteTrabajo().subscribe(data=>{
       this.referente=data;
     });
+  }
+  crearcomentario(){
+    const dialogConfig=new MatDialogConfig();
+    dialogConfig.disableClose=true;
+    dialogConfig.autoFocus=true;
+    dialogConfig.width="50%";
+    dialogConfig.height="50%";
+    this.dialog.open(AddComentarioTrabajoComponent,dialogConfig);
+
   }
 }

@@ -45,6 +45,8 @@ export class AuthService {
       apellido:user.apellido,
       fecha_nacimiento:user.fecha_nacimiento,
       lugar_acogida:user.lugar_acogida,
+      telefono:user.telefono,
+      genero:user.genero,
       role:["mod"]
     }, httpOptions);
   }

@@ -16,6 +16,7 @@ import {MatSnackBar}from '@angular/material/snack-bar';
 
 import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 import{ShowComentarioViviendaComponent}from 'src/app/components/comentario/vivienda/show-comentario-vivienda/show-comentario-vivienda.component';
+import { AddComentarioViviendaComponent } from 'src/app/components/comentario/vivienda/add-comentario-vivienda/add-comentario-vivienda.component';
 
 @Component({
   selector: 'app-show-vivienda',
@@ -69,5 +70,14 @@ export class ShowViviendaComponent implements OnInit {
     .getReferenteVivienda().subscribe(data=>{
       this.referente=data;
     });
+  }
+  crearcomentario(){
+    const dialogConfig=new MatDialogConfig();
+    dialogConfig.disableClose=true;
+    dialogConfig.autoFocus=true;
+    dialogConfig.width="50%";
+    dialogConfig.height="50%";
+    this.dialog.open(AddComentarioViviendaComponent,dialogConfig);
+
   }
 }

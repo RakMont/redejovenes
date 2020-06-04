@@ -1,9 +1,9 @@
 <div class="container">
-    <mat-list *ngFor="let hvt of comentariosRaw">
+    <mat-list *ngFor="let hvt of things">
         <mat-card class="example-card">
             <mat-card-header [ngClass]="{'custom-card':true}">
                 <div mat-card-avatar class="example-header-image"></div>
-                <mat-card-title>Shiba Inu</mat-card-title>
+                <mat-card-title>{{hvt.nombre}}</mat-card-title>
                 <mat-card-subtitle>Usuario registrado</mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
@@ -15,7 +15,7 @@
                 <button mat-button>Responder</button>
             </mat-card-actions>
             <mat-card-footer>Fecha: {{hvt.fecha}}</mat-card-footer>
-        
+
         </mat-card>
         <mat-list *ngFor="let comen of comentarios">
             <div *ngIf="hvt.id_comentario==comen.id_comentario_ref">

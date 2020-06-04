@@ -20,6 +20,10 @@ import { Usuario } from 'src/app/models/Usuario';
 export class ShowAllUsersComponent implements OnInit {
   usuarios:Usuario[];
   user:Usuario;
+  things=[];
+  public photos:any=[];
+  public aux;
+
   ///////////////////////////////////
   folders = [
     { name: 'Folder 1', link: '#1' },
@@ -35,6 +39,12 @@ export class ShowAllUsersComponent implements OnInit {
   constructor(private tokenStorageService: TokenStorageService,private snackBar:MatSnackBar,private service: UserService, private router: Router,private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.service.getAllusersphoto().subscribe(response=>{
+      this.photos=response;
+
+     this.Convertlist();
+
+    });
     this.service.getAllusers()
    .subscribe(data =>{
      this.usuarios = data;
@@ -53,7 +63,17 @@ export class ShowAllUsersComponent implements OnInit {
         });
      });
     }
+    window.location.reload();
 
   }
+  Convertlist(){
+    let c: number = 0;
 
+    for(let photo of this.photos){
+      this.aux=this.usuarios[c];
+      this.things.push({photo:photo,id:this.aux.id,username:this.aux.username,password:this.aux.password,email:this.aux.email,nombre:this.aux.nombre,apellido:this.aux.apellido,fecha_nacimiento:this.aux.fecha_nacimiento,lugar_acogida:this.aux.lugar_acogida,telefono:this.aux.telefono,perfil:this.aux.perfil,genero:this.aux.genero,roles:this.aux.roles});
+      c=c+1;
+    }
+
+  }
 }

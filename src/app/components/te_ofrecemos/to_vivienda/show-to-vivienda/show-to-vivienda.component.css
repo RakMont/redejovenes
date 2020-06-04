@@ -17,19 +17,18 @@ img {
 
 }
 
+h2 {
+    font-family: 'Mission Gothic Bold';
+    color: #952C6E;
+    font-size: x-large;
+}
+
 .container {
     text-align: justify;
     margin-bottom: 10%;
     max-width: 85%;
 }
 
-.tit {
-    color: #000000;
-    /*margin-top: 5%;*/
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-}
 
 .addbox-HVT {
     margin-left: 2%;
@@ -41,13 +40,22 @@ img {
     width: 100%;
     max-width: 80%;
     margin: auto;
-    background-color: #ffffff;
+    font-family: "Mission Gothic Light";
+    background-color: #EEEEEE;
     margin-bottom: 20px;
     padding: 10px;
     box-sizing: border-box;
     border-radius: 8px;
-    box-shadow: 0 0 40px -10px #000;
+    transition: none !important;
+    box-shadow: none !important;
     margin: calc(35px) auto;
+}
+
+.decorator-hr{
+    height:4px;
+    border-width:0;
+    color:#952C6E;
+    background-color:#952C6E;
 }
 
 .mat-card-footer {

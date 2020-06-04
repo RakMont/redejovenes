@@ -22,7 +22,8 @@ import {MatSnackBar}from '@angular/material/snack-bar';
 export class ShowComentarioSaludComponent implements OnInit {
   comentariosRaw:Comentario[];
   comentarios:Comentario[];
-
+  things=[];
+  public aux;
   dataSource=null;
   constructor(private snackBar:MatSnackBar,private service: ComentarioService, private router: Router,private dialog: MatDialog) {
     this.service.listen().subscribe((m:any)=>{
@@ -36,6 +37,8 @@ export class ShowComentarioSaludComponent implements OnInit {
     this.service.listComentariosRawSalud()
    .subscribe(data =>{
      this.comentariosRaw = data;
+     this.Convertlist();
+
    });
    this.service.listComentariosSalud()
    .subscribe(data =>{
@@ -51,6 +54,18 @@ export class ShowComentarioSaludComponent implements OnInit {
     .subscribe(data =>{
       this.comentarios = data;
     });
+    }
+    Convertlist(){
+      let c: number = 0;
+
+      for(let photo of this.comentariosRaw){
+        console.log(photo);
+        this.aux=photo.user.nombre;
+        console.log(this.aux);
+        this.things.push({comentario:photo.comentario,id_comentario:photo.id_comentario,nombre:this.aux,fecha:photo.fecha});
+        c=c+1;
+      }
+
     }
     edit_HVT(comentario: Comentario){
       this.service.formData=comentario;
