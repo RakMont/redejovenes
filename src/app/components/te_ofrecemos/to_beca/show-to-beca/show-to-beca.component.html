@@ -1,6 +1,7 @@
+<div style="justify-content: center; text-align: center;">
+    <h2 class="pt-4 h2-title">BECAS</h2>
+</div>
 <div class="container">
-    <h1 class="tit">Becas</h1>
-
     <div class="addbox-HVT" *ngIf="showAdminBoard || showModeratorBoard">
         <button class="mt-2" mat-raised-button (click)="AddBeca()" color="primary">
       Agregar
@@ -9,12 +10,7 @@
     </div>
     <mat-list *ngFor="let tob of teofrecemos">
         <mat-card>
-            <mat-card-header [ngClass]="{'custom-card':true}">
-                <mat-card-title>
-
-                    <br>
-                </mat-card-title>
-            </mat-card-header>
+            <hr class="decorator-hr">
             <div class="options" fxFlex="5px" fxFlexAlign="center">
                 <mat-card-actions *ngIf="showAdminBoard || showModeratorBoard">
                     <button mat-icon-button (click)="edit_Beca(tob)">
@@ -26,17 +22,14 @@
                 </mat-card-actions>
             </div>
             <div mat-card-avatar class="example-header-image">
-                <img src="../../../../assets/beca.jpg" />
+                <img src="../../../../assets/beca-purple.png" />
             </div>
 
             <div class="other">
-
-                <mat-card-title>CONTACTO: {{tob.contacto}}</mat-card-title>
-                <mat-card-subtitle> {{tob.contenido}}</mat-card-subtitle>
-
+                <h2>{{tob.contacto}}</h2> 
+                <p>{{tob.contenido}}</p>
             </div>
-
-            <br>
+            <hr class="decorator-hr">
         </mat-card>
     </mat-list>
 </div>

@@ -37,17 +37,25 @@ img {
     margin-bottom: 5px;
 }
 
+h2 {
+    font-family: 'Mission Gothic Bold';
+    color: #952C6E;
+    font-size: x-large;
+}
+
 .mat-card {
     width: 100%;
     max-width: 80%;
     margin: auto;
+    font-family: "Mission Gothic Bold";
     background-color: #ffffff;
     margin-bottom: 20px;
     padding: 10px;
     box-sizing: border-box;
     border-radius: 8px;
-    box-shadow: 0 0 40px -10px #000;
     margin: calc(35px) auto;
+    transition: none !important;
+    box-shadow: none !important;
 }
 
 .mat-card-footer {
@@ -132,4 +140,10 @@ hr.new4 {
         width: 100%;
         margin-left: 0px;
     }
+}
+.decorator-hr{
+    height:4px;
+    border-width:0;
+    color:#952C6E;
+    background-color:#952C6E;
 }
