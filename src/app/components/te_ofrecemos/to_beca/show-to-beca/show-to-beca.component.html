@@ -11,6 +11,7 @@
     <mat-list *ngFor="let tob of teofrecemos">
         <mat-card>
             <hr class="decorator-hr">
+            <br>
             <div class="options" fxFlex="5px" fxFlexAlign="center">
                 <mat-card-actions *ngIf="showAdminBoard || showModeratorBoard">
                     <button mat-icon-button (click)="edit_Beca(tob)">
@@ -22,14 +23,15 @@
                 </mat-card-actions>
             </div>
             <div mat-card-avatar class="example-header-image">
-                <img src="../../../../assets/beca-purple.png" />
+                <img class="image" src="../../../../assets/beca-purple.png" />
             </div>
 
             <div class="other">
-                <h2>{{tob.contacto}}</h2> 
+                <mat-card-title><h2>{{tob.contacto}}</h2> </mat-card-title>
                 <p>{{tob.contenido}}</p>
             </div>
             <hr class="decorator-hr">
+            <br>
         </mat-card>
     </mat-list>
 </div>
