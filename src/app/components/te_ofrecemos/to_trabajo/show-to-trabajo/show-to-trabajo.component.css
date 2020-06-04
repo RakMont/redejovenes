@@ -53,9 +53,8 @@ img {
 .mat-card {
     width: 100%;
     max-width: 80%;
-    font-family: "Mission Gothic Bold";
-    margin: auto;
-    background-color: #ffffff;
+    font-family: "Mission Gothic Light";
+    background-color: #EEEEEE;
     margin-bottom: 20px;
     padding: 10px;
     box-sizing: border-box;
