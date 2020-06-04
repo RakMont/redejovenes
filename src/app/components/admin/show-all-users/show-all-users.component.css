@@ -65,3 +65,16 @@ button:hover,
 a:hover {
     opacity: 0.7;
 }
+
+img {
+    vertical-align: middle;
+    width: 200px;
+    height: 210px;
+    border-radius: 50%;
+}
+
+.avatar {
+    background-color: black;
+    width: 220px;
+    height: 220px;
+}
