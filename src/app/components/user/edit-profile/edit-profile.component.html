@@ -9,6 +9,8 @@
     <div style="overflow: auto;height: 700px;">
         <form #form="ngForm" (ngSubmit)="onSubmit()" autocomplete="off">
             <input readonly="readonly" type="hidden" class="form-control" name="id" #id="ngModel" [(ngModel)]="userservice.formData.id">
+            <input readonly="readonly" type="hidden" class="form-control" name="perfil" #perfil="ngModel" [(ngModel)]="userservice.formData.perfil">
+
 
             <mat-form-field class="example-full-width">
 
@@ -48,6 +50,23 @@
                     Debes ingresar el centro de egreso.
                 </div>
             </mat-form-field>
+            <div class="form-group">
+                <label for="telefono">Telefono</label>
+                <input type="number" class="form-control" name="telefono" [(ngModel)]="userservice.formData.telefono" #telefono="ngModel" />
+
+            </div>
+            <div class="form-group">
+                <label for="genero">Genero</label>
+
+                <mat-form-field class="example-full-width">
+                    <mat-select [(ngModel)]="userservice.formData.genero" name="genero" required #genero="ngModel">
+                        <mat-option *ngFor="let genero of generos" [value]="genero">
+                            {{genero}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+            </div>
             <mat-form-field class="example-full-width">
                 <mat-label>
                     Correo

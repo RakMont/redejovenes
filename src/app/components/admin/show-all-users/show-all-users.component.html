@@ -5,13 +5,12 @@
 
 
         <mat-grid-list [responsive]="responsive" (responsiveColsChange)="cols = $event" rowHeight="700px" gutterSize="100px">
-            <mat-grid-tile *ngFor="let folder of usuarios">
+            <mat-grid-tile *ngFor="let folder of things">
 
 
                 <div class="card">
-                    <img src="../../../../assets/aguila.jpg" alt="John" style="width:100%">
-                    <h1>John Doe</h1>
-                    <p class="title">CEO & Founder, Example</p>
+                    <img [src]="folder.photo" alt="John" style="width:100%">
+
                     <p>{{folder.username}}</p>
                     <p>{{folder.email}}</p>
                     <p>{{folder.nombre}}</p>

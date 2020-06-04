@@ -13,6 +13,8 @@
     padding: 1em;
 }
 
+.mat-grid-list {}
+
 .example-spacer {
     flex: 1 1 auto;
 }
