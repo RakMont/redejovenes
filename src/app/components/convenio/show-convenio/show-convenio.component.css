@@ -1,14 +1,14 @@
 .example-card {
-    max-width: 350px;
+    
     max-height: 600px;
-    margin-left: 150px;
+    margin-left: 80px;
     margin-right: 150px;
 }
   
 .example-header-image {
    background-size: cover;
 }
-
+ 
 .container {
     margin-bottom: 10%;
     max-width: 85%;
@@ -16,81 +16,106 @@
     
 }
 .mat-card{
-    height: 400px;
-    width: 350px;
+    height: 450px;
+    width: 500px;
 }
-
+ 
 .tit {
     color: #000000;
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
 }
-
+ 
 .addbox-HVT {
     margin-left: 2%;
     margin-top: -30px;
     margin-bottom: 5px;
 }
-
+ 
 .options {
     margin-left: 250px;
     margin-top: -48px;
     margin-right: 2%;
     align-items: flex-end;
 }
-
+ 
 .mat-card-actions {
     display: flex;
+    margin-left: 140px;
 }
-
+ 
 .mat-card-content{
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
+ 
 .mat-card-actions {
     display: flex;
 }
-
+ 
 .mat-card-image{
     max-width: 300px;
     max-height: 300px;
 }
-
+ 
 .options {
     align-items: flex-end;
     margin-top: -25px;
     margin-right: 2%;
 }
-
+ 
 .form{
     column-count: 2;
-    row-gap: 1;
+    row-gap: 2;
 }
-
+ 
 .image{
     height: 150px; /* adjust as needed */
     object-fit: contain;
-
+ 
 }
-
+ 
+@media screen and (max-width:1000px){
+    .mat-card{
+        height: 450px;
+        width: 500px;
+    }
+    .form{
+        column-count: 1;
+    }
+    .mat-card-actions {
+        display: flex;
+        margin-left: 20px;
+    }
+}
+ 
 @media screen and (max-width: 800px) {
     
     .card{
         width: 100%;
         min-height: 500px;
     }
-
+ 
     .form{
         column-count: 1;
     }
-
+ 
     .example-card {
         max-width: 350px;
         max-height: 600px;
         margin-left: -15px;
         margin-right: 150px;
     }
+ 
+    .mat-card{
+        height: 550px;
+        width: 500px;
+    }
+    .mat-card-actions {
+        display: flex;
+        margin-left: 0px;
+    }
 }
+ 
