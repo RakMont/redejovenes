@@ -18,6 +18,9 @@
 .mat-card{
     height: 460px;
     width: 500px;
+    font-family: "Mission Gothic Ligth";
+    transition: none !important;
+    box-shadow: none !important;
 }
  
 .tit {
