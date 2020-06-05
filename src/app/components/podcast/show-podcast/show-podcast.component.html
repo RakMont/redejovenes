@@ -34,18 +34,6 @@
             <button class="mt-4" mat-raised-button color="warn" type="submit" [disabled]="tema.invalid" [disabled]="form.invalid">FILTRAR</button>
         </form>
     </div>
-<<<<<<< HEAD
-    <mat-list *ngFor="let hvt of things">
-        <mat-card class="classcard">
-            <div mat-card-avatar class="example-header-image">
-                <img src="../../../../assets/HistoriaVidaAudio/ShowIcons/microphone.png" />
-            </div>
-
-
-            <div class="options" fxFlex="5px" fxFlexAlign="center">
-                <mat-card-actions *ngIf="showAdminBoard || showModeratorBoard">
-                    <button mat-icon-button (click)="edit_HVV(hvt)">
-=======
     <div class="noavailable" *ngIf="!existelist">
         <img class="noavailable" height="500px" src="../../../../assets/noavailable.jpeg" alt="">
     </div>
@@ -59,7 +47,6 @@
                 <div class="options" fxFlex="5px" fxFlexAlign="center">
                     <mat-card-actions *ngIf="showAdminBoard || showModeratorBoard">
                         <button mat-icon-button (click)="edit_HVV(hvt)">
->>>>>>> 0a7bced9784032cbc416c266b387fc4f9ddfcb6c
                     <mat-icon>edit</mat-icon>
                 </button>
                         <button mat-icon-button color="warn" (click)="Delete(hvt)">
@@ -68,17 +55,10 @@
                     </mat-card-actions>
                 </div>
 
-<<<<<<< HEAD
-            <div class="other">
-                <div class="vl">
-                    <mat-card-title>{{hvt.titulo}}</mat-card-title>
-                    <!--                <mat-card-subtitle>{{hvt.archivo_mp3}}</mat-card-subtitle>
-=======
                 <div class="other">
                     <div>
                         <mat-card-title>{{hvt.titulo}}</mat-card-title>
                         <!--                <mat-card-subtitle>{{hvt.archivo_mp3}}</mat-card-subtitle>
->>>>>>> 0a7bced9784032cbc416c266b387fc4f9ddfcb6c
 -->
                         <h3>{{hvt.descripcion}}</h3>
                     </div>
@@ -87,17 +67,11 @@
                 <hr class="new4">
 
 
-<<<<<<< HEAD
-            </div>
-            <div class="audioBox">
-                <mat-basic-audio-player [audioUrl]="hvt.audio" [title]="hvt.fecha" [autoPlay]="false" muted="muted" [displayTitle]="msbapDisplayTitle" [displayVolumeControls]="true"></mat-basic-audio-player>
-=======
                 <div class="audioBox">
                     <mat-basic-audio-player [audioUrl]="hvt.audio" [title]="hvt.fecha" [autoPlay]="false" muted="muted" [displayTitle]="msbapDisplayTitle" [displayVolumeControls]="true"></mat-basic-audio-player>
 
                 </div>
 
->>>>>>> 0a7bced9784032cbc416c266b387fc4f9ddfcb6c
 
                 <hr class="decorator-hr">
             </mat-card>
@@ -105,10 +79,4 @@
     </div>
 
 
-<<<<<<< HEAD
-
-        </mat-card>
-    </mat-list>
-=======
->>>>>>> 0a7bced9784032cbc416c266b387fc4f9ddfcb6c
 </div>
