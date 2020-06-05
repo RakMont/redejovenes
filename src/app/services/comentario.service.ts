@@ -22,7 +22,10 @@ export class ComentarioService {
   }
 
 
+  getPhotosofrawtrabajocoments():Observable<any>{
+    return this.http.get(this.Url+'/getPhotosofrawtrabajocoments/');
 
+  }
 
   listComentariosRawVivienda() {
     // obtengo todos los datos de esta url que hace ref a backend

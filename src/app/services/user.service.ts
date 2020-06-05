@@ -58,6 +58,7 @@ export class UserService {
     return this.http.get(API_URL+'getModersPhotos/');
 
   }
+
   editProfile(user:Usuario): Observable<any>{
   // return this.http.put<historiaVidaTexto>(this.Url+"/"+historiaVidaTexto.id_HVT, historiaVidaTexto);
 

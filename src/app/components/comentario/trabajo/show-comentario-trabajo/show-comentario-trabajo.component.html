@@ -2,9 +2,13 @@
     <mat-list *ngFor="let hvt of things">
         <mat-card class="example-card">
             <mat-card-header [ngClass]="{'custom-card':true}">
-                <div mat-card-avatar class="example-header-image"></div>
+                <div class="example-header-image">
+                    <img [src]="hvt.profile" alt="">
+                </div>
+
                 <mat-card-title>{{hvt.nombre}}</mat-card-title>
                 <mat-card-subtitle>Usuario registrado</mat-card-subtitle>
+
             </mat-card-header>
             <mat-card-content>
                 <p>

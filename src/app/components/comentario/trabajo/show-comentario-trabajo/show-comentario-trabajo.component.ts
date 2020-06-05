@@ -22,6 +22,9 @@ export class ShowComentarioTrabajoComponent implements OnInit {
   comentariosRaw:Comentario[];
   comentarios:Comentario[];
   things=[];
+  public photos:any=[];
+  public aux2;
+
   public aux;
 
   dataSource=null;
@@ -37,6 +40,12 @@ export class ShowComentarioTrabajoComponent implements OnInit {
     this.service.listComentariosRawTrabajo()
    .subscribe(data =>{
      this.comentariosRaw = data;
+
+
+   });
+   this.service.getPhotosofrawtrabajocoments()
+   .subscribe(data =>{
+     this.photos = data;
      this.Convertlist();
 
    });
@@ -63,8 +72,9 @@ export class ShowComentarioTrabajoComponent implements OnInit {
       for(let photo of this.comentariosRaw){
         console.log(photo);
         this.aux=photo.user.nombre;
+        this.aux2=this.photos[c];
         console.log(this.aux);
-        this.things.push({comentario:photo.comentario,id_comentario:photo.id_comentario,nombre:this.aux,fecha:photo.fecha});
+        this.things.push({profile:this.aux2,comentario:photo.comentario,id_comentario:photo.id_comentario,nombre:this.aux,fecha:photo.fecha});
         c=c+1;
       }
 
