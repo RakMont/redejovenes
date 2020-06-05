@@ -19,8 +19,9 @@ img {
 }
 
 .noavailable {
-    max-width: 500px;
-    max-height: 500px;
+    width: 600px;
+    height: 500px;
+    text-align: center;
 }
 
 .example-header-image {
@@ -84,9 +85,8 @@ source {
 }
 
 .container {
-    /* margin-bottom: 50px;
-    max-width: 80%;*/
-    max-width: 100%;
+    /* margin-bottom: 50px;*/
+    max-width: 80%;
     margin-bottom: 50px;
     min-height: 100vh;
     margin-bottom: 20px;

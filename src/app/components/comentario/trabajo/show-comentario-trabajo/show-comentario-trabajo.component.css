@@ -19,6 +19,11 @@ img {
     height: 45px;
     border-radius: 50%;
 }
-.desc{
+
+.desc {
     margin-left: 10px;
+}
+
+.mat-button {
+    background-color: #03a0c3;
 }

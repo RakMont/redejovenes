@@ -193,6 +193,8 @@ selectedValue: string;
        });
     });
    }
+   window.location.reload();
+
 
   }
   edittema(tema:Tema){
