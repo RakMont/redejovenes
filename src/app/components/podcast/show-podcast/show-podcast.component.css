@@ -18,6 +18,11 @@ img {
     color: white;
 }
 
+.noavailable {
+    max-width: 500px;
+    max-height: 500px;
+}
+
 .example-header-image {
     background-image: url('https://img2.freepng.es/20190620/byr/kisspng-microphone-sound-computer-icons-clip-art-vector-gr-mic-a-svg-png-icon-free-download-411793-onlin-5d0c436f81bb67.2068817515610847835314.jpg');
     background-size: cover;
@@ -79,8 +84,12 @@ source {
 }
 
 .container {
+    /* margin-bottom: 50px;
+    max-width: 80%;*/
+    max-width: 100%;
     margin-bottom: 50px;
-    max-width: 80%;
+    min-height: 100vh;
+    margin-bottom: 20px;
 }
 
 hr.new4 {
@@ -126,11 +135,12 @@ hr.new4 {
     color: black;
     margin-right: 5px;
 }
-.decorator-hr{
-    height:4px;
-    border-width:0;
-    color:#952C6E;
-    background-color:#952C6E;
+
+.decorator-hr {
+    height: 4px;
+    border-width: 0;
+    color: #952C6E;
+    background-color: #952C6E;
 }
 
 @media screen and (max-width: 800px) {
@@ -147,7 +157,7 @@ hr.new4 {
         margin-top: 20px;
         text-align: justify;
         width: 83%;
-        height:300px;
+        height: 300px;
     }
     .addbox-HVT {
         margin-top: 30px;
@@ -160,7 +170,7 @@ hr.new4 {
         height: 50px;
         width: 50px;
     }
-    .options{
+    .options {
         margin-top: -60px;
     }
 }

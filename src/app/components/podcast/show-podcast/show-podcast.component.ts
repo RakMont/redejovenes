@@ -44,7 +44,7 @@ public hvaAudio: any=File;
 temas:Tema[];
 
   public counter:number;
-
+existelist=false;
 public aux;
 selectedValue: string;
    selectedCar: string;
@@ -68,6 +68,9 @@ selectedValue: string;
       this.audios=response;
       this.hvaAudio=this.audios[0];
       this.Convertlist();
+      if(this.things[0]!=null){
+        this.existelist=true;
+      }
 
     });
     this.podcastService.getPodcast()
