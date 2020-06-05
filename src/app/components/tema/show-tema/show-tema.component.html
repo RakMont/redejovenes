@@ -2,32 +2,28 @@
     <h1></h1>
 </div>
 
-
 <div class="container">
     <div class="addbox-HVT">
         <button class="mt-2" mat-raised-button (click)="gopodcast()">
-    RETORNAR A PODCAST
-     <mat-icon>exit_to_app</mat-icon>
-    </button>
-
+            RETORNAR A PODCAST
+            <mat-icon>exit_to_app</mat-icon>
+        </button>
     </div>
 
     <mat-list *ngFor="let hvt of temas">
         <mat-card>
-
-            <h1>NOMBRE {{hvt.nombreTema}}
-            </h1>
+            <hr class="decorator-hr">
+            <h3>Tema: {{hvt.nombreTema}}</h3>
             <div class="options" fxFlex="10px" fxFlexAlign="center">
                 <mat-card-actions>
                     <button mat-icon-button class="coloicon" (click)="edit_Tema(hvt)">
-                          <mat-icon>edit</mat-icon>
-                      </button>
-
+                        <mat-icon>edit</mat-icon>
+                    </button>
                 </mat-card-actions>
             </div>
-            <hr class="new4">
-
-
         </mat-card>
     </mat-list>
+    <div class="espacio">
+
+    </div>
 </div>

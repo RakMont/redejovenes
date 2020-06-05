@@ -20,8 +20,9 @@ hr.new4 {
 }
 
 .mat-card {
-    max-width: 80%;
+    max-width: 100%;
     margin-bottom: 2%;
+    height: 80px;
 }
 
 .mat-card-avatar {
@@ -44,7 +45,7 @@ hr.new4 {
 
 .options {
     float: right;
-    margin-top: -50px;
+    margin-top: -65px;
     margin-right: auto;
 }
 
@@ -67,4 +68,14 @@ hr.new4 {
     /*color: white;*/
     height: 0px;
     border: 2px dashed;
+}
+.espacio{
+    height: 200px;
+}
+
+.decorator-hr{
+    height:4px;
+    border-width:0;
+    color:#952C6E;
+    background-color:#952C6E;
 }
