@@ -19,8 +19,11 @@ img {
 }
 
 .example-header-image {
-    /* background-image: url("src/assets/HistoriaVidaAudio/ShowIcons/microphone.png");*/
+    background-image: url('https://img2.freepng.es/20190620/byr/kisspng-microphone-sound-computer-icons-clip-art-vector-gr-mic-a-svg-png-icon-free-download-411793-onlin-5d0c436f81bb67.2068817515610847835314.jpg');
     background-size: cover;
+    height: 100px;
+    width: 100px;
+    background-color: #ffffff;
 }
 
 .mat-card-title {
@@ -37,11 +40,13 @@ img {
 .classcard {
     margin-bottom: 20px;
     margin: 2%;
+    font-family: "Mission Gothic Bold";
     padding: 10px;
     box-sizing: border-box;
     border-radius: 8px;
-    box-shadow: 0 0 40px -10px #000;
     margin: calc(35px) auto;
+    transition: none !important;
+    box-shadow: none !important;
 }
 
 .addbox-Tema {
@@ -58,6 +63,7 @@ img {
     border-style: solid;
     border-color: black;*/
     height: 110px;
+    margin-top: -80px;
     margin-left: 16%;
     margin-bottom: 0%;
 }
@@ -100,7 +106,7 @@ hr.new4 {
 
 .options {
     float: right;
-    margin-top: -50px;
+    margin-top: -100px;
     /* margin-right: auto;*/
 }
 
@@ -120,14 +126,17 @@ hr.new4 {
     color: black;
     margin-right: 5px;
 }
+.decorator-hr{
+    height:4px;
+    border-width:0;
+    color:#952C6E;
+    background-color:#952C6E;
+}
 
 @media screen and (max-width: 800px) {
     .classcard {
         width: 110%;
         margin-left: -20px;
-    }
-    .example-header-image {
-        visibility: hidden;
     }
     .audioBox {
         width: 100%;
@@ -135,7 +144,23 @@ hr.new4 {
         box-sizing: border-box;
     }
     .other {
+        margin-top: 20px;
         text-align: justify;
         width: 83%;
+        height:300px;
+    }
+    .addbox-HVT {
+        margin-top: 30px;
+        margin-left: 35%;
+        margin-bottom: 30px;
+    }
+    .example-header-image {
+        background-image: url('https://img2.freepng.es/20190620/byr/kisspng-microphone-sound-computer-icons-clip-art-vector-gr-mic-a-svg-png-icon-free-download-411793-onlin-5d0c436f81bb67.2068817515610847835314.jpg');
+        background-size: cover;
+        height: 50px;
+        width: 50px;
+    }
+    .options{
+        margin-top: -60px;
     }
 }

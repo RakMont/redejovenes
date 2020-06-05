@@ -69,7 +69,7 @@ source {
 
 .options {
     float: right;
-    margin-top: -50px;
+    margin-top: -60px;
     /* margin-right: auto;*/
 }
 
@@ -78,9 +78,7 @@ source {
         width: 110%;
         margin-left: -20px;
     }
-    .example-header-image{
-        visibility: hidden;
-    }
+    
     .audioBox{
         width: 100%;
         padding: 5px;

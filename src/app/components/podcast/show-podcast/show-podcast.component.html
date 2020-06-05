@@ -6,8 +6,6 @@
       </button>
     </div>
 
-
-
     <div class="addbox-Tema" *ngIf="showAdminBoard || showModeratorBoard">
         <button class="mt-3" mat-raised-button (click)="addTema()">AgregarTema
         <mat-icon>add_box</mat-icon>
@@ -36,11 +34,10 @@
     </div>
     <mat-list *ngFor="let hvt of things">
         <mat-card class="classcard">
+            <hr class="decorator-hr">
             <div mat-card-avatar class="example-header-image">
-                <img src="../../../../assets/HistoriaVidaAudio/ShowIcons/microphone.png" />
+                
             </div>
-
-
             <div class="options" fxFlex="5px" fxFlexAlign="center">
                 <mat-card-actions *ngIf="showAdminBoard || showModeratorBoard">
                     <button mat-icon-button (click)="edit_HVV(hvt)">
@@ -53,7 +50,7 @@
             </div>
 
             <div class="other">
-                <div class="vl">
+                <div>
                     <mat-card-title>{{hvt.titulo}}</mat-card-title>
                     <!--                <mat-card-subtitle>{{hvt.archivo_mp3}}</mat-card-subtitle>
 -->
@@ -70,7 +67,7 @@
             </div>
 
 
-
+            <hr class="decorator-hr">
         </mat-card>
     </mat-list>
 </div>
