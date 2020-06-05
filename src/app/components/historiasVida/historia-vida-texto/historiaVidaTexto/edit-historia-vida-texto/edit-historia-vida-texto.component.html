@@ -14,7 +14,7 @@
 
                 <mat-label>TITULO:</mat-label>
 
-                <input matInput required minlength="2" type="text" class="form-control" name="titulo" #titulo="ngModel" [(ngModel)]="service.formData.titulo">
+                <input matInput required minlength="2" type="text" maxlength="42" class="form-control" name="titulo" #titulo="ngModel" [(ngModel)]="service.formData.titulo">
                 <div class="text-left text-danger" *ngIf="titulo.invalid && titulo.touched">
                     Debes ingresar el titulo.
                 </div>
@@ -24,7 +24,7 @@
                 <mat-label>
                     CONTENIDO:
                 </mat-label>
-                <textarea matInput required minlength="2" type="text" class="form-control" name="contenido" #contenido="ngModel" [(ngModel)]="service.formData.contenido"></textarea>
+                <textarea matInput required minlength="2" type="text" maxlength="2000" class="form-control" name="contenido" #contenido="ngModel" [(ngModel)]="service.formData.contenido"></textarea>
                 <div class="text-left text-danger" *ngIf="contenido.invalid && contenido.touched">
                     Debes ingresar la contenido.
                 </div>
