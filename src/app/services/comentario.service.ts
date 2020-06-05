@@ -22,8 +22,21 @@ export class ComentarioService {
   }
 
 
+  getPhotosofrawviviendacoments():Observable<any>{
+    return this.http.get(this.Url+'/getPhotosofrawviviendacoments/');
+
+  }
+
   getPhotosofrawtrabajocoments():Observable<any>{
     return this.http.get(this.Url+'/getPhotosofrawtrabajocoments/');
+
+  }
+  getPhotosofrawsaludcoments():Observable<any>{
+    return this.http.get(this.Url+'/getPhotosofrawsaludcoments/');
+
+  }
+  getPhotosofraweducacioncoments():Observable<any>{
+    return this.http.get(this.Url+'/getPhotosofraweducacioncoments/');
 
   }
 
