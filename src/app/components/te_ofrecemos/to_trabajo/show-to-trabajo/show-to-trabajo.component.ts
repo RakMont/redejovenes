@@ -23,7 +23,7 @@ import { AddToTrabajoComponent } from '../add-to-trabajo/add-to-trabajo.componen
   styleUrls: ['./show-to-trabajo.component.css']
 })
 export class ShowToTrabajoComponent implements OnInit {
-
+  existeLista=false;
   teofrecemos:TeOfrecemos[];
   private roles: string[];
   isLoggedIn = false;
@@ -41,10 +41,17 @@ export class ShowToTrabajoComponent implements OnInit {
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   ngOnInit() {
+    this.existeLista=false;
+    console.log("no existe lista");
+
     this.teofrecemosService.getTeOfrecemosTrabajo().subscribe(data =>{
       this.teofrecemos = data;
       this.charge();
     });
+    if(this.teofrecemos!=null){
+      console.log("existe lista");
+      this.existeLista=true;
+    }
     this.isLoggedIn = !!this.tokenStorageService.getToken();
 
     if (this.isLoggedIn) {
