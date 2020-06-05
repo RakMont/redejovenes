@@ -18,10 +18,15 @@
     padding: 20px 30px;
     max-width: calc(100vw - 40px);
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Mission Gothic Ligth";
     position: relative
 }
-
+p {
+    font-size: medium;
+    justify-content: center;
+    text-align: justify;
+    font-family: 'Mission Gothic Ligth'
+}
 .formText {
     width: 350px;
     height: 480px;
@@ -31,7 +36,7 @@
     padding: 20px 30px;
     max-width: calc(100vw - 40px);
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Mission Gothic Ligth";
     position: relative
 }
 
@@ -39,8 +44,8 @@ h2 {
     margin: 10px 0;
     padding-bottom: 10px;
     width: 180px;
-    color: #78788c;
-    border-bottom: 3px solid #78788c
+    color: #03A0C3;
+    border-bottom: 3px solid #03A0C3
 }
 
 input {
@@ -53,11 +58,11 @@ input {
     border: 0;
     font-family: 'Montserrat', sans-serif;
     transition: all .3s;
-    border-bottom: 2px solid #bebed2
+    border-bottom: 2px solid #03A0C3
 }
 
 input:focus {
-    border-bottom: 2px solid #78788c
+    border-bottom: 2px solid #03A0C3
 }
 
 p:before {
@@ -65,7 +70,7 @@ p:before {
     display: block;
     margin: 28px 0 0;
     font-size: 14px;
-    color: #5a5a5a
+    color: #03A0C3
 }
 
 button {
@@ -73,9 +78,9 @@ button {
     padding: 8px 12px;
     margin: 8px 0 0;
     font-family: 'Montserrat', sans-serif;
-    border: 2px solid #78788c;
+    border: 2px solid #03A0C3;
     background: 0 ;
-    color: #5a5a6e;
+    color: #03A0C3;
     cursor: pointer;
     transition: all .3s
 }
@@ -90,7 +95,7 @@ button:hover {
     position: absolute;
     bottom: -15px;
     right: -20px;
-    background: #50505a;
+    background: #03A0C3;
     color: #fff;
     width: 320px;
     padding: 16px 4px 16px 0;
