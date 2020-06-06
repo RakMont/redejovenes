@@ -56,7 +56,6 @@ import { EditObjetivoComponent } from './components/objetivo/edit-objetivo/edit-
 import { HomeComponent } from './components/home/home.component';
 import { ShowConvenioComponent } from './components/convenio/show-convenio/show-convenio.component';
 import { EditConvenioComponent } from './components/convenio/edit-convenio/edit-convenio.component';
-import { TrabajoComponent } from './components/referente/trabajo/trabajo.component';
 import { ShowContactanosComponent } from './components/contactanos/show-contactanos/show-contactanos.component';
 import { AddConvenioComponent } from './components/convenio/add-convenio/add-convenio.component';
 import { AddTrabajoComponent } from './components/referente/trabajo/add-trabajo/add-trabajo.component';
@@ -144,7 +143,6 @@ import { MatGridListResponsiveModule } from '../lib/mat-grid-list-responsive/mat
     HomeComponent,
     ShowConvenioComponent,
     EditConvenioComponent,
-    TrabajoComponent,
     ShowContactanosComponent,
     AddConvenioComponent,
     AddTrabajoComponent,
