@@ -8,11 +8,14 @@ import {MatSort}from '@angular/material/sort';
 import{MatDialog,MatDialogConfig}from '@angular/material/dialog';
 import{AddComentarioTrabajoComponent}from 'src/app/components/comentario/trabajo/add-comentario-trabajo/add-comentario-trabajo.component';
 import{EditComentarioTrabajoComponent}from 'src/app/components/comentario/trabajo/edit-comentario-trabajo/edit-comentario-trabajo.component';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 import { filter } from 'rxjs/operators';
 import{Subject}from 'rxjs';
 import {Observable} from 'rxjs';
 import {MatSnackBar}from '@angular/material/snack-bar';
+import { Addlev2comentarytrabajoComponent } from '../addlev2comentarytrabajo/addlev2comentarytrabajo.component';
+import { Usuario } from 'src/app/models/Usuario';
 @Component({
   selector: 'app-show-comentario-trabajo',
   templateUrl: './show-comentario-trabajo.component.html',
@@ -28,7 +31,13 @@ export class ShowComentarioTrabajoComponent implements OnInit {
   public aux;
 
   dataSource=null;
-  constructor(private snackBar:MatSnackBar,private service: ComentarioService, private router: Router,private dialog: MatDialog) {
+  link;
+  private roles: string[];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  username: string;
+  constructor(private tokenStorageService: TokenStorageService,private snackBar:MatSnackBar,private service: ComentarioService, private router: Router,private dialog: MatDialog) {
     this.service.listen().subscribe((m:any)=>{
       console.log(m);
 
@@ -53,6 +62,17 @@ export class ShowComentarioTrabajoComponent implements OnInit {
    .subscribe(data =>{
      this.comentarios = data;
    });
+   this.isLoggedIn = !!this.tokenStorageService.getToken();
+
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+
+      this.username = user.username;
+    }
   }
   charge(){
     this.service.listComentariosRawTrabajo()
@@ -105,11 +125,20 @@ export class ShowComentarioTrabajoComponent implements OnInit {
     }
    }
 
+
    Addcomentariorespuesta(id){
+    this.service.formData={
+      id_comentario:0,
+      comentario:'',
+      fecha:new Date,
+      id_comentario_ref:id,
+      referente:0,
+      user:new Usuario
+    }
     const dialogConfig=new MatDialogConfig();
     dialogConfig.disableClose=true;
     dialogConfig.autoFocus=true;
     dialogConfig.width="70%";
-    this.dialog.open(AddComentarioTrabajoComponent,dialogConfig);
+    this.dialog.open(Addlev2comentarytrabajoComponent,dialogConfig);
    }
 }
