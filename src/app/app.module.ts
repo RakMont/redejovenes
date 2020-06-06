@@ -118,6 +118,10 @@ import{MatMenuModule} from '@angular/material/menu';
 import{MatSlideToggleModule}from '@angular/material/slide-toggle';
 
 import { MatGridListResponsiveModule } from '../lib/mat-grid-list-responsive/mat-grid-list-responsive.module';
+import { Addlev2comentarytrabajoComponent } from './components/comentario/trabajo/addlev2comentarytrabajo/addlev2comentarytrabajo.component';
+import { Addlev2comentarysaludComponent } from './components/comentario/salud/addlev2comentarysalud/addlev2comentarysalud.component';
+import { Addlev2comentaryeducacionComponent } from './components/comentario/educacion/addlev2comentaryeducacion/addlev2comentaryeducacion.component';
+import { Addlev2comentaryviviendaComponent } from './components/comentario/vivienda/addlev2comentaryvivienda/addlev2comentaryvivienda.component';
 
 @NgModule({
   declarations: [
@@ -199,6 +203,10 @@ import { MatGridListResponsiveModule } from '../lib/mat-grid-list-responsive/mat
     ShowmoderatorComponent,
     AddcomentarioComponent,
     EditperfilComponent,
+    Addlev2comentarytrabajoComponent,
+    Addlev2comentarysaludComponent,
+    Addlev2comentaryeducacionComponent,
+    Addlev2comentaryviviendaComponent,
 
 
 

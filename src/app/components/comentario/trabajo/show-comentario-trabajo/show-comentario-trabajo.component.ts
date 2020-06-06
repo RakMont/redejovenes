@@ -105,7 +105,7 @@ export class ShowComentarioTrabajoComponent implements OnInit {
     }
    }
 
-   AddHVT(){
+   Addcomentariorespuesta(id){
     const dialogConfig=new MatDialogConfig();
     dialogConfig.disableClose=true;
     dialogConfig.autoFocus=true;

@@ -77,4 +77,13 @@ export class ShowTrabajoComponent implements OnInit {
     this.dialog.open(AddComentarioTrabajoComponent,dialogConfig);
 
   }
+  crearcomentarioRespuesta(id){
+    const dialogConfig=new MatDialogConfig();
+    dialogConfig.disableClose=true;
+    dialogConfig.autoFocus=true;
+    dialogConfig.width="50%";
+    dialogConfig.height="50%";
+    this.dialog.open(AddComentarioTrabajoComponent,dialogConfig);
+
+  }
 }
