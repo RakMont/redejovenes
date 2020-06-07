@@ -138,6 +138,12 @@ hr.new4 {
     font-size: 17px;
     font-family: 'Mission Gothic Bold';
 }
+.mdc-button1{
+    background-color: #03A0C3;
+    color: black;
+    font-size: 17px;
+    font-family: 'Mission Gothic Bold';
+}
 
 .vl {
     border-left: 6px solid #952C6E;
