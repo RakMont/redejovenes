@@ -50,6 +50,6 @@ img {
 
 .container-botton{
     width: 100px; /* Para que no se rompa en dos líneas, y lo translade tal cual. */
-    margin-left: 90%;
+    margin-left: 50%;
     transform: translateX(-35%);
 }
