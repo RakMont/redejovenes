@@ -18,6 +18,12 @@ img {
     color: white;
 }
 
+h1 {
+    font-family: 'Mission Gothic Bold';
+    color: #952C6E;
+    font-size: xx-large;
+}
+
 .noavailable {
     width: 600px;
     height: 500px;
@@ -120,7 +126,9 @@ hr.new4 {
 }
 
 .mt-2 {
-    background-color: #952C6E;
+    font-family: 'Mission Gothic Bold';
+    color: #952C6E;
+    font-size: large;
     color: #ffffff;
 }
 
@@ -141,6 +149,13 @@ hr.new4 {
     background-color: #03a0c3;
     color: black;
     margin-right: 5px;
+    font-family: 'Mission Gothic Bold';
+    font-size: large;
+}
+
+.mt-4{
+    font-family: 'Mission Gothic Bold';
+    font-size: large;
 }
 
 .decorator-hr {
