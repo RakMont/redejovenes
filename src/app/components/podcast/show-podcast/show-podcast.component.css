@@ -107,7 +107,7 @@ hr.new4 {
 }
 
 .tit {
-    color: #000000;
+    color: #952C6E;
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
@@ -122,6 +122,13 @@ hr.new4 {
 .mt-2 {
     background-color: #952C6E;
     color: #ffffff;
+}
+
+.mdc-button{
+    background-color: #952C6E;
+    color: white;
+    font-size: 17px;
+    font-family: 'Mission Gothic Bold';
 }
 
 .vl {
