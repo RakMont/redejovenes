@@ -46,3 +46,9 @@ img {
     /* background-image: url("src/assets/HistoriaVidaAudio/ShowIcons/microphone.png");*/
     background-size: cover;
 }
+
+.container-botton{
+    width: 100px; /* Para que no se rompa en dos líneas, y lo translade tal cual. */
+    margin-left: 90%;
+    transform: translateX(-35%);
+}
