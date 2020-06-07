@@ -57,7 +57,12 @@ h2 {
     color:#952C6E;
     background-color:#952C6E;
 }
-
+.mdc-button{
+    background-color: #952C6E;
+    color: white;
+    font-size: 17px;
+    font-family: 'Mission Gothic Bold';
+}
 .mat-card-footer {
     margin: 1%;
     text-align: right;

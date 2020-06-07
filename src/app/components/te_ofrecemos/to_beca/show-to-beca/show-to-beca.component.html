@@ -3,7 +3,7 @@
 </div>
 <div class="container">
     <div class="addbox-HVT" *ngIf="showAdminBoard || showModeratorBoard">
-        <button class="mt-2" mat-raised-button (click)="AddBeca()" color="primary">
+        <button class="mt-2" mat-raised-button (click)="AddBeca()" class="btn mdc-button">
       Agregar
        <mat-icon>add_box</mat-icon>
       </button>
@@ -13,11 +13,12 @@
             <hr class="decorator-hr">
             <br>
             <div class="options" fxFlex="5px" fxFlexAlign="center">
+                <br>
                 <mat-card-actions *ngIf="showAdminBoard || showModeratorBoard">
                     <button mat-icon-button (click)="edit_Beca(tob)">
                             <mat-icon>edit</mat-icon>
                         </button>
-                    <button mat-icon-button (click)="Delete(tob)">
+                    <button mat-icon-button color="warn" (click)="Delete(tob)">
                             <mat-icon>delete_forever</mat-icon>
                         </button>
                 </mat-card-actions>

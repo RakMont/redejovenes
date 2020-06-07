@@ -35,6 +35,12 @@ img {
     margin-bottom: 10%;
     max-width: 85%;
 }
+.mdc-button{
+    background-color: #952C6E;
+    color: white;
+    font-size: 17px;
+    font-family: 'Mission Gothic Bold';
+}
 
 .tit {
     color: #000000;
