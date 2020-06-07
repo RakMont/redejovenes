@@ -49,6 +49,12 @@ source {
     max-width: 80%;
     margin-bottom: 20px;
 }
+.mdc-button{
+    background-color:#952C6E;
+    color: white;
+    font-size: 17px;
+    font-family: 'Mission Gothic Bold';
+}
 
 .mat-card-title {
     margin-top: 1%;

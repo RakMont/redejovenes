@@ -16,7 +16,7 @@
 </div>
 <div class="container">
     <div class="addbox-HVT" *ngIf="showAdminBoard">
-        <button class="mt-2" mat-raised-button (click)="AddHVT()" color="primary">
+        <button class="mt-2" mat-raised-button (click)="AddHVT()" class="btn mdc-button">
       Agregar
        <mat-icon>add_box</mat-icon>
       </button>
@@ -34,7 +34,7 @@
                     <button mat-icon-button (click)="edit_HVT(hvt)">
                             <mat-icon>edit</mat-icon>
                         </button>
-                    <button mat-icon-button (click)="Delete(hvt)">
+                    <button mat-icon-button color="warn" (click)="Delete(hvt)">
                             <mat-icon>delete_forever</mat-icon>
                         </button>
                 </mat-card-actions>

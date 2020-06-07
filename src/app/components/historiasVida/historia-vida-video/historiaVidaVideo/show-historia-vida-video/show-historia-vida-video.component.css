@@ -102,6 +102,12 @@ div.hvv {
     max-width: 85%;
 }
 
+.mdc-button{
+    background-color: #952C6E;
+    color: white;
+    font-size: 17px;
+    font-family: 'Mission Gothic Bold';
+}
 .mat-card {
     box-sizing: border-box;
     /*border-radius: 25px;

@@ -30,8 +30,9 @@
             <div class="audioBox">
                 <mat-basic-audio-player [audioUrl]="service.hvaAudio" [autoPlay]="false" muted="muted" [displayVolumeControls]="true"></mat-basic-audio-player>
             </div>
+            <br>
             <!--(change)="preview(service.hvaAudio)"-->
-            <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Actualizar</button>
+            <button class="mt-4" mat-raised-button class="btn mdc-button" type="submit" [disabled]="form.invalid">Actualizar</button>
         </form>
 
     </div>
