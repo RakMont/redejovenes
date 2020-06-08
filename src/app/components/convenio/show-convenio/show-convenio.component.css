@@ -30,9 +30,14 @@
     font-size: 17px;
     font-family: 'Mission Gothic Bold';
 }
+h1 {
+    font-family: 'Mission Gothic Bold';
+    color: #952C6E;
+    font-size: xx-large;
+}
 
 .tit {
-    color: #000000;
+    color: #952C6E;
     text-align: center;
     padding: 20px;
     box-sizing: border-box;

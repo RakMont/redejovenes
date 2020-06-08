@@ -15,6 +15,12 @@
     background-color: #952C6E;
     color: #ffffff;
 }
+.mdc-button{
+    background-color: #952C6E;
+    color: white;
+    font-size: 17px;
+    font-family: 'Mission Gothic Bold';
+}
 
 .vl {
     border-left: 6px solid #952C6E;
