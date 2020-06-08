@@ -17,3 +17,11 @@ img {
     /* background-image: url("src/assets/HistoriaVidaAudio/ShowIcons/microphone.png");*/
     background-size: cover;
 }
+
+.mdc-button1{
+    background-color: #03A0C3;
+    color: black;
+    font-size: 17px;
+    font-family: 'Mission Gothic Bold';
+    margin-left: 50%;
+}
