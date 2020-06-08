@@ -1,66 +1,70 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a *ngIf="!isLoggedIn" style="font-size:13px; color: #952C6E; font-family: 'Mission Gothic Ligth'" class="navbar-link" href="#"> En caso de no tener una cuenta, click aqui </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+<div style="background: #f8f9fa !important;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img width="85" hight="75" alt="Angular Logo" src="../../../../assets/logo transparente.png" />
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    
+            <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+                <li class="nav-item active">
+                    <a class="nav-link" href="signup">
+                        <button class="btn singin mdc-button">
+                  Registrar <span class="sr-only">(current)</span>
+                </button>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link">
+                        <button class="btn mdc-button singin" (click)="login()">
+                  Iniciar Sesion <span class="sr-only">(current)</span>
+                </button>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav" *ngIf="isLoggedIn">
+                <li style="font-weight: bold;" *ngIf="showAdminBoard">
+                    <p>ERES EL ADMINISTRADOR PRINCIPAL</p>
+                </li>
+                <li style="font-weight: bold;" *ngIf="showModeratorBoard">
+                    <p>ERES UN MODERADOR</p>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+                <li class="nav-item" *ngIf="showAdminBoard">
+                    <a href="/profile" class="btn cabecera" routerLink="allmoders"> Ver moderadores</a>
+                    
+                </li>
+                <li class="nav-item " *ngIf="showAdminBoard">
+                    <a href="/profile" class="btn cabecera" routerLink="allusers"> Ver usuarios  </a>
+                </li>
+    
+                <li class="nav-item" *ngIf="showAdminBoard">
+                    <a href="/profile" class="btn cabecera" routerLink="registermod"> Registrar Moderadores  </a>
+                </li>
+                <li class="nav-item">
+                    <a href class="btn cabecera" (click)="logout()"> Cerrar Sesion </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav " routerLinkActive="active">
+    
+                <li class="nav-item">
+                    <a href="/user" class="btn cabecera" *ngIf="isLoggedIn" routerLink="user">
+                        <mat-icon>account_circle</mat-icon>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--<div style="justify-content: flex-end;">
+        <a *ngIf="!isLoggedIn" style="font-size:13px; color: #952C6E;  font-family: 'Mission Gothic Ligth'" class="nav-link" href="#"> En caso de no tener una cuenta, click aqui </a>
+    </div>-->
+</div>
 
-        <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
-            <li class="nav-item active">
-                <a class="nav-link" href="signup">
-                    <button class="btn singin mdc-button">
-              Registrar <span class="sr-only">(current)</span>
-            </button>
-                </a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link">
-                    <button class="btn mdc-button singin" (click)="login()">
-              Iniciar Sesion <span class="sr-only">(current)</span>
-            </button>
-                </a>
-            </li>
-        </ul>
-        <ul class="navbar-nav" *ngIf="isLoggedIn">
-            <li style="font-weight: bold;" *ngIf="showAdminBoard">
-                <p>ERES EL ADMINISTRADOR PRINCIPAL</p>
-            </li>
-            <li style="font-weight: bold;" *ngIf="showModeratorBoard">
-                <p>ERES UN MODERADOR</p>
-            </li>
-        </ul>
-        <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
-            <li class="nav-item" *ngIf="showAdminBoard">
-                <a href="/profile" class="btn cabecera" routerLink="allmoders"> Ver moderadores</a>
-                
-            </li>
-            <li class="nav-item " *ngIf="showAdminBoard">
-                <a href="/profile" class="btn cabecera" routerLink="allusers"> Ver usuarios  </a>
-            </li>
-
-            <li class="nav-item" *ngIf="showAdminBoard">
-                <a href="/profile" class="btn cabecera" routerLink="registermod"> Registrar Moderadores  </a>
-            </li>
-            <li class="nav-item">
-                <a href class="btn cabecera" (click)="logout()"> Cerrar Sesion </a>
-            </li>
-        </ul>
-        <ul class="navbar-nav " routerLinkActive="active">
-
-            <li class="nav-item">
-                <a href="/user" class="btn cabecera" *ngIf="isLoggedIn" routerLink="user">
-                    <mat-icon>account_circle</mat-icon>
-                </a>
-            </li>
-        </ul>
-    </div>
-</nav>
 <!--
 Custom nvbar color data-target="#navbarCustom
 -->
-
 <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
-    <img width="70" hight="60" alt="Angular Logo" src="../../../../assets/piesito.png" />
     <a class="navbar-brand" href="#"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCustom" aria-controls="#navbarCustom" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
