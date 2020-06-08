@@ -103,11 +103,12 @@ div.hvv {
 }
 
 .mdc-button{
-    background-color: #952C6E;
-    color: white;
+    background-color: #03A0C3;
+    color: black;
     font-size: 17px;
     font-family: 'Mission Gothic Bold';
 }
+
 .mat-card {
     box-sizing: border-box;
     /*border-radius: 25px;
