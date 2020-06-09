@@ -19,7 +19,7 @@
             <br>
             <mat-form-field class="example-full-width">
                 <mat-label>CONTENIDO:</mat-label>
-                <textarea matInput required minlength="2" type="text" maxlength="2000" class="form-control" name="contenido" #contenido="ngModel" [(ngModel)]="service.formData.contenido"></textarea>
+                <textarea matInput required minlength="2" type="text" rows="10" maxlength="2000" class="form-control" name="contenido" #contenido="ngModel" [(ngModel)]="service.formData.contenido"></textarea>
                 <div class="text-left text-danger" *ngIf="contenido.invalid && contenido.touched">
                     Debes ingresar el contenido.
                 </div>
