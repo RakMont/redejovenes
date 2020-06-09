@@ -15,7 +15,7 @@
 
                 <mat-label>INSTITUCION</mat-label>
 
-                <textarea matInput required minlength="2" type="text" maxlength="50" class="form-control" name="institucion" #institucion="ngModel" [(ngModel)]="service.formData.institucion"></textarea>
+                <textarea matInput required minlength="2" type="text" rows="2" maxlength="50" class="form-control" name="institucion" #institucion="ngModel" [(ngModel)]="service.formData.institucion"></textarea>
                 <div class="text-left text-danger" *ngIf="institucion.invalid && institucion.touched">
                     Debes ingresar la institucion.
                 </div>
@@ -25,7 +25,7 @@
                 <mat-label>
                     DESCRIPCION
                 </mat-label>
-                <textarea matInput required minlength="2" type="text" maxlength="300" class="form-control" name="descripcion" #descripcion="ngModel" [(ngModel)]="service.formData.descripcion"></textarea>
+                <textarea matInput required minlength="2" type="text" rows="4" maxlength="300" class="form-control" name="descripcion" #descripcion="ngModel" [(ngModel)]="service.formData.descripcion"></textarea>
                 <div class="text-left text-danger" *ngIf="descripcion.invalid && descripcion.touched">
                     Debes ingresar la descripcion.
                 </div>
@@ -36,7 +36,7 @@
                 <mat-label>
                     DIRECCION
                 </mat-label>
-                <textarea matInput required minlength="2" type="text" maxlength="100" class="form-control" name="direccion" #direccion="ngModel" [(ngModel)]="service.formData.direccion"></textarea>
+                <textarea matInput required minlength="2" type="text" rows="3" maxlength="100" class="form-control" name="direccion" #direccion="ngModel" [(ngModel)]="service.formData.direccion"></textarea>
                 <div class="text-left text-danger" *ngIf="direccion.invalid && direccion.touched">
                     Debes ingresar la direccion.
                 </div>
