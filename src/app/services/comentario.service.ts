@@ -118,7 +118,7 @@ export class ComentarioService {
   updateHVT(comentario: Comentario){
     return this.http.put<Comentario>(this.Url+"/"+comentario.id_comentario, comentario);
   }
-  deleteHVT(comentario: Comentario){
+  deletecomentario(comentario: Comentario){
     return this.http.delete<Comentario>(this.Url+"/"+comentario.id_comentario);
 
   }
