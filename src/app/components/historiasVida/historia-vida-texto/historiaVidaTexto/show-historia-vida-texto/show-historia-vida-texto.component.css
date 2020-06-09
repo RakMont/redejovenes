@@ -10,7 +10,7 @@
     margin-bottom: 5px;
 }
 
-.mdc-button{
+.mdc-button {
     background-color: #03A0C3;
     color: black;
     font-size: 17px;
@@ -48,7 +48,6 @@
     margin-right: 2%;
 }
 
-
 .card-header {
     margin-top: 2%;
 }
@@ -79,18 +78,18 @@ p {
     font-family: 'Mission Gothic Ligth'
 }
 
-.decorator-hr{
-    height:4px;
-    border-width:0;
-    color:#952C6E;
-    background-color:#952C6E;
+.decorator-hr {
+    height: 4px;
+    border-width: 0;
+    color: #952C6E;
+    background-color: #952C6E;
 }
 
-.decorator-hrb{
-    height:4px;
-    border-width:0;
-    color:#03A0C3;
-    background-color:#03A0C3;
+.decorator-hrb {
+    height: 4px;
+    border-width: 0;
+    color: #03A0C3;
+    background-color: #03A0C3;
 }
 
 h2 {

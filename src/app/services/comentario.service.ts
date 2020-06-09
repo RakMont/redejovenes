@@ -122,6 +122,23 @@ export class ComentarioService {
     return this.http.delete<Comentario>(this.Url+"/"+comentario.id_comentario);
 
   }
+  getPhotosofviviendacoments():Observable<any>{
+    return this.http.get(this.Url+'/getPhotosofviviendacoments/');
+
+  }
+
+  getPhotosoftrabajocoments():Observable<any>{
+    return this.http.get(this.Url+'/getPhotosoftrabajocoments/');
+
+  }
+  getPhotosofsaludcoments():Observable<any>{
+    return this.http.get(this.Url+'/getPhotososaludcoments/');
+
+  }
+  getPhotosofeducacioncoments():Observable<any>{
+    return this.http.get(this.Url+'/getPhotosofeducacioncoments/');
+
+  }
 
     private _listeners = new Subject<any>();
     listen(): Observable<any>{
