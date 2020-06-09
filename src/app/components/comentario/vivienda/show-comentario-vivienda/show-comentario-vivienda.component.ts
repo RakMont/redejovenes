@@ -13,6 +13,9 @@ import { filter } from 'rxjs/operators';
 import{Subject}from 'rxjs';
 import {Observable} from 'rxjs';
 import {MatSnackBar}from '@angular/material/snack-bar';
+import { Addlev2comentaryviviendaComponent } from '../addlev2comentaryvivienda/addlev2comentaryvivienda.component';
+import { Usuario } from 'src/app/models/Usuario';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 
 @Component({
@@ -32,7 +35,13 @@ export class ShowComentarioViviendaComponent implements OnInit {
   public aux2;
   public aux;
   dataSource=null;
-  constructor(private snackBar:MatSnackBar,private service: ComentarioService, private router: Router,private dialog: MatDialog) {
+  link;
+  private roles: string[];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  username: string;
+  constructor(private tokenStorageService: TokenStorageService,private snackBar:MatSnackBar,private service: ComentarioService, private router: Router,private dialog: MatDialog) {
     this.service.listen().subscribe((m:any)=>{
       console.log(m);
 
@@ -60,6 +69,17 @@ export class ShowComentarioViviendaComponent implements OnInit {
      this.photos2 = data;
      this.Convertlist2();
     });
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+
+      this.username = user.username;
+    }
   }
   charge(){
     this.service.listComentariosRawVivienda()
@@ -87,14 +107,14 @@ export class ShowComentarioViviendaComponent implements OnInit {
     }
     Convertlist2(){
       let c: number = 0;
-
       for(let photo of this.comentarios){
-        console.log(photo);
         this.aux=photo.user.nombre;
         this.aux2=this.photos2[c];
-        console.log(this.aux);
-        this.things2.push({profile:this.aux2,comentario:photo.comentario,id_comentario:photo.id_comentario,nombre:this.aux,fecha:photo.fecha});
+        this.things2.push({id_comentario_ref:photo.id_comentario_ref,profile:this.aux2,comentario:photo.comentario,id_comentario:photo.id_comentario,nombre:this.aux,fecha:photo.fecha});
+        console.log(this.things2[c]);
         c=c+1;
+
+
       }
 
     }
@@ -130,5 +150,19 @@ export class ShowComentarioViviendaComponent implements OnInit {
     dialogConfig.width="70%";
     this.dialog.open(AddComentarioViviendaComponent,dialogConfig);
    }
-
+   Addcomentariorespuesta(id){
+    this.service.formData={
+      id_comentario:0,
+      comentario:'',
+      fecha:new Date,
+      id_comentario_ref:id,
+      referente:0,
+      user:new Usuario
+    }
+    const dialogConfig=new MatDialogConfig();
+    dialogConfig.disableClose=true;
+    dialogConfig.autoFocus=true;
+    dialogConfig.width="70%";
+    this.dialog.open(Addlev2comentaryviviendaComponent,dialogConfig);
+   }
 }
