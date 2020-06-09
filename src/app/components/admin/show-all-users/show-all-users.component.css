@@ -3,9 +3,14 @@
     height: 2em;
 }
 
+.container {
+    /*height: 100%;*/
+    max-width: 90%;
+    /*background-color: chocolate;*/
+}
+
 .content {
     padding: 1em;
-    
 }
 
 .example-spacer {
