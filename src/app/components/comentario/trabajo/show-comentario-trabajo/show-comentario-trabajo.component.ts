@@ -146,6 +146,8 @@ export class ShowComentarioTrabajoComponent implements OnInit {
         });
      });
     }
+    window.location.reload();
+
    }
 
 

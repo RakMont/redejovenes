@@ -141,6 +141,8 @@ export class ShowComentarioViviendaComponent implements OnInit {
         });
      });
     }
+    window.location.reload();
+
    }
 
    AddHVT(){

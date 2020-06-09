@@ -150,6 +150,8 @@ export class ShowComentarioEducacionComponent implements OnInit {
         });
      });
     }
+    window.location.reload();
+
    }
 
    AddHVT(){
