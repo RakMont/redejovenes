@@ -25,7 +25,11 @@ export class ShowComentarioTrabajoComponent implements OnInit {
   comentariosRaw:Comentario[];
   comentarios:Comentario[];
   things=[];
+  things2=[];
+
   public photos:any=[];
+  public photos2:any[];
+
   public aux2;
 
   public aux;
@@ -49,20 +53,25 @@ export class ShowComentarioTrabajoComponent implements OnInit {
     this.service.listComentariosRawTrabajo()
    .subscribe(data =>{
      this.comentariosRaw = data;
-
-
    });
-   this.service.getPhotosofrawtrabajocoments()
+    this.service.getPhotosofrawtrabajocoments()
    .subscribe(data =>{
      this.photos = data;
      this.Convertlist();
-
    });
-   this.service.listComentariosTrabajo()
+    this.service.listComentariosTrabajo()
    .subscribe(data =>{
      this.comentarios = data;
+
    });
-   this.isLoggedIn = !!this.tokenStorageService.getToken();
+    this.service.getPhotosoftrabajocoments()
+   .subscribe(data =>{
+     this.photos2 = data;
+     this.Convertlist2();
+
+   });
+
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
 
     if (this.isLoggedIn) {
       const user = this.tokenStorageService.getUser();
@@ -84,6 +93,8 @@ export class ShowComentarioTrabajoComponent implements OnInit {
     .subscribe(data =>{
       this.comentarios = data;
     });
+
+
     }
 
     Convertlist(){
@@ -99,7 +110,19 @@ export class ShowComentarioTrabajoComponent implements OnInit {
       }
 
     }
+    Convertlist2(){
+      let c: number = 0;
+      for(let photo of this.comentarios){
+        this.aux=photo.user.nombre;
+        this.aux2=this.photos2[c];
+        this.things2.push({id_comentario_ref:photo.id_comentario_ref,profile:this.aux2,comentario:photo.comentario,id_comentario:photo.id_comentario,nombre:this.aux,fecha:photo.fecha});
+        console.log(this.things2[c]);
+        c=c+1;
 
+
+      }
+
+    }
   edit_HVT(comentario: Comentario){
     this.service.formData=comentario;
     const dialogConfig=new MatDialogConfig();

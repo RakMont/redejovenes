@@ -21,20 +21,30 @@
             <mat-card-footer>{{hvt.fecha}}</mat-card-footer>
 
         </mat-card>
-        <mat-list *ngFor="let comen of comentarios">
+        <mat-list *ngFor="let comen of things2">
             <div *ngIf="hvt.id_comentario==comen.id_comentario_ref">
-                <mat-card class="example-card">
-
-                    <div fxLayout="row">
-                        <mat-card-content [ngClass]="{'custom-card':true}">
-                            <p>
-                                CONTENIDO: {{comen.comentario}}
-                            </p>
+                <hr class="new4">
+                <div fxLayout="row">
+                    <div fxFlex="10">
+                        <mat-card-header [ngClass]="{'custom-card':true}">
+                            <div class="example-header-image">
+                                <img [src]="comen.profile" alt="">
+                            </div>
+                            <div class="desc">
+                                <mat-card-title>{{comen.nombre}}</mat-card-title>
+                                <mat-card-subtitle>Usuario registrado</mat-card-subtitle>
+                            </div>
+                        </mat-card-header>
+                        <mat-card-content [ngClass]="{'custom-card-content':true}">
+                            <h4>
+                                <h3>CONTENIDO: </h3>
+                                {{comen.comentario}}
+                            </h4>
                         </mat-card-content>
                     </div>
-                    <mat-card-footer> {{comen.fecha}}</mat-card-footer>
+                </div>
 
-                </mat-card>
+                <mat-card-footer>Fecha: {{comen.fecha}}</mat-card-footer>
             </div>
         </mat-list>
 

@@ -25,7 +25,10 @@ export class ShowComentarioViviendaComponent implements OnInit {
   comentariosRaw:Comentario[];
   comentarios:Comentario[];
   things=[];
+  things2=[];
+
   public photos:any=[];
+  public photos2:any[];
   public aux2;
   public aux;
   dataSource=null;
@@ -43,15 +46,20 @@ export class ShowComentarioViviendaComponent implements OnInit {
      this.comentariosRaw = data;
 
    });
-   this.service.getPhotosofrawviviendacoments()
+    this.service.getPhotosofrawviviendacoments()
    .subscribe(data =>{
      this.photos = data;
      this.Convertlist();
     });
-   this.service.listComentariosVivienda()
+    this.service.listComentariosVivienda()
    .subscribe(data =>{
      this.comentarios = data;
    });
+    this.service.getPhotosofviviendacoments()
+   .subscribe(data =>{
+     this.photos2 = data;
+     this.Convertlist2();
+    });
   }
   charge(){
     this.service.listComentariosRawVivienda()
@@ -77,7 +85,19 @@ export class ShowComentarioViviendaComponent implements OnInit {
       }
 
     }
+    Convertlist2(){
+      let c: number = 0;
 
+      for(let photo of this.comentarios){
+        console.log(photo);
+        this.aux=photo.user.nombre;
+        this.aux2=this.photos2[c];
+        console.log(this.aux);
+        this.things2.push({profile:this.aux2,comentario:photo.comentario,id_comentario:photo.id_comentario,nombre:this.aux,fecha:photo.fecha});
+        c=c+1;
+      }
+
+    }
   edit_HVT(comentario: Comentario){
     this.service.formData=comentario;
     const dialogConfig=new MatDialogConfig();
