@@ -13,8 +13,11 @@
             <mat-card-content>
                 <mat-card-actions *ngIf="showAdminBoard || showModeratorBoard">
                     <button mat-icon-button color="warn" (click)="Delete(hvt)">
-                    <mat-icon>delete_forever</mat-icon>
-                </button>
+                    <mat-icon>delete_forever</mat-icon> </button>
+                    <button mat-icon-button color="warn" (click)="edit_HVT(hvt)">
+                      <mat-icon>edit</mat-icon>
+                  </button>
+
                 </mat-card-actions>
                 <p>
                     {{hvt.comentario}}
@@ -22,6 +25,7 @@
             </mat-card-content>
             <mat-card-actions *ngIf="isLoggedIn">
                 <button mat-button (click)="Addcomentariorespuesta(hvt.id_comentario)">Responder</button>
+
             </mat-card-actions>
             <mat-card-footer>{{hvt.fecha}}</mat-card-footer>
 
