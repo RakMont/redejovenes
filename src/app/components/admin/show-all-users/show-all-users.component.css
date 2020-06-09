@@ -3,17 +3,10 @@
     height: 2em;
 }
 
-.container {
-    height: 100%;
-    max-width: 90%;
-    /*background-color: chocolate;*/
-}
-
 .content {
     padding: 1em;
+    
 }
-
-.mat-grid-list {}
 
 .example-spacer {
     flex: 1 1 auto;
