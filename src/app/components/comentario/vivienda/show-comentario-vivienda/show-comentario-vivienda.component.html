@@ -13,49 +13,49 @@
             <mat-card-content>
                 <mat-card-actions *ngIf="showAdminBoard || showModeratorBoard">
                     <button mat-icon-button color="warn" (click)="Delete(hvt)">
-                    <mat-icon>delete_forever</mat-icon> </button>
+                        <mat-icon>delete_forever</mat-icon>
+                    </button>
                     <button mat-icon-button color="warn" (click)="edit_HVT(hvt)">
                       <mat-icon>edit</mat-icon>
                   </button>
-
                 </mat-card-actions>
                 <p>
                     {{hvt.comentario}}
                 </p>
+                <br>
+                {{hvt.fecha}}
             </mat-card-content>
             <mat-card-actions *ngIf="isLoggedIn">
-                <button mat-button (click)="Addcomentariorespuesta(hvt.id_comentario)" class="btn mdc-button">Responder</button>
-
+                <button mat-button (click)="Addcomentariorespuesta(hvt.id_comentario)"class="btn mdc-button">Responder</button>
             </mat-card-actions>
-            <mat-card-footer>{{hvt.fecha}}</mat-card-footer>
-
-        </mat-card>
-        <mat-list *ngFor="let comen of things2">
-            <div *ngIf="hvt.id_comentario==comen.id_comentario_ref">
-                <hr class="new4">
-                <div fxLayout="row">
-                    <div fxFlex="10">
-                        <mat-card-header [ngClass]="{'custom-card':true}">
-                            <div class="example-header-image">
-                                <img [src]="comen.profile" alt="">
+            <div>
+                <mat-list *ngFor="let comen of things2">
+                    <div *ngIf="hvt.id_comentario==comen.id_comentario_ref">
+                        <hr class="new4">
+                        <div fxLayout="row">
+                            <div fxFlex="10">
+                                <mat-card-header [ngClass]="{'custom-card':true}">
+                                    <div class="example-header-image">
+                                        <img [src]="comen.profile" alt="">
+                                    </div>
+                                    <div class="desc">
+                                        <mat-card-title>{{comen.nombre}}</mat-card-title>
+                                        <mat-card-subtitle>Usuario registrado</mat-card-subtitle>
+                                    </div>
+                                </mat-card-header>
+                                <mat-card-content [ngClass]="{'custom-card-content':true}">
+                                    <h4>
+                                        {{comen.comentario}}
+                                    </h4>
+                                </mat-card-content>
                             </div>
-                            <div class="desc">
-                                <mat-card-title>{{comen.nombre}}</mat-card-title>
-                                <mat-card-subtitle>Usuario registrado</mat-card-subtitle>
-                            </div>
-                        </mat-card-header>
-                        <mat-card-content [ngClass]="{'custom-card-content':true}">
-                            <h4>
-                                <h3>CONTENIDO: </h3>
-                                {{comen.comentario}}
-                            </h4>
-                        </mat-card-content>
+                        </div>
+                        <mat-card-footer>{{comen.fecha}}</mat-card-footer>
                     </div>
-                </div>
-
-                <mat-card-footer>Fecha: {{comen.fecha}}</mat-card-footer>
+                </mat-list>
             </div>
-        </mat-list>
+        </mat-card>
+        
 
     </mat-list>
 
