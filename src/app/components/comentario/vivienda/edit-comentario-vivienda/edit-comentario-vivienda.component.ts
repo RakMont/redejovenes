@@ -55,7 +55,7 @@ onSubmit(){
   this.service.formData.user=this.userprof;
   console.log(this.service.formData);
 
-  this.service.editarComentarioTrabajo(this.service.formData).subscribe(res=>{
+  this.service.editarComentarioVivienda(this.service.formData).subscribe(res=>{
     this.dialogbox.close();
   this.service.filter("Register click");
     this.snackBar.open('Editado  correctamente','',{
