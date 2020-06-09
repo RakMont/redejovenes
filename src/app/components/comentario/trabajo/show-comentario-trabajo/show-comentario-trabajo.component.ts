@@ -136,7 +136,7 @@ export class ShowComentarioTrabajoComponent implements OnInit {
 
   Delete(comentario: Comentario){
     if(confirm('Estas seguro de eliminar ? ')){
-      this.service.deleteHVT(comentario)
+      this.service.deletecomentario(comentario)
       .subscribe(data=>{
         //.historiasHVT=this.historiasHVT.filter(p=>p.id_HVT!==historiaVidaTexto.id_HVT);
         this.charge();
@@ -146,6 +146,8 @@ export class ShowComentarioTrabajoComponent implements OnInit {
         });
      });
     }
+    window.location.reload();
+
    }
 
 
