@@ -8,13 +8,12 @@
     </div>
     <div style="overflow: auto;height: 200px;">
         <form #form="ngForm" (ngSubmit)="onSubmit()" autocomplete="off">
-            <input matInput required type="readonly" class="form-control" name="id_comentario_ref" #id_comentario_ref="ngModel" [(ngModel)]="service.formData.id_comentario_ref">
-
+            
             <mat-form-field class="example-full-width">
 
                 <mat-label>COMENTARIO:</mat-label>
 
-                <input matInput required minlength="2" type="text" class="form-control" name="titulo" #titulo="ngModel" [(ngModel)]="service.formData.comentario">
+                <textarea matInput required minlength="2" type="text" rows="5" class="form-control" name="titulo" #titulo="ngModel" [(ngModel)]="service.formData.comentario"></textarea>
                 <div class="text-left text-danger" *ngIf="titulo.invalid && titulo.touched">
                     Debes ingresar el titulo.
                 </div>
