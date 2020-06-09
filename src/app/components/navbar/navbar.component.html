@@ -5,7 +5,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    
+
             <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
                 <li class="nav-item active">
                     <a class="nav-link" href="signup">
@@ -33,12 +33,12 @@
             <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
                 <li class="nav-item" *ngIf="showAdminBoard">
                     <a href="/profile" class="btn cabecera" routerLink="allmoders"> Ver moderadores</a>
-                    
+
                 </li>
                 <li class="nav-item " *ngIf="showAdminBoard">
                     <a href="/profile" class="btn cabecera" routerLink="allusers"> Ver usuarios  </a>
                 </li>
-    
+
                 <li class="nav-item" *ngIf="showAdminBoard">
                     <a href="/profile" class="btn cabecera" routerLink="registermod"> Registrar Moderadores  </a>
                 </li>
@@ -47,8 +47,12 @@
                 </li>
             </ul>
             <ul class="navbar-nav " routerLinkActive="active">
-    
-                <li class="nav-item">
+                <li class="nav-item" *ngIf="showModeratorBoard">
+                    <a href="/mod" class="btn cabecera" *ngIf="showModeratorBoard" routerLink="mod">
+                        <mat-icon>account_circle</mat-icon>
+                    </a>
+                </li>
+                <li class="nav-item" *ngIf="!showModeratorBoard && !showAdminBoard">
                     <a href="/user" class="btn cabecera" *ngIf="isLoggedIn" routerLink="user">
                         <mat-icon>account_circle</mat-icon>
                     </a>

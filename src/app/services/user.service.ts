@@ -78,6 +78,25 @@ export class UserService {
 
     }, httpOptions);
   }
+  updateprofilemoderator(user:Usuario): Observable<any>{
+    // return this.http.put<historiaVidaTexto>(this.Url+"/"+historiaVidaTexto.id_HVT, historiaVidaTexto);
+
+      return this.http.post(API_URL + 'updateprofilemoderator',{
+        id:user.id,
+        username: user.username,
+        email: user.email,
+        password: user.password,
+        nombre:user.nombre,
+        apellido:user.apellido,
+        fecha_nacimiento:user.fecha_nacimiento,
+        lugar_acogida:user.lugar_acogida,
+        telefono:user.telefono,
+        genero:user.genero,
+        perfil:user.perfil,
+
+
+      }, httpOptions);
+    }
   deleteHVT(user:Usuario){
     return this.http.delete<Usuario>(API_URL+'deleteuser/'+user.username);
 

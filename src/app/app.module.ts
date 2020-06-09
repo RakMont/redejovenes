@@ -122,6 +122,8 @@ import { Addlev2comentarytrabajoComponent } from './components/comentario/trabaj
 import { Addlev2comentarysaludComponent } from './components/comentario/salud/addlev2comentarysalud/addlev2comentarysalud.component';
 import { Addlev2comentaryeducacionComponent } from './components/comentario/educacion/addlev2comentaryeducacion/addlev2comentaryeducacion.component';
 import { Addlev2comentaryviviendaComponent } from './components/comentario/vivienda/addlev2comentaryvivienda/addlev2comentaryvivienda.component';
+import { EditprofileasmoderComponent } from './components/user/editprofileasmoder/editprofileasmoder.component';
+import { EditprofileasadminComponent } from './components/user/editprofileasadmin/editprofileasadmin.component';
 
 @NgModule({
   declarations: [
@@ -207,6 +209,8 @@ import { Addlev2comentaryviviendaComponent } from './components/comentario/vivie
     Addlev2comentarysaludComponent,
     Addlev2comentaryeducacionComponent,
     Addlev2comentaryviviendaComponent,
+    EditprofileasmoderComponent,
+    EditprofileasadminComponent,
 
 
 
