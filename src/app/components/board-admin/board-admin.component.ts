@@ -10,6 +10,8 @@ import{MatDialog,MatDialogConfig}from '@angular/material/dialog';
 import{Subject}from 'rxjs';
 import {Observable} from 'rxjs';
 import {MatSnackBar}from '@angular/material/snack-bar';
+import { EditprofileasmoderComponent } from '../user/editprofileasmoder/editprofileasmoder.component';
+import { EditprofileasadminComponent } from '../user/editprofileasadmin/editprofileasadmin.component';
 @Component({
   selector: 'app-board-admin',
   templateUrl: './board-admin.component.html',
@@ -74,7 +76,7 @@ edit_profile(usuario:Usuario){
  dialogConfig.disableClose=true;
  dialogConfig.autoFocus=true;
  dialogConfig.width="70%";
- this.dialog.open(EditProfileComponent,dialogConfig);
+ this.dialog.open(EditprofileasadminComponent,dialogConfig);
 
  localStorage.setItem("id", usuario.id.toString());
 }
