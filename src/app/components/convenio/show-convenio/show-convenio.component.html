@@ -1,42 +1,47 @@
 <div class="container">
-  <h1 class="tit">CONVENIOS</h1>
-  <div class="addbox-HVT" *ngIf="showAdminBoard || showModeratorBoard">
-    <button class="mt-2" mat-raised-button (click)="AddHVA()" class="btn mdc-button">
+    <h1 class="tit">CONVENIOS</h1>
+    <div class="addbox-HVT" *ngIf="showAdminBoard || showModeratorBoard">
+        <button class="mt-2" mat-raised-button (click)="AddHVA()" class="btn mdc-button">
       Agregar
      <mat-icon>add_box</mat-icon>
     </button>
-  </div>
-  <div class="form">
-    <mat-list *ngFor="let hvt of things">
-      <mat-card class="example-card">
-        <hr class="decorator-hr">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image">
-            <!--opciones de editar-->
-            <div class="options">
-              <mat-card-actions *ngIf="showAdminBoard || showModeratorBoard">
-                <button mat-icon-button (click)="edit_HVV(hvt)">
+        <div class="noavailable" *ngIf="!existelist">
+            <img class="noavailable" height="500px" src="../../../../assets/noavailable.jpeg" alt="">
+        </div>
+        <div *ngIf="existelist">
+
+            <div class="form">
+                <mat-list *ngFor="let hvt of things">
+                    <mat-card class="example-card">
+                        <hr class="decorator-hr">
+                        <mat-card-header>
+                            <div mat-card-avatar class="example-header-image">
+                                <!--opciones de editar-->
+                                <div class="options">
+                                    <mat-card-actions *ngIf="showAdminBoard || showModeratorBoard">
+                                        <button mat-icon-button (click)="edit_HVV(hvt)">
                   <mat-icon>edit</mat-icon>
                 </button>
-                <button mat-icon-button color="warn" (click)="Delete(hvt)">
+                                        <button mat-icon-button color="warn" (click)="Delete(hvt)">
                   <mat-icon>delete_forever</mat-icon>
                 </button>
-              </mat-card-actions>
-            </div>  
-          </div>
-        </mat-card-header>
-        <div fxLayoutAlign="space-between center" style="text-align: center;">
-          <img class="image" mat-card-image [src]="hvt.photo" alt="">
+                                    </mat-card-actions>
+                                </div>
+                            </div>
+                        </mat-card-header>
+                        <div fxLayoutAlign="space-between center" style="text-align: center;">
+                            <img class="image" mat-card-image [src]="hvt.photo" alt="">
+                        </div>
+                        <mat-card-content>
+                            <!--optines de text-->
+                            <h4>Institucion: {{hvt.institucion}}</h4>
+                            <h4>Descripcion: {{hvt.descripcion}}</h4>
+                            <h4>Direccion: {{hvt.direccion}}</h4>
+                        </mat-card-content>
+                        <hr class="decorator-hr">
+                    </mat-card>
+                    <br>
+                </mat-list>
+            </div>
         </div>
-        <mat-card-content>
-          <!--optines de text-->
-          <h4 style="font-family: 'Mission Gothic Bold' !important; color:black; font-size:17px;">{{hvt.institucion}}</h4>
-          <h4 style="font-family: 'Mission Gothic' !important; color:black; font-size:17px;">{{hvt.descripcion}}</h4>
-          <h4 style="font-family: 'Mission Gothic' !important; color:black; font-size:17px;">Direccion: {{hvt.direccion}}</h4>
-        </mat-card-content>
-        <hr class="decorator-hr">
-      </mat-card>
-      <br>
-    </mat-list>
-  </div>
-</div>
+    </div>
