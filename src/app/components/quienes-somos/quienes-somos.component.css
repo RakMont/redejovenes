@@ -2,36 +2,37 @@
     max-width: 600px;
     transition: none !important;
     box-shadow: none !important;
-  }
-  p {
+}
+
+p {
     font-size: medium;
     justify-content: center;
     text-align: justify;
-    font-family: 'Mission Gothic Ligth'
+    font-family: 'Mission Gothic Light' !important;
 }
 
-hr{
-    width:50%;
-    margin-left:25%;
-    margin-right:25%;
-    height:4px;
-    border-width:0;
-    color:#952C6E;
-    background-color:#952C6E;
+hr {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    height: 4px;
+    border-width: 0;
+    color: #952C6E;
+    background-color: #952C6E;
 }
-.blue-hr{
-  width:50%;
-  margin-left:25%;
-  margin-right:25%;
-  height:4px;
-  border-width:0;
-  color:#952C6E;
-  background-color: #03A0C3
+
+.blue-hr {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    height: 4px;
+    border-width: 0;
+    color: #952C6E;
+    background-color: #03A0C3
 }
 
 h2 {
-  font-family: 'Mission Gothic Bold';
-  color: #952C6E;
-  font-size: x-large;
+    font-family: 'Mission Gothic Bold';
+    color: #952C6E;
+    font-size: x-large;
 }
-

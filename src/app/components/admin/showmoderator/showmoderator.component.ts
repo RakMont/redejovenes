@@ -52,14 +52,22 @@ export class ShowmoderatorComponent implements OnInit {
     if(confirm('Estas seguro de eliminar ? ')){
       this.service.deleteHVT(user)
       .subscribe(data=>{
+       // this.podcasts=this.podcasts.filter(p=>p.id_podcast!==podcast.id_podcast);
+       // this.audios=this.audios.filter(p=>p!==podcast);
+       // this.Convertlist();
+       // this.things=this.things.filter(t=>t!==some);
         this.usuarios=this.usuarios.filter(p=>p==user);
         this.snackBar.open('Eliminado Correctamente','',{
           duration:5000,
           verticalPosition:'top'
         });
+        window.location.reload();
+
+
      });
+
     }
-    window.location.reload();
+
 
   }
   Convertlist(){
@@ -70,6 +78,7 @@ export class ShowmoderatorComponent implements OnInit {
       this.things.push({photo:photo,id:this.aux.id,username:this.aux.username,password:this.aux.password,email:this.aux.email,nombre:this.aux.nombre,apellido:this.aux.apellido,fecha_nacimiento:this.aux.fecha_nacimiento,lugar_acogida:this.aux.lugar_acogida,telefono:this.aux.telefono,perfil:this.aux.perfil,genero:this.aux.genero,roles:this.aux.roles});
       c=c+1;
     }
+
 
   }
 }

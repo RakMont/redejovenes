@@ -101,13 +101,16 @@ export class ShowComentarioSaludComponent implements OnInit {
     }
     Convertlist(){
       let c: number = 0;
-
+      let vec;
       for(let photo of this.comentariosRaw){
-        console.log(photo);
+        //console.log(photo);
         this.aux=photo.user.nombre;
         this.aux2=this.photos[c];
-        console.log(this.aux);
-        this.things.push({profile:this.aux2,comentario:photo.comentario,id_comentario:photo.id_comentario,nombre:this.aux,fecha:photo.fecha});
+        vec=photo.user.roles.includes('1');
+        console.log(this.aux+vec);
+        vec=photo.user.roles.includes('2');
+        console.log(this.aux+vec);
+        this.things.push({role:photo.user.roles[0],profile:this.aux2,comentario:photo.comentario,id_comentario:photo.id_comentario,nombre:this.aux,username:photo.user.username,fecha:photo.fecha});
         c=c+1;
       }
 
@@ -118,7 +121,7 @@ export class ShowComentarioSaludComponent implements OnInit {
         this.aux=photo.user.nombre;
         this.aux2=this.photos2[c];
         this.things2.push({id_comentario_ref:photo.id_comentario_ref,profile:this.aux2,comentario:photo.comentario,id_comentario:photo.id_comentario,nombre:this.aux,fecha:photo.fecha});
-        console.log(this.things2[c]);
+        //console.log(this.things2[c]);
         c=c+1;
 
 

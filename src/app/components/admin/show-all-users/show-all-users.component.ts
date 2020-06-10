@@ -57,13 +57,16 @@ export class ShowAllUsersComponent implements OnInit {
       this.service.deleteHVT(user)
       .subscribe(data=>{
         this.usuarios=this.usuarios.filter(p=>p==user);
+        this.Convertlist();
         this.snackBar.open('Eliminado Correctamente','',{
           duration:5000,
           verticalPosition:'top'
         });
      });
     }
+
     window.location.reload();
+
 
   }
   Convertlist(){
