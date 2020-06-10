@@ -7,26 +7,25 @@
                 </div>
                 <div class="desc">
                     <mat-card-title>{{hvt.nombre}}</mat-card-title>
-                    <mat-card-subtitle>Usuario registrado</mat-card-subtitle>
+                    <!-- <mat-card-subtitle>Usuario registrado {{hvt.role}}</mat-card-subtitle>-->
                 </div>
             </mat-card-header>
             <mat-card-content>
-                <mat-card-actions *ngIf="showAdminBoard || showModeratorBoard">
-                    <button mat-icon-button color="warn" (click)="Delete(hvt)">
-                        <mat-icon>delete_forever</mat-icon>
-                    </button>
-                    <button mat-icon-button color="warn" (click)="edit_HVT(hvt)">
-                      <mat-icon>edit</mat-icon>
+                <mat-card-actions>
+                    <button *ngIf="showAdminBoard || showModeratorBoard || username==hvt.username" mat-icon-button color="warn" (click)="Delete(hvt)">
+                      <mat-icon>delete_forever</mat-icon>
                   </button>
+                    <button *ngIf="username==hvt.username" mat-icon-button (click)="edit_HVT(hvt)">
+                    <mat-icon>edit</mat-icon>
+                </button>
                 </mat-card-actions>
                 <p>
                     {{hvt.comentario}}
                 </p>
-                <br>
-                {{hvt.fecha}}
+                <br> {{hvt.fecha}}
             </mat-card-content>
             <mat-card-actions *ngIf="isLoggedIn">
-                <button mat-button (click)="Addcomentariorespuesta(hvt.id_comentario)"class="btn mdc-button">Responder</button>
+                <button mat-button (click)="Addcomentariorespuesta(hvt.id_comentario)" class="btn mdc-button">Responder</button>
             </mat-card-actions>
             <div>
                 <mat-list *ngFor="let comen of things2">
@@ -40,8 +39,16 @@
                                     </div>
                                     <div class="desc">
                                         <mat-card-title>{{comen.nombre}}</mat-card-title>
-                                        <mat-card-subtitle>Usuario registrado</mat-card-subtitle>
+                                        <!-- <mat-card-subtitle>Usuario registrado</mat-card-subtitle>-->
                                     </div>
+                                    <mat-card-actions>
+                                        <button *ngIf="showAdminBoard || showModeratorBoard || username==comen.username" mat-icon-button color="warn" (click)="Delete(comen)">
+                                        <mat-icon>delete_forever</mat-icon>
+                                    </button>
+                                        <button *ngIf="username==comen.username" mat-icon-button (click)="edit_HVT(comen)">
+                                      <mat-icon>edit</mat-icon>
+                                  </button>
+                                    </mat-card-actions>
                                 </mat-card-header>
                                 <mat-card-content [ngClass]="{'custom-card-content':true}">
                                     <h4>
@@ -55,7 +62,7 @@
                 </mat-list>
             </div>
         </mat-card>
-        
+
 
     </mat-list>
 
