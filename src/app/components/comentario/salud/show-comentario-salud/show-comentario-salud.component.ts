@@ -102,14 +102,18 @@ export class ShowComentarioSaludComponent implements OnInit {
     Convertlist(){
       let c: number = 0;
       let vec;
+      let a;
       for(let photo of this.comentariosRaw){
         //console.log(photo);
         this.aux=photo.user.nombre;
         this.aux2=this.photos[c];
+        /*a=photo.user.roles[0];
+        vec=a.includes('ROLE_ADMIN');
+        console.log(this.aux+vec);
         vec=photo.user.roles.includes('1');
         console.log(this.aux+vec);
         vec=photo.user.roles.includes('2');
-        console.log(this.aux+vec);
+        console.log(this.aux+vec);*/
         this.things.push({role:photo.user.roles[0],profile:this.aux2,comentario:photo.comentario,id_comentario:photo.id_comentario,nombre:this.aux,username:photo.user.username,fecha:photo.fecha});
         c=c+1;
       }
@@ -120,7 +124,7 @@ export class ShowComentarioSaludComponent implements OnInit {
       for(let photo of this.comentarios){
         this.aux=photo.user.nombre;
         this.aux2=this.photos2[c];
-        this.things2.push({id_comentario_ref:photo.id_comentario_ref,profile:this.aux2,comentario:photo.comentario,id_comentario:photo.id_comentario,nombre:this.aux,fecha:photo.fecha});
+        this.things2.push({id_comentario_ref:photo.id_comentario_ref,profile:this.aux2,comentario:photo.comentario,id_comentario:photo.id_comentario,username:photo.user.username,nombre:this.aux,fecha:photo.fecha});
         //console.log(this.things2[c]);
         c=c+1;
 
