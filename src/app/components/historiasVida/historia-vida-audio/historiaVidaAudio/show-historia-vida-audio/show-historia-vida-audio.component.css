@@ -67,12 +67,7 @@ source {
     border: 2px dashed;
 }
 
-.tit {
-    color: #000000;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-}
+
 
 .options {
     float: right;
@@ -104,10 +99,10 @@ source {
 }
 
 p {
-    font-size: medium;
+    font-size: 20px;
     justify-content: center;
     text-align: justify;
-    font-family: 'Mission Gothic Ligth'
+    font-family: 'Mission Gothic'
 }
 
 .decorator-hr{
