@@ -31,6 +31,7 @@ export class ShowConvenioComponent implements OnInit {
   showAdminBoard = false;
   showModeratorBoard = false;
   username: string;
+  existelist=false;
 
   constructor(private tokenStorageService: TokenStorageService,private snackBar:MatSnackBar,private convenioservice: ConvenioService, private router: Router,private dialog: MatDialog) {
     this.convenioservice.listen().subscribe((m:any)=>{
@@ -50,7 +51,9 @@ export class ShowConvenioComponent implements OnInit {
     this.convenioservice.getConvenios().subscribe(response=>{
       this.photos=response;
     this.Convertlist();
-
+    if(this.things[0]!=null){
+      this.existelist=true;
+    }
     });
     this.convenioservice.getConv()
       .subscribe(data =>{
