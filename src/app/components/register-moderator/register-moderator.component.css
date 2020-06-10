@@ -37,7 +37,11 @@ h2 {
     color: #78788c;
     border-bottom: 3px solid #78788c
 }
-
+.mt-2 {
+    font-family: 'Mission Gothic Bold';
+    color: #03A0C3;
+    font-size: xx-large;
+}
 input {
     width: 100%;
     padding: 10px;
@@ -48,7 +52,7 @@ input {
     border: 0;
     font-family: 'Montserrat', sans-serif;
     transition: all .3s;
-    border-bottom: 2px solid #bebed2
+    border-bottom: 2px solid #03a0c3
 }
 
 input:focus {
@@ -79,6 +83,7 @@ button {
     padding: 8px 12px;
     margin: 8px 0 0;
     /*background-color: #952C6E;*/
+    background-color: #03A0C3;
 }
 
 .footerContact {
