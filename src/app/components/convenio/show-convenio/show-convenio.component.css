@@ -19,7 +19,7 @@
 .mat-card{
     height: 460px;
     width: 500px;
-    font-family: "Mission Gothic Ligth";
+    font-family: 'Mission Gothic';
     transition: none !important;
     box-shadow: none !important;
 }
