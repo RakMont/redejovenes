@@ -79,7 +79,10 @@ onSubmit(){
         this.isLoginFailed = true;
       }
     );
-    this.dialogbox.close();
+    if(this.isLoggedIn){
+      this.dialogbox.close();
+    }
+
 
 
 
