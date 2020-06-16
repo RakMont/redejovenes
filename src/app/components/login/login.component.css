@@ -11,9 +11,13 @@
 h1 {
     text-align: center;
 }
-.mdc-button{
+
+.mdc-button {
     background-color: #03A0C3;
     color: black;
     font-size: 17px;
     font-family: 'Mission Gothic Bold';
 }
+
+
+/*********************************************************/

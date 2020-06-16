@@ -20,11 +20,11 @@ export class CarouselComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.images[3]="../../assets/img1.jpg"
-    this.images[4]="../../assets/img2.jpg"
-    this.images[1]="../../assets/img3.jpg"
-    this.images[5]="../../assets/img4.jpg"
-    this.images[2]="../../assets/img5.jpg"
+    this.images[1]="../../assets/img1.jpg"
+    this.images[2]="../../assets/img2.jpg"
+    this.images[3]="../../assets/img3.jpg"
+    this.images[4]="../../assets/img4.jpg"
+    this.images[5]="../../assets/img5.jpg"
   }
 
 }

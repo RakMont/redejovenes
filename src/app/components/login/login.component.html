@@ -5,21 +5,19 @@
 <mat-icon>close</mat-icon>
 </button>
     </div>
+
     <div style="overflow: auto;height: 300px;">
 
-        <!-- <img id="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" class="profile-img-card" />-->
         <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
             <mat-form-field class="example-full-width">
                 <mat-label>Nombre de Usuario:</mat-label>
-                <!--<input type="text" class="form-control" name="username" [(ngModel)]="form.username" required #username="ngModel" />
-                --><input matInput required minlength="2" type="text" class="form-control" name="username" #username="ngModel" [(ngModel)]="form.username">
+                <input matInput required minlength="2" type="text" class="form-control" name="username" #username="ngModel" [(ngModel)]="form.username">
                 <div class="text-left text-danger" *ngIf="username.invalid && username.touched">
                     Debes ingresar el Nombre de Usuario </div>
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Contraseña:</mat-label>
-                <!-- <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required minlength="6" #password="ngModel" />
-               --><input matInput required minlength="6" type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="form.password">
+                <input matInput required minlength="6" type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="form.password">
                 <div class="alert alert-danger" role="alert" *ngIf="f.submitted && password.invalid">
                     <div *ngIf="password.errors.required">Contraseña es requerida</div>
                     <div *ngIf="password.errors.minlength">
@@ -28,7 +26,7 @@
                 </div>
             </mat-form-field>
             <div class="form-group">
-             <button class="mt-4" mat-raised-button class="btn mdc-button" [disabled]="f.invalid">
+                <button class="mt-4" mat-raised-button class="btn mdc-button" [disabled]="f.invalid">
                  Iniciar Sesion
             </button>
             </div>
@@ -44,23 +42,51 @@
         </div>
     </div>
 </div>
+
+
+
 <!--
-        <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
+  <div class="limiter" style="overflow: auto;height: 700px;">
+    <button mat-button (click)="close()">
+    <mat-icon>close</mat-icon>
+    </button>
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <form class="login100-form validate-form" *ngIf="!isLoggedIn" name="form" (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
+                <span class="login100-form-title p-b-26">
+                      Iniciar Sesion
+        </span>
+                <span class="login100-form-title p-b-48">
+          <i class="zmdi zmdi-font">
+            <img src="" alt="">
+          </i>
+        </span>
 
-            <mat-form-field class="example-full-width">
-                <mat-label>USERNAME</mat-label>
-                <input matInput required minlength="2" type="text" class="form-control" name="username" #username="ngModel" [(ngModel)]="service.formData.username">
-                <div class="text-left text-danger" *ngIf="username.invalid && username.touched">
-                    Debes ingresar el Username </div>
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-                <mat-label>Password</mat-label>
-                <input matInput required minlength="2" type="text" class="form-control" name="password" #password="ngModel" [(ngModel)]="service.formData.password">
-                <div class="text-left text-danger" *ngIf="password.invalid && password.touched">
-                    Debes ingresar la contraseña </div>
-            </mat-form-field>
+                <div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
+                    <input class="input100" type="text" required minlength="2" type="text" class="form-control" name="username" #username="ngModel" [(ngModel)]="form.username">
+                    <span class="focus-input100" data-placeholder="Email"></span>
+                </div>
 
-            <br>
-            <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">ADD</button>
-        </form>
-      -->
+                <div class="wrap-input100 validate-input" data-validate="Enter password">
+                    <span class="btn-show-pass">
+            <i class="zmdi zmdi-eye"></i>
+          </span>
+                    <input class="input100" required minlength="6" type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="form.password" name="pass">
+                    <span class="focus-input100" data-placeholder="Password"></span>
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <div class="wrap-login100-form-btn">
+                        <div class="login100-form-bgbtn"></div>
+                        <button class="login100-form-btn" [disabled]="f.invalid">
+                              Iniciar Sesion
+            </button>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+-->

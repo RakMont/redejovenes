@@ -54,7 +54,7 @@ export class NavbarComponent implements OnInit {
     const dialogConfig=new MatDialogConfig();
     dialogConfig.disableClose=true;
     dialogConfig.autoFocus=true;
-    dialogConfig.width="40%";
+    dialogConfig.width="400px";
     this.dialog.open(LoginComponent,dialogConfig);
     this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
       this.router.navigate(["/"]));
