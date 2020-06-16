@@ -34,13 +34,13 @@
             </div>
             <div class="form-group">
                 <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">
-                    Login failed: {{ errorMessage }}
+                    error de Inicio de Sesion: {{ errorMessage }}
                 </div>
             </div>
         </form>
 
         <div class="alert alert-success" *ngIf="isLoggedIn">
-            Logged in as {{ roles }}.
+            Conectado como{{ roles }}.
         </div>
     </div>
 </div>
