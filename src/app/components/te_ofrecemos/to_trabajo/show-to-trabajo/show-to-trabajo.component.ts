@@ -48,12 +48,12 @@ export class ShowToTrabajoComponent implements OnInit {
 
     this.teofrecemosService.getTeOfrecemosTrabajo().subscribe(data =>{
       this.teofrecemos = data;
+      if(this.teofrecemos[0]!=null){
+        this.existelist=true;
+      }
       this.charge();
     });
-    if(this.teofrecemos!=null){
-      console.log("existe lista");
-      this.existeLista=true;
-    }
+
     this.isLoggedIn = !!this.tokenStorageService.getToken();
 
     if (this.isLoggedIn) {

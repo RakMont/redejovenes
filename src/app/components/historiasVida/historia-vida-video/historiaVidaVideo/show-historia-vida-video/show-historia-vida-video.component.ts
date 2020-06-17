@@ -34,6 +34,8 @@ export class ShowHistoriaVidaVideoComponent implements OnInit {
   showAdminBoard = false;
   showModeratorBoard = false;
   username: string;
+  existelist=false;
+
   savePlayer(player) {
     this.player = player;
     console.log('player instance', player.getVideoUrl());
@@ -53,6 +55,9 @@ export class ShowHistoriaVidaVideoComponent implements OnInit {
     this.historiaVidaVideoService.getHVV()
    .subscribe(data =>{
      this.historiasHVV = data;
+     if(this.historiasHVV[0]!=null){
+      this.existelist=true;
+    }
      this.charge();
    });
 

@@ -8,6 +8,10 @@
        <mat-icon>add_box</mat-icon>
       </button>
     </div>
+    <div class="noavailable" *ngIf="!existelist">
+
+        <img class="nfi" src="../../../../assets/notfound.png">
+    </div>
     <div *ngIf="teofrecemos">
         <mat-list *ngFor="let tob of teofrecemos">
             <mat-card>

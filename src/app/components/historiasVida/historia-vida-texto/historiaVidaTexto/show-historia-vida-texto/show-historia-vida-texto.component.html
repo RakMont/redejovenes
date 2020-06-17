@@ -1,19 +1,20 @@
 <div style="justify-content: center; text-align: center;">
     <h2 class="pt-4 h2-title">HISTORIAS DE VIDA TEXTO</h2>
 </div>
-<div class="container mb-0 p-4" >
+<div class="container2 mb-0 p-4">
     <div class="row">
         <div class="p-0">
             <div class="text-center m-0 d-flex flex-column justify-content-center">
-                <p>Aquí les compartimos las historias de los jóvenes que forman parte de Dejando Huellas.
-                    Son historias de inspiración, retos, alegrías, y aprendizajes. Esperamos que pueden servir como
-                    ejemplos de experiencias que demuestran que todos podemos salir adelante. No siempre es
-                    fácil pero si nos apoyamos todo es posible.
+                <hr class="decorator-hr">
+                <p>Aquí les compartimos las historias de los jóvenes que forman parte de Dejando Huellas. Son historias de inspiración, retos, alegrías, y aprendizajes. Esperamos que pueden servir como ejemplos de experiencias que demuestran que todos podemos
+                    salir adelante. No siempre es fácil pero si nos apoyamos todo es posible.
                 </p>
+                <hr class="decorator-hr">
             </div>
         </div>
     </div>
 </div>
+
 <div class="container">
     <div class="addbox-HVT" *ngIf="showAdminBoard">
         <button class="mt-2" mat-raised-button (click)="AddHVT()" class="btn mdc-button">
@@ -21,12 +22,15 @@
        <mat-icon>add_box</mat-icon>
       </button>
     </div>
+    <div class="noavailable" *ngIf="!existelist">
 
+        <img class="nfi" src="../../../../assets/notfound.png">
+    </div>
     <mat-list *ngFor="let hvt of historiasHVT">
         <mat-card>
             <hr class="decorator-hr">
             <mat-card-header [ngClass]="{'custom-card':true}">
-                    <h2>{{hvt.titulo}}</h2>
+                <h2>{{hvt.titulo}}</h2>
             </mat-card-header>
 
             <div class="options mb-0" fxFlex="10px" fxFlexAlign="center">
@@ -50,6 +54,6 @@
             <mat-card-footer>{{hvt.fecha}}</mat-card-footer>
             <hr class="decorator-hr">
         </mat-card>
-        
+
     </mat-list>
 </div>

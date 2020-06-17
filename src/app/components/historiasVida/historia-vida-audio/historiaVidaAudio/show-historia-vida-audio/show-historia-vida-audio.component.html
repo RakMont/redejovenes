@@ -5,10 +5,8 @@
     <div class="row">
         <div class="p-0">
             <div class="text-center m-0 d-flex flex-column justify-content-center">
-                <p>Aquí les compartimos las historias de los jóvenes que forman parte de Dejando Huellas.
-                    Son historias de inspiración, retos, alegrías, y aprendizajes. Esperamos que pueden servir como
-                    ejemplos de experiencias que demuestran que todos podemos salir adelante. No siempre es
-                    fácil pero si nos apoyamos todo es posible.
+                <p>Aquí les compartimos las historias de los jóvenes que forman parte de Dejando Huellas. Son historias de inspiración, retos, alegrías, y aprendizajes. Esperamos que pueden servir como ejemplos de experiencias que demuestran que todos podemos
+                    salir adelante. No siempre es fácil pero si nos apoyamos todo es posible.
                 </p>
             </div>
         </div>
@@ -21,29 +19,35 @@
             <mat-icon>add_box</mat-icon>
         </button>
     </div>
-    <mat-list *ngFor="let hvt of things">
-        <mat-card class="classcard">
-            <hr class="decorator-hr">
-            <mat-card-header>
-                <div mat-card-avatar class="example-header-image"></div>
-                <h2>{{hvt.titulo}}</h2>
-            </mat-card-header>
-            <div class="options mb-0" fxFlex="10px" fxFlexAlign="center">
-                <mat-card-actions *ngIf="showAdminBoard || showModeratorBoard">
-                    <button mat-icon-button (click)="edit_HVV(hvt)">
+    <div class="noavailable" *ngIf="!existelist">
+
+        <img class="nfi" src="../../../../assets/notfound.png">
+    </div>
+    <div *ngIf="existelist">
+        <mat-list *ngFor="let hvt of things">
+            <mat-card class="classcard">
+                <hr class="decorator-hr">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <h2>{{hvt.titulo}}</h2>
+                </mat-card-header>
+                <div class="options mb-0" fxFlex="10px" fxFlexAlign="center">
+                    <mat-card-actions *ngIf="showAdminBoard || showModeratorBoard">
+                        <button mat-icon-button (click)="edit_HVV(hvt)">
                         <mat-icon>edit</mat-icon>
                     </button>
-                    <button mat-icon-button color="warn" (click)="Delete(hvt)">
+                        <button mat-icon-button color="warn" (click)="Delete(hvt)">
                         <mat-icon>delete_forever</mat-icon>
                     </button>
-                </mat-card-actions>
-            </div>
-            <mat-card-content class="large mat-card-content">
-                <mat-basic-audio-player [audioUrl]="hvt.audio" [title]="hvt.fecha"
-                    [autoPlay]="false" muted="muted" [displayTitle]="msbapDisplayTitle" [displayVolumeControls]="true">
-                </mat-basic-audio-player>
-            </mat-card-content>
-            <hr class="decorator-hr">
-        </mat-card>
-    </mat-list>
+                    </mat-card-actions>
+                </div>
+                <mat-card-content class="large mat-card-content">
+                    <mat-basic-audio-player [audioUrl]="hvt.audio" [title]="hvt.fecha" [autoPlay]="false" muted="muted" [displayTitle]="msbapDisplayTitle" [displayVolumeControls]="true">
+                    </mat-basic-audio-player>
+                </mat-card-content>
+                <hr class="decorator-hr">
+            </mat-card>
+        </mat-list>
+    </div>
+
 </div>

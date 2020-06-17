@@ -39,6 +39,7 @@ private roles: string[];
   showAdminBoard = false;
   showModeratorBoard = false;
   username: string;
+  existelist=false;
 
   msbapTitle = 'Audio Title';
   msbapAudioUrl = '../../../../assets/HistoriaVidaAudio/euphoria.mp3';
@@ -59,6 +60,9 @@ private roles: string[];
         //auxiliar=this.audios[0].name;
        // console.log("this is ",this.hvaAudio);
        this.Convertlist();
+       if(this.things[0]!=null){
+        this.existelist=true;
+      }
 
       });
         this.historiaVidaAudioService.getHVA()
@@ -67,6 +71,7 @@ private roles: string[];
      this.aux=this.historiasHVA[0];
      console.log("this is ",this.aux);
     this.Convertlist();
+
    });
    this.isLoggedIn = !!this.tokenStorageService.getToken();
 

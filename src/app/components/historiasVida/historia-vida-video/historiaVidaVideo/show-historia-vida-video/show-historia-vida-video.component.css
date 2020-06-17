@@ -13,6 +13,26 @@
     text-align: center;
 }
 
+.nfi {
+    height: 120px;
+    margin-top: 20px;
+    margin-left: 20px;
+    position: absolute;
+}
+
+.noavailable {
+    text-align: left;
+    margin-bottom: 5%;
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.nfi {
+    max-width: 80%;
+    height: 80%;
+}
+
 div.hvv {
     background-size: cover;
     -webkit-background-size: cover;
@@ -53,6 +73,16 @@ div.hvv {
 .container {
     text-align: justify;
     width: 100%;
+    min-height: 100vh;
+}
+
+.container2 {
+    text-align: justify;
+    max-width: 100%;
+    margin-right: 5%;
+    margin-left: 5%;
+    align-content: center;
+    font-family: "Noto Sans", Helvetica, Arial, sans-serif;
 }
 
 .options {
@@ -97,12 +127,12 @@ div.hvv {
 .container {
     text-align: justify;
     font-family: "Noto Sans", Helvetica, Arial, sans-serif;
-    background-color:white;
+    background-color: white;
     margin-bottom: 10%;
     max-width: 85%;
 }
 
-.mdc-button{
+.mdc-button {
     background-color: #03A0C3;
     color: black;
     font-size: 17px;
@@ -136,7 +166,6 @@ h2 {
     font-size: xx-large;
 }
 
-
 p {
     font-size: 20px;
     justify-content: center;
@@ -144,9 +173,9 @@ p {
     font-family: 'Mission Gothic'
 }
 
-.decorator-hr{
-    height:4px;
-    border-width:0;
-    color:#952C6E;
-    background-color:#952C6E;
+.decorator-hr {
+    height: 4px;
+    border-width: 0;
+    color: #952C6E;
+    background-color: #952C6E;
 }

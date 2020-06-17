@@ -1,8 +1,8 @@
-.decorator-hr{
-    height:4px;
-    border-width:0;
-    color:#952C6E;
-    background-color:#952C6E;
+.decorator-hr {
+    height: 4px;
+    border-width: 0;
+    color: #952C6E;
+    background-color: #952C6E;
 }
 
 h2 {
@@ -27,19 +27,40 @@ img {
     height: 150px;
     margin-left: 25%;
     margin-bottom: 0%;
-
 }
 
 .container {
     text-align: justify;
     margin-bottom: 10%;
     max-width: 85%;
+    min-height: 80vh;
 }
-.mdc-button{
+
+.mdc-button {
     background-color: #03A0C3;
     color: black;
     font-size: 17px;
     font-family: 'Mission Gothic Bold';
+}
+
+.nfi {
+    height: 120px;
+    margin-top: 20px;
+    margin-left: 20px;
+    position: absolute;
+}
+
+.noavailable {
+    text-align: left;
+    margin-bottom: 5%;
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.nfi {
+    max-width: 80%;
+    height: 80%;
 }
 
 .tit {
@@ -105,9 +126,9 @@ hr.new4 {
 
 .custom-card {
     background: #ffffff;
-    /* fallback for old browsers 
+    /* fallback for old browsers
     background: -webkit-linear-gradient(to right, #96c93d, #00b09b);
-     Chrome 10-25, Safari 5.1-6 
+     Chrome 10-25, Safari 5.1-6
     background: linear-gradient(to right, #c228aa, #00AcDC);
      W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     margin: left;
@@ -144,7 +165,6 @@ hr.new4 {
 @media screen and (max-width: 1000px) {
     img {
         height: auto;
-
     }
     .mat-card {
         margin-left: -5%;
@@ -157,17 +177,17 @@ hr.new4 {
         min-height: 200px;
         margin-left: 0px;
     }
-    .image{
-        height: 90px; /* adjust as needed */
+    .image {
+        height: 90px;
+        /* adjust as needed */
         object-fit: contain;
         margin-left: 0px;
-        
     }
-    .mat-card-title{
+    .mat-card-title {
         margin-left: 120px;
         margin-top: -20px;
     }
-    .addbox-HVT{
+    .addbox-HVT {
         margin-top: 20px;
         margin-left: 0px;
     }

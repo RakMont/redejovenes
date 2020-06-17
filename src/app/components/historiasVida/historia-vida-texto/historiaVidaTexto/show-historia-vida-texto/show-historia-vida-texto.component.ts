@@ -31,6 +31,8 @@ export class ShowHistoriaVidaTextoComponent implements OnInit {
   showAdminBoard = false;
   showModeratorBoard = false;
   username: string;
+  existelist=false;
+
   constructor(private tokenStorageService: TokenStorageService,private snackBar:MatSnackBar,private historiaVidaTextoService: HistoriaVidaTextoService, private router: Router,private dialog: MatDialog) {
     this.historiaVidaTextoService.listen().subscribe((m:any)=>{
       console.log(m);
@@ -51,6 +53,9 @@ export class ShowHistoriaVidaTextoComponent implements OnInit {
     this.historiaVidaTextoService.getHVT()
    .subscribe(data =>{
      this.historiasHVT = data;
+     if(this.historiasHVT[0]!=null){
+      this.existelist=true;
+    }
      this.charge();
    });
    this.isLoggedIn = !!this.tokenStorageService.getToken();

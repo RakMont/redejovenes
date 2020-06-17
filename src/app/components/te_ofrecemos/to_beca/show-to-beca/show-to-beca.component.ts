@@ -30,6 +30,8 @@ export class ShowToBecaComponent implements OnInit {
   showModeratorBoard = false;
   username: string;
   dataSource=null;
+  existelist=false;
+
   constructor(private tokenStorageService: TokenStorageService,private snackBar:MatSnackBar,private teofrecemosService: TeofrecemosService, private router: Router,private dialog: MatDialog) {
     this.teofrecemosService.listen().subscribe((m:any)=>{
       console.log(m);
@@ -44,6 +46,9 @@ export class ShowToBecaComponent implements OnInit {
   ngOnInit() {
     this.teofrecemosService.getTeOfrecemosBeca().subscribe(data =>{
       this.teofrecemos = data;
+      if(this.teofrecemos[0]!=null){
+        this.existelist=true;
+      }
       this.charge();
     });
     this.isLoggedIn = !!this.tokenStorageService.getToken();

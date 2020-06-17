@@ -1,8 +1,25 @@
 .container {
     text-align: justify;
     margin-bottom: 10%;
-    max-width: 85%;
-    margin-bottom: 50vh;
+    width: 100%;
+    min-height: 100vh;
+    font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+}
+
+.container2 {
+    text-align: justify;
+    max-width: 100%;
+    margin-right: 5%;
+    margin-left: 5%;
+    align-content: center;
+    font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+}
+
+.mdc-button {
+    background-color: #03A0C3;
+    color: black;
+    font-size: 17px;
+    font-family: 'Mission Gothic Bold';
 }
 
 .addbox-HVT {
@@ -11,11 +28,51 @@
     margin-bottom: 5px;
 }
 
+h2 {
+    font-family: 'Mission Gothic Bold';
+    color: #952C6E;
+    font-size: xx-large;
+}
+
+p {
+    font-size: 20px;
+    justify-content: center;
+    text-align: justify;
+    font-family: 'Mission Gothic'
+}
+
 .mdc-button {
     background-color: #03A0C3;
     color: black;
     font-size: 17px;
     font-family: 'Mission Gothic Bold';
+}
+
+.decorator-hr {
+    height: 4px;
+    border-width: 0;
+    color: #952C6E;
+    background-color: #952C6E;
+}
+
+.nfi {
+    height: 120px;
+    margin-top: 20px;
+    margin-left: 20px;
+    position: absolute;
+}
+
+.noavailable {
+    text-align: left;
+    margin-bottom: 5%;
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.nfi {
+    max-width: 80%;
+    height: 80%;
 }
 
 .mat-card {
@@ -73,10 +130,10 @@
 }
 
 p {
-    font-size: 20px;
+    font-size: medium;
     justify-content: center;
     text-align: justify;
-    font-family: 'Mission Gothic'
+    font-family: 'Mission Gothic Ligth'
 }
 
 .decorator-hr {

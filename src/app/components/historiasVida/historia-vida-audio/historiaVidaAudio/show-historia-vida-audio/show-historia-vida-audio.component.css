@@ -1,8 +1,7 @@
-
 .example-header-image {
     background-image: url('https://img2.freepng.es/20190620/byr/kisspng-microphone-sound-computer-icons-clip-art-vector-gr-mic-a-svg-png-icon-free-download-411793-onlin-5d0c436f81bb67.2068817515610847835314.jpg');
     background-size: cover;
-  }
+}
 
 .mat-card-title {
     align-items: center;
@@ -50,7 +49,7 @@ source {
     margin-bottom: 20px;
 }
 
-.mdc-button{
+.mdc-button {
     background-color: #03A0C3;
     color: black;
     font-size: 17px;
@@ -61,13 +60,31 @@ source {
     margin-top: 1%;
 }
 
+.nfi {
+    height: 120px;
+    margin-top: 20px;
+    margin-left: 20px;
+    position: absolute;
+}
+
+.noavailable {
+    text-align: left;
+    margin-bottom: 5%;
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.nfi {
+    max-width: 80%;
+    height: 80%;
+}
+
 .new1 {
     /*color: white;*/
     height: 0px;
     border: 2px dashed;
 }
-
-
 
 .options {
     float: right;
@@ -75,18 +92,17 @@ source {
     /* margin-right: auto;*/
 }
 
-@media screen and (max-width: 800px){
-    .classcard{
+@media screen and (max-width: 800px) {
+    .classcard {
         width: 110%;
         margin-left: -20px;
     }
-    
-    .audioBox{
+    .audioBox {
         width: 100%;
         padding: 5px;
         box-sizing: border-box;
     }
-    .other{
+    .other {
         text-align: justify;
         width: 83%;
     }
@@ -105,11 +121,11 @@ p {
     font-family: 'Mission Gothic'
 }
 
-.decorator-hr{
-    height:4px;
-    border-width:0;
-    color:#952C6E;
-    background-color:#952C6E;
+.decorator-hr {
+    height: 4px;
+    border-width: 0;
+    color: #952C6E;
+    background-color: #952C6E;
 }
 
 h2 {

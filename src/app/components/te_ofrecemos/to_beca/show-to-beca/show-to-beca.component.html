@@ -8,6 +8,10 @@
        <mat-icon>add_box</mat-icon>
       </button>
     </div>
+    <div class="noavailable" *ngIf="!existelist">
+
+        <img class="nfi" src="../../../../assets/notfound.png">
+    </div>
     <mat-list *ngFor="let tob of teofrecemos">
         <mat-card>
             <hr class="decorator-hr">
@@ -28,7 +32,9 @@
             </div>
 
             <div class="other">
-                <mat-card-title><h2>{{tob.contacto}}</h2> </mat-card-title>
+                <mat-card-title>
+                    <h2>{{tob.contacto}}</h2>
+                </mat-card-title>
                 <p style="font-size: 20px; font-family: 'Mission Gothic';">{{tob.contenido}}</p>
             </div>
             <hr class="decorator-hr">
