@@ -50,6 +50,7 @@ export class ShowConvenioComponent implements OnInit {
   ngOnInit() {
     this.convenioservice.getConvenios().subscribe(response=>{
       this.photos=response;
+      console.log("this is "+this.photos[0]);
     this.Convertlist();
     if(this.things[0]!=null){
       this.existelist=true;
@@ -60,7 +61,7 @@ export class ShowConvenioComponent implements OnInit {
    this.convenios = data;
    this.aux=this.convenios[0];
    console.log("this is ",this.aux);
-   this.Convertlist();
+   //this.Convertlist();
  });
  this.isLoggedIn = !!this.tokenStorageService.getToken();
 

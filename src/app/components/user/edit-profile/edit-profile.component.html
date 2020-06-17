@@ -10,8 +10,9 @@
         <form #form="ngForm" (ngSubmit)="onSubmit()" autocomplete="off">
             <input readonly="readonly" type="hidden" class="form-control" name="id" #id="ngModel" [(ngModel)]="userservice.formData.id">
             <input readonly="readonly" type="hidden" class="form-control" name="perfil" #perfil="ngModel" [(ngModel)]="userservice.formData.perfil">
+            <input readonly="readonly" type="hidden" class="form-control" name="username" #username="ngModel" [(ngModel)]="userservice.formData.username">
 
-
+            <!--
             <mat-form-field class="example-full-width">
 
                 <mat-label>Nombre de usuario</mat-label>
@@ -20,7 +21,7 @@
                     Debes ingresar el nombre de usuario.
                 </div>
             </mat-form-field>
-            <br>
+            <br>-->
             <mat-form-field class="example-full-width">
                 <mat-label>
                     Nombre

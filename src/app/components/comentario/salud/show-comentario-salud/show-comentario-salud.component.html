@@ -10,7 +10,7 @@
                     <!-- <mat-card-subtitle>Usuario registrado {{hvt.role}}</mat-card-subtitle>-->
                 </div>
             </mat-card-header>
-            <mat-card-content>
+            <mat-card-content style="font-size: 20px; font-family: 'Mission Gothic';">
                 <mat-card-actions>
                     <button *ngIf="showAdminBoard || showModeratorBoard || username==hvt.username" mat-icon-button color="warn" (click)="Delete(hvt)">
                         <mat-icon>delete_forever</mat-icon>
@@ -19,7 +19,7 @@
                       <mat-icon>edit</mat-icon>
                   </button>
                 </mat-card-actions>
-                <p>
+                <p style="font-size: 20px; font-family: 'Mission Gothic';">
                     {{hvt.comentario}}
                 </p>
                 <br> {{hvt.fecha}}
@@ -51,13 +51,13 @@
                                     </mat-card-actions>
                                 </mat-card-header>
                                 <mat-card-content [ngClass]="{'custom-card-content':true}">
-                                    <h4>
+                                    <h4 style="font-size: 20px; font-family: 'Mission Gothic';">
                                         {{comen.comentario}}
                                     </h4>
                                 </mat-card-content>
                             </div>
                         </div>
-                        <mat-card-footer>{{comen.fecha}}</mat-card-footer>
+                        <mat-card-footer style="font-size: 20px; font-family: 'Mission Gothic';">{{comen.fecha}}</mat-card-footer>
                     </div>
                 </mat-list>
             </div>
