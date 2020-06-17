@@ -29,6 +29,7 @@ export class ShowToViviendaComponent implements OnInit {
   showModeratorBoard = false;
   username: string;
   dataSource=null;
+  existelist=false;
 
   constructor(private tokenStorageService: TokenStorageService,private snackBar:MatSnackBar,private teofrecemosService: TeofrecemosService, private router: Router,private dialog: MatDialog) {
     this.teofrecemosService.listen().subscribe((m:any)=>{
@@ -53,6 +54,9 @@ export class ShowToViviendaComponent implements OnInit {
   ngOnInit() {
     this.teofrecemosService.getTeOfrecemosVivienda().subscribe(data =>{
       this.teofrecemos = data;
+      if(this.teofrecemos[0]!=null){
+        this.existelist=true;
+      }
       this.charge();
     });
   }

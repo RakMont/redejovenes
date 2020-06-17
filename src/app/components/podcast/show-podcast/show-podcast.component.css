@@ -5,6 +5,14 @@ img {
     position: absolute;
 }
 
+.noavailable {
+    text-align: left;
+    margin-bottom: 5%;
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
 .mat-form-field {
     color: white;
     margin-right: 5%;
@@ -24,9 +32,11 @@ h1 {
     font-size: xx-large;
 }
 
-.noavailable {
-    width: 700px;
-    height: 370px;
+img {
+    /*width: 1200px;
+    height: 700px;*/
+    max-width: 80%;
+    height: 80%;
 }
 
 .example-header-image {
@@ -131,13 +141,14 @@ hr.new4 {
     color: #ffffff;
 }
 
-.mdc-button{
+.mdc-button {
     background-color: #952C6E;
     color: white;
     font-size: 17px;
     font-family: 'Mission Gothic Bold';
 }
-.mdc-button1{
+
+.mdc-button1 {
     background-color: #03A0C3;
     color: black;
     font-size: 17px;
@@ -158,7 +169,7 @@ hr.new4 {
     font-size: large;
 }
 
-.mt-4{
+.mt-4 {
     font-family: 'Mission Gothic Bold';
     font-size: large;
 }

@@ -134,7 +134,7 @@ export class ShowConvenioComponent implements OnInit {
        });
     });
    }
-
+   window.location.reload();
   }
 
   charge(){
