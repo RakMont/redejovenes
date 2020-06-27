@@ -7,7 +7,7 @@ import { Objetivos } from '../models/Objetivos';
 export class ObjetivoService {
 
   constructor(private http: HttpClient) { }
-  Url = 'http://localhost:8090/objetivos';
+  Url = 'https://redbkndspring.herokuapp.com/objetivos';
   formData: Objetivos;
   getObjetivos() {
     // obtengo todos los datos de esta url que hace ref a backend

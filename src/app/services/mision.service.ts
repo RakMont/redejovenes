@@ -8,7 +8,7 @@ import { Mision } from '../models/Mision';
 export class MisionService {
   // producto:Producto
   constructor(private http: HttpClient) { }
-  //Url = 'http://localhost:8090/misiones';
+
   Url = 'https://redbkndspring.herokuapp.com/misiones';
 
 
