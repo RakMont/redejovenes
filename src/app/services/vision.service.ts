@@ -7,7 +7,7 @@ import { Vision } from '../models/Vision';
 export class VisionService {
 
   constructor(private http: HttpClient) { }
-  Url = 'https://redbkndspring.herokuapp.com/visiones';
+  Url = 'https://cors-anywhere.herokuapp.com/https://redbkndspring.herokuapp.com/visiones';
   formData: Vision;
   getVision() {
     // obtengo todos los datos de esta url que hace ref a backend

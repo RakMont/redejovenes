@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
 export class ReferenteService {
 
   constructor(private http: HttpClient) { }
-  Url = 'https://redbkndspring.herokuapp.com/referentes';
+  Url = 'https://cors-anywhere.herokuapp.com/https://redbkndspring.herokuapp.com/referentes';
   formData: Referente;
   getReferenteId(id_vision:number){
     return this.http.get<Referente>(this.Url + "/" + id_vision);
