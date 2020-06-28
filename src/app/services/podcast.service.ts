@@ -10,7 +10,7 @@ import { historiaVidaTexto } from '../models/historiaVidaTexto-model';
 export class PodcastService {
 
   constructor(private http: HttpClient) { }
-  Url = 'http://localhost:8090/podcasts';
+  Url = 'https://cors-anywhere.herokuapp.com/https://redbkndspring.herokuapp.com/podcasts';
   formData:Podcast;
   hvaAudio: any=File;
   public podcasts:Podcast[];

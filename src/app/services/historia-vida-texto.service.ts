@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
 export class HistoriaVidaTextoService {
 
   constructor(private http: HttpClient) { }
-  Url = 'http://localhost:8090/historiasHVT';
+  Url = 'https://cors-anywhere.herokuapp.com/https://redbkndspring.herokuapp.com/historiasHVT';
   formData:historiaVidaTexto;
   getHVT() {
     // obtengo todos los datos de esta url que hace ref a backend

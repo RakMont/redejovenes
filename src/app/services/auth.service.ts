@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 import { Usuario } from '../models/Usuario';
 
-const AUTH_API = 'http://localhost:8090/api/auth/';
+const AUTH_API = 'https://cors-anywhere.herokuapp.com/https://redbkndspring.herokuapp.com/api/auth/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })

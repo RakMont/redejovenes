@@ -11,7 +11,7 @@ import { historiaVidaTexto } from '../models/historiaVidaTexto-model';
 export class HistoriaVidaAudioService {
 
   constructor(private http: HttpClient) { }
-  Url = 'http://localhost:8090/historiasHVA';
+  Url = 'https://cors-anywhere.herokuapp.com/https://redbkndspring.herokuapp.com/historiasHVA';
   formData:HistoriaVidaAudio;
   hvaAudio: any=File;
 

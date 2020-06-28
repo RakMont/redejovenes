@@ -11,7 +11,7 @@ import { historiaVidaTexto } from '../models/historiaVidaTexto-model';
 export class ConvenioService {
 
   constructor(private http: HttpClient) { }
-  Url = 'http://localhost:8090/convenios';
+  Url = 'https://cors-anywhere.herokuapp.com/https://redbkndspring.herokuapp.com/convenios';
   formData:Convenio;
   ConvImage: any=File;
 

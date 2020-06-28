@@ -5,7 +5,7 @@ import{Subject}from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
-const API_URL = 'http://localhost:8090/api/test/';
+const API_URL = 'https://cors-anywhere.herokuapp.com/https://redbkndspring.herokuapp.com/api/test/';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
