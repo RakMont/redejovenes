@@ -182,10 +182,8 @@ selectedValue: string;
     if(confirm('Estas seguro de eliminar ? ')){
      this.podcastService.deletePodcast(podcast)
      .subscribe(data=>{
-     // this.refresh();
        this.podcasts=this.podcasts.filter(p=>p.id_podcast!==podcast.id_podcast);
        this.audios=this.audios.filter(p=>p!==podcast);
-      // this.Convertlist();
        this.things=this.things.filter(t=>t!==some);
        this.snackBar.open('Eliminado Correctamente','',{
        duration:5000,

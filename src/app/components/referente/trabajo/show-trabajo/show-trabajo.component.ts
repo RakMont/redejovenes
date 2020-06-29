@@ -37,6 +37,7 @@ export class ShowTrabajoComponent implements OnInit {
     .subscribe(data =>{
       this.referente = data;
       this.link=this.referente.video_referente;
+      console.log('es to es '+this.referente);
     });
     this.isLoggedIn = !!this.tokenStorageService.getToken();
 

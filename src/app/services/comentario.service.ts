@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
 export class ComentarioService {
 
   constructor(private http: HttpClient) { }
-  Url = 'https://cors-anywhere.herokuapp.com/https://redbkndspring.herokuapp.com/comentarios';
+  Url = 'https://secondbackend.herokuapp.com/comentarios';
   formData:Comentario;
 
   listComentariosRawTrabajo() {

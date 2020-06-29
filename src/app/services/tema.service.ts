@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
 export class TemaService {
 
   constructor(private http: HttpClient) { }
-  Url = 'https://cors-anywhere.herokuapp.com/https://redbkndspring.herokuapp.com/temas';
+  Url = 'https://secondbackend.herokuapp.com/temas';
   formData:Tema;
   getTema() {
     // obtengo todos los datos de esta url que hace ref a backend

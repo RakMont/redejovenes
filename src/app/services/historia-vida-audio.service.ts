@@ -11,23 +11,23 @@ import { historiaVidaTexto } from '../models/historiaVidaTexto-model';
 export class HistoriaVidaAudioService {
 
   constructor(private http: HttpClient) { }
-  Url = 'https://redbkndspring.herokuapp.com/historiasHVA';
+  Url = 'https://secondbackend.herokuapp.com/historiasHVA';
   formData:HistoriaVidaAudio;
   hvaAudio: any=File;
 
   saveAudio(formData:FormData):Observable<any>{
-    return this.http.post('https://redbkndspring.herokuapp.com/historiasHVA/saveAudioFile',formData);
+    return this.http.post(this.Url+'/saveAudioFile',formData);
   }
 
   updateHVT(formData:FormData):Observable<any>{
     //let hva: HistoriaVidaAudio;
 
-    return this.http.post('https://redbkndspring.herokuapp.com/historiasHVA/UpdateAudioFile', formData);
+    return this.http.post(this.Url+'/UpdateAudioFile', formData);
   }
 
 
 getHVAAudios():Observable<any>{
-    return this.http.get('https://redbkndspring.herokuapp.com/historiasHVA/getHVAAudios');
+    return this.http.get(this.Url+'/getHVAAudios');
 
   }
 

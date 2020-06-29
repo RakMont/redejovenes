@@ -58,8 +58,7 @@ export class EditViviendaComponent implements OnInit {
     .getReferenteVivienda().subscribe(data=>{
       this.referente=data;
     });
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
-    this.router.navigate(["showRefVivienda"]));
+
   }
 
 }

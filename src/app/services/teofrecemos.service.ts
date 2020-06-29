@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
 export class TeofrecemosService {
 
   constructor(private http: HttpClient) { }
-  Url = 'https://cors-anywhere.herokuapp.com/https://redbkndspring.herokuapp.com/teOfrecemos';
+  Url = 'https://secondbackend.herokuapp.com/teOfrecemos';
   formData: TeOfrecemos;
 
 

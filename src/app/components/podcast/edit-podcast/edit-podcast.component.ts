@@ -117,6 +117,7 @@ export class EditPodcastComponent implements OnInit {
         this.things.push({ audio:audio,titulo:this.aux.titulo,fecha:this.aux.fecha,id_podcast:this.aux.id_podcast,archivoMP3:this.aux.archivoMP3,descripcion:this.aux.descripcion});
         c=c+1;
       }
+      window.location.reload();
 
     }
 

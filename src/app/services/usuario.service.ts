@@ -11,7 +11,7 @@ import {Observable} from 'rxjs';
 export class UsuarioService {
 
   constructor(private http: HttpClient) { }
-  Url = 'https://cors-anywhere.herokuapp.com/https://redbkndspring.herokuapp.com/api/auth/';
+  Url = 'https://secondbackend.herokuapp.com/api/auth/';
   formData:Usuario;
   getUserProfile(id:number){
     return this.http.get<Usuario>(this.Url + "/getprofile" + id);

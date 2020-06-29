@@ -9,7 +9,7 @@ export class MisionService {
   // producto:Producto
   constructor(private http: HttpClient) { }
 
-  Url = 'https://cors-anywhere.herokuapp.com/https://redbkndspring.herokuapp.com/misiones';
+  Url = 'https://secondbackend.herokuapp.com/misiones';
 
 
   formData: Mision;

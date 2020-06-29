@@ -62,12 +62,12 @@ export class AddHistoriaVidaAudioComponent implements OnInit {
       this.service.saveAudio(formData).subscribe((res)=>{
         this.resetForm(form);
         this.dialogbox.close();
-
+        this.charge();
       this.service.filter("Register click");
         this.snackBar.open('Añadido correctamente','',{
           duration:5000,
           verticalPosition:'top'
-      });
+      })
       })
       this.service.getHVAAudios().subscribe(response=>{
         this.audios=response;
@@ -79,8 +79,9 @@ export class AddHistoriaVidaAudioComponent implements OnInit {
      this.historiasHVA = data;
 
    });
-
-    }
+   this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+   this.router.navigate(["showHVA"]));
+}
 
     Convertlist(){
       let c: number = 0;
@@ -90,7 +91,10 @@ export class AddHistoriaVidaAudioComponent implements OnInit {
         this.things.push({audio:audio,titulo:this.aux.titulo,fecha:this.aux.fecha,id_HVA:this.aux.id_HVA,archivo_mp3:this.aux.archivo_mp3});
         c=c+1;
       }
+
       window.location.reload();
+
+
     }
   onSelectFile(event){
     //const file=event.target.file;

@@ -11,22 +11,22 @@ import { historiaVidaTexto } from '../models/historiaVidaTexto-model';
 export class ConvenioService {
 
   constructor(private http: HttpClient) { }
-  Url = 'https://cors-anywhere.herokuapp.com/https://redbkndspring.herokuapp.com/convenios';
+  Url = 'https://secondbackend.herokuapp.com/convenios';
   formData:Convenio;
   ConvImage: any=File;
 
   saveConvenioFile(formData:FormData):Observable<any>{
-    return this.http.post('https://cors-anywhere.herokuapp.com/https://redbkndspring.herokuapp.com/convenios/saveConvenioFile',formData);
+    return this.http.post(this.Url+'/saveConvenioFile',formData);
   }
 
   UpdateConvenioFile(formData:FormData):Observable<any>{
 
-    return this.http.post('https://cors-anywhere.herokuapp.com/https://redbkndspring.herokuapp.com/convenios/UpdateConvenioFile', formData);
+    return this.http.post(this.Url+'/UpdateConvenioFile', formData);
   }
 
 
   getConvenios():Observable<any>{
-    return this.http.get('https://cors-anywhere.herokuapp.com/https://redbkndspring.herokuapp.com/convenios/getConvenios');
+    return this.http.get(this.Url+'/getConvenios');
 
   }
 
