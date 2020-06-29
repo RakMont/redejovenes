@@ -58,6 +58,7 @@ onSubmit(form:NgForm){
       duration:5000,
       verticalPosition:'top'
     });
+    window.location.reload();
   })
 
 

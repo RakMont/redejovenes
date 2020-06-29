@@ -65,30 +65,8 @@ export class EditperfilComponent implements OnInit {
         verticalPosition:'top'
     });
     })
-    /*this.service.editProfile(this.service.formData).subscribe(
-       data => {
-         console.log(data);
-         this.isSuccessful = true;
-         this.isSignUpFailed = false;
-       },
-       err => {
-         this.errorMessage = err.error.message;
-         this.isSignUpFailed = true;
-       }
-     );
 
-    if(this.isSuccessful==true){
-             this.dialogbox.close();
-             this.service.filter("Register click");
-             this.snackBar.open('Editado con exito','',{
-         duration:5000,
-         verticalPosition:'top'
-       })
-             this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
-         this.router.navigate(["user"]));
-       }
-*/
-window.location.reload();
+    window.location.reload();
 
    }
 

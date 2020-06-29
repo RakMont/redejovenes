@@ -96,6 +96,8 @@ export class ShowToTrabajoComponent implements OnInit {
         });
      });
     }
+
+
    }
 
   AddTrabajo(){
@@ -104,5 +106,9 @@ export class ShowToTrabajoComponent implements OnInit {
     dialogConfig.autoFocus=true;
     dialogConfig.width="70%";
     this.dialog.open(AddToTrabajoComponent,dialogConfig);
+
+
   }
+
+
 }

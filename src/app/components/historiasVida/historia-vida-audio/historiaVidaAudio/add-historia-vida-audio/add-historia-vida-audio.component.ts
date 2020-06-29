@@ -28,7 +28,6 @@ export class AddHistoriaVidaAudioComponent implements OnInit {
     });
   }
    listData:MatTableDataSource<any>;
-   //showHistory:ShowHistoriaVidaAudioComponent;
   public hvaAudio: any=File;
   public audios:any=[];
   historiasHVA:HistoriaVidaAudio[];
@@ -37,8 +36,6 @@ export class AddHistoriaVidaAudioComponent implements OnInit {
 
   things=[];
    @ViewChild(MatSort, {static: true}) sort: MatSort;
-  // variable : ViewChild(MyChildComponent)
-  // @ViewChild(ShowHistoriaVidaAudioComponent,{static:true})variable:ShowHistoriaVidaAudioComponent;
   ngOnInit(): void {
     this.resetForm();
   }
@@ -58,7 +55,6 @@ export class AddHistoriaVidaAudioComponent implements OnInit {
     }
  }
     onSubmit(form:NgForm){
-      //console.log(form.value);
       const audio = form.value;
       const formData=new FormData;
       formData.append('audio',JSON.stringify(audio));
@@ -81,11 +77,9 @@ export class AddHistoriaVidaAudioComponent implements OnInit {
       this.service.getHVA()
           .subscribe(data =>{
      this.historiasHVA = data;
-    // this.convert();
-     console.log("this is ",this.aux);
+
    });
-   /*this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
-      this.router.navigate(["showHVA"]));*/
+
     }
 
     Convertlist(){

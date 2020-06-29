@@ -10,7 +10,7 @@ import { historiaVidaTexto } from '../models/historiaVidaTexto-model';
 export class PodcastService {
 
   constructor(private http: HttpClient) { }
-  Url = 'https://cors-anywhere.herokuapp.com/https://redbkndspring.herokuapp.com/podcasts';
+  Url = 'https://redbkndspring.herokuapp.com/podcasts';
   formData:Podcast;
   hvaAudio: any=File;
   public podcasts:Podcast[];
@@ -18,23 +18,23 @@ export class PodcastService {
 
 
   savePodcast(formData:FormData):Observable<any>{
-    return this.http.post('http://localhost:8090/podcasts/savePodcastFile',formData);
+    return this.http.post('https://redbkndspring.herokuapp.com/podcasts/savePodcastFile',formData);
   }
 
   UpdatePodcastFile(formData:FormData):Observable<any>{
     //let hva: HistoriaVidaAudio;
 
-    return this.http.post('http://localhost:8090/podcasts/UpdatePodcastFile', formData);
+    return this.http.post('https://redbkndspring.herokuapp.com/podcasts/UpdatePodcastFile', formData);
   }
 
 
   getPodcastAllAudios():Observable<any>{
-    this.audios=this.http.get('http://localhost:8090/podcasts/getPodcastAllAudios');
-    return this.http.get('http://localhost:8090/podcasts/getPodcastAllAudios');
+    this.audios=this.http.get('https://redbkndspring.herokuapp.com/podcasts/getPodcastAllAudios');
+    return this.http.get('https://redbkndspring.herokuapp.com/podcasts/getPodcastAllAudios');
 
   }
   getPodcastAudiosByTema(id_tema:number):Observable<any>{
-    return this.http.get('http://localhost:8090/podcasts/getPodcastAudiosByTema/'+ id_tema);
+    return this.http.get('https://redbkndspring.herokuapp.com/podcasts/getPodcastAudiosByTema/'+ id_tema);
 
   }
   getPodcast() {

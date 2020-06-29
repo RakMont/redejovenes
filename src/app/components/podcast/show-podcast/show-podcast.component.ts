@@ -193,7 +193,7 @@ selectedValue: string;
        });
     });
    }
-   window.location.reload();
+
 
 
   }

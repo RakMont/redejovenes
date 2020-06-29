@@ -16,7 +16,7 @@ import {ViewChild}from '@angular/core';
 })
 export class AddToBecaComponent implements OnInit {
 
-  constructor(private snackBar:MatSnackBar, private router: Router,public dialogbox: MatDialogRef<AddToBecaComponent>, public service: TeofrecemosService) { 
+  constructor(private snackBar:MatSnackBar, private router: Router,public dialogbox: MatDialogRef<AddToBecaComponent>, public service: TeofrecemosService) {
     this.service.listen().subscribe((m:any)=>{
       console.log(m);
       this.charge();
@@ -24,7 +24,7 @@ export class AddToBecaComponent implements OnInit {
     });
   }
 
-  listData:MatTableDataSource<any>; 
+  listData:MatTableDataSource<any>;
 
   ngOnInit(): void {
     this.resetForm();
@@ -54,6 +54,7 @@ export class AddToBecaComponent implements OnInit {
         duration:5000,
         verticalPosition:'top'
       });
+      window.location.reload();
     })
   }
 

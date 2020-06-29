@@ -16,15 +16,15 @@ import {ViewChild}from '@angular/core';
 })
 export class AddToTrabajoComponent implements OnInit {
 
-  constructor(private snackBar:MatSnackBar, private router: Router,public dialogbox: MatDialogRef<AddToTrabajoComponent>, public service: TeofrecemosService) { 
+  constructor(private snackBar:MatSnackBar, private router: Router,public dialogbox: MatDialogRef<AddToTrabajoComponent>, public service: TeofrecemosService) {
     this.service.listen().subscribe((m:any)=>{
       console.log(m);
       this.charge();
 
     });
   }
-  
-  listData:MatTableDataSource<any>; 
+
+  listData:MatTableDataSource<any>;
 
   ngOnInit(): void {
     this.resetForm();
@@ -54,7 +54,9 @@ export class AddToTrabajoComponent implements OnInit {
         duration:5000,
         verticalPosition:'top'
       });
+      window.location.reload();
     })
+
   }
 
   charge(){

@@ -84,6 +84,8 @@ export class EditHistoriaVidaAudioComponent implements OnInit {
  });
  this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
     this.router.navigate(["showHVA"]));
+    window.location.reload();
+
   }
 
   Convertlist(){

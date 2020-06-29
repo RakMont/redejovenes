@@ -16,17 +16,17 @@ export class ConvenioService {
   ConvImage: any=File;
 
   saveConvenioFile(formData:FormData):Observable<any>{
-    return this.http.post('http://localhost:8090/convenios/saveConvenioFile',formData);
+    return this.http.post('https://cors-anywhere.herokuapp.com/https://redbkndspring.herokuapp.com/convenios/saveConvenioFile',formData);
   }
 
   UpdateConvenioFile(formData:FormData):Observable<any>{
 
-    return this.http.post('http://localhost:8090/convenios/UpdateConvenioFile', formData);
+    return this.http.post('https://cors-anywhere.herokuapp.com/https://redbkndspring.herokuapp.com/convenios/UpdateConvenioFile', formData);
   }
 
 
   getConvenios():Observable<any>{
-    return this.http.get('http://localhost:8090/convenios/getConvenios');
+    return this.http.get('https://cors-anywhere.herokuapp.com/https://redbkndspring.herokuapp.com/convenios/getConvenios');
 
   }
 
