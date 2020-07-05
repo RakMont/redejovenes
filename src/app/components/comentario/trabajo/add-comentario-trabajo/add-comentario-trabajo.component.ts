@@ -80,7 +80,7 @@ onSubmit(){
     });
   })
 
-  window.location.reload();
+  //window.location.reload();
 
 }
 }

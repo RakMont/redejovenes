@@ -55,11 +55,13 @@ export class AddHistoriaVidaAudioComponent implements OnInit {
     }
  }
     onSubmit(form:NgForm){
+      let c:string=null;
       const audio = form.value;
       const formData=new FormData;
       formData.append('audio',JSON.stringify(audio));
       formData.append('file',this.hvaAudio);
       this.service.saveAudio(formData).subscribe((res)=>{
+        c=res;
         this.resetForm(form);
         this.dialogbox.close();
         this.charge();
@@ -68,19 +70,13 @@ export class AddHistoriaVidaAudioComponent implements OnInit {
           duration:5000,
           verticalPosition:'top'
       })
+        if(c!=null){
+        console.log('this is the result'+c);
+        window.location.reload();
+      }
       })
-      this.service.getHVAAudios().subscribe(response=>{
-        this.audios=response;
-        this.Convertlist();
 
-      });
-      this.service.getHVA()
-          .subscribe(data =>{
-     this.historiasHVA = data;
 
-   });
-   this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
-   this.router.navigate(["showHVA"]));
 }
 
     Convertlist(){
@@ -91,15 +87,9 @@ export class AddHistoriaVidaAudioComponent implements OnInit {
         this.things.push({audio:audio,titulo:this.aux.titulo,fecha:this.aux.fecha,id_HVA:this.aux.id_HVA,archivo_mp3:this.aux.archivo_mp3});
         c=c+1;
       }
-
-      window.location.reload();
-
-
     }
   onSelectFile(event){
-    //const file=event.target.file;
     const file=event.target.files[0];
-    console.log(file);
     this.hvaAudio=file;
   }
     charge(){

@@ -7,5 +7,4 @@ export class Comentario{
   user:Usuario;
   id_comentario_ref : number;
   referente:number;
-
 }

@@ -7,17 +7,17 @@
                 </div>
                 <div class="desc">
                     <mat-card-title>{{hvt.nombre}}</mat-card-title>
-                    <!-- <mat-card-subtitle>Usuario registrado {{hvt.role}}</mat-card-subtitle>-->
+                    <mat-card-subtitle>{{hvt.role}}</mat-card-subtitle>
                 </div>
             </mat-card-header>
             <mat-card-content>
                 <mat-card-actions>
                     <button *ngIf="showAdminBoard || showModeratorBoard || username==hvt.username" mat-icon-button color="warn" (click)="Delete(hvt)">
-                      <mat-icon>delete_forever</mat-icon>
-                  </button>
-                    <button *ngIf="username==hvt.username" mat-icon-button (click)="edit_HVT(hvt)">
-                    <mat-icon>edit</mat-icon>
+                    <mat-icon>delete_forever</mat-icon>
                 </button>
+                    <button *ngIf="username==hvt.username" mat-icon-button (click)="edit_HVT(hvt)">
+                  <mat-icon>edit</mat-icon>
+              </button>
                 </mat-card-actions>
                 <p style="font-size: 20px; font-family: 'Mission Gothic';">
                     {{hvt.comentario}}
@@ -39,15 +39,15 @@
                                     </div>
                                     <div class="desc">
                                         <mat-card-title>{{comen.nombre}}</mat-card-title>
-                                        <!-- <mat-card-subtitle>Usuario registrado</mat-card-subtitle>-->
+                                        <mat-card-subtitle>{{comen.role}}</mat-card-subtitle>
                                     </div>
                                     <mat-card-actions>
                                         <button *ngIf="showAdminBoard || showModeratorBoard || username==comen.username" mat-icon-button color="warn" (click)="Delete(comen)">
-                                        <mat-icon>delete_forever</mat-icon>
-                                    </button>
-                                        <button *ngIf="username==comen.username" mat-icon-button (click)="edit_HVT(comen)">
-                                      <mat-icon>edit</mat-icon>
+                                      <mat-icon>delete_forever</mat-icon>
                                   </button>
+                                        <button *ngIf="username==comen.username" mat-icon-button (click)="edit_HVT(comen)">
+                                    <mat-icon>edit</mat-icon>
+                                </button>
                                     </mat-card-actions>
                                 </mat-card-header>
                                 <mat-card-content [ngClass]="{'custom-card-content':true}">

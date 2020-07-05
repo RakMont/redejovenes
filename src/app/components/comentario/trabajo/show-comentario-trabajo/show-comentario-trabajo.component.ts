@@ -22,8 +22,11 @@ import { Usuario } from 'src/app/models/Usuario';
   styleUrls: ['./show-comentario-trabajo.component.css']
 })
 export class ShowComentarioTrabajoComponent implements OnInit {
-  comentariosRaw:Comentario[];
-  comentarios:Comentario[];
+  //comentariosRaw:Comentario[];
+  public comentariosRaw:any[]
+  public comentarios:any[]
+
+  //comentarios:Comentario[];
   things=[];
   things2=[];
 
@@ -43,7 +46,7 @@ export class ShowComentarioTrabajoComponent implements OnInit {
   username: string;
   constructor(private tokenStorageService: TokenStorageService,private snackBar:MatSnackBar,private service: ComentarioService, private router: Router,private dialog: MatDialog) {
     this.service.listen().subscribe((m:any)=>{
-      console.log(m);
+     // console.log(m);
 
 
     });
@@ -102,28 +105,31 @@ export class ShowComentarioTrabajoComponent implements OnInit {
       let vec;
       let a;
       for(let photo of this.comentariosRaw){
-        //console.log(photo);
-        this.aux=photo.user.nombre;
-        this.aux2=this.photos[c];
-        /*a=photo.user.roles[0];
-        vec=a.includes('ROLE_ADMIN');
-        console.log(this.aux+vec);
-        vec=photo.user.roles.includes('1');
-        console.log(this.aux+vec);
-        vec=photo.user.roles.includes('2');
-        console.log(this.aux+vec);*/
-        this.things.push({role:photo.user.roles[0],profile:this.aux2,comentario:photo.comentario,id_comentario:photo.id_comentario,nombre:this.aux,username:photo.user.username,fecha:photo.fecha});
-        c=c+1;
+       //console.log(photo.userProfileResponse);
+       if(photo.userProfileResponse.roles.includes('ROLE_ADMIN') || photo.userProfileResponse.roles.includes('ROLE_MODERATOR')){
+         this.aux='Administrador';
+       }
+       else{
+         this.aux='Usuario Registrado';
+       }
+       this.aux2=this.photos[c];
+       this.things.push({role:this.aux,profile:this.aux2,comentario:photo.comentario,id_comentario:photo.id_comentario,nombre:photo.userProfileResponse.nombre,username:photo.userProfileResponse.username,fecha:photo.fecha});
+       c = c + 1;
+
       }
 
     }
     Convertlist2(){
       let c: number = 0;
       for(let photo of this.comentarios){
-        this.aux=photo.user.nombre;
+        if(photo.userProfileResponse.roles.includes('ROLE_ADMIN') || photo.userProfileResponse.roles.includes('ROLE_MODERATOR')){
+          this.aux='Administrador';
+        }
+        else{
+          this.aux='Usuario Registrado';
+        }
         this.aux2=this.photos2[c];
-        this.things2.push({id_comentario_ref:photo.id_comentario_ref,profile:this.aux2,comentario:photo.comentario,id_comentario:photo.id_comentario,username:photo.user.username,nombre:this.aux,fecha:photo.fecha});
-        //console.log(this.things2[c]);
+        this.things2.push({role:this.aux,id_comentario_ref:photo.id_comentario_ref,profile:this.aux2,comentario:photo.comentario,id_comentario:photo.id_comentario,username:photo.userProfileResponse.username,nombre:photo.userProfileResponse.nombre,fecha:photo.fecha});
         c=c+1;
 
 
@@ -166,6 +172,7 @@ export class ShowComentarioTrabajoComponent implements OnInit {
       id_comentario_ref:id,
       referente:0,
       user:new Usuario
+
     }
     const dialogConfig=new MatDialogConfig();
     dialogConfig.disableClose=true;
