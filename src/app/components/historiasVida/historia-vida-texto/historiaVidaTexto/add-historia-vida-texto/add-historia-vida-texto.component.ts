@@ -48,21 +48,17 @@ this.service.formData={
 }
 }
 onSubmit(form:NgForm){
-  let c=null;
+  //console.log(form.value);
   //this.Guardar();
   this.service.createHVT(form.value).subscribe(res=>{
     this.resetForm(form);
-    c=res;
+    this.dialogbox.close();
   this.service.filter("Register click");
     this.snackBar.open('Añadido correctamente','',{
       duration:5000,
       verticalPosition:'top'
     });
-    if(c!=null){
-      console.log('this is the result'+c);
-      this.dialogbox.close();
-      window.location.reload();
-    }
+
   })
 
 
@@ -77,4 +73,3 @@ charge(){
 }
 
 }
-

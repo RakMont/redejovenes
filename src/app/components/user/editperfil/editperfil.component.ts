@@ -52,7 +52,9 @@ export class EditperfilComponent implements OnInit {
    onSubmit(){
     let c=null;
     const formData=new FormData;
+    this.service.formData.email=this.service.formData.email+'@gmail.com';
     const user = this.service.formData;
+
     console.log(this.service.formData);
     formData.append('user',JSON.stringify(user));
     formData.append('photo',this.hvaAudio);
@@ -76,7 +78,7 @@ export class EditperfilComponent implements OnInit {
     }
     })
 
-    //window.location.reload();
+    window.location.reload();
 
    }
 
