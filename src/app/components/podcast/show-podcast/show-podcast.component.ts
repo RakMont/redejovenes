@@ -189,6 +189,10 @@ selectedValue: string;
        duration:5000,
          verticalPosition:'top'
        });
+       if(data!=null){
+        window.location.reload();
+
+       }
     });
    }
 

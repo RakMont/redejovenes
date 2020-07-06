@@ -76,21 +76,20 @@ export class AddPodcastComponent implements OnInit {
       formData.append('file',this.hvaAudio);
       this.service.savePodcast(formData).subscribe((res)=>{
         //this.router.navigate([ "showPodcast" ]);
-        this.resetForm(form);
+        //this.resetForm(form);
         c=res;
         //this.charge();
-
       this.service.filter("Register click");
         this.snackBar.open('Añadido correctamente','',{
           duration:5000,
           verticalPosition:'top'
       });
       if(c!=null){
-        console.log('this is the result'+c);
+       // console.log('this is the result'+c);
         this.dialogbox.close();
         window.location.reload();
       }
-      })
+     /* })
       this.service.getPodcastAllAudios().subscribe(response=>{
         this.audios=response;
         this.hvaAudio=this.audios[0];
@@ -99,7 +98,7 @@ export class AddPodcastComponent implements OnInit {
       });
       this.service.getPodcast()
         .subscribe(data =>{
-     this.podcasts = data;
+     this.podcasts = data;*/
 
     });
       /*this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
