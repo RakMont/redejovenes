@@ -51,20 +51,27 @@ export class Addlev2comentarytrabajoComponent implements OnInit {
     this.dialogbox.close();
     }
     onSubmit(){
+      let c=null;
       //this.Guardar();
       this.service.formData.user=this.userprof;
-      console.log(this.service.formData);
+     // console.log(this.service.formData);
 
-      this.service.agregarComentarioTrabajo(this.service.formData).subscribe(res=>{
-        this.dialogbox.close();
+      this.service.agregarComentarioTrabajo(this.service.formData).subscribe((res)=>{
+        c=res;
+
       this.service.filter("Register click");
         this.snackBar.open('Añadido correctamente','',{
           duration:5000,
           verticalPosition:'top'
         });
+        if(c!=null){
+          this.dialogbox.close();
+          console.log('this is the result'+c);
+          window.location.reload();
+        }
       })
 
-      window.location.reload();
+      //window.location.reload();
 
     }
 }

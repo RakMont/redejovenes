@@ -53,6 +53,7 @@ export class EditConvenioComponent implements OnInit {
     }
  }
   onSubmit(form:NgForm){
+    let c=null;
     console.log("llega aqui",this.service.ConvImage);
     const audio = form.value;
     const formData=new FormData;
@@ -61,12 +62,17 @@ export class EditConvenioComponent implements OnInit {
     formData.append('file',this.hvaAudio);
     this.service.UpdateConvenioFile(formData).subscribe((res)=>{
       //this.resetForm(form);
-      this.dialogbox.close();
+      c=res;
       this.service.filter("Register click");
       this.snackBar.open('Editado con exito','',{
         duration:5000,
         verticalPosition:'top'
       })
+      if(c!=null){
+        console.log('this is the result'+c);
+        this.dialogbox.close();
+        window.location.reload();
+      }
     })
     this.service.getConvenios().subscribe(response=>{
       this.photos=response;

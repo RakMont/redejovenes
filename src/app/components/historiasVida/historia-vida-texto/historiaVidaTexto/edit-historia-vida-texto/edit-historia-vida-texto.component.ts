@@ -41,9 +41,11 @@ export class EditHistoriaVidaTextoComponent implements OnInit {
     this.dialogbox.close();
   }
   onSubmit(form:NgForm){
+    let c=null;
+
     this.service.updateHVT(form.value).subscribe(res=>
     {
-      this.dialogbox.close();
+      c=res;
       this.service.filter("Register click");
       this.snackBar.open('Editado con exito','',{
         duration:5000,

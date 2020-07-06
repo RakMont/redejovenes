@@ -65,21 +65,28 @@ export class EditPodcastComponent implements OnInit {
     }
  }
   onSubmit(form:NgForm){
+    let c=null;
+
     const podcast = form.value;
     const formData=new FormData;
     formData.append('podcast',JSON.stringify(podcast));
     formData.append('file',this.hvaAudio);
     this.service.UpdatePodcastFile(formData).subscribe((res)=>{
       this.resetForm(form);
-      this.dialogbox.close();
+      c=res;
       this.charge();
 
-      this.dialogbox.close();
+      //this.dialogbox.close();
       this.service.filter("Register click");
       this.snackBar.open('Editado con exito','',{
         duration:5000,
         verticalPosition:'top'
       })
+      if(c!=null){
+        console.log('this is the result'+c);
+        this.dialogbox.close();
+        window.location.reload();
+      }
     })
     this.service.getPodcastAllAudios().subscribe(response=>{
       this.audios=response;

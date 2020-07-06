@@ -64,11 +64,11 @@
             </div>
             <mat-form-field class="example-full-width">
                 <mat-label>
-                    Correo
+                    Apodo
                 </mat-label>
                 <input matInput required minlength="2" type="text" class="form-control" name="email" #email="ngModel" [(ngModel)]="userservice.formData.email">
                 <div class="text-left text-danger" *ngIf="email.invalid && email.touched">
-                    Debes ingresar el Correo.
+                    Debes ingresar el Apodo.
                 </div>
             </mat-form-field>
             <mat-form-field class="example-full-width">

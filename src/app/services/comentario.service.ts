@@ -9,8 +9,8 @@ import {Observable} from 'rxjs';
 export class ComentarioService {
 
   constructor(private http: HttpClient) { }
- // Url = 'https://secondbackend.herokuapp.com/comentarios';
-  Url = 'http://localhost:8090/comentarios';
+  Url = 'https://secondbackend.herokuapp.com/comentarios';
+  //Url = 'http://localhost:8090/comentarios';
   formData:Comentario;
 
   listComentariosRawTrabajo() {

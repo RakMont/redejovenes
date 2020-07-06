@@ -51,20 +51,26 @@ export class Addlev2comentarysaludComponent implements OnInit {
     this.dialogbox.close();
     }
     onSubmit(){
-      //this.Guardar();
+      let c=null;
       this.service.formData.user=this.userprof;
       console.log(this.service.formData);
 
       this.service.agregarComentarioSalud(this.service.formData).subscribe(res=>{
+        c=res;
         this.dialogbox.close();
       this.service.filter("Register click");
         this.snackBar.open('Añadido correctamente','',{
           duration:5000,
           verticalPosition:'top'
         });
+        if(c!=null){
+          console.log('this is the result'+c);
+          this.dialogbox.close();
+          window.location.reload();
+        }
       })
 
-      window.location.reload();
+     // window.location.reload();
 
     }
 }

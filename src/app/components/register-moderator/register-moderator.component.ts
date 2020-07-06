@@ -130,7 +130,9 @@ export class RegisterModeratorComponent implements OnInit {
     window.location.reload();
   }
   onSubmit() {
-
+    let auxi=this.form.email;
+    auxi=auxi+'@gmail.com';
+    this.form.email=auxi;
     this.form.fecha_nacimiento="2020-05-06";
     ///console.log(this.date.value);
     console.log(this.form);

@@ -12,6 +12,8 @@ import {ViewChild}from '@angular/core';
 import{Usuario}from 'src/app/models/Usuario';
 import{AuthService}from 'src/app/services/auth.service';
 import {FormControl, Validators} from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
@@ -21,6 +23,10 @@ import {FormControl, Validators} from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
   form: any = {};
+  public usuarios:any[];
+  public correos:any[];
+  isusernamevalid=false;
+  isemailvalid=true;
   lugar_acogida:String;
   isSuccessful = false;
   isSignUpFailed = false;
@@ -28,6 +34,10 @@ export class SignupComponent implements OnInit {
   confirmpassword = false;
   startDate = new Date(2000, 0, 1);
   date = new FormControl(new Date(2000, 0, 1));
+  //public femenino : File = '../../../../assets/Femenino.png';
+  hvaAudio: any;
+
+
   selectedValue: string;
    selectedCar: string;
    animalControl = new FormControl('', Validators.required);
@@ -125,13 +135,15 @@ export class SignupComponent implements OnInit {
 "Zapatito"
   ]
 
-  constructor(private router: Router,private authService: AuthService) { }
+  constructor(public service:UserService,private https: HttpClient,private router: Router,private authService: AuthService) { }
   ngOnInit() {
   }
 
   onSubmit() {
 
-
+    let auxi=this.form.email;
+    auxi=auxi+'@gmail.com';
+    this.form.email=auxi;
     console.log(this.form);
     this.authService.register(this.form).subscribe(
       data => {
@@ -144,7 +156,34 @@ export class SignupComponent implements OnInit {
         this.isSignUpFailed = true;
       }
     );
+    this.hvaAudio = this.https.get("../../../../assets/Femenino.png");
 
+    const formData=new FormData;
+    const user = this.form;
+    console.log(user);
+    formData.append('user',JSON.stringify(user));
+    console.log(this.hvaAudio);
+    formData.append('photo',this.hvaAudio);
+
+    this.service.saveProfilePhoto(formData).subscribe((res)=>{
+      data => {
+      };
+    })
+  }
+  myFunc(){
+    //let correos
+    let correos2:any[];
+    this.https.get<String[]>('http://localhost:8090/api/test/getemails')
+    .subscribe(
+      res=>{
+      this.correos = res;
+      console.log(this.correos);
+      if(this.correos.includes(this.form.username)){
+       this.isusernamevalid=true;
+          console.log("error");
+      }
+    })
+    console.log(this.form.username);
   }
   reloadpage(){
     window.location.reload();

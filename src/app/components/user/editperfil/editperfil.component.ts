@@ -25,6 +25,8 @@ export class EditperfilComponent implements OnInit {
   isSignUpFailed = false;
   errorMessage = '';
   confirmpassword = false;
+  msbapAudioUrl = '../../../../assets/HistoriaVidaAudio/euphoria.mp3';
+
   startDate = new Date(2000, 0, 1);
   constructor(private snackBar:MatSnackBar, private router: Router,public dialogbox:MatDialogRef<EditperfilComponent>,public service:UserService) {
     this.service.listen().subscribe((m:any)=>{
@@ -48,25 +50,33 @@ export class EditperfilComponent implements OnInit {
      this.dialogbox.close();
    }
    onSubmit(){
+    let c=null;
     const formData=new FormData;
     const user = this.service.formData;
     console.log(this.service.formData);
     formData.append('user',JSON.stringify(user));
     formData.append('photo',this.hvaAudio);
+
     this.service.saveProfilePhoto(formData).subscribe((res)=>{
       data => {
-        console.log(data);
+        c=res;
+        //console.log(data);
       };
-      this.dialogbox.close();
+      //this.dialogbox.close();
 
     this.service.filter("Register click");
       this.snackBar.open('Añadido correctamente','',{
         duration:5000,
         verticalPosition:'top'
     });
+    if(c!=null){
+      console.log('this is the result'+c);
+      this.dialogbox.close();
+      window.location.reload();
+    }
     })
 
-    window.location.reload();
+    //window.location.reload();
 
    }
 

@@ -33,8 +33,8 @@ export class UserService {
   }
 
   getUserProfile(username:String){
-    return this.http.get<Usuario>('http://localhost:8090/api/test/getprofile/'+username);
-    //return this.http.get<Usuario>(API_URL + 'getprofile/'+username);
+    //return this.http.get<Usuario>(API_URL+'getprofile/'+username);
+    return this.http.get<Usuario>(API_URL + 'getprofile/'+username);
   }
   getAllusers(){
     return this.http.get<Usuario[]>(API_URL + 'getallusers/');

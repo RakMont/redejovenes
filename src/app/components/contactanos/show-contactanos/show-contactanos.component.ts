@@ -11,7 +11,8 @@ export class ShowContactanosComponent implements OnInit {
   constructor(private https: HttpClient) { }
 
   onSubmit(){
-    this.https.post<Details>('http://localhost:8090/showContactanos/getdetails',
+    //https://secondbackend.herokuapp.com/
+    this.https.post<Details>('https://secondbackend.herokuapp.com/showContactanos/getdetails',
     this.dataset).subscribe(
       res => {
         this.dataset = res;

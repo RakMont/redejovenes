@@ -69,15 +69,15 @@ export class AddPodcastComponent implements OnInit {
     }
  }
     onSubmit(form:NgForm){
-      //console.log(form.value);
+      let c=null;
       const podcast = form.value;
       const formData=new FormData;
       formData.append('podcast',JSON.stringify(podcast));
       formData.append('file',this.hvaAudio);
       this.service.savePodcast(formData).subscribe((res)=>{
-        this.router.navigate([ "showPodcast" ]);
+        //this.router.navigate([ "showPodcast" ]);
         this.resetForm(form);
-        this.dialogbox.close();
+        c=res;
         //this.charge();
 
       this.service.filter("Register click");
@@ -85,6 +85,11 @@ export class AddPodcastComponent implements OnInit {
           duration:5000,
           verticalPosition:'top'
       });
+      if(c!=null){
+        console.log('this is the result'+c);
+        this.dialogbox.close();
+        window.location.reload();
+      }
       })
       this.service.getPodcastAllAudios().subscribe(response=>{
         this.audios=response;

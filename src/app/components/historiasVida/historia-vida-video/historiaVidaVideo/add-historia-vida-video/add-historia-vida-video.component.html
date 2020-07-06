@@ -23,7 +23,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">URL</span>
                 </div>
-                <input required minlength="2" type="text" class="form-control" placeholder="https://www.youtube.com/....." name="video_HVV" #video_HVV="ngModel" [(ngModel)]="service.formData.video_HVV">
+                <input required minlength="2" type="text" class="form-control" placeholder="https://www.youtube.com/....." name="video_HVV" #video_HVV="ngModel" [(ngModel)]="service.formData.video_HVV" pattern="(?:https?:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/watch\?v=([^&]+)">
             </div>
             <div class="text-left text-danger" *ngIf="video_HVV.invalid && video_HVV.touched">
                 Debes ingresar la URL del video

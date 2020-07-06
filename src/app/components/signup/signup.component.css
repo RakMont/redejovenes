@@ -1,3 +1,68 @@
+.container {
+    /* max-width: 100%;
+  margin-top: 8%;
+  position: absolute;*/
+    max-width: 100%;
+    margin-bottom: 50px;
+    min-height: 100vh;
+    margin-bottom: 20px;
+}
+
+.container-login100 {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.wrap-login100 {
+    width: 520px;
+    min-height: 100vh;
+    background: #fff;
+    border-radius: 2px;
+    position: relative;
+}
+
+.login100-more {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: calc(100% - 520px);
+    position: relative;
+    z-index: 1;
+}
+
+.login100-more::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #e8519e;
+    background: -webkit-linear-gradient(bottom, #e8519e, #c77ff2);
+    background: -o-linear-gradient(bottom, #e8519e, #c77ff2);
+    background: -moz-linear-gradient(bottom, #e8519e, #c77ff2);
+    opacity: 0.8;
+}
+
+.login100-form-title {
+    display: block;
+    width: 100%;
+    font-family: Poppins-Bold;
+    font-size: 39px;
+    color: #333333;
+    line-height: 1.2;
+    text-align: left;
+}
+
 .form {
     width: 350px;
     height: 480px;
@@ -13,26 +78,32 @@
 
 .container {
     /* max-width: 100%;
-    margin-top: 8%;
-    position: absolute;*/
+  margin-top: 8%;
+  position: absolute;*/
     max-width: 100%;
     margin-bottom: 50px;
     min-height: 100vh;
     margin-bottom: 20px;
 }
 
-.card-container {}
-
 .formText {
-    width: 350px;
-    height: 480px;
+    width: 70%;
+    height: 300px;
     border-radius: 8px;
-    box-shadow: 0 0 40px -10px #000;
-    margin: calc(50vh - 220px) auto;
-    padding: 20px 30px;
-    max-width: calc(100vw - 40px);
+    margin-top: 100px;
+    /*padding: 20px 30px;*/
+    max-width: 70%;
     box-sizing: border-box;
-    position: relative
+    font-family: "Mission Gothic";
+    position: center;
+    font-size: 18px;
+}
+
+p {
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    line-height: 20px;
 }
 
 h2 {
@@ -51,20 +122,22 @@ h2 {
 
 input {
     width: 100%;
-    padding: 10px;
+    /*padding: 10px;*/
     box-sizing: border-box;
     background: none;
     outline: none;
     resize: none;
     border: 0;
-    font-family: 'Montserrat', sans-serif;
-    transition: all .3s;
+    font-family: "Mission Gothic";
+    /*transition: all .3s;*/
     border-bottom: 2px solid #03A0C3;
 }
 
+
+/*
 input:focus {
     border-bottom: 2px solid #78788c
-}
+}*/
 
 p:before {
     content: attr(type);
@@ -74,8 +147,6 @@ p:before {
     color: #5a5a5a
 }
 
-p {}
-
 .error-message {
     color: red;
 }
@@ -83,6 +154,9 @@ p {}
 label {
     margin-left: 2%;
     font-size: 20px;
+    margin-bottom: 2px;
+    font-family: "Mission Gothic";
+    margin-top: 10px;
 }
 
 button {
@@ -90,7 +164,6 @@ button {
     padding: 8px 12px;
     margin: 8px 0 0;
     background-color: #03A0C3;
-
 }
 
 .footerContact {
@@ -111,9 +184,6 @@ h1 {
     margin-top: 2%;
     text-align: center;
     font-size: 30px;
-    color: black;
-}
-
-span {
-    margin: 0 5px 0 15px
+    color: #952C6E;
+    font-family: 'Mission Gothic Bold';
 }

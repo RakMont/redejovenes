@@ -1,133 +1,141 @@
 <div class="container">
     <div class="row">
-        <div class="col-lg-6 col-md-6  col-sm-12">
-            <p>Si te registras, vas a poder hacer comentarios en nuestras publicaciones aquí en la plataforma, y también te vamos a mantener al tanto de las actividades de la red e invitarte a ser parte! Los miembros de Dejando Huellas somos adolescentes
+        <div class="col-md-6 formText">
+            <p style style="line-height: 300%">Si te registras, vas a poder hacer comentarios en nuestras publicaciones aquí en la plataforma, y también te vamos a mantener al tanto de las actividades de la red e invitarte a ser parte! Los miembros de Dejando Huellas somos adolescentes
                 y jóvenes que hemos vivido en centros de acogida del sistema de protección de Bolivia. Si también eres un/a joven que vives o has vivido en un centro de acogida en Bolivia, te invitamos a registrarte y formar parte de nuestra familia!
                 Queremos apoyarte y acompañarte. No estás solo/a!
             </p>
-
-
         </div>
-        <div class="col-lg-5 col-md-6  col-sm-12">
-            <div class="card card-container">
-                <h1 class="ion-text-center" class="mt-2">Registrar</h1>
-                <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
-                    <div class="form-group">
-                        <label for="username">Nombre de usuario</label>
-                        <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required minlength="3" maxlength="20" #username="ngModel" />
-                        <div class="alert-danger" *ngIf="f.submitted && username.invalid">
-                            <div *ngIf="username.errors.required">El nombre de usuario es requerido</div>
-                            <div *ngIf="username.errors.minlength">
-                                nombre de usuario debe tener al menos 3 caracteres
+        <div class="limiter">
+            <div class="container-login100">
+                <div class="login100-more"></div>
+
+                <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+                    <form class="login100-form validate-form" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                        <br>
+                        <h1>
+                            Registrarse
+                        </h1>
+
+                        <div class="validate-input">
+                            <label class="label-input100" for="username">Nombre de usuario: </label>
+                            <input type="text" class="form-control" name="username" ng-required="isusernamevalid" (change)="myFunc()" [(ngModel)]="form.username" required isusernamevalid minlength="3" maxlength="20" #username="ngModel" />
+                            <div *ngIf="username.invalid && (form.submitted || username.touched)" class="alert alert-danger">
+                                <div *ngIf="username.errors.required">El nombre de usuario es requerido</div>
+                                <div *ngIf="username.errors.minlength">
+                                    nombre de usuario debe tener al menos 3 caracteres
+                                </div>
+                                <!--<div *ngIf="username.errors.ng-required">
+                                    usuario en uso
+                            </div>-->
+                                <div *ngIf="username.errors.maxlength">
+                                    nombre de usuario debe tener como maximo 20 caracteres
+                                </div>
+                                <!-- <div *ngIf="username.errors.isusernamevalid">
+                                    usuario en uso
+                                </div>-->
                             </div>
-                            <div *ngIf="username.errors.maxlength">
-                                nombre de usuario debe tener como maximo 20 caracteres
+
+                        </div>
+                        <div class="validate-input">
+                            <label class="label-input100" for="nombre">Nombre: </label>
+                            <input type="text" class="form-control" name="nombre" [(ngModel)]="form.nombre" required minlength="3" maxlength="20" #nombre="ngModel" />
+                            <div class="alert-danger" *ngIf="f.submitted && nombre.invalid">
+                                <div *ngIf="nombre.errors.required">nombre es requerido</div>
+                                <div *ngIf="nombre.errors.minlength">
+                                    nombre debe tener al menos 3 caracteres
+                                </div>
+                                <div *ngIf="username.errors.maxlength">
+                                    nombre debe tener como maximo 20 caracteres
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" name="nombre" [(ngModel)]="form.nombre" required minlength="3" maxlength="20" #nombre="ngModel" />
-                        <div class="alert-danger" *ngIf="f.submitted && nombre.invalid">
-                            <div *ngIf="nombre.errors.required">nombre es requerido</div>
-                            <div *ngIf="nombre.errors.minlength">
-                                nombre debe tener al menos 3 caracteres
-                            </div>
-                            <div *ngIf="username.errors.maxlength">
-                                nombre debe tener como maximo 20 caracteres
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="apellido">Apellido</label>
-                        <input type="text" class="form-control" name="apellido" [(ngModel)]="form.apellido" required minlength="3" maxlength="20" #apellido="ngModel" />
-                        <div class="alert-danger" *ngIf="f.submitted && apellido.invalid">
-                            <div *ngIf="apellido.errors.required">apellido es requerido</div>
-                            <div *ngIf="apellido.errors.minlength">
-                                apellido debe tener al menos 3 caracteres
-                            </div>
-                            <div *ngIf="apellido.errors.maxlength">
-                                apellido debe tener como maximo 20 caracteres
+                        <div class="validate-input">
+                            <label class="label-input100" for="apellido">Apellido: </label>
+                            <input type="text" class="form-control" name="apellido" [(ngModel)]="form.apellido" required minlength="3" maxlength="20" #apellido="ngModel" />
+                            <div class="alert-danger" *ngIf="f.submitted && apellido.invalid">
+                                <div *ngIf="apellido.errors.required">apellido es requerido</div>
+                                <div *ngIf="apellido.errors.minlength">
+                                    apellido debe tener al menos 3 caracteres
+                                </div>
+                                <div *ngIf="apellido.errors.maxlength">
+                                    apellido debe tener como maximo 20 caracteres
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="lugar_acogida">Centro de acogida</label>
-                        <!--<input type="text" class="form-control" name="lugar_acogida" [(ngModel)]="form.lugar_acogida" required minlength="3" maxlength="20" #lugar_acogida="ngModel" />
-                        -->
-                        <mat-form-field class="example-full-width">
-                            <mat-select [(ngModel)]="form.lugar_acogida" name="lugar_acogida" required #lugar_acogida="ngModel">
-                                <mat-option *ngFor="let lugar of lugares" [value]="lugar">
-                                    {{lugar}}
-                                </mat-option>
-                            </mat-select>
-                        </mat-form-field>
+                        <div class="validate-input">
+                            <label class="label-input100" for="lugar_acogida">Centro de acogida: </label>
+                            <!--<input type="text" class="form-control" name="lugar_acogida" [(ngModel)]="form.lugar_acogida" required minlength="3" maxlength="20" #lugar_acogida="ngModel" />
+                              -->
+                            <mat-form-field class="example-full-width">
+                                <mat-select [(ngModel)]="form.lugar_acogida" name="lugar_acogida" required #lugar_acogida="ngModel">
+                                    <mat-option *ngFor="let lugar of lugares" [value]="lugar">
+                                        {{lugar}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="validate-input">
+                            <label class="label-input100" for="telefono">Telefono: </label>
+                            <input type="number" class="form-control" name="telefono" [(ngModel)]="form.telefono" #telefono="ngModel" />
+                        </div>
+                        <div class="validate-input">
+                            <label class="label-input100" for="genero">Genero: </label>
 
-                    </div>
-                    <div class="form-group">
-                        <label for="telefono">Telefono</label>
-                        <input type="number" class="form-control" name="telefono" [(ngModel)]="form.telefono" #telefono="ngModel" />
+                            <mat-form-field class="example-full-width">
+                                <mat-select [(ngModel)]="form.genero" name="genero" required #genero="ngModel">
+                                    <mat-option *ngFor="let genero of generos" [value]="genero">
+                                        {{genero}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="validate-input">
+                            <label class="label-input100" for="email">Apodo: </label>
+                            <input type="text" class="form-control" name="email" [(ngModel)]="form.email" required #email="ngModel" />
+                            <div *ngIf="email.invalid && (form.submitted || email.touched)" class="alert alert-danger">
+                                <div *ngIf="email.errors.required">Apodo es requerido y debe ser unico</div>
 
-                    </div>
-                    <div class="form-group">
-                        <label for="genero">Genero</label>
-
-                        <mat-form-field class="example-full-width">
-                            <mat-select [(ngModel)]="form.genero" name="genero" required #genero="ngModel">
-                                <mat-option *ngFor="let genero of generos" [value]="genero">
-                                    {{genero}}
-                                </mat-option>
-                            </mat-select>
-                        </mat-form-field>
-
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Correo</label>
-                        <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email #email="ngModel" />
-                        <div class="alert-danger" *ngIf="f.submitted && email.invalid">
-                            <div *ngIf="email.errors.required">Correo es requerido</div>
-                            <div *ngIf="email.errors.email">
-                                Correo debe ser un correo valido
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Contraseña</label>
-                        <input type="password" [(ngModel)]="form.password" name="password" class="form-control" required #password="ngModel" pattern="(?=.*\d)(?=.*[a-z]).{6,}" />
-                        <div *ngIf="password.invalid && (form.submitted || password.touched)" class="alert alert-danger">
-                            <div *ngIf="password.errors.required"> La contraseña es requerida. </div>
-                            <div *ngIf="password.errors.pattern"> La contraseña debe tener un minimo de 6 caracteres.</div>
+                        <div class="form-group">
+                            <label for="password">Contraseña</label>
+                            <input type="password" [(ngModel)]="form.password" name="password" class="form-control" required #password="ngModel" pattern="(?=.*\d)(?=.*[a-z]).{6,}" />
+                            <div *ngIf="password.invalid && (form.submitted || password.touched)" class="alert alert-danger">
+                                <div *ngIf="password.errors.required"> La contraseña es requerida. </div>
+                                <div *ngIf="password.errors.pattern"> La contraseña debe tener un minimo de 6 caracteres.</div>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password">Confirmar contraseña</label>
-                        <input type="password" [(ngModel)]="form.confirmpassword" name="confirmpassword" class="form-control" required #confirmpassword="ngModel" pattern="{{ password.value }}" />
-                        <div *ngIf=" confirmpassword.invalid && (form.submitted || confirmpassword.touched)" class="alert alert-danger">
-                            <div *ngIf="confirmpassword.errors.required"> Confirmar contraseña es requerido. </div>
-                            <div *ngIf="confirmpassword.errors.pattern"> contraseña & Confirmar contraseña no son iguales.</div>
+                        <div class="validate-input">
+                            <label for="password">Confirmar contraseña: </label>
+                            <input type="password" [(ngModel)]="form.confirmpassword" name="confirmpassword" class="form-control" required #confirmpassword="ngModel" pattern="{{ password.value }}" />
+                            <div *ngIf=" confirmpassword.invalid && (form.submitted || confirmpassword.touched)" class="alert alert-danger">
+                                <div *ngIf="confirmpassword.errors.required"> Confirmar contraseña es requerido. </div>
+                                <div *ngIf="confirmpassword.errors.pattern"> contraseña & Confirmar contraseña no son iguales.</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Fecha de nacimiento</label>
+                        <div class=" validate-input">
+                            <div class="form-group">
+                                <label for="password">Fecha de nacimiento: </label>
 
-                        <input matInput [matDatepicker]="picker" required [(ngModel)]="form.fecha_nacimiento" name="fecha_nacimiento">
-                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                        <mat-datepicker #picker [startAt]="startDate"></mat-datepicker>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn  btn-block" mat-raised-button [disabled]="f.invalid">Registrar</button>
-                    </div>
+                                <input matInput [matDatepicker]="picker" required [(ngModel)]="form.fecha_nacimiento" name="fecha_nacimiento">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker [startAt]="startDate"></mat-datepicker>
+                            </div>
+                        </div>
+                        <div class="validate-input">
+                            <button class="btn  btn-block" mat-raised-button [disabled]="f.invalid">Registrar</button>
+                        </div>
 
-                    <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
-                        REGISTRO FALLIDO!!!!<br />{{ errorMessage }}
-                        <button class="btn  btn-block" (click)="reloadpage()" mat-raised-button>Intentar nuevamente</button>
+                        <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+                            REGISTRO FALLIDO!!!!<br />{{ errorMessage }}
+                            <button class="btn  btn-block" (click)="reloadpage()" mat-raised-button>Intentar nuevamente</button>
 
+                        </div>
+                    </form>
+                    <div class="alert alert-success" *ngIf="isSuccessful">
+                        EL REGISTRO FUE EXITOSO!
                     </div>
-                </form>
-
-                <div class="alert alert-success" *ngIf="isSuccessful">
-                    EL REGISTRO FUE EXITOSO!
                 </div>
             </div>
         </div>

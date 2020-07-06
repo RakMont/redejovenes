@@ -64,21 +64,28 @@ this.service.formData={
 }
 }
 onSubmit(){
+  let c=null;
   //this.Guardar();
   this.service.formData.user=this.userprof;
   console.log(this.service.formData);
 
   this.service.agregarComentarioEducacion(this.service.formData).subscribe(res=>{
+    c=res;
     this.resetForm();
-    this.dialogbox.close();
+   // this.dialogbox.close();
   this.service.filter("Register click");
     this.snackBar.open('Añadido correctamente','',{
       duration:5000,
       verticalPosition:'top'
     });
+    if(c!=null){
+      console.log('this is the result'+c);
+      this.dialogbox.close();
+      window.location.reload();
+    }
   })
 
-  window.location.reload();
+ // window.location.reload();
 
 }
 }

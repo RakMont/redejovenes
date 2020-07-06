@@ -56,19 +56,24 @@ export class AddConvenioComponent implements OnInit {
 
 
  onSubmit(form:NgForm){
-  //console.log(form.value);
+  let c=null;
   const convenio = form.value;
   const formData=new FormData;
   formData.append('convenio',JSON.stringify(convenio));
   formData.append('file',this.hvaAudio);
   this.service.saveConvenioFile(formData).subscribe((res)=>{
     this.resetForm(form);
-    this.dialogbox.close();
+    c=res;
   this.service.filter("Register click");
     this.snackBar.open('Añadido correctamente','',{
       duration:5000,
       verticalPosition:'top'
   });
+  if(c!=null){
+    console.log('this is the result'+c);
+    this.dialogbox.close();
+    window.location.reload();
+  }
   })
   this.service.getConvenios().subscribe(response=>{
     this.photos=response;

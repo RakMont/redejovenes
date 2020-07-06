@@ -52,10 +52,6 @@ export class ShowmoderatorComponent implements OnInit {
     if(confirm('Estas seguro de eliminar ? ')){
       this.service.deleteHVT(user)
       .subscribe(data=>{
-       // this.podcasts=this.podcasts.filter(p=>p.id_podcast!==podcast.id_podcast);
-       // this.audios=this.audios.filter(p=>p!==podcast);
-       // this.Convertlist();
-       // this.things=this.things.filter(t=>t!==some);
         this.usuarios=this.usuarios.filter(p=>p==user);
         this.snackBar.open('Eliminado Correctamente','',{
           duration:5000,
