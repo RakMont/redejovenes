@@ -71,7 +71,7 @@ export class AddHistoriaVidaAudioComponent implements OnInit {
           verticalPosition:'top'
       })
         if(c!=null){
-        console.log('this is the result'+c);
+       // console.log('this is the result'+c);
         window.location.reload();
       }
       })

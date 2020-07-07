@@ -58,30 +58,32 @@ export class EditperfilComponent implements OnInit {
     console.log(this.service.formData);
     formData.append('user',JSON.stringify(user));
     formData.append('photo',this.hvaAudio);
-
     this.service.saveProfilePhoto(formData).subscribe((res)=>{
-      data => {
-        c=res;
-        //console.log(data);
-      };
-      //this.dialogbox.close();
-
+    c=res;
+    this.isSuccessful = true;
+    this.isSignUpFailed = false;
     this.service.filter("Register click");
-      this.snackBar.open('Añadido correctamente','',{
-        duration:5000,
-        verticalPosition:'top'
-    });
+    this.snackBar.open('Editado con exito','',{
+    duration:5000,
+    verticalPosition:'top'
+  })
     if(c!=null){
       console.log('this is the result'+c);
       this.dialogbox.close();
       window.location.reload();
     }
-    })
 
-    window.location.reload();
+  },
+  err => {
+    this.errorMessage = err.error.message;
+    this.isSignUpFailed = true;
+  }
+);
+// this.dialogbox.close();
 
-   }
 
+
+}
    onSelectFile(event){
     //const file=event.target.file;
     const file=event.target.files[0];

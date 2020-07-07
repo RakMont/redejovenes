@@ -23,7 +23,13 @@ export class ShowAllUsersComponent implements OnInit {
   things=[];
   public photos:any=[];
   public aux;
-
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  username: string;
+  email:String;
+  id;
+  userprof:Usuario;
   ///////////////////////////////////
   folders = [
     { name: 'Folder 1', link: '#1' },
@@ -32,13 +38,36 @@ export class ShowAllUsersComponent implements OnInit {
     { name: 'Folder 4', link: '#4' },
     { name: 'Folder 5', link: '#5' }
   ];
-
+  private roles: string[];
   responsive = true;
   cols = 1;
   /////////////////////////////////
   constructor(private tokenStorageService: TokenStorageService,private snackBar:MatSnackBar,private service: UserService, private router: Router,private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+
+      this.username = user.username;
+      this.id=user.id;
+      this.email=user.email;
+
+      this.service.getUserProfile(this.username)
+    .subscribe(data =>{
+    this.userprof = data;
+  });
+}
+if(!this.showAdminBoard){
+  this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+  this.router.navigate(["/"]));
+
+}
     this.service.getAllusersphoto().subscribe(response=>{
       this.photos=response;
 
@@ -52,6 +81,7 @@ export class ShowAllUsersComponent implements OnInit {
     console.log(this.user.roles[0]);
    });
   }
+
   Delete(user: Usuario){
     if(confirm('Estas seguro de eliminar ? ')){
       this.service.deleteHVT(user)

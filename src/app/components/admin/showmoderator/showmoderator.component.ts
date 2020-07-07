@@ -29,12 +29,43 @@ export class ShowmoderatorComponent implements OnInit {
     { name: 'Folder 4', link: '#4' },
     { name: 'Folder 5', link: '#5' }
   ];
-
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  username: string;
+  email:String;
+  id;
+  userprof:Usuario;
   responsive = true;
   cols = 1;
+  private roles: string[];
+
   constructor(private tokenStorageService: TokenStorageService,private snackBar:MatSnackBar,private service: UserService, private router: Router,private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+
+      this.username = user.username;
+      this.id=user.id;
+      this.email=user.email;
+
+      this.service.getUserProfile(this.username)
+    .subscribe(data =>{
+    this.userprof = data;
+  });
+}
+if(!this.showAdminBoard){
+  this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+  this.router.navigate(["/"]));
+
+}
     this.service.getAllmoderatorsphoto().subscribe(response=>{
       this.photos=response;
 

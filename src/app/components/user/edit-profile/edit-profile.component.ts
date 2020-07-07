@@ -56,52 +56,34 @@ export class EditProfileComponent implements OnInit {
     this.dialogbox.close();
   }
   onSubmit(){
-
-    console.log(this.userservice.formData);
+    let c=null;
+    //console.log(this.userservice.formData);
+    this.userservice.formData.email=this.userservice.formData.email+'@gmail.com';
     this.userservice.editProfile(this.userservice.formData).subscribe(
       data => {
-        console.log(data);
+        c=data;
+        //console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
+        this.userservice.filter("Register click");
+        this.snackBar.open('Editado con exito','',{
+        duration:5000,
+        verticalPosition:'top'
+      })
+        if(c!=null){
+          console.log('this is the result'+c);
+          this.dialogbox.close();
+          window.location.reload();
+        }
+
       },
       err => {
         this.errorMessage = err.error.message;
         this.isSignUpFailed = true;
       }
     );
-  /* this.form2=this.form;
-    console.log(this.form2);
-    this.tokenStorage.signOut();
-    console.log(this.form2);
-*/
-   /* if (this.tokenStorage.getToken()) {
-      this.isLoggedIn = true;
-      this.roles = this.tokenStorage.getUser().roles;
-    }
-    this.resetForm();
-*/
-   /* this.authService.login(this.form2).subscribe(
-    data => {
-      this.tokenStorage.saveToken(data.accessToken);
-      this.tokenStorage.saveUser(data);
+   // this.dialogbox.close();
 
-      this.isLoginFailed = false;
-      this.isLoggedIn = true;
-      this.roles = this.tokenStorage.getUser().roles;
-    },
-    err => {
-      this.errorMessage = err.error.message;
-      this.isLoginFailed = true;
-    }
-  );*/
-   this.dialogbox.close();
-    this.userservice.filter("Register click");
-            this.snackBar.open('Editado con exito','',{
-        duration:5000,
-        verticalPosition:'top'
-      })
-            this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
-        this.router.navigate(["user"]));
 
 
   }

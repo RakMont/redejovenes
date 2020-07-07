@@ -48,13 +48,22 @@ export class EditprofileasadminComponent implements OnInit {
     this.dialogbox.close();
   }
   onSubmit(){
-
-    console.log(this.userservice.formData);
+    let c=null;
+    this.userservice.formData.email=this.userservice.formData.email+'@gmail.com';
     this.userservice.updateprofileadmin(this.userservice.formData).subscribe(
       data => {
-        console.log(data);
+        c=data;
         this.isSuccessful = true;
         this.isSignUpFailed = false;
+        if(c!=null){
+          this.dialogbox.close();
+          this.userservice.filter("Register click");
+          this.snackBar.open('Editado con exito','',{
+      duration:5000,
+      verticalPosition:'top'
+    })
+      window.location.reload();
+    }
       },
       err => {
         this.errorMessage = err.error.message;
@@ -62,16 +71,7 @@ export class EditprofileasadminComponent implements OnInit {
       }
     );
 
-    if(this.isSuccessful==true){
-            this.dialogbox.close();
-            this.userservice.filter("Register click");
-            this.snackBar.open('Editado con exito','',{
-        duration:5000,
-        verticalPosition:'top'
-      })
-            this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
-        this.router.navigate(["mod"]));
-      }
+
 
   }
 }

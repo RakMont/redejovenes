@@ -48,7 +48,6 @@ export class BoardAdminComponent implements OnInit {
       this.userservice.getUserProfile(this.username)
     .subscribe(data =>{
     this.userprof = data;
-    console.log(this.userprof);
   });
 
     }
