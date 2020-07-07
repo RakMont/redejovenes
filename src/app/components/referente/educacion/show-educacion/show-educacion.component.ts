@@ -7,6 +7,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import {MatSort}from '@angular/material/sort';
 import{MatDialog,MatDialogConfig}from '@angular/material/dialog';
 import{EditEducacionComponent}from 'src/app/components/referente/educacion/edit-educacion/edit-educacion.component';
+import { DomSanitizer } from '@angular/platform-browser';
+import { Pipe, PipeTransform } from '@angular/core';
 
 import { filter } from 'rxjs/operators';
 import{Subject}from 'rxjs';
@@ -27,20 +29,25 @@ export class ShowEducacionComponent implements OnInit {
   referente:Referente;
   dataSource=null;
   link;
+  videos;
   private roles: string[];
 
   isLoggedIn = false;
   showAdminBoard = false;
   showModeratorBoard = false;
   username: string;
-  constructor(private tokenStorageService: TokenStorageService,private snackBar:MatSnackBar,private service: ReferenteService, private router: Router,private dialog: MatDialog) { }
+  constructor(private sanitizer: DomSanitizer,private tokenStorageService: TokenStorageService,private snackBar:MatSnackBar,private service: ReferenteService, private router: Router,private dialog: MatDialog) { }
 
   ngOnInit() {
     this.service.getReferenteEducacion()
     .subscribe(data =>{
       this.referente = data;
       this.link=this.referente.video_referente;
-
+      this.videos=this.link;
+      this.videos='https://www.youtube.com/embed/'+this.videos;
+      console.log(this.link);
+      this.videos=this.sanitizer.bypassSecurityTrustResourceUrl(this.videos);
+      //console.log('es to es '+this.referente);
 
     });
     this.isLoggedIn = !!this.tokenStorageService.getToken();

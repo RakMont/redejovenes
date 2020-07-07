@@ -8,6 +8,8 @@ import {MatSort}from '@angular/material/sort';
 import{MatDialog,MatDialogConfig}from '@angular/material/dialog';
 import{EditViviendaComponent}from 'src/app/components/referente/vivienda/edit-vivienda/edit-vivienda.component';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { Pipe, PipeTransform } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 import { filter } from 'rxjs/operators';
 import{Subject}from 'rxjs';
@@ -27,19 +29,25 @@ export class ShowViviendaComponent implements OnInit {
   referente:Referente;
   dataSource=null;
   link;
+  videos;
   referentes: Referente[];
   private roles: string[];
   isLoggedIn = false;
   showAdminBoard = false;
   showModeratorBoard = false;
   username: string;
-  constructor(private tokenStorageService: TokenStorageService,private snackBar:MatSnackBar,private service: ReferenteService, private router: Router,private dialog: MatDialog) { }
+  constructor(private sanitizer: DomSanitizer,private tokenStorageService: TokenStorageService,private snackBar:MatSnackBar,private service: ReferenteService, private router: Router,private dialog: MatDialog) { }
 
   ngOnInit() {
     this.service.getReferenteVivienda()
     .subscribe(data =>{
       this.referente = data;
       this.link=this.referente.video_referente;
+      this.videos=this.link;
+      this.videos='https://www.youtube.com/embed/'+this.videos;
+      console.log(this.link);
+      this.videos=this.sanitizer.bypassSecurityTrustResourceUrl(this.videos);
+      //console.log('es to es '+this.referente);
     });
     this.isLoggedIn = !!this.tokenStorageService.getToken();
 
