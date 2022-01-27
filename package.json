@@ -41,7 +41,7 @@
         "ngx-youtube-player": "^7.1.5",
         "path": "^0.12.7",
         "rxjs": "^6.5.5",
-        "three": "^0.115.0",
+        "three": "^0.137.0",
         "three-obj-mtl-loader": "^1.0.3",
         "tslib": "^1.13.0",
         "typescript": "~3.7.5",
